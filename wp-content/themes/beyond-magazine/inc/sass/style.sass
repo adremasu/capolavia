@@ -1,0 +1,728 @@
+/*
+ *Theme Name: Beyond Magazine
+ *Theme URI: http://ketchupthemes.com/beyond-magazine/
+ *Author: Alexandros Itsios
+ *Author URI: http://ketchupthemes/alex-itsios
+ *Description: Beyond is a free and responsive Magazine Theme for WordPress that makes you stand out of the crowd.
+ *Version: 1.4
+ *License: GNU General Public License v2 or later
+ *License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *Tags: white, blue, gray, light, two-columns, editor-style, left-sidebar, responsive-layout, custom-menu, featured-image-header, featured-images, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header
+ *TextDomain: beyondmagazine
+
+/***
+ **
+ *GENERAL
+ **
+ ***
+@import "font-awesome-sprockets"
+@import "font-awesome"
+@import "compass/css3/border-radius"
+@import "colors"
+@font-face
+  font-family: 'CC-ICONS'
+  font-style: normal
+  font-weight: normal
+  src: url('http://mirrors.creativecommons.org/presskit/cc-icons.ttf') format("truetype")
+
+
+span.cc
+  font-family: 'CC-ICONS'
+  color: #ABB3AC
+body
+  text-align: justify
+  color: $color-text
+  font-family: 'Open Sans',sans-serif
+  word-wrap: break-word
+
+img
+  max-width: 100%
+  height: auto
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+  font-family: 'djb_baileyregular', sans-serif
+  font-weight: 400
+  color: $color-text
+  line-height: 1.4
+
+.kt-grey
+  color: $color-secondary
+
+a
+  &:hover, &:focus
+    color: $color-secondary
+    text-decoration: none
+
+/***
+ **
+ *DEFAULT WORDPRESS CLASSES
+ **
+ ***
+
+.alignnone
+  margin: 5px 20px 20px 0
+
+.aligncenter, div.aligncenter
+  display: block
+  margin: 5px auto 5px auto
+
+.alignright
+  float: right
+  margin: 5px 0 20px 20px
+
+.alignleft
+  float: left
+  margin: 5px 20px 20px 0
+
+a img
+  &.alignright
+    float: right
+    margin: 5px 0 20px 20px
+  &.alignnone
+    margin: 5px 20px 20px 0
+  &.alignleft
+    float: left
+    margin: 5px 20px 20px 0
+  &.aligncenter
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+.wp-caption
+  background: #fff
+  border: 1px solid #f0f0f0
+  max-width: 96%
+  /* Image does not overflow the content area
+  padding: 5px 3px 10px
+  text-align: center
+  &.alignnone, &.alignleft
+    margin: 5px 20px 20px 0
+  &.alignright
+    margin: 5px 0 20px 20px
+  img
+    border: 0 none
+    height: auto
+    margin: 0
+    max-width: 98.5%
+    padding: 0
+    width: auto
+  p.wp-caption-text
+    font-size: 11px
+    line-height: 17px
+    margin: 0
+    padding: 0 4px 5px
+
+.clearfix
+  clear: both
+
+table
+  width: 90%
+  border-top: 1px solid #e5eff8
+  border-right: 1px solid #e5eff8
+  border-collapse: collapse
+
+th, td
+  color: #678197
+  border-bottom: 1px solid #e5eff8
+  border-left: 1px solid #e5eff8
+  padding: .3em 1em
+  text-align: center
+
+dt
+  font-weight: bold
+  text-decoration: underline
+
+dd
+  margin: 0
+  padding: 0 0 0.5em 0
+
+/***
+ **06bfea
+ *HEADER
+ **42A942
+ ***
+.headerwidget.widget_polylang
+  position: absolute
+  top: 0
+  right: 10%
+  height: 1em
+  overflow: visible
+  font-size: .75em
+  background-color: $color-primary
+  @media only screen and (max-width: 900px)
+    left: 0
+    right: auto
+    top: -45px
+  &:after, &:before
+    @media only screen and (min-width: 900px)
+      content: ""
+  &:after
+    display: block
+    +border-top-radius(10px)
+    background-color: white
+    height: 40px
+    width: 10px
+    position: absolute
+    margin-right: -5px
+    top: 0
+    right: 0
+  &:before
+    display: block
+    +border-top-radius(10px)
+    background-color: white
+    height: 40px
+    width: 10px
+    position: absolute
+    margin-left: -5px
+    top: 0
+    left: 0
+  ul
+    list-style-type: none
+    padding: 6px 10px
+    margin: 0 4px
+    background-color: $color-primary
+    +border-bottom-radius(10px)
+
+    li
+      display: inline
+    .current-lang
+      a
+        font-weight: bold
+        text-decoration: underline
+  a
+    color: white
+
+.blog-title
+  font-size: 2.15em
+  line-height: 1.6em
+  display: inline-block
+  @media (min-width: 992px) and (max-width: 1200px)
+    font-size: 1.8em
+  @media (min-width: 768px) and (max-width: 992px)
+    text-align: center
+
+.blog-description
+  line-height: 1.9em
+  @media (min-width: 992px) and (max-width: 1200px)
+    font-size: .9em
+  @media (min-width: 768px) and (max-width: 992px)
+    text-align: center
+#kt-logo
+  h1
+    text-align: center
+.logo
+  @media (max-width: 992px)
+    width: 50%
+    margin: 0 auto
+
+.kt-wrapper
+  border-top: 3px solid $color-primary
+  background: #fff
+  max-width: 1290px
+  margin: 0 auto
+  -webkit-box-shadow: 0px 0px 5px 0px $color-primary
+  -moz-box-shadow: 0px 0px 5px 0px $color-primary
+  box-shadow: 0px 0px 5px 0px $color-primary
+  margin-bottom: 20px
+  padding-top: $padding-std
+  position: relative
+
+#kt-logo h1
+  font-size: 1.8em
+
+
+/*-------------------
+/* Navigation Menu
+/*-------------------
+
+#kt-main-nav
+  ul
+    padding: 0
+    list-style: none
+    line-height: 79px
+    li
+      float: left
+      position: relative
+      margin-right: 25px
+      &:hover > .sub-menu
+        display: inline-block
+        position: absolute
+        top: auto
+        left: auto
+        z-index: 10000
+  .sub-menu li:hover > .sub-menu
+    display: inline-block
+    position: absolute
+    top: 0px
+    left: auto
+    z-index: 10000
+  ul
+    li a
+      display: block
+      padding: 0 15px
+    &.sub-menu
+      display: none
+      top: 0
+  .sub-menu
+    border-bottom: 2px solid #0E4FA3
+    background: #ffffff
+    li
+      position: relative
+      width: 160px
+      float: none
+      margin-right: 0px !important
+      border-bottom: 1px solid rgba(5, 79, 2, 0.2)
+      a
+        font-size: 14px
+        line-height: 40px
+      > .sub-menu
+        background: #fdfdfd
+        position: absolute
+        top: 0
+        left: 160px !important
+
+/**Second Level*
+
+/**Third Level*
+
+.slicknav_menu
+  display: none
+  .slicknav_btn
+    background-color: $color-secondary
+
+/***
+ **
+ *MAIN
+ **
+ ***
+
+#kt-latest-title
+  color: $color-primary
+  text-align: center
+  background: url("img/bg.png")
+  padding: 0.6em 0 0
+  font-weight: bold
+  border: 1px solid $color-border
+  p
+    position: relative
+    overflow: hidden
+    text-align: center
+    margin-bottom: 0
+    span
+      display: inline-block
+      vertical-align: baseline
+      zoom: 1
+      *display: inline
+      *vertical-align: auto
+      position: relative
+      padding: 0 20px
+      line-height: 1.8
+      &:before, &:after
+        content: ''
+        display: block
+        width: 100%
+        position: absolute
+        top: 0.6em
+        border-top: 1px solid $color-primary
+      &:before
+        right: 100%
+      &:after
+        left: 100%
+
+.kt-articles
+  background: url(img/bg.png)
+  border: 1px solid $color-border
+  margin-bottom: 20px
+  .kt-article
+    margin: 15px
+    background-image: none
+    background-color: #fff
+
+.kt-article
+  border: 1px solid $color-border
+  background: url(img/bg.png) #fff
+  padding: 20px
+  overflow: hidden
+  margin: 15px 0
+  .kt-article-content
+    padding: 15px
+    border: 1px solid $color-border
+    background-color: #fff
+
+#kt-icon
+  float: left
+  background: #949494
+  border-radius: 5px
+  width: 60px
+  height: 60px
+  color: #fff
+  text-align: center
+  margin-right: 20px
+  font-size: 25px
+  i
+    margin-top: 25%
+
+#kt-article-title
+  h1, a, i
+    color: $color-primary
+
+#kt-article img
+  padding: 15px
+  background: url(img/bg.png)
+  border-radius: 5px
+
+/***
+ **
+ *COMMENTS
+ **
+ ***
+
+.btn-primary
+  border-color: $color-primary
+  &:hover
+    background-color: $color-primary
+    border-color: $color-hover
+
+p
+  &.comment-form-author, &.comment-form-email
+    width: 30%
+    display: inline-block
+    margin-right: 5px
+  &.comment-form-url
+    width: 30%
+    display: inline-block
+  &.comment-form-comment textarea
+    width: 93%
+    padding: 5px 10px
+    background: #ffffff
+    color: inherit
+    border-top: 1px solid #dddddd
+    border-left: 1px solid #dddddd
+    border-right: 1px solid #dddddd
+    border-bottom: 1px solid #dddddd
+  &.form-allowed-tags
+    display: none
+  &.form-submit input[type="submit"]
+    padding: 5px 10px
+    background: $color-button
+    color: #fff
+    border: none
+    &:hover
+      color: #fff
+  &.comment-form-author input[type="text"], &.comment-form-email input[type="text"], &.comment-form-url input[type="text"]
+    padding: 5px 10px
+    background: #ffffff
+    color: #fff
+    border-top: 1px solid #dddddd
+    border-left: 1px solid #dddddd
+    border-right: 1px solid #dddddd
+    border-bottom: 1px solid #dddddd
+
+.comment-body
+  padding: 10px 0 20px 0
+  p
+    padding: 30px 15px
+    margin: 12px 30px
+    background: white
+    border: 1px solid $color-border
+
+.comments-area
+  margin: 20px auto
+  max-width: 100%
+  padding: 0 10px
+
+.comment_num
+  display: inline-block
+  background-color: #07a2d6
+  font-size: 14px
+  padding: 8px 10px
+  color: #191919
+  -webkit-border-radius: 50px
+  -moz-border-radius: 50px
+  border-radius: 50px
+
+.comment-reply-title, .comments-title
+  margin: 10px 0 30px 0
+  padding-bottom: 20px
+  font-size: 16px
+  color: #7F8C8C
+  border-bottom: 1px solid #323232
+
+.comment-list
+  list-style: none
+  margin: 0 0 48px 0
+
+.comment-author
+  font-size: 13px
+  line-height: 1.5
+
+.comment-reply-link
+  float: right
+
+.comment-list .reply, .comment-metadata
+  font-size: 12px
+  line-height: 2
+  text-transform: uppercase
+
+.commentmetadata
+  font-size: 10px
+  width: 65%
+  display: inline-block
+  vertical-align: sub
+  margin-top: 25px
+
+.comment-list .reply
+  margin: 10px 0 10px 0
+
+.comment-author
+  .fn
+    color: #7f8c8c
+    font-weight: bold
+    display: block
+    font-size: 15px
+    margin-top: -59px
+    padding-left: 89px
+  a
+    color: #2b2b2b
+    float: right
+    font-size: 14px
+  &.vcard
+    width: 30%
+    float: left
+    display: inline-block
+
+.comment-list
+  .trackback a, .pingback a
+    color: #767676
+
+.comment-metadata a
+  color: #767676
+
+.comment-author a:hover
+  color: #07a2d6
+
+.comment-list
+  .pingback a:hover, .trackback a:hover
+    color: #07a2d6
+
+.comment-metadata a:hover
+  color: #07a2d6
+
+.comment-list
+  article, .pingback, .trackback
+    border-top: 1px solid rgba(0, 0, 0, 0.1)
+    margin-bottom: 24px
+    padding-top: 24px
+  li:first-child > article, .pingback:first-child, .trackback:first-child
+    border-top: 0
+
+.comment-author
+  position: relative
+  .avatar
+    border: 1px solid rgba(0, 0, 0, 0.1)
+    height: 80px
+    padding: 2px
+    top: 0
+    left: 0
+    width: 80px
+
+.says
+  display: none
+
+.comment-author, .comment-awaiting-moderation, .comment-content, .comment-list .reply, .comment-metadata
+  padding-left: 10px
+
+.comment-content
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  -ms-hyphens: auto
+  hyphens: auto
+  word-wrap: break-word
+  ul, ol
+    margin: 0 0 15px 15px
+  li >
+    ul
+      margin-bottom: 0
+      > :last-child
+        margin-bottom: 0
+    ol
+      margin-bottom: 0
+      > :last-child
+        margin-bottom: 0
+
+.comment-list .children
+  list-style: none
+  margin-left: 10px
+
+.comment-respond
+  margin-bottom: 24px
+  padding: 0
+
+.comment .comment-respond
+  margin-top: 12px
+
+.comment-respond h3
+  margin-top: 0
+  margin-bottom: 24px
+
+.comment-notes, .comment-awaiting-moderation, .logged-in-as, .no-comments
+  color: #767676
+
+.form-allowed-tags
+  color: #767676
+  code
+    color: #767676
+
+.comment-notes, .comment-awaiting-moderation, .logged-in-as
+  font-size: 14px
+  line-height: 1.7142857142
+
+.no-comments
+  font-size: 16px
+  font-weight: 900
+  line-height: 1.5
+  margin-top: 24px
+  text-transform: uppercase
+
+.comment-form
+  label
+    display: block
+  input
+    &[type="text"], &[type="email"], &[type="url"]
+      width: 100%
+
+.form-allowed-tags
+  font-size: 12px
+  line-height: 1.5
+  code
+    font-size: 12px
+    line-height: 1.5
+
+.required
+  color: #c0392b
+
+.comment-reply-title small a
+  color: #2b2b2b
+  float: right
+  height: 24px
+  overflow: hidden
+  width: 24px
+  &:hover
+    color: #41a62a
+  &:before
+    content: "\f405"
+    font-size: 32px
+
+.comment-navigation
+  font-size: 12px
+  line-height: 2
+  margin-bottom: 48px
+  text-transform: uppercase
+  .nav-next
+    display: inline-block
+  .nav-previous
+    display: inline-block
+    a
+      margin-right: 10px
+
+#comment-nav-above
+  margin-top: 25px
+  margin-bottom: 0
+
+/***
+ **
+ *SIDEBAR & WIDGETS
+ **
+ ***
+
+.kt-sidebar
+  margin-top: $padding-std
+  color: #a2a2a2
+  h3
+    position: relative
+    overflow: hidden
+    padding-left: 10px
+    span
+      display: inline-block
+      vertical-align: baseline
+      zoom: 1
+      *display: inline
+      *vertical-align: auto
+      position: relative
+      padding: 10px 0  0
+      line-height: 1.8
+
+      &:before
+        content: ''
+        display: block
+        width: 100%
+        position: absolute
+        top: 0.6em
+        border-image: url(img/bg.png) 1 1
+
+#kt-sidebar h3 span:after
+  content: ''
+  display: block
+  width: 100%
+  position: absolute
+  top: 0.6em
+  border-image: url(img/bg.png) 1 1
+
+.kt-sidebar
+  h3 span
+    &:before
+      right: 100%
+    &:after
+      left: 100%
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+    color: $color-primary
+
+/***
+ **
+ *FOOTER & WIDGETS
+ **
+ ***
+
+#kt-footer
+  background-color: #3a3a3a
+  color: #fff
+
+.kt-copyright-column
+  margin: 15px
+
+#kt-footer
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+    color: $color-primary
+    border-bottom: 1px solid #7a7a7a
+    padding-bottom: 0.3em
+
+#kt-copyright
+  background: #303030
+  margin-bottom: 2px
+  p
+    color: #fff
+
+/***
+ **
+ *BOOTSTRAP OVERRIDES
+ **
+ ***
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px), (max-width: 900px)
+  .slicknav_menu
+    display: block
+    background-color: $color-primary
+  #kt-main-nav
+    display: none
+.menu-item
+  font-size: 18px
+  background-image: url("img/bg.png")
+  background-repeat: repeat
+  border: 1px solid $color-border
+  a
+    color: $color-secondary
+  a:hover, a:focus
+    color: $color-secondary
+  &.current_page_item
+    a
+      &:hover
+        color: $color-primary

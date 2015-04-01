@@ -1,0 +1,130 @@
+/* SMALL SCREENS */
+@media screen and (max-width: 1024px){
+	.wrapper-boxed { width:960px; }
+	.menu-main li ul { visibility:visible; opacity:1; display:none; } 
+	.menu-main li:hover > ul { display:block; } 
+}
+
+
+/* TABLET PORTRAIT */
+@media screen and (max-width: 800px){
+    	
+	.wrapper-boxed { margin:0 auto; width:100%; }
+
+	.container { padding:0 20px; }
+    
+	.header .logo { float:none; text-align:center; }
+    .header .logo .description { text-align:center; }
+
+	/* CONTENT */
+	.content { float:none; width:auto; margin:0 0 50px; }
+	.content-submenu { float:none; width:auto; margin:0 0 50px; }
+	.sidebar { clear:both; float:none; width:auto; }
+	.sidebar .widget { overflow:hidden; }
+	.sidebar .widget > li { float:left; width:47%; }
+	.sidebar .widget > li:nth-child(odd) { margin-right:6%; }
+	.submenu { float:none; width:auto; }
+	
+	
+	/* NAVIGATION */
+	.menu { float:none; }
+	.menu-main { float:none; }
+	.menu li a { line-height:40px; height:40px; }
+	
+
+	
+	/* CONTACT FORM */
+	.contact-form .field { overflow:hidden; margin:0 0 20px; }
+	.contact-form .field input[type=text] { width:100%; }
+	.contact-form .field textarea{ width:100%; }	
+    
+}
+
+
+/* SMARTPHONE */
+@media only screen and (max-width: 480px){
+	
+	h1 { font-size:2em; } 
+	h2 { font-size:1.8em; } 
+	h3 { font-size:1.4em; } 
+	h4 { font-size:1.2em; } 
+	h5 { font-size:1.1em; } 
+	h6 { font-size:1.0em; }
+	
+	.container { padding:0 10px; }
+	
+	.topmenu { display:none; }
+	
+	/* SOCIAL ICONS */
+	.social { float:none; text-align:center; width:auto; }
+	.social .social-profile { display:inline-block; float:none; }
+	
+	
+	.languages img { display:none; }
+	
+	.header { overflow:hidden; }
+	.header .logo { float:none; text-align:center; }
+	.header .subheader { display:none; }
+	
+	.slider-slides .slide-textbox:link,
+	.slider-slides .slide-textbox:visited,
+	.slider-slides .slide-right .slide-textbox { bottom:10px; left:10px; right:10px; padding:10px; width:auto; text-align:left; }
+	.slider-slides .slide-textbox .slide-title { font-size:1.8em; }
+	
+	.slider-prev, 
+	.slider-next { width:30px; height:30px; font-size:50px; line-height:30px; margin-top:-15px; }
+	.slider:hover .slider-prev { margin-left:10px; } 
+	.slider:hover .slider-next { margin-right:10px; }
+
+	
+	.minifeatures .feature { margin-top:50px; }
+	
+	.pagetitle { margin:10px 0 0; }
+	.breadcrumb { float:none; margin:0 0 10px; }
+	
+	.content { overflow:hidden; clear:both; margin:0; float:none; width:auto; }
+    .content-right { float:none; margin:0; }
+	.content-wide { width:auto; margin:0; }
+
+	
+	/* CONTENT */
+	.sidebar .widget > li { float:none; width:auto; margin-right:0; }
+	.sidebar .widget > li:nth-child(odd) { margin-right:0; }
+	
+	.toplink:link { bottom:10px; right:10px; width:30px; height:30px; line-height:30px; }
+	
+	/* NAVIGATION */
+	.menu-top { text-align:center;  }
+	.menu-top li { display:inline-block; }
+	.menu-top li a { margin:0 auto; }
+	
+	.menu-main { display:none; }
+	.menu-mobile { display:block; }
+	
+	.footer { text-align:center; }
+	.footermenu { float:none; }
+	.menu-footer { float:none; }
+	.menu-footer > ul { }
+	.menu-footer li { float:none; margin:0 0 5px; }
+	.menu-footer li li { display:block; float:none; width:100%; margin:0; }
+	
+	/* POSTS & PAGES */
+	.contact-form { float:none; width:auto; padding:0 0 20px; margin:0; }
+	
+    /* COMMENTS */
+	.comment .comment-avatar { width:50px; }
+	.comment .comment-title { padding:0; height:48px; margin-left:60px; }
+	.comment .comment-author { display:block; }
+	.comment .comment-date { display:block; border:0; padding:0; margin:0; }
+	.comment .comment-content { margin-left:60px; }
+	.comment .comment-children { margin-left:20px; }
+	
+	/* COMMENTS */
+	.comment-form label{ float:none; padding:8px 0; }
+	.comment-form input[type=text], 
+	.comment-form textarea{ width:100%; }
+	.comment-respond .form-submit { padding-left:0; }
+	.comment-respond .form-allowed-tags { padding-left:0; }
+	.comment-respond .form-submit { padding-left:0; }
+	.comment-respond .form-submit, .respond .submit:visited { margin-left:0; }
+}
