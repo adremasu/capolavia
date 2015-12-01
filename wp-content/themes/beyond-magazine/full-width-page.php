@@ -11,21 +11,13 @@ get_header();?>
                             <div id="kt-icon-inner"><span class="glyphicon glyphicon-tree-deciduous"></span></div>
                         </div>
                         <div id="kt-article-title">
-                            <h1><?php 
-                                $beyon_thetitle = get_the_title($post->ID);
-                                $beyond_origpostdate = get_the_date(get_option('date_format'), $post->post_parent);
-                                if($beyond_thetitle == null):echo $origpostdate; 
-                                else:
+                            <h2 class="col-md-9 h3"><?php
                                 the_title();
-                                endif;
                                 ?>
-                            </h1>
+                            </h2>
                         </div>
                         <div>
                             <?php 
-                            if(has_post_thumbnail()):
-                                the_post_thumbnail('',array('class'=>'img-responsive')); 
-                            endif; 
                             the_content();
                             ?>
                             

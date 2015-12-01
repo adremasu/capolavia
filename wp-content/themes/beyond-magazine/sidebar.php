@@ -1,4 +1,4 @@
-<div class="col-md-3 kt-sidebar">
+<div class="kt-sidebar">
     <?php if (!dynamic_sidebar( 'sidebar' )): ?>
     <div class="pre-widget">
     <h3><span><?php _e('Widgetized Sidebar', 'beyondmagazine'); ?></span></h3>

@@ -1,0 +1,7 @@
+#: comments.php:14
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr "Un commento su &ldquo;%2$s&rdquo;"
+
+msgid "%1$s commenti su &ldquo;%2$s&rdquo;"
+msgstr "%1$s thoughts on &ldquo;%2$s&rdquo;"
+

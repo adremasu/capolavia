@@ -92,8 +92,8 @@ function beyond_theme_setup(){
         $beyond_header_defaults = array(
         'default-image'          => '',
         'random-default'         => false,
-        'width'                  => '1140',
-        'height'                 => '487',
+        'width'                  => '570',
+        'height'                 => '243',
         'flex-height'            => false,
         'flex-width'             => false,
         'default-text-color'     => '',
@@ -167,11 +167,11 @@ LOAD CSS AND JS STYLES
 
     function beyond_load_styles()
     { 
-        wp_enqueue_style( 'beyond_bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
-        wp_enqueue_style( 'beyond_bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
-        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
-        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
-        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
+//        wp_enqueue_style( 'beyond_bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
+//        wp_enqueue_style( 'beyond_bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
+//        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
+//        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
+//        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
         wp_enqueue_style( 'beyond_style', get_stylesheet_uri(),'','','all' );
     }    
     add_action('wp_enqueue_scripts', 'beyond_load_styles');
@@ -188,7 +188,8 @@ SIDEBARS INITIALIZATION
 *
 ***/
 function beyond_widgets_init() {
-    
+    global $widgets;
+
     register_sidebar(array(
         'name' => __('Sidebar', 'beyondmagazine' ),
         'id'   => 'sidebar',
@@ -202,7 +203,7 @@ function beyond_widgets_init() {
         'name' => __('Left footer Sidebar', 'beyondmagazine' ),
         'id'   => 'footer-sidebar-1',
         'description' => __('This is the widgetized sidebar.', 'beyondmagazine' ),
-        'before_widget' => '<div id="%1$s" class="footerwidget widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="footerwidget widget %2$s '. slbd_count_widgets( "footer-sidebar-1" ).'">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
@@ -211,7 +212,7 @@ function beyond_widgets_init() {
         'name' => __('Right Footer Sidebar', 'beyondmagazine' ),
         'id'   => 'footer-sidebar-2',
         'description' => __('This is the widgetized sidebar.', 'beyondmagazine' ),
-        'before_widget' => '<div id="%1$s" class="footerwidget widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="footerwidget widget %2$s ">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>'
@@ -225,6 +226,73 @@ function beyond_widgets_init() {
     ));
     }
 add_action( 'widgets_init', 'beyond_widgets_init' );
+/**
+ * Count number of widgets in a sidebar
+ * Used to add classes to widget areas so widgets can be displayed one, two, three or four per row
+ */
+function slbd_count_widgets( $sidebar_id ) {
+    // If loading from front page, consult $_wp_sidebars_widgets rather than options
+    // to see if wp_convert_widget_settings() has made manipulations in memory.
+    global $_wp_sidebars_widgets;
+    if ( empty( $_wp_sidebars_widgets ) ) :
+        $_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
+    endif;
+
+    $sidebars_widgets_count = $_wp_sidebars_widgets;
+
+    if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
+        $widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
+        if ($widget_count != 0) {
+            $widget_classes = 'col-md-' . count( $sidebars_widgets_count[ $sidebar_id ] );
+            if ( 12 % $widget_count == 0 || $widget_count > 6 ):
+                // Four widgets er row if there are exactly four or more than six
+                $widget_classes =  'col-md-'.(12/$widget_count);
+            else:
+                // Otherwise show two widgets per row
+                $widget_classes = ' col-md-12';
+            endif;
+        }
+
+
+        return $widget_classes;
+    endif;
+}
+//add_filter('dynamic_sidebar_params','widget_bs_class');
+function my_edit_widget_func($params) {
+    global $widgets;
+    $sidebarContext = $params[0]['id'];
+
+    if(is_array($widgets[$sidebarContext])){
+        array_push($widgets[$sidebarContext], $params[0]['widget_id']);
+    }
+    else{
+        $widgets[$sidebarContext] = array($params[0]['widget_id']);
+    }
+    $params[0]['before_title'] = '<h3 class="' . $params[0]['widget_name'] . '">' ;
+    return $params;
+}
+//add_filter('dynamic_sidebar_params', 'my_edit_widget_func');
+// add bootstrap class to widgets
+function widget_bs_class($params) {
+    global $widget_num, $wp_registered_widgets, $wp_registered_sidebars;
+    $arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets
+    foreach($arr_registered_widgets as $sidebar=>$widget){
+
+// Widget class
+        $class = 'widget';
+
+// Iterated class
+        $num = count($widget);
+        if($num%12 == 0){
+            $class = 'col-md-'.$num;
+        }
+
+// Interpolate the 'my_widget_class' placeholder
+        $params[0]['before_widget'] = str_replace('bs_class-'.$sidebar, $class, $params[0]['before_widget']);
+    }
+
+    return $params;
+}
 /***
 *
 THEME FUNCTIONS
@@ -391,7 +459,7 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
     <tr class="form-field">
         <th scope="row" valign="top"><label for="cat_Image_url"><?php _e('Icona categoria'); ?></label></th>
         <td>
-            <input type="text" name="Cat_meta[img]" id="Cat_meta[img]" size="3" style="width:20px" value="<?php echo $cat_meta['img'] ? $cat_meta['img'] : ''; ?>"><br />
+            <input type="text" name="Cat_meta[img]" id="Cat_meta[img]" size="25" style="width:100px" value="<?php echo $cat_meta['img'] ? $cat_meta['img'] : ''; ?>"><br />
             <span class="description"><?php _e('Image for category: use full url with '); ?></span>
         </td>
     </tr>
@@ -416,4 +484,195 @@ function save_extra_category_fileds( $term_id ) {
         update_option( "category_$t_id", $cat_meta );
     }
 }
+
+
+
+/**
+ * Adds a box to the main column on the Post and Page edit screens.
+ */
+function icon_add_meta_box() {
+
+    $screens = array( 'page' );
+
+    foreach ( $screens as $screen ) {
+
+        add_meta_box(
+            'icon_sectionid',
+            __( 'Page Icon', 'icon_textdomain' ),
+            'icon_meta_box_callback',
+            $screen,
+            'side'
+        );
+    }
+}
+add_action( 'add_meta_boxes', 'icon_add_meta_box' );
+
+/**
+ * Prints the box content.
+ *
+ * @param WP_Post $post The object for the current post/page.
+ */
+function icon_meta_box_callback( $post ) {
+
+    // Add an nonce field so we can check for it later.
+    wp_nonce_field( 'icon_meta_box', 'icon_meta_box_nonce' );
+
+    /*
+     * Use get_post_meta() to retrieve an existing value
+     * from the database and use the value for the form.
+     */
+    $value = get_post_meta( $post->ID, '_my_meta_value_key', true );
+
+    echo '<label for="icon_new_field">';
+    _e( 'Page Icon', 'icon_textdomain' );
+    echo '</label> ';
+    echo '<input type="text" id="icon_new_field" name="icon_new_field" value="' . esc_attr( $value ) . '" size="25" />';
+}
+
+/**
+ * When the post is saved, saves our custom data.
+ *
+ * @param int $post_id The ID of the post being saved.
+ */
+function icon_save_meta_box_data( $post_id ) {
+
+    /*
+     * We need to verify this came from our screen and with proper authorization,
+     * because the save_post action can be triggered at other times.
+     */
+
+    // Check if our nonce is set.
+    if ( ! isset( $_POST['icon_meta_box_nonce'] ) ) {
+        return;
+    }
+
+    // Verify that the nonce is valid.
+    if ( ! wp_verify_nonce( $_POST['icon_meta_box_nonce'], 'icon_meta_box' ) ) {
+        return;
+    }
+
+    // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    // Check the user's permissions.
+    if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+        if ( ! current_user_can( 'edit_page', $post_id ) ) {
+            return;
+        }
+
+    } else {
+
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
+            return;
+        }
+    }
+
+    /* OK, it's safe for us to save the data now. */
+
+    // Make sure that it is set.
+    if ( ! isset( $_POST['icon_new_field'] ) ) {
+        return;
+    }
+
+    // Sanitize user input.
+    $my_data = sanitize_text_field( $_POST['icon_new_field'] );
+
+    // Update the meta field in the database.
+    update_post_meta( $post_id, '_my_meta_value_key', $my_data );
+}
+add_action( 'save_post', 'icon_save_meta_box_data' );
+
+//analytics
+function GAnalytics() {
+    if ( !is_admin() ) {
+
+        echo "<script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-9418500-11', 'auto');
+          ga('send', 'pageview');
+
+        </script>";
+    }
+    echo "<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '940504799317225',
+          xfbml      : true,
+          version    : 'v2.3'
+        });
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = '//connect.facebook.net/it_IT/sdk.js';
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document,'script', 'facebook-jssdk'));
+    </script>
+<script src='https://apis.google.com/js/platform.js' async defer>
+  {lang: 'it', parsetags: 'explicit'}
+</script>
+    ";
+
+}
+add_action('wp_footer', 'GAnalytics', 100);
+add_action( 'init', 'my_add_excerpts_to_pages' );
+function my_add_excerpts_to_pages() {
+    add_post_type_support( 'page', 'excerpt' );
+}
+
+
+//add post list image size
+add_image_size( "post-list", 287, 215, true );
+add_image_size( "gallery", 518, 388, true );
+add_image_size( "small_square", 250, 250, true );
+
+//create vegetables posts
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    register_post_type( 'products',
+        array(
+            'labels' => array(
+                'name' => __( 'Prodotti' ),
+                'singular_name' => __( 'Prodotto' )
+            ),
+            'public' => true,
+            'has_archive' => 'products',
+            'rewrite' => array('slug' => 'products'),
+            'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
+
+        )
+    );
+    register_post_type( 'recipes',
+        array(
+            'labels' => array(
+                'name' => __( 'Ricette' ),
+                'singular_name' => __( 'Ricetta' )
+            ),
+            'public' => true,
+            'has_archive' => 'recipe',
+            'rewrite' => array('slug' => 'recipe'),
+            'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
+
+        )
+    );
+}
+
+
+function my_connection_types() {
+    p2p_register_connection_type( array(
+        'name' => 'products_to_recipes',
+        'from' => 'products',
+        'to' => 'recipes'
+    ) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+
 ?>

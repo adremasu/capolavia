@@ -1,10 +1,8 @@
 <?php get_header();?>
             <div class="row" id="kt-main">
-                <div class="col-md-9">
-                    <div id="kt-latest-title" class="h1">
-                        <p><span><?php echo __('RECENT FROM BLOG','beyondmagazine');?></span></p>
-                    </div>
-                    <?php 
+                <div class="col-md-12">
+                    <?php the_archive_title( '<div id="kt-latest-title" class="h3"><p><span>', '</span></p></div>' ); ?>
+                    <?php
                     $beyond_post_columns = esc_html(beyond_post_columns());
                     if(empty($beyond_post_columns) || $beyond_post_columns == ''):$beyond_post_columns = 'two_col'; endif;
                     if($beyond_post_columns == 'two_col'):
@@ -22,6 +20,5 @@
                             </div>
                         </div>
                     </div><!-- .col-md-9 ends here -->
-                <?php get_sidebar(); ?>
             </div>
 <?php get_footer();?>

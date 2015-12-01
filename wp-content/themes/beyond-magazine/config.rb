@@ -1,4 +1,5 @@
 require 'bootstrap-sass'
+require 'font-awesome-sass'
 
 # Set this to the root of your project when deployed:
 
@@ -8,7 +9,7 @@ sass_dir = "inc/sass"
 images_dir = "inc/images"
 http_images_path = "inc/images"
 javascripts_dir = "inc/js"
-fonts_dir = "inc/fonts"
+fonts_dir = "fonts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

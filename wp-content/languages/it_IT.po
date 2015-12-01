@@ -7127,3 +7127,9 @@ msgstr "Nessun articolo trovato."
 #: wp-includes/script-loader.php:461
 msgid "Published"
 msgstr "Pubblicato"
+
+#: comments.php:14
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo"
+msgstr[0] "Un commento su &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commenti su &ldquo;%2$s&rdquo;"

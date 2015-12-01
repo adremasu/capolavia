@@ -1,49 +1,48 @@
 <?php
 /**
- * Il file base di configurazione di WordPress.
+ * The base configuration for WordPress
  *
- * Questo file definisce le seguenti configurazioni: impostazioni MySQL,
- * Prefisso Tabella, Chiavi Segrete, Lingua di WordPress e ABSPATH.
- * E' possibile trovare ultetriori informazioni visitando la pagina: del
- * Codex {@link http://codex.wordpress.org/Editing_wp-config.php
- * Editing wp-config.php}. E' possibile ottenere le impostazioni per
- * MySQL dal proprio fornitore di hosting.
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
  *
- * Questo file viene utilizzato, durante l'installazione, dallo script
- * di creazione di wp-config.php. Non è necessario utilizzarlo solo via
- * web,è anche possibile copiare questo file in "wp-config.php" e
- * rimepire i valori corretti.
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
  */
 
-// ** Impostazioni MySQL - E? possibile ottenere questoe informazioni
-// ** dal proprio fornitore di hosting ** //
-/** Il nome del database di WordPress */
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
 
-/** Nome utente del database MySQL */
+/** MySQL database username */
 define('DB_USER', 'username_here');
 
-/** Password del database MySQL */
+/** MySQL database password */
 define('DB_PASSWORD', 'password_here');
 
-/** Hostname MySQL  */
+/** MySQL hostname */
 define('DB_HOST', 'localhost');
 
-/** Charset del Database da utilizare nella creazione delle tabelle. */
+/** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
-/** Il tipo di Collazione del Database. Da non modificare se non si ha
-idea di cosa sia. */
+/** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
 /**#@+
- * Chiavi Univoche di Autenticazione e di Salatura.
+ * Authentication Unique Keys and Salts.
  *
- * Modificarle con frasi univoche differenti!
- * E' possibile generare tali chiavi utilizzando {@link https://api.wordpress.org/secret-key/1.1/salt/ servizio di chiavi-segrete di WordPress.org}
- * E' possibile cambiare queste chiavi in qualsiasi momento, per invalidare tuttii cookie esistenti. Ciò forzerà tutti gli utenti ad effettuare nuovamente il login.
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
@@ -59,29 +58,32 @@ define('NONCE_SALT',       'put your unique phrase here');
 /**#@-*/
 
 /**
- * Prefisso Tabella del Database WordPress .
+ * WordPress Database Table prefix.
  *
- * E' possibile avere installazioni multiple su di un unico database if you give each a unique
- * fornendo a ciascuna installazione un prefisso univoco.
- * Solo numeri, lettere e sottolineatura!
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
 
 /**
- * Per gli sviluppatori: modalità di debug di WordPress.
+ * For developers: WordPress debugging mode.
  *
- * Modificare questa voce a TRUE per abilitare la visualizzazione degli avvisi
- * durante lo sviluppo.
- * E' fortemente raccomandato agli svilupaptori di temi e plugin di utilizare
- * WP_DEBUG all'interno dei loro ambienti di sviluppo.
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the Codex.
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
 
-/* Finito, interrompere le modifiche! Buon blogging. */
+/* That's all, stop editing! Happy blogging. */
 
-/** Path assoluto alla directory di WordPress. */
+/** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Imposta lle variabili di WordPress ed include i file. */
+/** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

@@ -1,10 +1,8 @@
 <?php get_header();?>
             <div class="row" id="kt-main">
                 <div class="col-md-12">
-                    <div id="kt-latest-title" class="h1">
-                        <p><span><?php echo __('RECENT FROM BLOG','beyondmagazine');?></span></p>
-                    </div>
-                    <?php 
+
+                    <?php
                     $beyond_post_columns = esc_html(beyond_post_columns());
                     if(empty($beyond_post_columns) || $beyond_post_columns == ''):$beyond_post_columns = 'two_col'; endif;
                     if($beyond_post_columns == 'two_col'):

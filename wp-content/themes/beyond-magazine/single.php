@@ -1,52 +1,95 @@
 <?php get_header();?>
-<div class="row" id="kt-main">
+<div class="row hentry" id="kt-main" itemscope itemtype="http://schema.org/NewsArticle">
+    <div class="col-md-12">
+    <?php if(have_posts()):while(have_posts()):the_post();?>
+        <div <?php post_class('kt-article'); ?> id="post-<?php the_ID(); ?>">
+            <?php
+                if (function_exists('get_field')){
+                    $images = get_field('galleria');
+                    $post_template = get_field('tipo_di_post');
+                }
+
+
+            $categories = wp_get_post_categories( $post->ID);
+            if (is_array($categories)){
+                $cat = get_category( $categories[0] );
+                $t_id = $cat->term_id;
+                $cat_meta = get_option( "category_$t_id");
+                if (is_array($cat_meta)){
+                    $icon = $cat_meta['img'];
+                } else {
+                    $icon = 'leaf';
+                }
+            }
+
+            ?>
+            <div id="kt-icon">
+                <div id="kt-icon-inner"><i class="fa fa-<?php echo $icon;?>"></i></div>
+            </div>
+            <div id="kt-article-title" class="row">
+                <h2 class="col-md-9 h3" itemprop="headline"><?php
+                    $beyond_thetitle = get_the_title($post->ID);
+                    $beyond_origpostdate = get_the_date('M d, Y', $post->post_parent);
+                    if($beyond_thetitle == null):echo $origpostdate;
+                    else:
+                    the_title();
+                    endif;
+                    ?>
+                </h2>
+                <div class="social-links col-md-2">
+                    <div class="row "><span class="h6 col-md-12"><?php echo __("Condividi su:"); ?></span></div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <a href="#" class="col-md-3" rel="nofollow" onclick="return window.open('https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>', 'facebook-share-dialog','width=626,height=436'); ">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="#" class="col-md-3" rel="nofollow" onclick="return window.open('https://twitter.com/home?status=<?php echo $beyond_thetitle; ?>%20-%20<?php echo get_permalink(); ?>', 'twitter-share-dialog','width=626,height=436'); ">
+
+                            <i class="fa fa-twitter-square"></i>
+                        </a>
+                        <a href="#" class="col-md-3" rel="nofollow" onclick="return window.open('https://plus.google.com/share?url=<?php echo get_permalink(); ?>', 'twitter-share-dialog','width=626,height=436'); ">
+                            <i class="fa fa-google-plus-square"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+                <meta itemprop="datePublished" content="<?php the_date('Y-m-d') ;?>"/>
+                <p class="small col-md-8"><?php the_date(_x( 'F j, Y', 'daily archives date format' )) ;?> <?php echo __('in','beyondmagazine');?> <?php echo get_the_category_list(','); ?> &nbsp;
+                &nbsp; <i class="glyphicon glyphicon-comment small"></i>
+                <?php comments_number( __('No Comments'), __('1 Comment'),__('% Comments')); ?></p>
+
+            </div>
+
+            <?php
+            switch($post_template){
+                case null:
+                    include 'template/default.php';
+                    break;
+                case 'default':
+                    include 'template/default.php';
+                    break;
+                case '2-columns';
+                    include 'template/2-columns.php';
+                    break;
+                default:
+                    include 'template/default.php';
+                    break;
+            }
+            ?>
+            <div class="row">
+                <div class="col-md-6"><?php previous_post_link(); ?></div>
+                <div class="col-md-6 text-right"><?php next_post_link(); ?></div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
-                <?php if(have_posts()):while(have_posts()):the_post();?>
-                    <div <?php post_class('kt-article'); ?> id="post-<?php the_ID(); ?>">
-                        <div id="kt-icon">
-                            <div id="kt-icon-inner"><i class="glyphicon glyphicon-tree-deciduous"></i></div>
-                        </div>
-                        <div id="kt-article-title">
-                            <h1><?php 
-                                $beyond_thetitle = get_the_title($post->ID);
-                                $beyond_origpostdate = get_the_date('M d, Y', $post->post_parent);
-                                if($beyond_thetitle == null):echo $origpostdate; 
-                                else:
-                                the_title();
-                                endif;
-                                ?>
-                            </h1>
-                            <p class="small"><?php the_date('d, M Y') ;?> by <a href="<?php echo get_the_author_link();?>"><?php echo get_the_author(); ?></a> <?php echo __('in','beyondmagazine');?> <?php echo get_the_category_list(','); ?> &nbsp;
-                            &nbsp; <i class="glyphicon glyphicon-comment small"></i>
-                            <?php comments_number( __('No Comments','beyondmagazine'), __('1 Comment','beyondmagazine'),__('% Comment' ,'beyondmagazine')); ?></p>
-
-                        </div>
-                        <div class="kt-article-content">
-                             <?php if(has_tag()):?>
-                            <i class="glyphicon glyphicon-tags small"></i> &nbsp; 
-                            <?php 
-                            echo get_the_tag_list(' ',', ',' ');
-                            ?> 
-                            <?php endif; ?>
-
-                            <?php 
-                            if(has_post_thumbnail()):the_post_thumbnail('',array('class'=>'img-responsive')); endif; 
-                            the_content();
-                            ?>
-                            
-                            <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'beyondmagazine' ) . '</span>', 'after' => '</div>' ) ); ?>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="row">
-                        <div class="col-md-12">
-                            <div id="kt-comments">
-                                <?php comments_template( '', true ); ?>
-                            </div>
-                        </div>
-                    </div>  
+                    <div id="kt-comments">
+                        <?php comments_template( '', true ); ?>
                     </div>
                 </div>
-                <?php endwhile; endif;?>
-                <?php get_sidebar(); ?>
             </div>
+        </div>
+    </div>
+    <?php endwhile; endif;?>
+</div>
 <?php get_footer();?>

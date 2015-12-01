@@ -1,8 +1,9 @@
+@charset "UTF-8"
 /*
  *Theme Name: Beyond Magazine
- *Theme URI: http://ketchupthemes.com/beyond-magazine/
+ *Theme URI: http://capolavia.it
  *Author: Alexandros Itsios
- *Author URI: http://ketchupthemes/alex-itsios
+ *Author URI:  http://capolavia.it
  *Description: Beyond is a free and responsive Magazine Theme for WordPress that makes you stand out of the crowd.
  *Version: 1.4
  *License: GNU General Public License v2 or later
@@ -15,15 +16,27 @@
  *GENERAL
  **
  ***
-@import "font-awesome-sprockets"
-@import "font-awesome"
+$fa-font-path: "fonts/"
+@import "compass/css3/font-face"
+
 @import "compass/css3/border-radius"
 @import "colors"
-@font-face
-  font-family: 'CC-ICONS'
-  font-style: normal
-  font-weight: normal
-  src: url('http://mirrors.creativecommons.org/presskit/cc-icons.ttf') format("truetype")
+@import "carousel"
+@import "bootstrap5c"
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "bootstrap/theme"
+@import "font-awesome-sprockets"
+@import "font-awesome"
+@import "slicknav"
+@import "products"
+
+.djb_baileyregular
+  font-family: 'djb_baileyregular'
+
++font-face("djb_baileyregular", font-files("DJB BAILEY-webfont.woff2", woff2, "DJB BAILEY-webfont.woff", woff, "DJB BAILEY-webfont.ttf", truetype, "DJB BAILEY-webfont.svg", svg), "DJB BAILEY-webfont.eot")
++font-face("FontAwesome", font-files("fontawesome-webfont.woff2", woff2, "fontawesome-webfont.woff", woff, "fontawesome-webfont.ttf", truetype, "fontawesome-webfont.svg", svg), "fontawesome-webfont.eot")
++font-face("Glyphicons Halflings", font-files("glyphicons-halflings-regular.woff2", woff2, "glyphicons-halflings-regular.woff", woff, "glyphicons-halflings-regular.ttf", truetype, "glyphicons-halflings-regular.svg", svg), "glyphicons-halflings-regular.eot")
 
 
 span.cc
@@ -34,7 +47,8 @@ body
   color: $color-text
   font-family: 'Open Sans',sans-serif
   word-wrap: break-word
-
+iframe
+  border: none
 img
   max-width: 100%
   height: auto
@@ -49,6 +63,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
   color: $color-secondary
 
 a
+  color: $color-primary
   &:hover, &:focus
     color: $color-secondary
     text-decoration: none
@@ -152,7 +167,6 @@ dd
   @media only screen and (max-width: 900px)
     left: 0
     right: auto
-    top: -45px
   &:after, &:before
     @media only screen and (min-width: 900px)
       content: ""
@@ -196,20 +210,30 @@ dd
   font-size: 2.15em
   line-height: 1.6em
   display: inline-block
-  @media (min-width: 992px) and (max-width: 1200px)
-    font-size: 1.8em
-  @media (min-width: 768px) and (max-width: 992px)
-    text-align: center
+  @media screen and (max-width: 768px)
+    font-size: 1.5em
+
+.social-links
+  text-align: right
+  margin-top: 2px
+  .h6
+    text-align: right
+    color: $color-primary
+    margin: 0
+  i
+    font-size: 2em
 
 .blog-description
   line-height: 1.9em
-  @media (min-width: 992px) and (max-width: 1200px)
+  @media (max-width: 1200px)
     font-size: .9em
   @media (min-width: 768px) and (max-width: 992px)
     text-align: center
 #kt-logo
   h1
     text-align: center
+    p
+      margin: 0
 .logo
   @media (max-width: 992px)
     width: 50%
@@ -225,11 +249,18 @@ dd
   box-shadow: 0px 0px 5px 0px $color-primary
   margin-bottom: 20px
   padding-top: $padding-std
-  position: relative
+  @media screen and (min-width: 900px)
+    position: relative
 
 #kt-logo h1
   font-size: 1.8em
-
+  &:hover, &:active, &:focus
+    .blog-title
+      color: $color-primary
+  @media (min-width: 992px) and (max-width: 1200px)
+    font-size: 1.7em
+  @media (min-width: 768px) and (max-width: 992px)
+    text-align: center
 
 /*-------------------
 /* Navigation Menu
@@ -243,7 +274,6 @@ dd
     li
       float: left
       position: relative
-      margin-right: 25px
       &:hover > .sub-menu
         display: inline-block
         position: absolute
@@ -289,7 +319,8 @@ dd
   display: none
   .slicknav_btn
     background-color: $color-secondary
-
+.carousel-inner>.item>img
+  width: 100%
 /***
  **
  *MAIN
@@ -333,14 +364,28 @@ dd
   background: url(img/bg.png)
   border: 1px solid $color-border
   margin-bottom: 20px
+  @media only screen and (max-width: 768px)
+    padding: 10px
+
   .kt-article
-    margin: 15px
+    @media only screen and (min-width: 768px)
+      margin: 15px
     background-image: none
     background-color: #fff
+    h2
+      text-align: start
+    @media screen and (min-width: 992px)
+      height: 550px
+      .btn
+        position: absolute
+        bottom: 40px
+        right: 40px
 
-.kt-article
+
+.kt-article, .widget
   border: 1px solid $color-border
   background: url(img/bg.png) #fff
+.kt-article
   padding: 20px
   overflow: hidden
   margin: 15px 0
@@ -348,19 +393,19 @@ dd
     padding: 15px
     border: 1px solid $color-border
     background-color: #fff
+    @media all and (max-width: 768px)
+      margin: 0 -15px
 
 #kt-icon
   float: left
-  background: #949494
-  border-radius: 5px
-  width: 60px
-  height: 60px
-  color: #fff
+  background: transparent
+  width: 35px
+  height: 69px
+  color: $color-primary
   text-align: center
-  margin-right: 20px
   font-size: 25px
   i
-    margin-top: 25%
+    margin-top: 23px
 
 #kt-article-title
   h1, a, i
@@ -371,6 +416,9 @@ dd
   background: url(img/bg.png)
   border-radius: 5px
 
+.map_wrapper
+  margin: 2em 0
+
 /***
  **
  *COMMENTS
@@ -379,9 +427,6 @@ dd
 
 .btn-primary
   border-color: $color-primary
-  &:hover
-    background-color: $color-primary
-    border-color: $color-hover
 
 p
   &.comment-form-author, &.comment-form-email
@@ -396,10 +441,10 @@ p
     padding: 5px 10px
     background: #ffffff
     color: inherit
-    border-top: 1px solid #dddddd
-    border-left: 1px solid #dddddd
-    border-right: 1px solid #dddddd
-    border-bottom: 1px solid #dddddd
+    border-top: 1px solid $color-input-border
+    border-left: 1px solid $color-input-border
+    border-right: 1px solid $color-input-border
+    border-bottom: 1px solid $color-input-border
   &.form-allowed-tags
     display: none
   &.form-submit input[type="submit"]
@@ -412,19 +457,21 @@ p
   &.comment-form-author input[type="text"], &.comment-form-email input[type="text"], &.comment-form-url input[type="text"]
     padding: 5px 10px
     background: #ffffff
-    color: #fff
-    border-top: 1px solid #dddddd
-    border-left: 1px solid #dddddd
-    border-right: 1px solid #dddddd
-    border-bottom: 1px solid #dddddd
+    color: $color-text
+    border-top: 1px solid $color-input-border
+    border-left: 1px solid $color-input-border
+    border-right: 1px solid $color-input-border
+    border-bottom: 1px solid $color-input-border
 
 .comment-body
   padding: 10px 0 20px 0
   p
     padding: 30px 15px
-    margin: 12px 30px
+    margin: 18px 30px 12px
     background: white
     border: 1px solid $color-border
+    @media screen and (max-width: 768px)
+      margin: 0
 
 .comments-area
   margin: 20px auto
@@ -449,6 +496,7 @@ p
   border-bottom: 1px solid #323232
 
 .comment-list
+  padding: 0
   list-style: none
   margin: 0 0 48px 0
 
@@ -466,10 +514,11 @@ p
 
 .commentmetadata
   font-size: 10px
-  width: 65%
-  display: inline-block
-  vertical-align: sub
-  margin-top: 25px
+  float: left
+  margin-left: 100px
+  //@media screen and (max-width: 768px)
+  //  width: 50%
+  //  margin-left: 50%
 
 .comment-list .reply
   margin: 10px 0 10px 0
@@ -484,12 +533,9 @@ p
     padding-left: 89px
   a
     color: #2b2b2b
-    float: right
     font-size: 14px
-  &.vcard
-    width: 30%
-    float: left
-    display: inline-block
+  //&.vcard
+    //display: inline-block
 
 .comment-list
   .trackback a, .pingback a
@@ -552,7 +598,6 @@ p
 
 .comment-list .children
   list-style: none
-  margin-left: 10px
 
 .comment-respond
   margin-bottom: 24px
@@ -567,7 +612,10 @@ p
 
 .comment-notes, .comment-awaiting-moderation, .logged-in-as, .no-comments
   color: #767676
-
+.tag-links
+  padding: 1em 0
+.top-fb-like
+  margin-bottom: 1em
 .form-allowed-tags
   color: #767676
   code
@@ -659,7 +707,10 @@ p
         position: absolute
         top: 0.6em
         border-image: url(img/bg.png) 1 1
-
+.textwidget
+  margin: 0 10px 20px
+.widget
+  margin: 0 0 20px
 #kt-sidebar h3 span:after
   content: ''
   display: block
@@ -674,8 +725,8 @@ p
       right: 100%
     &:after
       left: 100%
-  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
-    color: $color-primary
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+  color: $color-primary
 
 /***
  **
@@ -702,11 +753,22 @@ p
   p
     color: #fff
 
+div.post
+  overflow: visible
+
+//CONTACT PAGE
+
+.wpcf7-form
+  textarea, input
+    @media only screen and (max-width: 768px)
+      width: 100%
+
 /***
  **
  *BOOTSTRAP OVERRIDES
  **
  ***
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px), (max-width: 900px)
   .slicknav_menu
     display: block
@@ -715,14 +777,18 @@ p
     display: none
 .menu-item
   font-size: 18px
-  background-image: url("img/bg.png")
-  background-repeat: repeat
-  border: 1px solid $color-border
   a
     color: $color-secondary
+    background-image: url("img/bg.png")
+    background-repeat: repeat
+    border: 1px solid $color-border
   a:hover, a:focus
     color: $color-secondary
   &.current_page_item
     a
       &:hover
         color: $color-primary
+@media only screen and (max-width: 768px)
+  .menu-item a
+    background-color: white
+    background-image: none

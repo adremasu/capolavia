@@ -9,8 +9,8 @@ if(is_category()):
     ));
    
 elseif(is_tag()):
-    $$beyond_tag = get_query_var('tag'); 
-    $$beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $beyond_tag = get_query_var('tag');
+    $beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $beyond_my_query = new WP_Query(
     array('post_type'=>'post',
     'paged'=>$beyond_paged,
@@ -19,7 +19,7 @@ elseif(is_tag()):
     
 elseif(is_search()):
     
-    $$beyond_search = get_query_var('s');
+    $beyond_search = get_query_var('s');
     $beyond_paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $beyond_my_query = new WP_Query(
     array('post_type'=>'post',
@@ -34,17 +34,21 @@ endif;
     $beyond_divider = 3;
 ?>
 <?php if( $beyond_my_query->have_posts() ) : ?>
-                    <div class="kt-articles">  
+                    <div class="kt-articles">
                         <div class="row">
                         <?php while($beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
                             <article class="col-md-4">
                                 <div class="kt-article clearfix">
-                                    <a href="<?php the_permalink();?>">
-                                    <?php if(has_post_thumbnail()):the_post_thumbnail('',array('class'=>'img-responsive')); endif;?>
+                                    <a href="<?php the_permalink();?>" title="<?php the_title();?>">
+                                    <?php if(has_post_thumbnail()):the_post_thumbnail('post-list',array('class'=>'img-responsive')); endif;?>
                                     </a>
-                                    <h1><?php the_title();?></h1>
+                                    <h2>
+                                        <a href="<?php the_permalink();?>" title="<?php the_title();?>" class="h3">
+                                            <?php the_title();?>
+                                        </a>
+                                    </h2>
                                     <?php the_excerpt(); ?>
-                                    <a href="<?php the_permalink();?>" class="btn btn-primary pull-right"><?php echo __('Read More','beyondmagazine');?></a>
+                                    <a href="<?php the_permalink();?>" class="btn btn-primary pull-right"><?php echo __('Read more...');?></a>
                                 </div>
                             </article>
                             <?php $beyond_current_position = $beyond_my_query->current_post + 1; ?>

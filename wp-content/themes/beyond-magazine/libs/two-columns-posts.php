@@ -35,33 +35,45 @@ endif;
     $beyond_divider = 2;
                         ?>
 <?php if( $beyond_my_query->have_posts() ) : ?>
-                    <div class="kt-articles">  
-                        <div class="row">
-                        <?php while( $beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
-                            <article class="col-md-6">
-                                <div class="kt-article clearfix">
-                                    <a href="<?php the_permalink();?>">
-                                    <?php if(has_post_thumbnail()):the_post_thumbnail('',array('class'=>'img-responsive')); endif;?>
-                                    </a>
-                                    <h1><?php the_title();?></h1>
-                                    <?php the_excerpt();?>
-                                    <a href="<?php the_permalink();?>" class="btn btn-primary pull-right"><?php echo __('Read More','beyondmagazine');?></a>
-                                </div>
-                            </article>
-                            <?php $beyond_current_position = $beyond_my_query->current_post + 1; ?>
+<div class="row">
+    <div class="col-md-8">
+        <div id="kt-latest-title" class="h3">
+            <p><span><?php echo __('Recent Posts');?></span></p>
+        </div>
+        <div class="kt-articles">
+            <div class="row">
+            <?php while( $beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
+            <article class="col-md-6">
+                <div class="kt-article clearfix">
+                    <a href="<?php the_permalink();?>">
+                    <?php if(has_post_thumbnail()):the_post_thumbnail('post-list',array('class'=>'img-responsive')); endif;?>
+                    </a>
+                    <h2>
+                        <a href="<?php the_permalink();?>" title="<?php the_title();?>" class="h3">
+                            <?php the_title();?>
+                        </a>
+                    </h2>
+                    <?php the_excerpt();?>
+                    <a href="<?php the_permalink();?>" class="btn btn-primary pull-right"><?php echo __('Read more...');?></a>
+                </div>
+            </article>
+            <?php $beyond_current_position = $beyond_my_query->current_post + 1; ?>
 
-                                <?php if( $beyond_current_position < $beyond_my_query->found_posts && $beyond_current_position % $beyond_divider == 0 ) : ?>
+                <?php if( $beyond_current_position < $beyond_my_query->found_posts && $beyond_current_position % $beyond_divider == 0 ) : ?>
 
-                                <!-- if position is equal to the divider and not the last result close the currently open div and start another -->
-                                </div><div class="row">
-                                <?php endif; ?>
-                                 
-                              <?php endwhile; ?>
+                <!-- if position is equal to the divider and not the last result close the currently open div and start another -->
+    <?php endif; ?>
+    <?php endwhile; ?>
+    </div>
+    </div>
 
-                              </div>
-                              <!-- close whichever div was last open -->
-                              <?php else: ?>
-                              <div class="row kt-no-found-posts"><?php echo __('No posts found.Sorry','beyondmagazine') ;?></div>
-                              <?php endif; wp_reset_postdata();?>
-                            
-                    </div><!-- .kt-articles end here -->
+      <!-- close whichever div was last open -->
+      <?php else: ?>
+      <div class="row kt-no-found-posts"><?php echo __('No posts found.Sorry','beyondmagazine') ;?></div>
+      <?php endif; wp_reset_postdata();?>
+
+    </div><!-- .kt-articles end here -->
+    <div class="col-md-4">
+    <?php get_template_part( 'sidebar' ); ?>
+    </div>
+</div>
