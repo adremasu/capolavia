@@ -3,7 +3,7 @@ get_header();?>
 <div class="row" id="kt-main">
     <div class="col-md-12">
         <div id="kt-latest-title" class="h3">
-            <p><span>Le ricette</span></p>
+            <p><span>I prodotti</span></p>
         </div>
     </div>
     <?php

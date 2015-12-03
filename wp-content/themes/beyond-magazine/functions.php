@@ -675,4 +675,48 @@ function my_connection_types() {
 }
 add_action( 'p2p_init', 'my_connection_types' );
 
+
+//gestione disponibilità
+add_action( 'admin_menu', 'my_plugin_menu' );
+
+function my_plugin_menu() {
+    add_options_page(
+        'Disponibilità',
+        'Disponibilità',
+        'manage_options',
+        'availability.php',
+        'manage_availability'
+    );
+}
+
+function manage_availability() {
+    ?>
+    <div class="wrap">
+        <h1>Gestione disponibilità</h1>
+
+    <?php
+    $type = 'products';
+    $args=array(
+        'post_type' => $type,
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'caller_get_posts'=> 1
+    );
+    $my_query = null;
+    $my_query = new WP_Query($args);
+    if( $my_query->have_posts() ) {
+        while ($my_query->have_posts()) : $my_query->the_post(); ?>
+            <div class="checkbox">
+                <label><input type="checkbox" value=""><?php the_title(); ?></label>
+            </div>
+        <?php
+        endwhile;
+    }
+    wp_reset_query();  // Restore global post data stomped by the_post().
+    ?>
+    </div>
+<?php
+
+
+}
 ?>
