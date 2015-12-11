@@ -7,7 +7,7 @@
 Plugin Name: Tables
 Plugin URI: http://capolavia.org
 Description: Manage availability of products
-Author: Matt Mullenweg
+Author: Andrea Marchetto
 Version: 0.1
 Author URI: http://capolavia.it/
 */
@@ -116,6 +116,16 @@ class Products_List extends WP_List_Table {
     public function column_default( $item, $column_name ) {
         switch ( $column_name ) {
             case 'post_title':
+                return print_r( $item[post_title], true );
+            case 'availability': {
+            $available_yes = ($item[availability] ? "checked" : "");
+            $available_no = ($item[availability] ? "" : "checked");
+
+            return sprintf(
+                '<input type="radio" name="bulk-update[%1$s]" %2$s value="1">Sì <input type="radio" name="bulk-update[%1$s]" %3$s value="0">No', $item['ID'], $available_yes, $available_no
+            );
+
+        }
             case 'city':
                 return $item[ $column_name ];
             default:
@@ -170,8 +180,7 @@ class Products_List extends WP_List_Table {
     function get_columns() {
         $columns = [
             'post_title'    => __( 'Prodotto', 'sp' ),
-
-            'cb'      => '<input type="checkbox" />'
+            'availability'    => __( 'Disponibile', 'sp' )
         ];
 
         return $columns;
@@ -185,10 +194,12 @@ class Products_List extends WP_List_Table {
      */
     public function get_sortable_columns() {
         $sortable_columns = array(
-            'post_title' => array( 'post_title', true )
+            'post_title' => array( 'post_title', true ),
+            'availability' => array( 'availability', true )
         );
 
         return $sortable_columns;
+
     }
 
     /**
@@ -227,6 +238,68 @@ class Products_List extends WP_List_Table {
         $this->items = self::get_products( $per_page, $current_page );
     }
 
+    /*
+     * get the code for newsletter
+     */
+    public function get_newsletter_code(){
+        $my_query = new WP_Query(
+            array(
+                'post_type' => 'products',
+                'meta_query' => array(
+                    array(
+                        'key' => 'disponibilita',
+                        'value' => '1'
+                    )
+                )
+
+            )
+        );
+        $products =  $my_query->posts;
+        $array_products = json_decode(json_encode($products),TRUE);
+        $html_code = "";
+        foreach ($array_products as $product){
+            $url = $product[guid];
+            $_price = get_post_meta( $product[ID], 'prezzo', true );
+            $price =  ($_price ? ' a '.$_price  : '' );
+            $_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($product[ID]), 'small_square');
+
+            $thumbnail = ( has_post_thumbnail($product[ID]) ? $_thumbnail[0] : get_header_image());
+            $html_code .= '
+
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock">
+                    <tbody class="mcnCaptionBlockOuter">
+                        <tr>
+                            <td class="mcnCaptionBlockInner" valign="top" style="padding:9px;">
+                                <table border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightContentOuter" width="100%">
+                                    <tbody><tr>
+                                        <td valign="top" class="mcnCaptionRightContentInner" style="padding:0 9px ;">
+                                            <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer">
+                                                <tbody><tr>
+                                                    <td class="mcnCaptionRightImageContent" valign="top">
+                                                        <a class="link" href="'.$url.'">
+                                                            <img alt="" src="'.$thumbnail.'" width="132" style="max-width:2448px;" class="mcnImage">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                            <table class="mcnCaptionRightTextContentContainer" align="right" border="0" cellpadding="0" cellspacing="0" width="396">
+                                                <tbody><tr>
+                                                    <td valign="top" class="mcnTextContent" style="font-size: 18px; font-style: normal; font-weight: normal; line-height: 200%; text-align: left;">
+                                                        <a class="link" href="'.$url.'">'.$product[post_title] . $price.'</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>';
+        }
+        return $html_code;
+
+    }
     public function process_bulk_action() {
         //Detect when a bulk action is being triggered...
 
@@ -321,7 +394,13 @@ class SP_Plugin {
                                 <?php
                                 $this->products_obj->prepare_items();
                                 $this->products_obj->display(); ?>
+                                <button class="" >Codice per newsletter</button>
+                                <br/>
+                                <textarea name="" id="" cols="100" rows="10">
+                                <?php echo $this->products_obj->get_newsletter_code(); ?>
+                                </textarea>
                             </form>
+
                         </div>
                     </div>
                 </div>

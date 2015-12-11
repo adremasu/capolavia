@@ -623,6 +623,14 @@ function GAnalytics() {
 
 }
 add_action('wp_footer', 'GAnalytics', 100);
+function angularJs(){
+    if (is_archive()){
+        wp_enqueue_script('angularJs', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js',  array(), '3', true);
+
+    }
+}
+add_action('wp_enqueue_scripts', 'angularJs', 100);
+
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
     add_post_type_support( 'page', 'excerpt' );
