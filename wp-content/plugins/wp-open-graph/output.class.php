@@ -175,7 +175,7 @@ class NY_OG_Output {
 			if (has_post_thumbnail()) {				
 				$this->_metas['og:image'] = wp_get_attachment_url(get_post_thumbnail_id());
 				if($admin_img) {
-					$img = wp_get_attachment_image( get_post_thumbnail_id(), array(50,50) );
+					$img = wp_get_attachment_image( get_post_thumbnail_id(), 'medium' );
 					return $img;
 				}
 				return wp_get_attachment_url(get_post_thumbnail_id());
@@ -185,7 +185,7 @@ class NY_OG_Output {
 				if ($attachment) {
 					$this->_metas['og:image'] = wp_get_attachment_thumb_url($attachment[0]->ID);
 					if($admin_img) {
-						$img = wp_get_attachment_image( $attachment[0]->ID, array(50,50) );
+						$img = wp_get_attachment_image( $attachment[0]->ID, 'medium' );
 						return $img;
 					}
 					return wp_get_attachment_thumb_url($attachment[0]->ID);
