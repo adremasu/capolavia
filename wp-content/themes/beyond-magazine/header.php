@@ -39,7 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> <?php if (is_archive()){ echo 'ng-app=""';}?>>
+<body <?php body_class(); ?> data-ng-app="productsApp">
  <div class="kt-wrapper">
      <?php if ( is_active_sidebar( 'header-sidebar' ) ) : ?>
          <?php dynamic_sidebar( 'header-sidebar' ); ?>

@@ -16,9 +16,9 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'libs/coffee/',
-                        src: ['**/**/*.coffee'],
-                        dest: 'libs',
+                        cwd: 'inc/coffee/',
+                        src: ['*.coffee'],
+                        dest: 'libs/main',
                         ext: '.js'
                     }
                 ]
@@ -38,8 +38,8 @@ module.exports = function (grunt) {
 
         concat: {
             dist: {
-                src: [ 'libs/js/*.js', 'libs/js/**/*.js'],
-                dest: 'libs/main.js'
+                src: [ 'js/angular.min.js','js/angular-route.js','js/dirPagination.js','js/bootstrap.js', 'js/jquery.slicknav.js', 'js/init.js', 'libs/main/main.js', 'libs/main/menu.js'],
+                dest: 'js/main.js'
             }
         },
 
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 
             prod: {
                 files: {
-                    'main.min.js': ['libs/main.js']
+                    'main.min.js': ['js/main.js']
                 }
             }
         },

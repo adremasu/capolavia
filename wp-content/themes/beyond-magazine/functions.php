@@ -152,9 +152,9 @@ LOAD CSS AND JS STYLES
 ***/
     function beyond_load_scripts() {
    
-        wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
-        wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-        wp_enqueue_script('beyond_init',get_template_directory_uri().'/js/init.js',array('jquery'),'',true);
+        //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
+        //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
+        wp_enqueue_script('beyond_init',get_template_directory_uri().'/main.min.js',array('jquery'),null, null);
         
         wp_localize_script('beyond_init', 'init_vars', array(
             'label' => __('Menu', 'beyondmagazine')
@@ -623,13 +623,6 @@ function GAnalytics() {
 
 }
 add_action('wp_footer', 'GAnalytics', 100);
-function angularJs(){
-    if (is_archive()){
-        wp_enqueue_script('angularJs', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js',  array(), '3', true);
-
-    }
-}
-add_action('wp_enqueue_scripts', 'angularJs', 100);
 
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
