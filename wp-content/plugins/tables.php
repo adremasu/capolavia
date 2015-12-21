@@ -245,6 +245,7 @@ class Products_List extends WP_List_Table {
         $my_query = new WP_Query(
             array(
                 'post_type' => 'products',
+                'nopaging'=> true,
                 'meta_query' => array(
                     array(
                         'key' => 'disponibilita',
