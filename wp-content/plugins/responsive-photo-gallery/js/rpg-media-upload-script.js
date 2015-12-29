@@ -13,7 +13,10 @@ function weblizar_image(image_id)
 			
 			window.send_to_editor = function(html)
 			{
-				imgurl = jQuery('img',html).attr('src');
+				imgurl = jQuery(html).attr('src');
+				if(!(imgurl)) {
+					imgurl = jQuery('img', html).attr('src');
+				}
 				 showImg.attr('src',imgurl);
 				uploadID.val(imgurl); /*assign the value to the input*/
 				tb_remove();

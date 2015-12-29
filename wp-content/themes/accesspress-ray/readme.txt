@@ -61,6 +61,44 @@ Images
     http://pixabay.com/en/wristwatch-watch-time-fashion-407096/
 
 == Changelog ==
+Version 1.16.13
+* Fixed responsive issue for the RTL Support
+
+Version 1.16.12
+* Fixed translation text domain issue
+* More Themes Page Added
+
+Version 1.16.1
+* Responsive issue in the Blog slider fixed
+* Minor Issue in admin panel CSS fixed.
+
+Version 1.16.0
+* Slider text overlapping out of the slider image in responsive layout fixed
+* Options field misplacement in Theme option panel fixed
+* Other Minor Changes
+
+Version 1.15.9
+* Bottom blog slider responsive bug fixed
+* Minor Changes of style in Theme panel
+
+
+Version 1.15.8
+* Minor Changes in Theme panel
+* TGM plugin updated
+
+Version 1.15.7
+* PHP syntax error in page/post siderbar metabox fixed.
+* Link added to title in archive pages.
+
+Version 1.14
+* Option to disable view all button in blog section added.
+* Slider Problem in RTL direction fixed.
+* Minor Changes in Theme Option Panel.
+
+Version 1.13
+* Sidebar Issue for Static home page solved.
+* Emails removed from theme option panel due to over spam emails.
+
 Version 1.12
 * Section in Theme Option page rearranged to make it more user friendly.
 

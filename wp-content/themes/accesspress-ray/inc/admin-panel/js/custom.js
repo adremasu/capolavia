@@ -73,6 +73,10 @@ jQuery(document).ready(function($) {
 	$('.ap-popup-bg, .ap-popup-close').click(function(){
 		$('.ap-popup-bg, .ap-popup-wrapper').fadeOut();
 	});
+
+	$('.upgrade-header').click(function(){
+	    $('.upgrade-image').slideToggle();
+	  });
 });
 
 

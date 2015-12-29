@@ -1,12 +1,20 @@
+#optionsframework-wrap{
+    padding-left:220px;
+    padding-right:230px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin:10px 20px 0 0;
+}
 #optionsframework-wrap img{
 	max-width: 100%;
 	vertical-align: middle;
 }
 #optionsframework {
-    max-width:800px;
     background:#fff;
 }
-#optionsframework h3 {
+#optionsframework-wrap h3 {
 	background-color: #333333;
 	font-weight: normal;
 	padding: 20px 15px;
@@ -14,6 +22,8 @@
 	text-transform: uppercase;
 	line-height: 1;
 	margin-bottom: 5px;
+    font-size: 14px;
+    margin:0;
 }
 #optionsframework p {
 	margin-bottom:0;
@@ -26,6 +36,9 @@
 	width: 100%;
 	margin: 0;
 }
+#optionsframework .form-table th{
+    width: 200px;
+}
 #optionsframework .form-table th,#optionsframework .form-table td{
 	padding:15px;
 	line-height: 1.2;
@@ -33,6 +46,12 @@
 }
 #optionsframework .hide {
 	display:none;
+}
+
+.appearance_page_theme_options div.error, 
+.appearance_page_theme_options div.updated {
+  margin-left: 0;
+  clear: both;
 }
 
 /* Editor */
@@ -144,12 +163,15 @@
 	font-size: 18px;
 	color: #FFF;
 	font-weight: normal;
-	margin: 10px 0 0;
+	margin: 10px 0 0 !important;
 	font-style: italic;
+    padding: 0 !important;
 }
 #optionsframework-wrap .nav-tab-wrapper{ 
-	width: 240px;
+	width: 220px;
 	float: left;
+    margin-left: -230px;
+    position: relative;
 }
 #optionsframework-wrap .nav-tab-wrapper .nav-tab {
     font-size: 14px;
@@ -163,8 +185,15 @@
     border-top:0;
 }
 #optionsframework-metabox.metabox-holder{
-	margin-left: 250px;
-	padding: 0;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding:0;
+    max-width: 800px;
+    padding-right: 10px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
 .radio-image-wrapper{
 	margin-right: 25px; 
@@ -288,12 +317,16 @@
 .update-banner{
 	margin-top: 10px;
 }
-.button-link{
+#optionsframework-wrap .button-link{
 	background: #FFF;
 	padding: 10px;
 	text-align: center;
 	border-left: 1px solid #e5e5e5;
 	border-right: 1px solid #e5e5e5;
+}
+.button-link a{
+    width: 49%;
+    display: inline-block;
 }
 .any-question{
 	background: #FFF;
@@ -308,4 +341,21 @@
 
 .setting-title h4{
 	margin: 0
+}
+.upgrade-ray{
+  float: left;
+  width: 220px;
+  margin-right: -220px;
+  position: relative;
+  right: 0;
+}
+#optionsframework-wrap textarea{
+    width:100%;
+    min-width: 320px;
+}
+.upgrade-header{
+	cursor: pointer;
+}
+.upgrade-image{
+	display: none;
 }

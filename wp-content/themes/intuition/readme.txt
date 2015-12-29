@@ -1,8 +1,15 @@
 Thanks for downloading this theme!
 
-If you have any questions regarding its usage, you can get support 
-at http://cpothemes.com/support. Bear in mind that support requests
-will be answered as fast as possible, as soon as we can.
+This theme is meant to work hand in hand with the CPO Content Types plugin. 
+The plugin is very light, and you will need to install it in order to 
+manage the main slider, homepage features, as well as the portfolio:
+http://wordpress.org/plugins/cpo-content-types
+
+
+
+If you have any questions regarding its usage, you can read the 
+quickstart guide at the following URL:
+http://www.cpothemes.com/documentation
 
 
 BUNDLED RESOURCES
@@ -13,11 +20,7 @@ Font Awesome - http://fortawesome.github.io/Font-Awesome/
 License: http://fortawesome.github.io/Font-Awesome/license/
 Copyright: Dave Gandy
 
-Color Picker - www.eyecon.ro
-License: Dual licensed under the MIT and GPL licenses.
-Copyright: Stefan Petre
-
-Jquery Cycle - http://jquery.malsup.com/cycle/
+Jquery Cycle2 - http://jquery.malsup.com/cycle2/
 License: Dual licensed under the MIT and GPL licenses.
 Copyright: M. Alsup
 
@@ -25,6 +28,10 @@ HTML5 Shiv - https://github.com/aFarkas/html5shiv
 License: Dual licensed under the MIT and GPL licenses.
 Copyright: @afarkas @jdalton @jon_neal @rem
 
-PrettyPhoto - http://www.no-margin-for-errors.com
-License: GPLv2 General Public License
+Magnific Popup - http://dimsemenov.com/plugins/magnific-popup/
+License: MIT License
 Copyright: Stephane Caron
+
+All Image Resources
+License: GPLv2 General Public License
+Copyright: Manuel Vicedo

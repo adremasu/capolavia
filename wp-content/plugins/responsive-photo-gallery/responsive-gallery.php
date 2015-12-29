@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Responsive Photo Gallery
- * Version: 2.5
+ * Version: 3.2.1
  * Description: Create and display multiple animated image and photo gallery on WordPress blog.
  * Author: Weblizar
  * Author URI: http://www.weblizar.com
@@ -34,6 +34,62 @@ add_action('plugins_loaded', 'GetReadyTranslation');
 function GetReadyTranslation() {
 	load_plugin_textdomain(WEBLIZAR_RPG_TEXT_DOMAIN, FALSE, dirname( plugin_basename(__FILE__)).'/languages/' );
 }
+
+
+
+function admin_content_rpg_144936() {
+ 
+if(get_post_type()=="responsive-gallery"){
+?>
+<style>
+.wlTBlock{
+	background:#F8504B;
+	padding: 27px 0 23px 0;
+	margin-left: -20px;
+	font-family: Myriad Pro ;
+	cursor: pointer;
+	text-align: center;
+}
+.wlTBlock .wlTBig{
+	color: white;
+	font-size: 30px;
+	font-weight: bolder;
+	padding: 0 0 15px 0;
+}
+.wlTBlock .wlTBig .dashicons{
+	font-size: 40px;
+	position: absolute;
+	margin-left: -45px;
+	margin-top: -10px;
+}
+.wlTBlock .WlTSmall{
+	font-weight: bolder;
+	color: white;
+	font-size: 18px;
+	padding: 0 0 15px 15px;
+}
+
+.wlTBlock a{
+text-decoration: none;
+}
+@media screen and ( max-width: 600px ) {
+	.wlTBlock{ padding-top: 60px; margin-bottom: -50px; }
+	.wlTBlock .WlTSmall { display: none; }
+	
+}
+</style>
+<div class="wlTBlock ">
+			<a href="https://weblizar.com/plugins/responsive-photo-gallery-pro/" target="_new">
+				<div class="wlTBig"><span class="dashicons dashicons-cart"></span>Get unlimited features and design layout only in 10$</div>
+				<div class="WlTSmall">with PRO version you get more advanced functionality and even more flexibility in settings </div>
+			</a>
+		</div>
+<?php  
+
+ }
+ 
+}
+add_action('in_admin_header','admin_content_rpg_144936'); 
 
 // Register Custom Post Type
 function ResponsiveGallery() {
@@ -340,8 +396,9 @@ add_action( 'wp', 'WeblizarResponsiveGalleryShortCodeDetect' );
 add_action('admin_menu' , 'WRG_SettingsPage');
 
 function WRG_SettingsPage() {
-    add_submenu_page('edit.php?post_type=responsive-gallery', __('Settings', WEBLIZAR_RPG_TEXT_DOMAIN), __('Settings', WEBLIZAR_RPG_TEXT_DOMAIN), 'administrator', 'image-gallery-settings', 'image_gallery_settings_page_function');
+    add_submenu_page('edit.php?post_type=responsive-gallery', __('Gallery Settings', WEBLIZAR_RPG_TEXT_DOMAIN), __('Gallery Settings', WEBLIZAR_RPG_TEXT_DOMAIN), 'administrator', 'image-gallery-settings', 'image_gallery_settings_page_function');
     add_submenu_page('edit.php?post_type=responsive-gallery', 'Pro Screenshots', 'Pro Screenshots', 'administrator', 'get-image-gallery-pro-plugin', 'get_image_gallery_pro_page_function');
+    add_submenu_page('edit.php?post_type=responsive-gallery', 'recommendation', 'Plugin Recommendation', 'administrator', 'plugin-recommendation', 'RPG_plugin_recommendation');
 }
 
 /**
@@ -363,6 +420,11 @@ function get_image_gallery_pro_page_function() {
     //wp_enqueue_style('wl-pricing-table-responsive-css', WEBLIZAR_RG_PLUGIN_URL.'css/pricing-table-responsive.css');
     wp_enqueue_style('wl-boot-strap-admin', WEBLIZAR_RG_PLUGIN_URL.'css/bootstrap-admin.css');
     require_once("get-responsive-gallery-pro.php");
+}
+function RPG_plugin_recommendation(){
+	 //css
+    wp_enqueue_style('recom2', WEBLIZAR_RG_PLUGIN_URL.'css/recom.css');
+	require_once("recommendations.php");
 }
 
 

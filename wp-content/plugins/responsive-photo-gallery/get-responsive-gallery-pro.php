@@ -17,27 +17,35 @@ font-size: 22px;
 padding-top: 10px;
 padding-bottom: 10px;">Get All Lightboxs in Responsive Photo Gallery Pro only in 10$</h6>
     </div>
+	<style>
+	.col-md-6 {
+    width: 46% !important;
+}
+.col-md-4 {
+    width: 30.333333% !important;
+}
+	</style>
 	<!-- SLIDER-INTRO-->
 				<!--===============================================================-->
-				<div class="col-sm-6 col-xs-4">
+				<div class="col-md-6 col-xs-4">
 					<h2 style="font-weight: bold;font-size: 26px;padding-top: 20px;padding-bottom: 20px; text-align:center">Nivo Lightbox</h2>
-					<img class="img-responsive" style="border: 1px solid #e3e3e3;
+					<img class="img-responsive" style="border: 1px solid #e3e3e3;width:100%; 
 background: #f7f7f7;padding:10px" src="http://weblizar.com/wp-content/themes/home-theme/images/lightbox/nivo.jpg" alt=""/>
 				</div>
-				<div class="col-sm-6 col-xs-4">
+				<div class="col-md-6 col-xs-4">
 					<h2 style="font-weight: bold;font-size: 26px;padding-top: 20px;padding-bottom: 20px; text-align:center">Photobox</h2>
-					<img style="border: 1px solid #e3e3e3;
+					<img style="border: 1px solid #e3e3e3;width:100%;
 background: #f7f7f7;padding:10px" class="img-responsive" src="http://weblizar.com/wp-content/themes/home-theme/images/lightbox/photobox.jpg" alt=""/>
 				</div>
-				<div class="col-sm-6 col-xs-4">
+				<div class="col-md-6 col-xs-4">
 					<h2 style="font-weight: bold;font-size: 26px;padding-top: 20px;padding-bottom: 20px; text-align:center">Pretty Photo</h2>
-					<img style="border: 1px solid #e3e3e3;
+					<img style="border: 1px solid #e3e3e3;width:100%;
 background: #f7f7f7;padding:10px" class="img-responsive" src="http://weblizar.com/wp-content/themes/home-theme/images/lightbox/prettyphoto.jpg" alt=""/>
 				</div>
 				
-				<div class="col-sm-6 col-xs-4">
+				<div class="col-md-6 col-xs-4">
 					<h2 style="font-weight: bold;font-size: 26px;padding-top: 20px;padding-bottom: 20px; text-align:center">Swipe Box</h2>
-					<img style="border: 1px solid #e3e3e3;
+					<img style="border: 1px solid #e3e3e3;width:100%;
 background: #f7f7f7;padding:10px" class="img-responsive" src="http://weblizar.com/wp-content/themes/home-theme/images/lightbox/swipebox.jpg" alt=""/>
 				</div>
 		

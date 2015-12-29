@@ -15,10 +15,10 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress_ray' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-ray' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'accesspress_ray' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'accesspress-ray' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 </article><!-- #post-## -->

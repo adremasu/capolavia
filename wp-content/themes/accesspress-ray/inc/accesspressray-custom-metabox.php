@@ -13,7 +13,7 @@ function accesspress_ray_add_sidebar_layout_box()
 {
     add_meta_box(
                  'accesspress_ray_sidebar_layout', // $id
-                 'Sidebar Layout', // $title
+                 __('Sidebar Layout', 'accesspress-ray' ), // $title
                  'accesspress_ray_sidebar_layout_callback', // $callback
                  'post', // $page
                  'normal', // $context
@@ -21,7 +21,7 @@ function accesspress_ray_add_sidebar_layout_box()
 
     add_meta_box(
                  'accesspress_ray_sidebar_layout', // $id
-                 'Sidebar Layout', // $title
+                 __('Sidebar Layout', 'accesspress-ray'), // $title
                  'accesspress_ray_sidebar_layout_callback', // $callback
                  'page', // $page
                  'normal', // $context
@@ -32,23 +32,23 @@ function accesspress_ray_add_sidebar_layout_box()
 $accesspress_ray_sidebar_layout = array(
         'left-sidebar' => array(
                         'value'     => 'left-sidebar',
-                        'label'     => __( 'Left sidebar', 'accesspress_ray' ),
+                        'label'     => __( 'Left sidebar', 'accesspress-ray' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/left-sidebar.png'
                     ), 
         'right-sidebar' => array(
                         'value' => 'right-sidebar',
-                        'label' => __( 'Right sidebar<br/>(default)', 'accesspress_ray' ),
+                        'label' => __( 'Right sidebar<br/>(default)', 'accesspress-ray' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/right-sidebar.png'
                     ),
         'both-sidebar' => array(
                         'value'     => 'both-sidebar',
-                        'label'     => __( 'Both Sidebar', 'accesspress_ray' ),
+                        'label'     => __( 'Both Sidebar', 'accesspress-ray' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/both-sidebar.png'
                     ),
        
         'no-sidebar' => array(
                         'value'     => 'no-sidebar',
-                        'label'     => __( 'No sidebar', 'accesspress_ray' ),
+                        'label'     => __( 'No sidebar', 'accesspress-ray' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/no-sidebar.png'
                     )   
 
@@ -62,7 +62,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspress_ray_sidebar_layout_nonce' );
 
 <table class="form-table">
 <tr>
-<td colspan="4"><em class="f13">Choose Sidebar Template</em></td>
+<td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template', 'accesspress-ray'); ?></em></td>
 </tr>
 
 <tr>
@@ -83,7 +83,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspress_ray_sidebar_layout_nonce' );
 </td>
 </tr>
 <tr>
-    <td><em class="f13">You can set up the sidebar content <a href="<?php echo admin_url('/themes.php?page=theme_options'); ?>">here</a></em></td>
+    <td><em class="f13"><?php echo sprintf(__('You can set up the sidebar content <a href="%s" target="_blank">here</a>', 'accesspress-ray'), esc_url(admin_url('/themes.php?page=theme_options'))); ?></em></td>
 </tr>
 </table>
 

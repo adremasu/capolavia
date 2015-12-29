@@ -1,16 +1,21 @@
 <?php get_header(); ?>
 
-<div id="main" class="main">	
+<?php get_template_part('element', 'page-header'); ?>
+
+<div id="main" class="main">
 	<div class="container">
 		<section id="content" class="content content-wide">
+			<?php do_action('cpotheme_before_404'); ?>
 			<div class="notfound">
-				<div class="column col2 notfound-image">404</div>
-				<div class="column col2 col-last notfound-content">
-					<h1 class="notfound-title"><?php _e('Page Not Found', 'cpotheme'); ?></h1>
-					<?php _e('The requested page could not be found. It could have been deleted or changed location. Try searching for it using the search function.', 'cpotheme'); ?>
+				<div class="column col2 notfound-image">
+					404
 				</div>
-				<div class="col-divide"></div>
+				<div class="column col2 col-last notfound-content">
+					<?php cpotheme_404(); ?>
+				</div>
+				<div class="clear"></div>
 			</div>
+			<?php do_action('cpotheme_after_404'); ?>
 		</section>
 	</div>
 </div>

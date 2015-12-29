@@ -1,0 +1,5 @@
+Version 1.3.0
+Revamped the theme with all-new features
+
+Version 1.0.0
+Theme release!

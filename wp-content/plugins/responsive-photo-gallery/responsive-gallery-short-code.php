@@ -167,6 +167,8 @@ function image_gallery_premium_short_code( $Id ) {
 		</div>
     <?php endwhile; ?>
     </div>
+	<p class="weblizar_powered" style="font-size:17px">Responsive Photo Gallery Powered By <a href="https://weblizar.com/" style="color:#31a3dd;text-decoration: underline;" target="_new">Weblizar</a></p>
+	
    <?php wp_reset_query(); 
     return ob_get_clean();
 }

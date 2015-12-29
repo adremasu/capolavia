@@ -28,46 +28,46 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'accesspress_ray' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'accesspress-ray' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'accesspress_ray' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'accesspress-ray' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'accesspress_ray' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'accesspress_ray' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'accesspress-ray' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'accesspress-ray' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'accesspress_ray' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'accesspress_ray' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'accesspress-ray' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'accesspress-ray' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', 'accesspress_ray' );
+							_e( 'Asides', 'accesspress-ray' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'accesspress_ray');
+							_e( 'Galleries', 'accesspress-ray');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'accesspress_ray');
+							_e( 'Images', 'accesspress-ray');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'accesspress_ray' );
+							_e( 'Videos', 'accesspress-ray' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'accesspress_ray' );
+							_e( 'Quotes', 'accesspress-ray' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'accesspress_ray' );
+							_e( 'Links', 'accesspress-ray' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'accesspress_ray' );
+							_e( 'Statuses', 'accesspress-ray' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'accesspress_ray' );
+							_e( 'Audios', 'accesspress-ray' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', 'accesspress_ray' );
+							_e( 'Chats', 'accesspress-ray' );
 
 						else :
-							_e( 'Archives', 'accesspress_ray' );
+							_e( 'Archives', 'accesspress-ray' );
 
 						endif;
 					?>

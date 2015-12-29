@@ -37,20 +37,20 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 					<?php if ( get_header_image() ) { ?>
 						<img src="<?php header_image(); ?>" alt="<?php bloginfo('name') ?>">
 					<?php }else{ ?>
-						<h1><?php echo bloginfo('title'); ?></h1>
-						<div class="tagline"><?php echo bloginfo('description'); ?></div>
+						<h1 class="site-title"><?php echo bloginfo('title'); ?></h1>
+						<div class="tagline site-description"><?php echo bloginfo('description'); ?></div>
 					<?php } ?>		
 					</a>		
 				</div><!-- .site-branding -->        		
 
 				<nav id="site-navigation" class="main-navigation">
-					<h1 class="menu-toggle"><?php _e( 'Menu', 'accesspress_ray' ); ?></h1>
+					<h1 class="menu-toggle"><?php _e( 'Menu', 'accesspress-ray' ); ?></h1>
 
 						<?php 
 						wp_nav_menu( array( 
 						'theme_location' => 'primary' , 
 						'container_class' => 'menu',
-						'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
+						'items_wrap'      => '<ul class="clearfix" id="%1$s">%3$s</ul>',
 						) ); 
 
 						if($accesspress_ray_settings['show_search'] == 1){ ?>

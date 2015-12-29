@@ -49,7 +49,7 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 
 		<div id="middle-footer" class="footer-menu">
 			<div class="ak-container">
-				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); 	?>
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'depth' => -1) ); 	?>
 			</div>
 		</div>
 
@@ -57,16 +57,16 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 		<div class="ak-container">
 			<div class="footer-wrap clearfix">
 				<div class="copyright">
-					<?php _e('Copyright', 'accesspress_ray'); ?> &copy; <?php echo date('Y') ?> 
+					<?php _e('Copyright', 'accesspress-ray'); ?> &copy; <?php echo date('Y') ?> 
 					<a href="<?php echo home_url(); ?>">
 					<?php if(!empty($accesspress_ray_settings['footer_copyright'])){
 						echo $accesspress_ray_settings['footer_copyright']; 
 						}else{
 							echo bloginfo('name');
 						} ?>
-					</a>. <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress_ray' ) ); ?>"><?php printf( __( 'Powered by %s', 'accesspress_ray' ), 'WordPress' ); ?></a>
+					</a>. <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>"><?php printf( __( 'Powered by %s', 'accesspress-ray' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
-					<?php _e( 'Theme:', 'accesspress_ray' ) ?> <a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Ray</a>
+					<?php _e( 'Theme:', 'accesspress-ray' ) ?> <a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Ray</a>
 				</div><!-- .copyright -->
 			</div><!-- .footer-wrap -->
 

@@ -1,13 +1,18 @@
-<?php
-/*
-  This template is used to display the heading and banner of most pages.
- */
-?>
-<?php if(!is_home() && !is_front_page()){ ?>
+<?php do_action('cpotheme_before_title'); ?>
+
+<?php $image_url = cpotheme_header_image(); ?>
+<?php if($image_url != false): ?>
+<div id="banner" class="banner">
+	<img class="banner-image" src="<?php echo $image_url; ?>">
+</div>
+<?php endif; ?>
+
+<?php do_action('cpotheme_before_title'); ?>
 <section id="pagetitle" class="pagetitle">
 	<div class="container">
-		<?php cpotheme_breadcrumb(); ?>
-		<h1 class="pagetitle-title"><?php the_title(); ?></h1>
+		<?php do_action('cpotheme_title'); ?>
 	</div>
 </section>
-<?php } ?>
+<?php do_action('cpotheme_after_title'); ?>
+
+<?php do_action('cpotheme_after_title'); ?>

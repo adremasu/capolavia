@@ -3,8 +3,8 @@ Contributors: weblizar
 Donate link: http://www.weblizar.com/responsive-photo-gallery/
 Tags: responsive gallery, add album, add gallery, add pictures, album, gallery, gallery image, image, multiple pictures, photo, photo album, photo gallery, pictures, upload images, website gallery, albums, best gallery plugin, best portfolio plugin, flash, foto, fotoalbum, gallery album, gallery bank, gallery image, gallery wordpress plugin, grid gallery, image album, image slider, images, lightbox, links, media, modal, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, sidebar, slideshow, thumbnails, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin, carousel, categories, category, content slider, custom, custom fields, dashboard, FAQ, FAQ widget, filterable gallery, filterable portfolio,image-size,two-column,three-column, jpeg, jpg, jquery gallery, jquery portfolio, labels, nextgen, nextgen gallery, page, pages, , responsive slideshow, screenshot, screenshots, seo, shortcode, Simple gallery, slide, slide show, slider, slider plugin, slider widget, sliders, slides, slideshow, slideshow manager, slideshow plugin, sortable portfolio, thumbnails, thumbs, vertical slides, view images, visual items, web designer, website gallery, widget, widget gallery, widget slider, widget slideshow, widgets, wordpress faq, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wordpress portfolio, wordpress portfolio plugin, wordpress slider, wordpress slideshow, wp gallery, wp gallery plugins, wp slider, responsive slider
 Requires at least: 3.5
-Tested up to: 4.1.1
-Stable tag: 2.5
+Tested up to: 4.4
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +97,40 @@ Using **[WRG id=xx]** shortcode, you can publish image or photo gallery into any
 == Changelog ==
 
 For more information, see Weblizar(http://wwww.weblizar.com/).
+
+= Version 3.2.1 17-Dec-2015 =
+* Remove Media upload issue for wordpress old versions
+
+= Version 3.2 10-Dec-2015 =
+* Remove Upload image issue 
+
+= Version 3.1.2 19-Nov-2015 =
+* Small Bug resolved
+* Compatible with wordpress 4.4
+
+= Version 3.1.1 27-Oct-2015 =
+* Minor Update in css
+
+= Version 3.1 12-Oct-2015 =
+* Small design issue has been resolved
+
+= Version 3.0 28-sep-2015 =
+* Small Bug Fixed
+
+= Version 2.9 21-sep-2015 =
+* Compatible with wordpress version 4.3.1
+* update banner
+* Small Bug Fixed
+
+= Version 2.8 31-Aug-2015 =
+* Small Bug Fixed
+
+= Version 2.7 07-July-2015 =
+* Small Bug Fixed
+* New: WordPress 4.2.2 Compatible
+
+= Version 2.6 21-Apr-2015 =
+* New: WordPress 4.2 Compatible
 
 = Version 2.5 30-Mar-2015 =
 * Added: Turkish Translation

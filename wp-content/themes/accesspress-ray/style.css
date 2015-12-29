@@ -4,8 +4,8 @@ Theme URI: http://accesspressthemes.com/wordpress-themes/accesspress-ray/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Ray- is beautifully designed, multi-purpose, feature-rich modern responsive theme. It is - Woocommerce, bbPress compatible, RTL supported, translation ready, cross-browser compatible and SEO friendly.  It features: different page layout like portfolio, testimonial, gallery, blog etc and has a strong call to action to help achieve greater conversion. With its extensive theme option panel, configuring theme is easy, fast and fun. AccessPress Ray is multi-purpose and is suitable for travel, corporate, portfolio, photography, nature, health, small biz, personal, creative, corporate, agencies, bloggers anyone and everyone. Demo: http://accesspressthemes.com/accesspress-ray/ Support forum:https://accesspressthemes.com/support/
-Version: 1.12
-Text Domain: accesspress_ray
+Version: 1.16.3
+Text Domain: accesspress-ray
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blue, white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, full-width-template, custom-header, flexible-header, responsive-layout
@@ -323,7 +323,7 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	height: 160px;
-    max-width: 100%;
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -841,7 +841,7 @@ Slider
 }
 /*All the css of the banner slider is includes in css/jquery.bxslider.css */
 #slider-banner .overlay{
-	background: url(images/overlay2.png) repeat;
+	background: url(images/overlay.png) repeat;
 	height: 100%;
     left: 0;
     position: absolute;
@@ -1124,11 +1124,11 @@ TOP-FOOTER
 	padding: 30px 0;
 }
 #top-footer a{
-	color: #FFF;
+	color: #FFF !important;
 }
 #top-footer .footer {
     float: left;
-    min-height: 280px;
+    min-height: 200px;
 }
 
 #top-footer .footer .widget{
@@ -1287,45 +1287,53 @@ footer #bottom-footer{
 ABOUT-SECTION
 -------------------------------*/
 #about-section {
-	text-shadow: 1px 1px 1px #3c3535;
-	background: url(images/about-bg.jpg) no-repeat scroll top center;
-	background-size: cover;
-	height: auto;
-	padding: 85px 0 75px;
+	height: auto; 
+	padding: 75px 0;
 	text-align: center;
+	background: #FFF;
 }
 #about-section .main-title{
-	font-size: 48px;
+	font-size: 38px;
 }
 #about-section .main-title a{
-	color:#ffffff;
 	display: block;
 	line-height: 1;
 	margin-bottom: 21px;
+	color: #333;
 }
 #about-section .welcome-detail {
-    color: #ffffff;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 300;
     line-height: 36px;
+}
+
+#about-section .welcome-content{
+	margin-bottom: 30px;
+}
+
+#about-section a.read-more.bttn{
+	padding: 16px 25px;
 }
 
 /*-----------------------------
 EVENTS-SECTION
 -------------------------------*/
 .events-section{
-	background: #2e313d;
+	background: #FFF;
 	padding: 50px 0;
 	text-align: center;
 }
 .events-section .main-title{
-	color:#ffffff;
+	color:#333;
 	font-size: 30px;
 	line-height: 1;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
+}
+.events-section .main-title a{
+	color: #333;
 }
 .events-section .event-list{
-	background: #ffffff;
+	background: #F2F2F2;
     float: left;
     position: relative;
     width: 377px;
@@ -1367,13 +1375,13 @@ EVENTS-SECTION
 	margin-bottom: 6px;
 }
 .events-section .event-list .event-title a{
-	color:#f0563d;
+	color:#333;
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 28px;
 }
 .read-more-btn {
-    background: none repeat scroll 0 0 #23a38f;
+    background:#23a38f;
     color: #ffffff;
     display: inline-block;
     font-size: 14px;
@@ -1388,14 +1396,14 @@ EVENTS-SECTION
     padding-right: 35px;
 }
 .read-more-btn:hover{
-	background: none repeat scroll 0 0 #0f806e;
+	background: none repeat scroll 0 0 #209684;
 	color:#ffffff;
 }
 .read-more-btn:hover .read-icon-wrap{
 	background: none repeat scroll 0 0 #23a38f;
 }
 .read-more-btn .read-icon-wrap {
-    background: none repeat scroll 0 0 #0f806e;
+    background: none repeat scroll 0 0 #209684;
     height: 31px;
     position: absolute;
     right: 0;
@@ -1448,7 +1456,7 @@ EVENTS-SECTION
     background-position: right 0;
 }
 .events-section .bx-wrapper .bx-pager.bx-default-pager a {
-    background: none repeat scroll 0 0 #ffffff;
+    background: #F2F2F2;
     display: block;
     height: 11px;
     margin: 0 0 0 6px;
@@ -1456,6 +1464,7 @@ EVENTS-SECTION
     text-indent: -9999px;
     transition: all 0.3s ease-in-out 0s;
     width: 11px;
+    border-radius: 0;
 }
 .events-section .bx-wrapper .bx-pager.bx-default-pager a:hover, .events-section .bx-wrapper .bx-pager.bx-default-pager a.active{
     background:#f0563d;
@@ -1467,7 +1476,7 @@ CLIENTS-SAY
 .clients-say-section{
 	padding: 40px 0 80px;
 	text-align: center;
-	background: #FFF;
+	background: #F6F6F6;
 }
 .clients-say-section .main-title{
     color: #2e313d;
@@ -1483,14 +1492,15 @@ CLIENTS-SAY
 .clients-say-section .bx-wrapper .bx-pager.bx-default-pager a {
     background: none repeat scroll 0 0 #23a38f;
     display: block;
-    height: 15px;
+    height: 11px;
     margin: 0 4px;
     outline: 0 none;
     text-indent: -9999px;
     transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -webkit-transition: all 0.3s ease-in-out 0s;
-    width: 15px;
+    width: 11px;
+    border-radius: 0;
 }
 .clients-say-section .testimonial-wrap {
     margin: 0 auto;
@@ -1547,34 +1557,34 @@ CLIENTS-SAY
 BUSINESS-ACTIVITIES
 -------------------------------*/
 .business-section{
-	background: none repeat scroll 0 0 #ebebeb;
+	background: #23A38F;
 	padding: 45px 0;
+    color:#FFF;
+}
+.business-section a{
+    color:#FFF;
 }
 .business-section .widget-title{
-    color: #111111;
+    color: #FFF;
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 300;
     font-family: "Roboto",sans-serif;
 }
 .business-activities-wrapper{
-	margin-left: -20px;
+	margin-left: -1.33%;
 }
 .business-section .business-wrapper{
-	background: #ffffff;
-	color: #111111;
+	color: #FFF;
     font-size: 16px;
     font-weight: 400;
     line-height: 29.81px;
     float: left;
-    margin-left: 20px;
-    padding: 14px;
+    margin-left: 1.33%;
     position: relative;
-    width: 376px;
+    width: 32%;
 }
-.business-section .business-wrapper:last-child{
-	margin-right: 0;
-}
+
 .business-section .business-image img{
 	float: left;
 }
@@ -1591,32 +1601,37 @@ FEATURED-POST
 -------------------------------*/
 .featured-section{
 	padding: 45px 0 60px;
-	background: #FFF;
+	background: #23A38F;
 }
 .featured-section .main-title{
-	color:#23a38f;
+	color:#F6F6F6;
 	font-size: 32px;
 }
 .featured-section .sub-desc {
-    color: #000000;
+    color: #F6F6F6;
     display: block;
     font-size: 16px;
     line-height: 25px;
     margin-bottom: 50px;
     text-align: center;
 }
+.featured-section .sub-desc a{
+	color: #F6F6F6;
+	border-bottom: 1px dotted #F6F6F6;
+}
 .featured-section .featured-post-wrapper{
 	margin-left: -20px;
 }
 .featured-section .featured-post {
-    background: none repeat scroll 0 0 #23a38f;
-    color: #ffffff;
+    background: #FFF;
+    color: #333;
     float: left;
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
     margin-left: 20px;
     width: 277px;
+    text-align: center;
 }
 .featured-section .featured-content {
     padding: 15px 20px 15px;
@@ -1629,18 +1644,22 @@ FEATURED-POST
 	line-height:180px;
 }
 .featured-post .view-more {
-    color: #ffffff;
+    color: #23A38F;
     font-size: 13px;
     font-weight: 300;
+    border: 1px solid #23A38F;
+    padding: 6px 15px;
+    display: inline-block;
 }
 .featured-post .view-more:hover{
-	margin-left: 5px;
+	background: #23A38F;
+	color: #FFF;
 }
 .featured-post h2.featured-title {
     line-height: 24px;
 }
 .featured-post h2.featured-title a{
-	color: #ffffff;
+	color: #222;
     font-size: 20px;
     font-weight: 500;
 }
@@ -1650,6 +1669,7 @@ CONTACT-GOOGLE-MAP
 -------------------------------*/
 #google-map{
 	position: relative;
+	height: 450px;
 }
 .google-section-wrap{
 	left: 50%;
@@ -1657,12 +1677,11 @@ CONTACT-GOOGLE-MAP
 	position: absolute;
     top: 0;
 }
-#google-map #ap-map-canvas{
+#google-map iframe{
 	width:100%;
-	vertical-align: middle;
-	height: 450px;
+	height: 100%;
 }
-#google-map #ap-map-canvas img{
+#google-map img{
 	max-width: none;
 }
 .googlemaps br, 
@@ -1739,6 +1758,19 @@ CONTACT-GOOGLE-MAP
 }
 .ak-contact-address .socials a.rss {
 	background: none repeat scroll 0 0 #FAA21C;
+}
+
+/*-----------------------------
+Blog Post
+-------------------------------*/
+#accesspress-blog{
+	padding:40px 0;
+	background:#FFF;
+}
+
+#accesspress-blog .main-title{
+	color: #23a38f;
+    font-size: 32px;
 }
 
 /*-----------------------------
@@ -2103,4 +2135,30 @@ Galleries
 .not-found .page-content{
 	text-align: center;
 	font-size: 20px;
+}
+
+/*RTL CSS*/
+.rtl .header-wrap .main-navigation{
+	float: left;
+}
+
+.rtl #site-navigation .menu > ul > li{
+	float: right;
+}
+.rtl .events-section .event-list .event-detail{
+	text-align: right;
+}
+.rtl .footer-menu ul li a{
+	border-left: 0;
+	border-right: 1px solid #FFF;
+	margin-left: 0;
+	padding-left: 0;
+	margin-right: 8px;
+	padding-right: 8px
+}
+.rtl .footer-menu ul li:first-child a{
+	border-right: 0;
+}
+.rtl .bx-wrapper .bx-controls-direction a{
+	text-indent: 99999999px;
 }

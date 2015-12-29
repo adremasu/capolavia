@@ -1,19 +1,21 @@
 <?php get_header(); ?>
 
-<?php if(have_posts()) while(have_posts()): the_post(); ?>
-
-<?php if(get_post_meta(get_the_ID(), 'page_title', true) != 0) get_template_part('element', 'page-header'); ?>
+<?php get_template_part('element', 'page-header'); ?>
 
 <div id="main" class="main">
 	<div class="container">
-		<section id="content" class="content <?php cpotheme_sidebar_position(); ?>">
+		<section id="content" class="content">
+			<?php do_action('cpotheme_before_content'); ?>
+			<?php if(have_posts()) while(have_posts()): the_post(); ?>
 			<?php get_template_part('element', 'blog'); ?>
-			<?php if(get_the_author_meta('description')) cpotheme_post_authorbio(); ?>
+			<?php cpotheme_author(); ?>
 			<?php comments_template('', true); ?>
+			<?php endwhile; ?>
+			<?php do_action('cpotheme_after_content'); ?>
 		</section>
-		<?php get_sidebar('blog'); ?>
+		<?php get_sidebar(); ?>
+		<div class="clear"></div>
 	</div>
 </div>
-<?php endwhile; ?>
 
 <?php get_footer(); ?>

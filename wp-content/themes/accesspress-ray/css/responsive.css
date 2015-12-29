@@ -54,6 +54,11 @@
         right: 0;
         left: auto;
     }
+
+    #latest-events{
+        width: 773px;
+        padding: 0;
+    }
 }
 
 /******************************************************************************************/
@@ -112,7 +117,7 @@
         top:-1px;
     }
     .header-wrap .main-navigation{
-        float: none;
+        float: none !important;
     }
     .header-wrap .search-icon{
         display: none;
@@ -151,6 +156,19 @@
     #primary{
         margin-bottom: 15px;
     }
+
+    .slider-caption .caption-title{
+        font-size:24px; 
+    }
+    .slider-caption .caption-description{
+        font-size: 18px;
+    }
+
+    .rtl .menu-toggle{
+        left: 5px;
+        right: auto;
+        text-indent: 999px;
+    }
 }
 
 
@@ -178,7 +196,7 @@
     }
     #site-navigation .menu > ul > li {
         display: block;
-        float: none;
+        float: none !important; 
         border-bottom:1px solid #DDD;
     }
 
@@ -199,6 +217,10 @@
         border:none;
         position: static;
         box-shadow:none;
+    }
+    #latest-events{
+        width: 100%;
+        padding:0 10px;
     }
 }
 
@@ -268,10 +290,37 @@
     .cat-testimonial-list img{
         width: 100%;
     }
+    .event-excerpt{
+        display: none;
+    }
+    .events-section .event-list .event-title a{
+        font-size: 20px;
+    }
+    .events-section .event-list .event-date{
+        width: 30px;
+        height: 60px;
+    }
+    .events-section .event-list .event-date-day{
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .events-section .event-list .event-date-month{
+        font-size: 11px;
+    }
+    .read-more-btn{
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width:420px){
+ #latest-events{
+        width: auto;
+    }
 }
 
 @media screen and (min-width:993px){
     #site-navigation .menu{
-        display: block !important;
+        display: inline-block !important;
     }
 }

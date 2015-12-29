@@ -1,9 +1,9 @@
 jQuery(function($){
   $('.event-slider').bxSlider({
-    minSlides: 1,
+    minSlides: 2,
     maxSlides: 3,
     slideWidth: 377,
-    slideMargin: 19
+    slideMargin: 19,
   });
 
   $('.testimonial-slider').bxSlider({
@@ -12,8 +12,6 @@ jQuery(function($){
    controls:'true',
    speed:1000
   });
-
-  
 
   $(window).resize(function(){
     $('.slider-caption').each(function(){

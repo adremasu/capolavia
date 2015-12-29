@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap 3 Shortcodes
 Plugin URI: http://wp-snippets.com/freebies/bootstrap-shortcodes or https://github.com/filipstefansson/bootstrap-shortcodes
 Description: The plugin adds a shortcodes for all Bootstrap elements.
-Version: 3.3.5
+Version: 3.3.6
 Author: Filip Stefansson, Simon Yeldon, and Michael W. Delaney
 Author URI: 
 License: GPL2
@@ -1180,9 +1180,14 @@ class BoostrapShortcodes {
       }
       $i = 0;
       foreach( $atts_map as $tab ) {
+        
+        $class  ='';
+        $class .= ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? 'active' : '';
+        $class .= ( !empty($tab["tab"]["xclass"]) ) ? ' ' . $tab["tab"]["xclass"] : '';
+        
         $tabs[] = sprintf(
           '<li%s><a href="#%s" data-toggle="tab">%s</a></li>',
-          ( !empty($tab["tab"]["active"]) || ($GLOBALS['tabs_default_active'] && $i == 0) ) ? ' class="active"' : '',
+          ( !empty($class) ) ? ' class="' . $class . '"' : '',
           'custom-tab-' . $GLOBALS['tabs_count'] . '-' . md5($tab["tab"]["title"]),
           $tab["tab"]["title"]
         );
@@ -1224,9 +1229,11 @@ class BoostrapShortcodes {
     $GLOBALS['tabs_default_count']++;
 
     $class  = 'tab-pane';
-    $class .= ( $atts['fade']   == 'true' )            ? ' fade' : '';
-    $class .= ( $atts['active'] == 'true' )          ? ' active' : '';
+    $class .= ( $atts['fade']   == 'true' )                            ? ' fade' : '';
+    $class .= ( $atts['active'] == 'true' )                            ? ' active' : '';
     $class .= ( $atts['active'] == 'true' && $atts['fade'] == 'true' ) ? ' in' : '';
+    $class .= ( $atts['xclass'] )                                      ? ' ' . $atts['xclass'] : '';
+
 
     $id = 'custom-tab-'. $GLOBALS['tabs_count'] . '-'. md5( $atts['title'] );
  
@@ -1505,7 +1512,7 @@ function bs_popover( $atts, $content = null ) {
     $class = 'bs-popover';
         
     $atts['data']   .= $this->check_for_data($atts['data']) . 'toggle,popover';
-    $atts['data']   .= $this->check_for_data($atts['data']) . 'content,' . $atts['text'];
+    $atts['data']   .= $this->check_for_data($atts['data']) . 'content,' . str_replace(',', '&#44;', $atts['text']);
     $atts['data']   .= ( $atts['animation'] ) ? $this->check_for_data($atts['data']) . 'animation,' . $atts['animation'] : '';
     $atts['data']   .= ( $atts['placement'] ) ? $this->check_for_data($atts['data']) . 'placement,' . $atts['placement'] : '';
     $atts['data']   .= ( $atts['html'] )      ? $this->check_for_data($atts['data']) . 'html,'      . $atts['html']      : '';
@@ -1514,7 +1521,7 @@ function bs_popover( $atts, $content = null ) {
     $tag = 'span';
     $content = do_shortcode($content);
     $return .= $this->get_dom_element($tag, $content, $class, $atts['title'], $atts['data']);
-    return $return;
+    return html_entity_decode($return);
     
   }
 
@@ -1851,6 +1858,8 @@ function bs_popover( $atts, $content = null ) {
     $div_class  = 'modal fade';
     $div_class .= ( $atts['size'] ) ? ' bs-modal-' . $atts['size'] : '';
       
+    $div_size = ( $atts['size'] ) ? ' modal-' . $atts['size'] : '';
+      
     $id = 'custom-modal-' . md5( $atts['title'] );
       
     $data_props = $this->parse_data_attributes( $atts['data'] );
@@ -1858,14 +1867,14 @@ function bs_popover( $atts, $content = null ) {
     return sprintf( 
       '<a data-toggle="modal" href="#%1$s" class="%2$s"%3$s>%4$s</a>
         <div class="%5$s" id="%1$s" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog %6$s">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        %6$s
+                        %7$s
                     </div>
                     <div class="modal-body">
-                        %7$s
+                        %8$s
                     </div>
                 </div> <!-- /.modal-content -->
             </div> <!-- /.modal-dialog -->
@@ -1876,6 +1885,7 @@ function bs_popover( $atts, $content = null ) {
       ( $data_props ) ? ' ' . $data_props : '',
       esc_html( $atts['text'] ),
       esc_attr( $div_class ),
+      esc_attr( $div_size ),
       ( $atts['title'] ) ? '<h4 class="modal-title">' . $atts['title'] . '</h4>' : '',
       do_shortcode( $content )
     );
@@ -1944,25 +1954,25 @@ function bs_popover( $atts, $content = null ) {
       $previous_value = libxml_use_internal_errors(TRUE);
       
       $dom = new DOMDocument;
-      $dom->loadXML($content);
+      $dom->loadXML(utf8_encode($content));
         
       libxml_clear_errors();
       libxml_use_internal_errors($previous_value);
       
       if(!$dom->documentElement) {
-          $element = $dom->createElement($tag, $content);
+          $element = $dom->createElement($tag, utf8_encode($content));
           $dom->appendChild($element);
       }
       
-      $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( $class ));
+      $dom->documentElement->setAttribute('class', $dom->documentElement->getAttribute('class') . ' ' . esc_attr( utf8_encode($class) ));
       if( $title ) {
-          $dom->documentElement->setAttribute('title', $title );
+          $dom->documentElement->setAttribute('title', utf8_encode($title) );
       }
       if( $data ) {
           $data = explode( '|', $data );
           foreach( $data as $d ):
           $d = explode(',',$d);
-          $dom->documentElement->setAttribute('data-'.$d[0],trim($d[1]));
+          $dom->documentElement->setAttribute('data-'.utf8_encode($d[0]),trim(utf8_encode($d[1])));
           endforeach;
       }
       return $dom->saveXML($dom->documentElement);
@@ -2020,7 +2030,7 @@ function bs_popover( $atts, $content = null ) {
       $previous_value = libxml_use_internal_errors(TRUE);
       
       $dom = new DOMDocument;
-      $dom->loadXML($content);
+      $dom->loadXML(utf8_encode($content));
       
       libxml_clear_errors();
       libxml_use_internal_errors($previous_value);

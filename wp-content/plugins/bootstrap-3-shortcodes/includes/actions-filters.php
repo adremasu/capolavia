@@ -10,10 +10,7 @@ function bootstrap_shortcodes_styles_all() {
 
 add_action( 'admin_enqueue_scripts', 'bootstrap_shortcodes_styles_all' );
 
-
 function bootstrap_shortcodes_help_styles() {
-    $screen = get_current_screen(); 
-    if($screen != null && $screen->parent_base != "gf_edit_forms") {
         wp_register_style( 'bs-font', plugins_url( 'bootstrap-3-shortcodes/includes/help/bs-font.css' ) );
         wp_register_style( 'bootstrap-shortcodes-help', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-shortcodes-help.css' ) );
         wp_register_style( 'bootstrap-modal', plugins_url( 'bootstrap-3-shortcodes/includes/help/css/bootstrap-modal.css' ) );
@@ -22,17 +19,19 @@ function bootstrap_shortcodes_help_styles() {
         wp_enqueue_style( 'bootstrap-modal' );
         wp_enqueue_style( 'bs-font' );
         wp_enqueue_script( 'bootstrap' );
-    }
-
+    
+        //Visual Composer causes problems
+        $handle = 'vc_bootstrap_js';
+        $list = 'enqueued';
+         if (wp_script_is( $handle, $list )) {
+             wp_dequeue_script( $handle );
+         }
 }
-add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
 
 add_filter('the_content', 'bs_fix_shortcodes');
 
 //action to add a custom button to the content editor
 function add_bootstrap_button() {
-    $screen = get_current_screen(); 
-    if($screen != null && $screen->parent_base != "gf_edit_forms") {
         //the id of the container I want to show in the popup
         $popup_id = 'bootstrap-shortcodes-help';
 
@@ -48,15 +47,16 @@ function add_bootstrap_button() {
         esc_attr( 'button add_media bootstrap-shortcodes-button')
         //sprintf( '<img src="%s" style="height: 20px; position: relative; top: -2px;">', esc_url( $img ) )
         );
-    }
 }
 
 
 // Create a Media Button for the help file
 //add a button to the content editor, next to the media button
 //this button will show a popup that contains inline content
-add_action('media_buttons', 'add_bootstrap_button', 11);
-
+if(in_array(basename($_SERVER['PHP_SELF']), array('post.php', 'page.php', 'page-new.php', 'post-new.php', 'widgets.php'))) {
+    add_action('media_buttons', 'add_bootstrap_button', 11);
+    add_action( 'media_buttons', 'bootstrap_shortcodes_help_styles' );
+}
 function boostrap_shortcodes_help() {
     include('bootstrap-shortcodes-help.php');
 }

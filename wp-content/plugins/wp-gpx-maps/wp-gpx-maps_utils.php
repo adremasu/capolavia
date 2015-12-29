@@ -2,6 +2,66 @@
 
 	require_once("wp-gpx-maps_utils_nggallery.php");
 
+	function getAttachedImages($dt, $lat, $lon, $dtoffset, &$error)
+	{
+		$result = array();
+			
+		try {
+			$attachments = get_children( array(
+				 'post_parent'    => get_the_ID(),
+				 'post_type'      => 'attachment',
+				 'numberposts'    => -1, 			// show all -1
+				 'post_status'    => 'inherit',
+				 'post_mime_type' => 'image',
+				 'order'          => 'ASC',
+				 'orderby'        => 'menu_order ASC')
+			);
+
+			foreach ($attachments as $attachment_id => $attachment) {
+
+				$img_src  		= wp_get_attachment_image_src($attachment_id,'full');
+				$img_thmb  		= wp_get_attachment_image_src($attachment_id,'thumbnail');
+         		$img_metadata	= wp_get_attachment_metadata( $attachment_id);
+
+				$item = array();
+				$item["data"] = wp_get_attachment_link( $attachment_id, array(105,105) );
+
+				if (is_callable('exif_read_data')) {
+					$exif = @exif_read_data($img_src[0]);	
+					if ($exif !== false)
+					{
+						$item["lon"] = getExifGps($exif["GPSLongitude"], $exif['GPSLongitudeRef']);
+						$item["lat"] = getExifGps($exif["GPSLatitude"], $exif['GPSLatitudeRef']);
+						if (($item["lat"] != 0) || ($item["lon"] != 0)) 
+						{
+							$result[] = $item;
+						}
+						else if (isset($p->imagedate))
+						{
+							$_dt = strtotime($p->imagedate) + $dtoffset;
+							$_item = findItemCoordinate($_dt, $dt, $lat, $lon);
+							if ($_item != null)
+							{
+								$item["lat"] = $_item["lat"];
+								$item["lon"] = $_item["lon"];
+								$result[] = $item;
+							}
+						}
+					}
+				}
+				else
+				{
+					$error .= "Sorry, <a href='http://php.net/manual/en/function.exif-read-data.php' target='_blank' >exif_read_data</a> function not found! check your hosting..<br />";
+				}
+			}
+			
+		} catch (Exception $e) {
+			$error .= 'Error When Retrieving attached images: $e <br />';
+		}
+
+		return $result;
+	}
+
 	function sitePath()
 	{
 		return substr(substr(__FILE__, 0, strrpos(__FILE__,'wp-content')), 0, -1);
@@ -524,21 +584,41 @@
 			$gpx->registerXPathNamespace('10', 'http://www.topografix.com/GPX/1/0'); 
 			$gpx->registerXPathNamespace('11', 'http://www.topografix.com/GPX/1/1'); 
 			$nodes = $gpx->xpath('//wpt | //10:wpt | //11:wpt');
+			global $wpdb;
 			
 			if ( count($nodes) > 0 )	
 			{
 				// normal case
 				foreach($nodes as $wpt)
 				{
-					$lat = $wpt['lat'];
-					$lon = $wpt['lon'];
-					$ele = $wpt->ele;
-					$time = $wpt->time;
-					$name = $wpt->name;
-					$desc = $wpt->desc;
-					$sym = $wpt->sym;
-					$type = $wpt->type;
-					array_push($points, array((float)$lat,(float)$lon,(float)$ele,$time,$name,$desc,$sym,$type));
+					$lat  = $wpt['lat'];
+					$lon  = $wpt['lon'];
+					$ele  = (string) $wpt->ele;
+					$time = (string) $wpt->time;
+					$name = (string) $wpt->name;
+					$desc = (string) $wpt->desc;
+					$sym  = (string) $wpt->sym;
+					$type = (string) $wpt->type;
+					$img  = '';
+					
+					$img_name = 'map-marker-' . $sym;
+					$query = "SELECT ID FROM {$wpdb->prefix}posts WHERE post_name LIKE '{$img_name}' AND post_type LIKE 'attachment'";
+					$img_id = $wpdb->get_var($query);
+					if (!is_null($img_id)) {
+						$img = wp_get_attachment_url($img_id);
+					}
+					
+					array_push($points, array(
+						"lat"  => (float)$lat,
+						"lon"  => (float)$lon,
+						"ele"  => (float)$ele,
+						"time" => $time,
+						"name" => $name,
+						"desc" => $desc,
+						"sym"  => $sym,
+						"type" => $type,
+						"img"  => $img
+					));
 				}
 			}
 		}

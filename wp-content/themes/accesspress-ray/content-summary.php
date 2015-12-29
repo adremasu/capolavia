@@ -15,9 +15,9 @@ if(!empty($cat_testimonial) && is_category() && is_category($cat_testimonial)): 
 	<div class="cat-testimonial-image clearfix">
 	<?php 
 		if( has_post_thumbnail() ){
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 		?>
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 		<?php }else {?>	
 		<img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-fallback.png" alt="<?php the_title(); ?>">
 		<?php }?>
@@ -36,12 +36,12 @@ if(!empty($cat_testimonial) && is_category() && is_category($cat_testimonial)): 
 
 <article id="post-<?php the_ID(); ?>" class="cat-portfolio-list">
 <?php 
-$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portfolio-thumbnail', false ); 
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-portfolio-thumbnail', false ); 
 $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large', false ); 
 ?>
 	<a href="<?php the_permalink(); ?>" >
     <div class="cat-portfolio-image">
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
     </div>
 	<div class="portofolio-layout">
 		<div class="portofolio-content-wrap">
@@ -58,7 +58,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h2><?php the_title(); ?></h2>
+		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
@@ -75,7 +75,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 	<div class="entry-content">
 		<?php if(has_post_thumbnail()){?>
 		<div class="entry-thumbnail">
-			<?php  the_post_thumbnail('featured-thumbnail'); ?>
+			<?php  the_post_thumbnail('accesspress-ray-featured-thumbnail'); ?>
 		</div>
 		<?php } ?>
 		<div class="entry-exrecpt <?php if(!has_post_thumbnail()){ echo "full-width"; }?>">
@@ -85,7 +85,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<a href="<?php the_permalink(); ?>" class="bttn"><?php echo $accesspress_ray_settings['read_more_text'];?></a>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress_ray' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-ray' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -97,26 +97,26 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'accesspress_ray' ) );
+				$categories_list = get_the_category_list( __( ', ', 'accesspress-ray' ) );
 				if ( $categories_list && accesspress_ray_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'accesspress_ray' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'accesspress-ray' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'accesspress_ray' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'accesspress-ray' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'accesspress_ray' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'accesspress-ray' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php //edit_post_link( __( 'Edit', 'accesspress_ray' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php //edit_post_link( __( 'Edit', 'accesspress-ray' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 <?php endif; ?>

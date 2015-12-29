@@ -48,7 +48,8 @@ class PLL_Switcher {
 		foreach ($links->model->get_languages_list(array('hide_empty' => $args['hide_if_empty'])) as $language) {
 			$id = (int) $language->term_id;
 			$slug = $language->slug;
-			$classes = array('lang-item', 'lang-item-' . esc_attr($id), 'lang-item-' . esc_attr($slug));
+			$classes = array('lang-item', 'lang-item-' . $id, 'lang-item-' . esc_attr($slug));
+			$url = null; // avoids potential notice
 
 			if ($current_lang = pll_current_language() == $slug) {
 				if ($args['hide_current'] && !$args['dropdown'])
@@ -57,8 +58,12 @@ class PLL_Switcher {
 					$classes[] = 'current-lang';
 			}
 
-			$url = $args['post_id'] !== null && ($tr_id = $links->model->get_post($args['post_id'], $language)) && $links->current_user_can_read($tr_id) ? get_permalink($tr_id) :
-				($args['post_id'] === null && !$args['force_home'] ? $links->get_translation_url($language) : null);
+			if ( $args['post_id'] !== null && ( $tr_id = $links->model->get_post( $args['post_id'], $language ) ) && $links->current_user_can_read( $tr_id ) ) {
+				$url =  get_permalink( $tr_id );
+			}
+			elseif ( $args['post_id'] === null ) {
+				$url = $links->get_translation_url( $language );
+			}
 
 			if ($no_translation = empty($url))
 				$classes[] = 'no-translation';
@@ -69,7 +74,7 @@ class PLL_Switcher {
 			if (empty($url) && $args['hide_if_no_translation'])
 				continue;
 
-			$url = empty($url) ? $links->get_home_url($language) : $url ; // if the page is not translated, link to the home page
+			$url = empty( $url ) || $args['force_home'] ? $links->get_home_url( $language ) : $url ; // if the page is not translated, link to the home page
 
 			$name = $args['show_names'] || !$args['show_flags'] || $args['raw'] ? ($args['display_names_as'] == 'slug' ? $slug : $language->name) : '';
 			$flag = $args['raw'] && !$args['show_flags'] ? $language->flag_url : ($args['show_flags'] ? $language->flag : '');
@@ -121,11 +126,11 @@ class PLL_Switcher {
 		);
 		$args = wp_parse_args($args, $defaults);
 		$args = apply_filters('pll_the_languages_args', $args);
-		
+
 		// prevents showing empty options in dropdown
 		if ($args['dropdown'])
 			$args['show_names'] = 1;
-		
+
 		$elements = $this->get_elements($links, $args);
 
 		if ($args['raw'])
@@ -157,7 +162,7 @@ class PLL_Switcher {
 					}
 					//]]>
 				</script>',
-				'urls_' . preg_replace('#[^a-zA-Z0-9]#', '', $args['dropdown']), wp_json_encode($urls), esc_js($args['name'])
+				'urls_' . preg_replace('#[^a-zA-Z0-9]#', '', $args['dropdown']), json_encode($urls), esc_js($args['name'])
 			);
 		}
 
