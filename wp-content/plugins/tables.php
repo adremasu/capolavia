@@ -40,11 +40,30 @@ class Products_List extends WP_List_Table {
      */
     public static function get_products( $per_page = 5, $page_number = 1 ) {
         $type = 'products';
+        $_order_by = $_GET['orderby'];
+        switch($_order_by){
+            case 'title':
+            case 'author':
+            case 'name':
+            case 'type':
+            case 'post_title':
+                $order_by = $_order_by;
+                $meta_key = '';
+                break;
+            default:
+                $order_by = 'meta_value_num';
+                $meta_key  = $_order_by;
+        }
+        $order = $_GET['order'];
+
         $args=array(
             'post_type' => $type,
             'post_status' => 'publish',
             'posts_per_page' => -1,
-            'caller_get_posts'=> 1
+            'caller_get_posts'=> 1,
+            'orderby' => $order_by,
+            'order' => $order,
+            'meta_key' => $meta_key
         );
         $my_query = null;
         $my_query = new WP_Query($args);
@@ -195,7 +214,7 @@ class Products_List extends WP_List_Table {
     public function get_sortable_columns() {
         $sortable_columns = array(
             'post_title' => array( 'post_title', true ),
-            'availability' => array( 'availability', true )
+            'availability' => array( 'disponibilita', true )
         );
 
         return $sortable_columns;
@@ -246,6 +265,8 @@ class Products_List extends WP_List_Table {
             array(
                 'post_type' => 'products',
                 'nopaging'=> true,
+                'orderby' => 'title',
+                'order' => 'ASC',
                 'meta_query' => array(
                     array(
                         'key' => 'disponibilita',

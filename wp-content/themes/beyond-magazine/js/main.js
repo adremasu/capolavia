@@ -4422,7 +4422,6 @@ jQuery(document).ready(function($){
   productsApp.archiveCtrl = function($scope) {
     $scope.currentPage = 0;
     $scope.pageSize = 2;
-    console.log('ciao');
     $scope.numberOfPages = function() {
       return Math.ceil($scope.products.length / $scope.pageSize);
     };
@@ -4444,6 +4443,17 @@ jQuery(document).ready(function($){
     $('.main-menu').slicknav({
       label: init_vars.label
     });
+  });
+
+}).call(this);
+
+(function() {
+  var subscribeApp;
+
+  subscribeApp = angular.module('subscribeApp', []);
+
+  subscribeApp.controller("configCtrl", function($scope) {
+    return console.log('ciao');
   });
 
 }).call(this);

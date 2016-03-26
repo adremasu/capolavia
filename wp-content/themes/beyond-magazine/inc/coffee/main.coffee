@@ -5,7 +5,6 @@ productsApp = angular.module('productsApp', [])
 productsApp.archiveCtrl = ($scope) ->
   $scope.currentPage = 0
   $scope.pageSize = 2
-  console.log 'ciao'
   $scope.numberOfPages = ->
     Math.ceil $scope.products.length / $scope.pageSize
   return

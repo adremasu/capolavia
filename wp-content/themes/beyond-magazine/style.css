@@ -10229,6 +10229,20 @@ h3.product-name {
   color: #CC5500;
 }
 
+.square {
+  padding-bottom: 33.33333%;
+  float: left;
+  position: relative;
+}
+.square > div {
+  position: absolute;
+  background: gold;
+}
+
+.booking-product-wrapper {
+  margin-top: 25px;
+}
+
 .djb_baileyregular {
   font-family: "djb_baileyregular";
 }

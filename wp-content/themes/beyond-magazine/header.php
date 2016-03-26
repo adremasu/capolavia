@@ -39,7 +39,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> data-ng-app="productsApp">
+<?php $products_archive=get_post_type_archive_link( 'products' );?>
+<?php
+$Path = $_SERVER['REQUEST_URI'];
+$URI = 'http://'.$_SERVER[HTTP_HOST].$Path;
+?>
+<body <?php body_class(); ?> <?php if ($products_archive == $URI){?>data-ng-app="productsApp" <?php } ?>>
  <div class="kt-wrapper">
      <?php if ( is_active_sidebar( 'header-sidebar' ) ) : ?>
          <?php dynamic_sidebar( 'header-sidebar' ); ?>

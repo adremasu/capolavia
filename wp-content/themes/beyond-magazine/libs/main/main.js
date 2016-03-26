@@ -6,7 +6,6 @@
   productsApp.archiveCtrl = function($scope) {
     $scope.currentPage = 0;
     $scope.pageSize = 2;
-    console.log('ciao');
     $scope.numberOfPages = function() {
       return Math.ceil($scope.products.length / $scope.pageSize);
     };
