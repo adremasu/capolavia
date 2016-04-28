@@ -2,27 +2,581 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e61095c0-a34b-480d-aa52-b3161ceeb09d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_forms.sass" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/booking.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/calendar-php-quickstart.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/class-holidays.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/quickstart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription-ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/.sass-cache/b13df2d9e9a2ba57de1ec3e1d770d83a4c27b094/style.sassc" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/.sass-cache/b13df2d9e9a2ba57de1ec3e1d770d83a4c27b094/style.sassc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/Gruntfile.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_booking.sass" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_booking.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_subscribe.sass" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_subscribe.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/capolavia.blog.iml" afterPath="$PROJECT_DIR$/.idea/capolavia.blog.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/js/main.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/style.sass" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/style.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/subscribe-page.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/subscribe-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/subscribe.coffee" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/subscribe.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/images/w-logo-blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/about-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/about.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/admin-menu-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/admin-menu.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-partial.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-selective-refresh.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/class-wp-metadata-lazyloader.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/class-wp-site.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/common-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/common.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/customize-selective-refresh.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/customize-selective-refresh.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/dashboard-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/dashboard.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/edit-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/edit.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/embed-404.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/embed-content.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/embed.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/farbtastic-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/farbtastic.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/footer-embed.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/forms-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/forms.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/header-embed.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/l10n-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/l10n.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/list-tables-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/list-tables.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/media-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/media.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/press-this-editor-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/press-this-editor.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_libsodium_legacy.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/revisions-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/revisions.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/site-icon-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/site-icon.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/term.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/themes-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/themes.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/widgets-rtl.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-admin/css/widgets.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-mediaelement.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-mediaelement.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-playlist.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/fonts/dashicons.ttf" afterPath="$PROJECT_DIR$/wp-includes/fonts/dashicons.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/fonts/dashicons.woff" afterPath="$PROJECT_DIR$/wp-includes/fonts/dashicons.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.woff" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/images/w-logo-white.png" afterPath="$PROJECT_DIR$/wp-admin/images/w-logo-white.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/wp-tinymce.js.gz" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/wp-tinymce.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/_admin.scss" afterPath="$PROJECT_DIR$/wp-admin/css/colors/_admin.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/about-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/about-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/about.css" afterPath="$PROJECT_DIR$/wp-admin/css/about.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/about.php" afterPath="$PROJECT_DIR$/wp-admin/about.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/admin-ajax.php" afterPath="$PROJECT_DIR$/wp-admin/admin-ajax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/admin-bar-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/admin-bar-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/admin-bar-rtl.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/admin-bar-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/admin-bar.css" afterPath="$PROJECT_DIR$/wp-includes/css/admin-bar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/admin-bar.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/admin-bar.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/admin-bar.php" afterPath="$PROJECT_DIR$/wp-includes/admin-bar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/admin-menu-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/admin-menu-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/admin-menu.css" afterPath="$PROJECT_DIR$/wp-admin/css/admin-menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/admin-post.php" afterPath="$PROJECT_DIR$/wp-admin/admin-post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/admin.php" afterPath="$PROJECT_DIR$/wp-admin/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/ajax-actions.php" afterPath="$PROJECT_DIR$/wp-admin/includes/ajax-actions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/author-template.php" afterPath="$PROJECT_DIR$/wp-includes/author-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/autosave.js" afterPath="$PROJECT_DIR$/wp-includes/js/autosave.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/autosave.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/autosave.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/backbone.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/backbone.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/bookmark.php" afterPath="$PROJECT_DIR$/wp-includes/bookmark.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/buttons-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/buttons-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/buttons.css" afterPath="$PROJECT_DIR$/wp-includes/css/buttons.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/byte_safe_strings.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/byte_safe_strings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/certificates/ca-bundle.crt" afterPath="$PROJECT_DIR$/wp-includes/certificates/ca-bundle.crt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/cache.php" afterPath="$PROJECT_DIR$/wp-includes/cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/canonical.php" afterPath="$PROJECT_DIR$/wp-includes/canonical.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/capabilities.php" afterPath="$PROJECT_DIR$/wp-includes/capabilities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/cast_to_int.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/cast_to_int.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/category-template.php" afterPath="$PROJECT_DIR$/wp-includes/category-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/category.php" afterPath="$PROJECT_DIR$/wp-includes/category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-IXR.php" afterPath="$PROJECT_DIR$/wp-includes/class-IXR.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-feed.php" afterPath="$PROJECT_DIR$/wp-includes/class-feed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-ftp.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-ftp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-http.php" afterPath="$PROJECT_DIR$/wp-includes/class-http.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-json.php" afterPath="$PROJECT_DIR$/wp-includes/class-json.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-oembed.php" afterPath="$PROJECT_DIR$/wp-includes/class-oembed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-phpmailer.php" afterPath="$PROJECT_DIR$/wp-includes/class-phpmailer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-smtp.php" afterPath="$PROJECT_DIR$/wp-includes/class-smtp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-snoopy.php" afterPath="$PROJECT_DIR$/wp-includes/class-snoopy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-walker-category-dropdown.php" afterPath="$PROJECT_DIR$/wp-includes/class-walker-category-dropdown.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-walker-category.php" afterPath="$PROJECT_DIR$/wp-includes/class-walker-category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-walker-comment.php" afterPath="$PROJECT_DIR$/wp-includes/class-walker-comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-walker-nav-menu-edit.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-walker-nav-menu-edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-walker-page-dropdown.php" afterPath="$PROJECT_DIR$/wp-includes/class-walker-page-dropdown.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-walker-page.php" afterPath="$PROJECT_DIR$/wp-includes/class-walker-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-admin-bar.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-admin-bar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-ajax-response.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-ajax-response.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-comment-query.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-comment-query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-comment.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-comments-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-comments-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-control.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-filter-setting.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-filter-setting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-header-image-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-header-image-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-image-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-image-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-manager.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-manager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-media-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-media-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menu-item-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menu-item-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menu-item-setting.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menu-item-setting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menu-setting.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menu-setting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menus-panel.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-nav-menus-panel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-nav-menus.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-nav-menus.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-panel.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-panel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-setting.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-setting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-site-icon-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-site-icon-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-themes-section.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-themes-section.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-widgets.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-widgets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-editor.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-editor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-embed.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-embed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-base.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-ftpext.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-ftpext.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-ftpsockets.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-ftpsockets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-ssh2.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-filesystem-ssh2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-http-curl.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-http-curl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-http-proxy.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-http-proxy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-http-streams.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-http-streams.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-image-editor-imagick.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-image-editor-imagick.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-image-editor.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-image-editor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-links-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-links-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-media-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-media-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-meta-query.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-meta-query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-sites-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-sites-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-themes-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-themes-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-users-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-users-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-nav-menu-widget.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-nav-menu-widget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-network.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-network.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-plugin-install-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-plugin-install-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-plugins-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-plugins-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-posts-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-posts-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-press-this.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-press-this.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/rest-api/class-wp-rest-request.php" afterPath="$PROJECT_DIR$/wp-includes/rest-api/class-wp-rest-request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/rest-api/class-wp-rest-response.php" afterPath="$PROJECT_DIR$/wp-includes/rest-api/class-wp-rest-response.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/rest-api/class-wp-rest-server.php" afterPath="$PROJECT_DIR$/wp-includes/rest-api/class-wp-rest-server.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-rewrite.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-rewrite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-role.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-roles.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-roles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-screen.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-screen.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-tax-query.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-tax-query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-term.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-term.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-terms-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-terms-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-theme-install-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-theme-install-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-theme.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-theme.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-upgrader-skins.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-upgrader-skins.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-upgrader.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-upgrader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-user-query.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-user-query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-user.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-walker.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-walker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-archives.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-archives.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-calendar.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-calendar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-categories.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-categories.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-widget-factory.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-widget-factory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-links.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-links.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-meta.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-meta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-pages.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-pages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-recent-comments.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-recent-comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-recent-posts.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-recent-posts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-rss.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-rss.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-search.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-tag-cloud.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-tag-cloud.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-text.php" afterPath="$PROJECT_DIR$/wp-includes/widgets/class-wp-widget-text.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-widget.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-widget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-xmlrpc-server.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-xmlrpc-server.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class.wp-dependencies.php" afterPath="$PROJECT_DIR$/wp-includes/class.wp-dependencies.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class.wp-scripts.php" afterPath="$PROJECT_DIR$/wp-includes/class.wp-scripts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class.wp-styles.php" afterPath="$PROJECT_DIR$/wp-includes/class.wp-styles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/color-picker-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/color-picker-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/color-picker-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/color-picker-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/color-picker.css" afterPath="$PROJECT_DIR$/wp-admin/css/color-picker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/color-picker.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/color-picker.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/light/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/light/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/light/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/light/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/light/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/light/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/blue/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/coffee/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ectoplasm/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/light/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/light/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/midnight/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/ocean/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/colors/sunrise/colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/comment-template.php" afterPath="$PROJECT_DIR$/wp-includes/comment-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/comment.php" afterPath="$PROJECT_DIR$/wp-admin/comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/comment.php" afterPath="$PROJECT_DIR$/wp-includes/comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/theme-compat/comments.php" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/common-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/common-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/common.css" afterPath="$PROJECT_DIR$/wp-admin/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/common.js" afterPath="$PROJECT_DIR$/wp-admin/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/common.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/common.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/compat.php" afterPath="$PROJECT_DIR$/wp-includes/compat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/content.inline.min.css" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/content.inline.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/content.min.css" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/content.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/credits.php" afterPath="$PROJECT_DIR$/wp-admin/credits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/credits.php" afterPath="$PROJECT_DIR$/wp-admin/includes/credits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/cron.php" afterPath="$PROJECT_DIR$/wp-includes/cron.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/custom-header.php" afterPath="$PROJECT_DIR$/wp-admin/custom-header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-base.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-base.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-base.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-base.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-controls-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-controls-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-controls-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-controls-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-controls.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-controls.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/customize-controls.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-controls.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-controls.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-controls.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/customize-controls.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-controls.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-nav-menus.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-preview-nav-menus.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-preview-nav-menus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-preview-nav-menus.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-preview-nav-menus.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-preview-widgets.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-preview-widgets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-preview-widgets.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-preview-widgets.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/customize-preview.css" afterPath="$PROJECT_DIR$/wp-includes/css/customize-preview.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-preview.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-preview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/customize-preview.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/customize-preview.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-preview.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-preview.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-views.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-views.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/customize-views.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/customize-views.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-widgets-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-widgets-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-widgets-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-widgets-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-widgets.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/customize-widgets.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-widgets.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/customize-widgets.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/customize-widgets.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/customize-widgets.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-widgets.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/customize.php" afterPath="$PROJECT_DIR$/wp-admin/customize.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/dashboard-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/dashboard-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/dashboard.css" afterPath="$PROJECT_DIR$/wp-admin/css/dashboard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/dashboard.php" afterPath="$PROJECT_DIR$/wp-admin/includes/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/dashicons.css" afterPath="$PROJECT_DIR$/wp-includes/css/dashicons.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/fonts/dashicons.eot" afterPath="$PROJECT_DIR$/wp-includes/fonts/dashicons.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/dashicons.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/dashicons.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/fonts/dashicons.svg" afterPath="$PROJECT_DIR$/wp-includes/fonts/dashicons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/date.php" afterPath="$PROJECT_DIR$/wp-includes/date.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/default-filters.php" afterPath="$PROJECT_DIR$/wp-includes/default-filters.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/deprecated-media-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/deprecated-media-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/deprecated-media-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/deprecated-media-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/deprecated-media.css" afterPath="$PROJECT_DIR$/wp-admin/css/deprecated-media.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/deprecated-media.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/deprecated-media.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/deprecated.php" afterPath="$PROJECT_DIR$/wp-admin/includes/deprecated.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/deprecated.php" afterPath="$PROJECT_DIR$/wp-includes/deprecated.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/edit-comments.js" afterPath="$PROJECT_DIR$/wp-admin/js/edit-comments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/edit-comments.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/edit-comments.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/edit-comments.php" afterPath="$PROJECT_DIR$/wp-admin/edit-comments.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/edit-form-advanced.php" afterPath="$PROJECT_DIR$/wp-admin/edit-form-advanced.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/edit-form-comment.php" afterPath="$PROJECT_DIR$/wp-admin/edit-form-comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/edit-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/edit-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/edit-tag-form.php" afterPath="$PROJECT_DIR$/wp-admin/edit-tag-form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/edit-tags.php" afterPath="$PROJECT_DIR$/wp-admin/edit-tags.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/edit.css" afterPath="$PROJECT_DIR$/wp-admin/css/edit.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/edit.php" afterPath="$PROJECT_DIR$/wp-admin/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/editor-expand.js" afterPath="$PROJECT_DIR$/wp-admin/js/editor-expand.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/editor-expand.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/editor-expand.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/editor-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/editor-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/editor-rtl.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/editor-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/editor.css" afterPath="$PROJECT_DIR$/wp-includes/css/editor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/editor.js" afterPath="$PROJECT_DIR$/wp-admin/js/editor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/editor.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/editor.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/editor.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/editor.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/embed-template.php" afterPath="$PROJECT_DIR$/wp-includes/embed-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/embed.php" afterPath="$PROJECT_DIR$/wp-includes/embed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/export.php" afterPath="$PROJECT_DIR$/wp-admin/export.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/feed.php" afterPath="$PROJECT_DIR$/wp-includes/feed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/file.php" afterPath="$PROJECT_DIR$/wp-admin/includes/file.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/theme-compat/footer.php" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/formatting.php" afterPath="$PROJECT_DIR$/wp-includes/formatting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/forms-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/forms-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/forms.css" afterPath="$PROJECT_DIR$/wp-admin/css/forms.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/freedoms.php" afterPath="$PROJECT_DIR$/wp-admin/freedoms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/functions.php" afterPath="$PROJECT_DIR$/wp-includes/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/functions.wp-scripts.php" afterPath="$PROJECT_DIR$/wp-includes/functions.wp-scripts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/functions.wp-styles.php" afterPath="$PROJECT_DIR$/wp-includes/functions.wp-styles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/general-template.php" afterPath="$PROJECT_DIR$/wp-includes/general-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/heartbeat.js" afterPath="$PROJECT_DIR$/wp-includes/js/heartbeat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/http.php" afterPath="$PROJECT_DIR$/wp-includes/http.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/ie-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/ie-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/ie-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/ie-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/ie.css" afterPath="$PROJECT_DIR$/wp-admin/css/ie.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/ie.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/ie.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/image-edit.js" afterPath="$PROJECT_DIR$/wp-admin/js/image-edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/image-edit.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/image-edit.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/image-edit.php" afterPath="$PROJECT_DIR$/wp-admin/includes/image-edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/image.php" afterPath="$PROJECT_DIR$/wp-admin/includes/image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/import.php" afterPath="$PROJECT_DIR$/wp-admin/import.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/index.php" afterPath="$PROJECT_DIR$/wp-admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/inline-edit-post.js" afterPath="$PROJECT_DIR$/wp-admin/js/inline-edit-post.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/inline-edit-post.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/inline-edit-post.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/inline-edit-tax.js" afterPath="$PROJECT_DIR$/wp-admin/js/inline-edit-tax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/inline-edit-tax.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/inline-edit-tax.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/install-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/install-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/install-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/install-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/install.css" afterPath="$PROJECT_DIR$/wp-admin/css/install.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/install.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/install.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/install.php" afterPath="$PROJECT_DIR$/wp-admin/install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog-rtl.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog.css" afterPath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/jquery-ui-dialog.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/jquery.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/kses.php" afterPath="$PROJECT_DIR$/wp-includes/kses.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/l10n.php" afterPath="$PROJECT_DIR$/wp-includes/l10n.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/license.txt" afterPath="$PROJECT_DIR$/license.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/link-manager.php" afterPath="$PROJECT_DIR$/wp-admin/link-manager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/link-template.php" afterPath="$PROJECT_DIR$/wp-includes/link-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/list-tables-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/list-tables-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/list-tables.css" afterPath="$PROJECT_DIR$/wp-admin/css/list-tables.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/load-scripts.php" afterPath="$PROJECT_DIR$/wp-admin/load-scripts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/load-styles.php" afterPath="$PROJECT_DIR$/wp-admin/load-styles.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/load.php" afterPath="$PROJECT_DIR$/wp-includes/load.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/locale.php" afterPath="$PROJECT_DIR$/wp-includes/locale.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/login-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/login-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/login-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/login-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/login.css" afterPath="$PROJECT_DIR$/wp-admin/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/login.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/login.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-audiovideo.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-audiovideo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-audiovideo.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-audiovideo.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-grid.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-grid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-grid.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-grid.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/media-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/media-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/media-upload.js" afterPath="$PROJECT_DIR$/wp-admin/js/media-upload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/media-upload.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/media-upload.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/media-views-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/media-views-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/media-views-rtl.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/media-views-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/media-views.css" afterPath="$PROJECT_DIR$/wp-includes/css/media-views.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-views.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-views.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/media-views.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/media-views.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-views.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-views.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/media.css" afterPath="$PROJECT_DIR$/wp-admin/css/media.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/media.php" afterPath="$PROJECT_DIR$/wp-admin/media.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/media.php" afterPath="$PROJECT_DIR$/wp-admin/includes/media.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/media.php" afterPath="$PROJECT_DIR$/wp-includes/media.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/menu-header.php" afterPath="$PROJECT_DIR$/wp-admin/menu-header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/menu.php" afterPath="$PROJECT_DIR$/wp-admin/menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/meta-boxes.php" afterPath="$PROJECT_DIR$/wp-admin/includes/meta-boxes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/meta.php" afterPath="$PROJECT_DIR$/wp-includes/meta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/misc.php" afterPath="$PROJECT_DIR$/wp-admin/includes/misc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/ms-admin-filters.php" afterPath="$PROJECT_DIR$/wp-admin/includes/ms-admin-filters.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/ms-blogs.php" afterPath="$PROJECT_DIR$/wp-includes/ms-blogs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/ms-default-constants.php" afterPath="$PROJECT_DIR$/wp-includes/ms-default-constants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/ms-deprecated.php" afterPath="$PROJECT_DIR$/wp-includes/ms-deprecated.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/ms-functions.php" afterPath="$PROJECT_DIR$/wp-includes/ms-functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/ms-settings.php" afterPath="$PROJECT_DIR$/wp-includes/ms-settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/ms.php" afterPath="$PROJECT_DIR$/wp-admin/includes/ms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/my-sites.php" afterPath="$PROJECT_DIR$/wp-admin/my-sites.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/nav-menu-template.php" afterPath="$PROJECT_DIR$/wp-includes/nav-menu-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/nav-menu.js" afterPath="$PROJECT_DIR$/wp-admin/js/nav-menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/nav-menu.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/nav-menu.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/nav-menu.php" afterPath="$PROJECT_DIR$/wp-admin/includes/nav-menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/nav-menu.php" afterPath="$PROJECT_DIR$/wp-includes/nav-menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/nav-menus.css" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/nav-menus.php" afterPath="$PROJECT_DIR$/wp-admin/nav-menus.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/network.php" afterPath="$PROJECT_DIR$/wp-admin/includes/network.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/option.php" afterPath="$PROJECT_DIR$/wp-includes/option.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/options-general.php" afterPath="$PROJECT_DIR$/wp-admin/options-general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/options-permalink.php" afterPath="$PROJECT_DIR$/wp-admin/options-permalink.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/options-writing.php" afterPath="$PROJECT_DIR$/wp-admin/options-writing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/options.php" afterPath="$PROJECT_DIR$/wp-admin/includes/options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/pluggable-deprecated.php" afterPath="$PROJECT_DIR$/wp-includes/pluggable-deprecated.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/pluggable.php" afterPath="$PROJECT_DIR$/wp-includes/pluggable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/plugin-install.js" afterPath="$PROJECT_DIR$/wp-admin/js/plugin-install.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/plugin-install.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/plugin-install.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/plugin-install.php" afterPath="$PROJECT_DIR$/wp-admin/includes/plugin-install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/charmap/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/charmap/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/compat3x/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/compat3x/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/fullscreen/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/fullscreen/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/image/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/image/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/lists/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/lists/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/media/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/media/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/paste/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/paste/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/tabfocus/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/tabfocus/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/textcolor/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/textcolor/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpeditimage/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpeditimage/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpemoji/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpemoji/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wptextpattern/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wptextpattern/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/charmap/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/charmap/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/fullscreen/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/fullscreen/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/image/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/image/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/lists/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/lists/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/media/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/media/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/paste/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/paste/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/tabfocus/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/tabfocus/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/textcolor/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/textcolor/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpeditimage/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpeditimage/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpemoji/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wpemoji/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wptextpattern/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wptextpattern/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/plugin.php" afterPath="$PROJECT_DIR$/wp-admin/includes/plugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/plugin.php" afterPath="$PROJECT_DIR$/wp-includes/plugin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/plugins.php" afterPath="$PROJECT_DIR$/wp-admin/plugins.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/post-template.php" afterPath="$PROJECT_DIR$/wp-includes/post-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/post.js" afterPath="$PROJECT_DIR$/wp-admin/js/post.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/post.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/post.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/post.php" afterPath="$PROJECT_DIR$/wp-admin/includes/post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/post.php" afterPath="$PROJECT_DIR$/wp-includes/post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/postbox.js" afterPath="$PROJECT_DIR$/wp-admin/js/postbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/postbox.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/postbox.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/press-this-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/press-this-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/press-this-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/press-this-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/press-this.css" afterPath="$PROJECT_DIR$/wp-admin/css/press-this.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/press-this.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/press-this.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/query.php" afterPath="$PROJECT_DIR$/wp-includes/query.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_com_dotnet.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_com_dotnet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_dev_urandom.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_dev_urandom.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_libsodium.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_libsodium.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_mcrypt.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_mcrypt.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_openssl.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_bytes_openssl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/random_compat/random_int.php" afterPath="$PROJECT_DIR$/wp-includes/random_compat/random_int.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.html" afterPath="$PROJECT_DIR$/readme.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/rest-api.php" afterPath="$PROJECT_DIR$/wp-includes/rest-api.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/revision.php" afterPath="$PROJECT_DIR$/wp-admin/includes/revision.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/revision.php" afterPath="$PROJECT_DIR$/wp-includes/revision.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/revisions-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/revisions-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/revisions.css" afterPath="$PROJECT_DIR$/wp-admin/css/revisions.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/revisions.js" afterPath="$PROJECT_DIR$/wp-admin/js/revisions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/rewrite.php" afterPath="$PROJECT_DIR$/wp-includes/rewrite.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/schema.php" afterPath="$PROJECT_DIR$/wp-admin/includes/schema.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/screen.php" afterPath="$PROJECT_DIR$/wp-admin/includes/screen.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/script-loader.php" afterPath="$PROJECT_DIR$/wp-includes/script-loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/session.php" afterPath="$PROJECT_DIR$/wp-includes/session.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/settings.php" afterPath="$PROJECT_DIR$/wp-admin/network/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/setup-config.php" afterPath="$PROJECT_DIR$/wp-admin/setup-config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/shortcodes.php" afterPath="$PROJECT_DIR$/wp-includes/shortcodes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/theme-compat/sidebar.php" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/sidebar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/site-icon-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/site-icon-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/site-icon.css" afterPath="$PROJECT_DIR$/wp-admin/css/site-icon.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/site-info.php" afterPath="$PROJECT_DIR$/wp-admin/network/site-info.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/site-new.php" afterPath="$PROJECT_DIR$/wp-admin/network/site-new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/site-settings.php" afterPath="$PROJECT_DIR$/wp-admin/network/site-settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/site-themes.php" afterPath="$PROJECT_DIR$/wp-admin/network/site-themes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/site-users.php" afterPath="$PROJECT_DIR$/wp-admin/network/site-users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/sites.php" afterPath="$PROJECT_DIR$/wp-admin/network/sites.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/skin.ie7.min.css" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/skin.ie7.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/skin.min.css" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/skin.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/suggest.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/suggest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/suggest.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/suggest.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/taxonomy.php" afterPath="$PROJECT_DIR$/wp-admin/includes/taxonomy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/taxonomy.php" afterPath="$PROJECT_DIR$/wp-includes/taxonomy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/template-loader.php" afterPath="$PROJECT_DIR$/wp-includes/template-loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/template.php" afterPath="$PROJECT_DIR$/wp-admin/includes/template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/template.php" afterPath="$PROJECT_DIR$/wp-includes/template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/theme-install.php" afterPath="$PROJECT_DIR$/wp-admin/theme-install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/theme-install.php" afterPath="$PROJECT_DIR$/wp-admin/includes/theme-install.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/theme.js" afterPath="$PROJECT_DIR$/wp-admin/js/theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/themes/modern/theme.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/themes/modern/theme.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/theme.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/theme.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/themes/modern/theme.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/themes/modern/theme.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/theme.php" afterPath="$PROJECT_DIR$/wp-admin/includes/theme.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/theme.php" afterPath="$PROJECT_DIR$/wp-includes/theme.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/themes-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/themes-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/themes.css" afterPath="$PROJECT_DIR$/wp-admin/css/themes.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/themes.php" afterPath="$PROJECT_DIR$/wp-admin/themes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/themes.php" afterPath="$PROJECT_DIR$/wp-admin/network/themes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/thickbox/thickbox.css" afterPath="$PROJECT_DIR$/wp-includes/js/thickbox/thickbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/thickbox/thickbox.js" afterPath="$PROJECT_DIR$/wp-includes/js/thickbox/thickbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/tiny_mce_popup.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/tiny_mce_popup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/tinymce.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/tinymce.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/twemoji.js" afterPath="$PROJECT_DIR$/wp-includes/js/twemoji.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/twemoji.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/twemoji.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/underscore.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/underscore.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/update-core.php" afterPath="$PROJECT_DIR$/wp-admin/update-core.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/update-core.php" afterPath="$PROJECT_DIR$/wp-admin/includes/update-core.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/update.php" afterPath="$PROJECT_DIR$/wp-admin/includes/update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/update.php" afterPath="$PROJECT_DIR$/wp-includes/update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/updates.js" afterPath="$PROJECT_DIR$/wp-admin/js/updates.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/updates.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/updates.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/upgrade.php" afterPath="$PROJECT_DIR$/wp-admin/includes/upgrade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/upgrade.php" afterPath="$PROJECT_DIR$/wp-admin/network/upgrade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/upload.php" afterPath="$PROJECT_DIR$/wp-admin/upload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/user-edit.php" afterPath="$PROJECT_DIR$/wp-admin/user-edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/user-new.php" afterPath="$PROJECT_DIR$/wp-admin/user-new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/user-new.php" afterPath="$PROJECT_DIR$/wp-admin/network/user-new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/user-profile.js" afterPath="$PROJECT_DIR$/wp-admin/js/user-profile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/js/user-profile.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/user-profile.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/user.php" afterPath="$PROJECT_DIR$/wp-admin/includes/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/user.php" afterPath="$PROJECT_DIR$/wp-includes/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/users.php" afterPath="$PROJECT_DIR$/wp-admin/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/network/users.php" afterPath="$PROJECT_DIR$/wp-admin/network/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/vars.php" afterPath="$PROJECT_DIR$/wp-includes/vars.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/version.php" afterPath="$PROJECT_DIR$/wp-includes/version.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/widgets-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/widgets-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/widgets.css" afterPath="$PROJECT_DIR$/wp-admin/css/widgets.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/widgets.php" afterPath="$PROJECT_DIR$/wp-admin/widgets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/widgets.php" afterPath="$PROJECT_DIR$/wp-includes/widgets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/images/wordpress-logo-white.svg" afterPath="$PROJECT_DIR$/wp-admin/images/wordpress-logo-white.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-activate.php" afterPath="$PROJECT_DIR$/wp-activate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/wp-admin-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/wp-admin-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/css/wp-admin.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/wp-admin.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-auth-check-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-auth-check-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-auth-check-rtl.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-auth-check-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-auth-check.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-auth-check.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-auth-check.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-auth-check.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-auth-check.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-auth-check.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-auth-check.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-auth-check.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-backbone.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-backbone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-backbone.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-backbone.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-blog-header.php" afterPath="$PROJECT_DIR$/wp-blog-header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-comments-post.php" afterPath="$PROJECT_DIR$/wp-comments-post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/wordpress/wp-content.css" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/skins/wordpress/wp-content.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/wp-db.php" afterPath="$PROJECT_DIR$/wp-includes/wp-db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-embed-template.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-embed-template.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-embed-template.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-embed-template.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-embed.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-embed.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-embed.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-embed.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-emoji-loader.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-emoji-loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-emoji-loader.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-emoji-loader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-emoji-release.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-emoji-release.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-emoji.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-emoji.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-emoji.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-emoji.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-lists.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-lists.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wp-lists.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-lists.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-login.php" afterPath="$PROJECT_DIR$/wp-login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-mediaelement.css" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-mediaelement.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-mediaelement.js" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-mediaelement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-playlist.js" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/wp-playlist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/plupload/wp-plupload.js" afterPath="$PROJECT_DIR$/wp-includes/js/plupload/wp-plupload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-pointer-rtl.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-pointer-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-pointer-rtl.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-pointer-rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-pointer.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-pointer.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/css/wp-pointer.min.css" afterPath="$PROJECT_DIR$/wp-includes/css/wp-pointer.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-settings.php" afterPath="$PROJECT_DIR$/wp-settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-signup.php" afterPath="$PROJECT_DIR$/wp-signup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wplink.js" afterPath="$PROJECT_DIR$/wp-includes/js/wplink.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/wplink.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wplink.min.js" />
     </list>
     <ignored path="capolavia.blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,16 +638,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/posts-to-posts/vendor/scribu/lib-posts-to-posts/storage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="583" max-vertical-offset="1020">
-              <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="subscribe-page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/subscribe-page.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,7 +663,7 @@
       <file leaf-file-name=".htaccess" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.htaccess">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45362905" vertical-offset="0" max-vertical-offset="496">
+            <state vertical-scroll-proportion="0.41666666" vertical-offset="0" max-vertical-offset="540">
               <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
               <folding />
             </state>
@@ -537,6 +1081,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -573,11 +1149,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/wp-content/themes/beyond-magazine" />
       <recent name="$PROJECT_DIR$/wp-content/themes/beyond-magazine/img" />
       <recent name="$PROJECT_DIR$/wp-content/languages" />
       <recent name="$PROJECT_DIR$/wp-content/plugins" />
-      <recent name="$PROJECT_DIR$/wp-content/themes/beyond-magazine/fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/wp-content/plugins" />
@@ -655,13 +1231,20 @@
       <option name="project" value="LOCAL" />
       <updated>1459015573994</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="last step of subscription">
+      <created>1461839716299</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1461839716299</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1282" height="753" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -679,7 +1262,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23464566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32751092" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -935,13 +1517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-admin/includes/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15649" max-vertical-offset="31185">
-          <caret line="1069" column="9" selection-start-line="1069" selection-start-column="9" selection-end-line="1069" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-open-graph/admin.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1635">
@@ -957,13 +1532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/class-wp-user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.537477" vertical-offset="11258" max-vertical-offset="11805">
-          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/cimy-user-extra-fields/cimy_user_extra_fields.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="9004" max-vertical-offset="9480">
@@ -971,41 +1539,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3605313" vertical-offset="13190" max-vertical-offset="77550">
-          <caret line="896" column="34" selection-start-line="896" selection-start-column="34" selection-end-line="896" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/cimy-user-extra-fields/cimy_uef_profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.2295084" vertical-offset="10701" max-vertical-offset="11250">
           <caret line="522" column="9" selection-start-line="522" selection-start-column="9" selection-end-line="522" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/deprecated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34054" max-vertical-offset="54540">
-          <caret line="2291" column="64" selection-start-line="2291" selection-start-column="48" selection-end-line="2291" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18417" max-vertical-offset="34545">
-          <caret line="1243" column="38" selection-start-line="1243" selection-start-column="25" selection-end-line="1243" selection-end-column="38" />
-          <folding>
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..wp_posts..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT post_..wp_posts..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT :_sel..wp_usermeta..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT meta_..wp_usermeta..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT ID FR..wp_users..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT ID FR..wp_users..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT ID, u..wp_users..." />
-            <marker date="1449271526000" expanded="true" signature="-1:-1" placeholder="SELECT user_..wp_usermeta..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1111,9 +1648,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wp-admin/js/xfn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45362905" vertical-offset="0" max-vertical-offset="496">
+        <state vertical-scroll-proportion="0.41666666" vertical-offset="0" max-vertical-offset="540">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
           <folding />
         </state>
