@@ -93,12 +93,82 @@ function my_meta_clean(&$arr)
         }
     }
 }
-/***
-*
-TGM PLUGIN ACTIVATION
-*
-***/
+
+
+
+
 require_once('libs/class-tgm-plugin-activation.php');
+require_once('libs/subscription.php');
+require_once('libs/subscription-ajax.php');
+//require_once('libs/class-holidays.php');
+
+
+require_once('vendor/autoload.php');
+define('CREDENTIALS_PATH',  __DIR__ . '/calendar-php-quickstart.json');
+define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
+
+define('SCOPES', implode(' ', array(
+        Google_Service_Calendar::CALENDAR_READONLY)
+));
+
+function getGoogleClient() {
+    $client = new Google_Client();
+    $client->setApplicationName('Gestione consegne');
+    $client->setScopes(SCOPES);
+    $client->setAuthConfigFile(CLIENT_SECRET_PATH);
+    $client->setAccessType('offline');
+
+    // Load previously authorized credentials from a file.
+    $credentialsPath = CREDENTIALS_PATH;
+    if (file_exists($credentialsPath)) {
+        $accessToken = file_get_contents($credentialsPath);
+    } else {
+
+        // Request authorization from the user.
+        $authUrl = $client->createAuthUrl();
+        //printf("Open the following link in your browser:\n%s\n", $authUrl);
+        //print 'Enter verification code: ';
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $authUrl);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Must be set to true so that PHP follows any "Location:" header
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $a = curl_exec($ch); // $a will contain all headers
+
+        $authCode = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL); // This is what you need, it will return you the last effective URL
+        //$authCode = trim(fgets(STDIN));
+
+        // Exchange authorization code for an access token.
+        $accessToken = $client->authenticate($authCode);
+
+        // Store the credentials to disk.
+        if(!file_exists(dirname($credentialsPath))) {
+            mkdir(dirname($credentialsPath), 0700, true);
+        }
+        file_put_contents($credentialsPath, $accessToken);
+        //printf("Credentials saved to %s\n", $credentialsPath);
+    }
+    $client->setAccessToken($accessToken);
+
+    // Refresh the token if it's expired.
+    if ($client->isAccessTokenExpired()) {
+        $client->refreshToken($client->getRefreshToken());
+        file_put_contents($credentialsPath, $client->getAccessToken());
+    }
+    return $client;
+}
+
+
+
+
+/***
+ *
+TGM PLUGIN ACTIVATION
+ *
+ ***/
+
 add_action( 'tgmpa_register', 'beyond_register_recommended_plugins' );
 /**
  * Register the required plugins for this theme.
@@ -113,7 +183,7 @@ add_action( 'tgmpa_register', 'beyond_register_recommended_plugins' );
  * TGM_Plugin_Activation class constructor.
  */
 function beyond_register_recommended_plugins() {
- 
+
     /**
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -123,13 +193,13 @@ function beyond_register_recommended_plugins() {
             'name'      => __('Bootstrap 3 Shortcodes','beyondmagazine'),
             'slug'      => 'bootstrap-3-shortcodes',
             'required'  => false,
-    ),
+        ),
         array(
             'name'      => __('Ketchup Shortcodes','beyondmagazine'),
             'slug'      => 'ketchup-shortcodes-pack',
             'required'  => false,
-    )
-    
+        )
+
 
     );
     $beyond_config = array(
@@ -161,29 +231,29 @@ function beyond_register_recommended_plugins() {
             'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         )
     );
- 
+
     tgmpa( $beyond_plugins, $beyond_config );
 }
 /***
-*
+ *
 THEME SETUP
-*
-***/
+ *
+ ***/
 function beyond_theme_setup(){
-    
-        global $content_width;
-        if (!isset( $content_width ))
+
+    global $content_width;
+    if (!isset( $content_width ))
         $content_width = 575;
 
-        $beyond_background_args = array(
+    $beyond_background_args = array(
         'default-color' => 'ffffff',
         'default-image' => get_template_directory_uri() . '/img/bg.png',
         'wp-head-callback' => 'beyond_custom_background_cb',
-        );
-        add_theme_support( 'custom-background', $beyond_background_args );
-        add_editor_style( 'style.css' );
-        
-        $beyond_header_defaults = array(
+    );
+    add_theme_support( 'custom-background', $beyond_background_args );
+    add_editor_style( 'style.css' );
+
+    $beyond_header_defaults = array(
         'default-image'          => '',
         'random-default'         => false,
         'width'                  => '570',
@@ -196,91 +266,91 @@ function beyond_theme_setup(){
         'wp-head-callback'       => '',
         'admin-head-callback'    => '',
         'admin-preview-callback' => '',
-        );
-        add_theme_support( 'custom-header', $beyond_header_defaults );
-        add_theme_support( 'automatic-feed-links' );
-        add_theme_support( 'post-thumbnails' );
-        register_nav_menu( 'primary', __('Main Menu','beyondmagazine' ));
-        load_theme_textdomain('beyondmagazine', get_template_directory() . '/languages');
+    );
+    add_theme_support( 'custom-header', $beyond_header_defaults );
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'post-thumbnails' );
+    register_nav_menu( 'primary', __('Main Menu','beyondmagazine' ));
+    load_theme_textdomain('beyondmagazine', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'beyond_theme_setup');
 function beyond_custom_background_cb() {
-  $background = set_url_scheme( get_background_image() );
-  $color = get_theme_mod( 'background_color', get_theme_support( 'custom-background', 'default-color' ) );
+    $background = set_url_scheme( get_background_image() );
+    $color = get_theme_mod( 'background_color', get_theme_support( 'custom-background', 'default-color' ) );
 
-  if ( ! $background && ! $color )
-    return;
+    if ( ! $background && ! $color )
+        return;
 
-  $style = $color ? "background-color: #$color;" : '';
+    $style = $color ? "background-color: #$color;" : '';
 
-  if ( $background ) {
-    $image = " background-image: url('$background');";
+    if ( $background ) {
+        $image = " background-image: url('$background');";
 
-    $repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
-    if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
-      $repeat = 'repeat';
-    $repeat = " background-repeat: $repeat;";
+        $repeat = get_theme_mod( 'background_repeat', get_theme_support( 'custom-background', 'default-repeat' ) );
+        if ( ! in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) )
+            $repeat = 'repeat';
+        $repeat = " background-repeat: $repeat;";
 
-    $position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
-    if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
-      $position = 'left';
-    $position = " background-position: top $position;";
+        $position = get_theme_mod( 'background_position_x', get_theme_support( 'custom-background', 'default-position-x' ) );
+        if ( ! in_array( $position, array( 'center', 'right', 'left' ) ) )
+            $position = 'left';
+        $position = " background-position: top $position;";
 
-    $attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
-    if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
-      $attachment = 'scroll';
-    $attachment = " background-attachment: $attachment;";
+        $attachment = get_theme_mod( 'background_attachment', get_theme_support( 'custom-background', 'default-attachment' ) );
+        if ( ! in_array( $attachment, array( 'fixed', 'scroll' ) ) )
+            $attachment = 'scroll';
+        $attachment = " background-attachment: $attachment;";
 
-    $style .= $image . $repeat . $position . $attachment;
-  }
-?>
-<style type="text/css" id="custom-background-css">
-body.custom-background { <?php echo trim( $style ); ?> }
-</style>
+        $style .= $image . $repeat . $position . $attachment;
+    }
+    ?>
+    <style type="text/css" id="custom-background-css">
+        body.custom-background { <?php echo trim( $style ); ?> }
+    </style>
 <?php
 }
 /***
-*
+ *
 LOAD CSS AND JS STYLES
-*
-***/
-    function beyond_load_scripts() {
-   
-        //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
-        //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-        wp_enqueue_script('beyond_init',get_template_directory_uri().'/main.min.js',array('jquery'),null, null);
-        
-        wp_localize_script('beyond_init', 'init_vars', array(
-            'label' => __('Menu', 'beyondmagazine')
-        ));
+ *
+ ***/
+function beyond_load_scripts() {
+
+    //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
+    //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
+    wp_enqueue_script('beyond_init',get_template_directory_uri().'/main.min.js',array('jquery'),null, null);
+
+    wp_localize_script('beyond_init', 'init_vars', array(
+        'label' => __('Menu', 'beyondmagazine')
+    ));
 
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
-    }
-    add_action('wp_enqueue_scripts', 'beyond_load_scripts');
+}
+add_action('wp_enqueue_scripts', 'beyond_load_scripts');
 
-    function beyond_load_styles()
-    { 
+function beyond_load_styles()
+{
 //        wp_enqueue_style( 'beyond_bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
 //        wp_enqueue_style( 'beyond_bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
 //        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
 //        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
 //        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-        wp_enqueue_style( 'beyond_style', get_stylesheet_uri(),'','','all' );
-    }    
-    add_action('wp_enqueue_scripts', 'beyond_load_styles');
-   
-    function beyond_add_ie_html5_shim () {
-        echo '<!--[if lt IE 9]>';
-        echo '<script src="'.get_template_directory_uri().'/js/html5shiv.js"></script>';
-        echo '<![endif]-->';
-    }
-    add_action('wp_head', 'beyond_add_ie_html5_shim');
+    wp_enqueue_style( 'beyond_style', get_stylesheet_uri(),'','','all' );
+}
+add_action('wp_enqueue_scripts', 'beyond_load_styles');
+
+function beyond_add_ie_html5_shim () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="'.get_template_directory_uri().'/js/html5shiv.js"></script>';
+    echo '<![endif]-->';
+}
+add_action('wp_head', 'beyond_add_ie_html5_shim');
 /***
-*
+ *
 SIDEBARS INITIALIZATION
-*
-***/
+ *
+ ***/
 function beyond_widgets_init() {
     global $widgets;
 
@@ -318,7 +388,7 @@ function beyond_widgets_init() {
         'before_widget' => '<div id="%1$s" class="headerwidget widget %2$s">',
         'after_widget'  => '</div>'
     ));
-    }
+}
 add_action( 'widgets_init', 'beyond_widgets_init' );
 /**
  * Count number of widgets in a sidebar
@@ -388,10 +458,10 @@ function widget_bs_class($params) {
     return $params;
 }
 /***
-*
+ *
 THEME FUNCTIONS
-*
-***/
+ *
+ ***/
 function beyond_wp_title($title,$sep){
 
     global $page, $paged;
@@ -401,10 +471,10 @@ function beyond_wp_title($title,$sep){
         $title = "$title $sep $site_description";
 
     if ( $paged >= 2 || $page >= 2 )
-        
+
         $title = "$title $sep " . sprintf( __( 'Page %s', 'beyondmagazine' ), max( $paged, $page ) );
-        
-        return $title;
+
+    return $title;
 }
 add_filter( 'wp_title', 'beyond_wp_title', 10, 2 );
 function beyond_excerpt_length( $length ) {
@@ -416,47 +486,47 @@ add_action( 'admin_menu', 'beyond_add_admin_menu' );
 add_action( 'admin_init', 'beyond_settings_init' );
 
 
-function beyond_add_admin_menu(  ) { 
+function beyond_add_admin_menu(  ) {
     add_theme_page( __('beyondmagazine','beyondmagazine'), __('Beyond Magazine Settings','beyondmagazine'), 'manage_options', 'beyondmagazine', 'beyond_options_page' );
 
 }
 
 
-function beyond_settings_init(  ) { 
+function beyond_settings_init(  ) {
 
     register_setting( 'pluginPage', 'beyond_settings' );
 
     add_settings_section(
-        'beyond_pluginPage_section', 
-        __( 'General Settings For Theme.', 'beyondmagazine' ), 
-        'beyond_settings_section_callback', 
+        'beyond_pluginPage_section',
+        __( 'General Settings For Theme.', 'beyondmagazine' ),
+        'beyond_settings_section_callback',
         'pluginPage'
     );
-    add_settings_field( 
-        'beyond_add_favicon', 
-        __( 'Favicon URL', 'beyondmagazine' ), 
-        'beyond_add_favicon_render', 
-        'pluginPage', 
-        'beyond_pluginPage_section' 
+    add_settings_field(
+        'beyond_add_favicon',
+        __( 'Favicon URL', 'beyondmagazine' ),
+        'beyond_add_favicon_render',
+        'pluginPage',
+        'beyond_pluginPage_section'
     );
-    add_settings_field( 
-        'beyond_footer_sidebars', 
-        __( 'Select Footer Sidebars', 'beyondmagazine' ), 
-        'beyond_footer_sidebars_render', 
-        'pluginPage', 
-        'beyond_pluginPage_section' 
+    add_settings_field(
+        'beyond_footer_sidebars',
+        __( 'Select Footer Sidebars', 'beyondmagazine' ),
+        'beyond_footer_sidebars_render',
+        'pluginPage',
+        'beyond_pluginPage_section'
     );
-    add_settings_field( 
-        'beyond_post_columns', 
-        __( 'Select Beyond Magazine Post Columns', 'beyondmagazine' ), 
-        'beyond_columns_render', 
-        'pluginPage', 
-        'beyond_pluginPage_section' 
+    add_settings_field(
+        'beyond_post_columns',
+        __( 'Select Beyond Magazine Post Columns', 'beyondmagazine' ),
+        'beyond_columns_render',
+        'pluginPage',
+        'beyond_pluginPage_section'
     );
-    
-    
+
+
 }
-function beyond_columns_render() { 
+function beyond_columns_render() {
 
     $options = get_option( 'beyond_settings' );
     ?>
@@ -466,7 +536,7 @@ function beyond_columns_render() {
     </select>
 
 <?php }
-function beyond_footer_sidebars_render() { 
+function beyond_footer_sidebars_render() {
 
     $options = get_option( 'beyond_settings' );
     ?>
@@ -476,16 +546,16 @@ function beyond_footer_sidebars_render() {
     </select>
 
 <?php }
-function beyond_add_favicon_render() { 
+function beyond_add_favicon_render() {
 
     $options = get_option( 'beyond_settings' );
     $value = esc_url_raw($options['beyond_add_favicon']);
     ?>
     <input type='text' name='beyond_settings[beyond_add_favicon]' value='<?php echo $value; ?>'>
-    <?php
+<?php
 }
 function beyond_settings_section_callback(  ) {
-     
+
     echo __('Premium Features', 'beyondmagazine');
     echo'<ul style="background:#ffffff; padding:10px; width:90%;">
         <li>'.__('Favicon & Logo Upload through uploaded','beyondmagazine').'</li>
@@ -502,41 +572,41 @@ function beyond_settings_section_callback(  ) {
         <p>
         <a rel="nofollow" href="'.esc_url( 'http://ketchupthemes.com/beyond-magazine/').'" style="background:red; margin:5px 0; padding:10px 20px; color:#ffffff; margin-top:10px; text-decoration:none;">'.__('Update to Premium','beyondmagazine').'</a></p>';
 }
-function beyond_options_page() { 
-?>
+function beyond_options_page() {
+    ?>
     <form action='options.php' method='post' name="settingsform">
-     
+
         <h2><?php _e('Theme Options','beyondmagazine'); ?></h2>
-            <?php if( isset($_GET['settings-updated']) ) { ?>
+        <?php if( isset($_GET['settings-updated']) ) { ?>
             <div id="message" class="updated">
                 <p><strong><?php _e('Settings saved.','beyondmagazine') ?></strong></p>
             </div>
-              
-            <?php } ?>
+
+        <?php } ?>
         <?php
         settings_fields( 'pluginPage' );
         do_settings_sections( 'pluginPage' );
         submit_button();
         ?>
     </form>
-    <?php
+<?php
 }
 function beyond_get_favicon(){
     $options = get_option('beyond_settings');
     $favicon = $options['beyond_add_favicon'];
-    
+
     return $favicon;
 }
 function beyond_footer_sidebars(){
     $options = get_option('beyond_settings');
     $beyond_footer_sidebars = $options['beyond_footer_sidebars'];
-    
+
     return $beyond_footer_sidebars;
 }
 function beyond_post_columns(){
     $options = get_option('beyond_settings');
     $beyond_post_columns = $options['beyond_post_columns'];
-    
+
     return $beyond_post_columns;
 }
 
@@ -563,7 +633,7 @@ function extra_category_fields( $tag ) {    //check for existing featured ID
 
 // save extra category extra fields hook
 add_action ( 'edited_category', 'save_extra_category_fileds');
-   // save extra category extra fields callback function
+// save extra category extra fields callback function
 function save_extra_category_fileds( $term_id ) {
     if ( isset( $_POST['Cat_meta'] ) ) {
         $t_id = $term_id;
@@ -789,26 +859,26 @@ function manage_availability() {
     <div class="wrap">
         <h1>Gestione disponibilità</h1>
 
-    <?php
-    $type = 'products';
-    $args=array(
-        'post_type' => $type,
-        'post_status' => 'publish',
-        'posts_per_page' => -1,
-        'caller_get_posts'=> 1
-    );
-    $my_query = null;
-    $my_query = new WP_Query($args);
-    if( $my_query->have_posts() ) {
-        while ($my_query->have_posts()) : $my_query->the_post(); ?>
-            <div class="checkbox">
-                <label><input type="checkbox" value=""><?php the_title(); ?></label>
-            </div>
         <?php
-        endwhile;
-    }
-    wp_reset_query();  // Restore global post data stomped by the_post().
-    ?>
+        $type = 'products';
+        $args=array(
+            'post_type' => $type,
+            'post_status' => 'publish',
+            'posts_per_page' => -1,
+            'caller_get_posts'=> 1
+        );
+        $my_query = null;
+        $my_query = new WP_Query($args);
+        if( $my_query->have_posts() ) {
+            while ($my_query->have_posts()) : $my_query->the_post(); ?>
+                <div class="checkbox">
+                    <label><input type="checkbox" value=""><?php the_title(); ?></label>
+                </div>
+            <?php
+            endwhile;
+        }
+        wp_reset_query();  // Restore global post data stomped by the_post().
+        ?>
     </div>
 <?php
 

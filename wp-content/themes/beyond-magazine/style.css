@@ -10233,14 +10233,196 @@ h3.product-name {
   padding-bottom: 33.33333%;
   float: left;
   position: relative;
+  min-height: 340px;
 }
-.square > div {
+.square > label {
+  cursor: pointer;
   position: absolute;
-  background: gold;
+  background: #e9e9e9;
+  border-color: #dddddd;
+  border-width: 1em;
+  border-style: solid;
+  border-radius: 2em;
+  width: 90%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  height: 90%;
+}
+.square > label span {
+  display: block;
+  text-align: center;
+}
+.square > label .main {
+  font-size: 12em;
+  line-height: 1em;
+}
+.square > label .secondary {
+  font-size: 2em;
+}
+.square input:checked ~ label {
+  background: white;
+  border-color: #42A942;
+  color: #CC5500;
+}
+
+.step-nav {
+  margin-bottom: 20px;
+}
+.step-nav button {
+  width: 100%;
+}
+
+.ng-hide {
+  transition: all 0.5s ease;
+}
+
+.step-wrapper {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+  opacity: 1;
+  height: auto;
+  overflow: hidden;
+  /* remember to add this */
+}
+.step-wrapper.hidden_step {
+  opacity: 0;
+  height: 0;
+  -webkit-transition: 1.5s linear all;
+  transition: 1.5s linear all;
+}
+
+.form-horizontal .control-label {
+  max-height: 2em;
+  overflow: visible;
+}
+
+.blacklist .products-wrapper {
+  margin-bottom: 20px;
+}
+.blacklist input.checkbox:empty {
+  margin-left: -999px;
+}
+.blacklist input.checkbox ~ label {
+  text-indent: 3em;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  line-height: 2.5em;
+  margin-bottom: 0;
+  width: 100%;
+}
+.blacklist input.checkbox:empty ~ label {
+  position: relative;
+  float: left;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 1em;
+}
+.blacklist input.checkbox:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 2.5em;
+  background: #42A942;
+  border-radius: 3px 0 0 3px;
+}
+.blacklist input.checkbox:hover:not(:checked) ~ label {
+  color: #888;
+}
+.blacklist input.checkbox:hover:not(:checked) ~ label:before {
+  content: "✗";
+  text-indent: 0.9em;
+  color: #C2C2C2;
+}
+.blacklist input.checkbox:checked ~ label {
+  color: #777;
+}
+.blacklist input.checkbox:checked ~ label:before {
+  content: "✗";
+  text-indent: 0.9em;
+  color: white;
+  background-color: red;
+}
+.blacklist input.checkbox:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.transfer-wrapper, .paypal-wrapper {
+  background-image: url("img/bg.png");
+  background-repeat: repeat;
+  border: 1px solid #e9e9e9;
+  height: 250px;
+  padding-top: 20px;
+}
+.transfer-wrapper table, .paypal-wrapper table {
+  border: none;
+  width: 100%;
+}
+
+#payment-step {
+  margin-bottom: 20px;
 }
 
 .booking-product-wrapper {
-  margin-top: 25px;
+  margin-top: 24px;
+}
+
+.custom_form input.radio:empty {
+  margin-left: -999px;
+}
+.custom_form input.radio ~ label {
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+}
+.custom_form input.radio:empty ~ label {
+  position: relative;
+  float: left;
+  line-height: 2.5em;
+  text-indent: 2em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 1em;
+}
+.custom_form input.radio:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+.custom_form input.radio:hover:not(:checked) ~ label {
+  color: #888;
+}
+.custom_form input.radio:hover:not(:checked) ~ label:before {
+  content: "✔";
+  text-indent: 0.9em;
+  color: #C2C2C2;
+}
+.custom_form input.radio:checked ~ label {
+  color: #777;
+}
+.custom_form input.radio:checked ~ label:before {
+  content: "✔";
+  text-indent: 0.9em;
+  color: white;
+  background-color: #42A942;
+}
+.custom_form input.radio:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
 }
 
 .djb_baileyregular {
