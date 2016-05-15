@@ -57,7 +57,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="kt-copyright-column">
-                            <p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />I contenuti di questo sito sono distribuiti con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Internazionale  4.0</a>. Condividi allo stesso modo.
+                            <p>
+                                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                                    <img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+                                </a>
+                                <br />
+                                I contenuti di questo sito sono distribuiti con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Internazionale  4.0</a>. Condividi allo stesso modo.
+                                <br/>
+                                <span class="impressum">Capolavia Azienda Agricola di Marchetto Andrea, via Rodolfo Rossi 101, Rovigo (RO) - C.F. MRCNDR84B11H620W - P.I. 01523680294</span>
                             </p>
                         </div>
                     </div>
