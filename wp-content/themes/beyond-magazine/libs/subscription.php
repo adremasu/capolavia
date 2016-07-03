@@ -120,8 +120,8 @@ class subscription {
         update_user_meta( $user_id, 'customer', $_POST['customer'] );
     }
     public function show_customer_profile_fields( $user ) {
-        $meta = get_the_author_meta( 'customer', $user->ID )
-
+        $meta = get_the_author_meta( 'customer', $user->ID );
+        var_dump($meta);
         ?>
 
         <table class="form-table">
@@ -185,6 +185,7 @@ class subscription {
         wp_nonce_field( 'sub_inner_custom_box', 'sub_inner_custom_box_nonce' );
         $this->get_subscription_data($post->ID);
         $data = $this->subscription_data;
+        var_dump($data);
         $checked_1 = (isset($this->subscription_data) && $data->payed_subscription == 1) ? 'checked' : ' ';
         $checked_0 = (!isset($this->subscription_data) || $data->payed_subscription == 0) ? 'checked' : ' ';
 

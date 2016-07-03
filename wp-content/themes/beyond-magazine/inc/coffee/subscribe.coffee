@@ -6,6 +6,7 @@ subscribeApp.controller "configCtrl", [
     $scope.current_step = 'length'
     $scope.subscription = {}
     $scope.subscription.length = false
+    $scope.message = 'Qualcosa è andato storto'
     $scope.goToStep = (event, size) ->
       $scope.current_step = size
       event.preventDefault()
@@ -14,11 +15,20 @@ subscribeApp.controller "configCtrl", [
         return 'current_step'
       else
         return 'hidden_step'
+    copyValues = (o, n)->
+      unless typeof $scope.user is 'undefined'
+        if !$scope.subscription.different_address
+          $scope.user.invoice = n
+        else
+          $scope.user.invoice = {}
+
     $scope.subscribeSave = (e)->
       e.preventDefault()
+
       request = {
         action: "save_new_subscription"
         subscription: $scope.subscription
+        user: $scope.user
       }
       $http(
         method: "POST"
@@ -31,8 +41,18 @@ subscribeApp.controller "configCtrl", [
           $scope.goToStep e, 'payment'
           $scope.price = data.price
           $scope.paypal_ID = data.paypal_ID
+        else
+          if data.message
+            $scope.message = data.message
+          $scope.showMessage($scope.message)
 
+    $scope.showMessage = (message) ->
+      jQuery('#myModal').modal()
+    $scope.$watch 'subscription', (oldValue, newValue)->
+      copyValues(oldValue, newValue)
+    , true
 ]
+
 
 subscribeApp.directive 'pwCheck', [ ->
   {

@@ -46,3 +46,10 @@
 
     &:focus ~ label:before
       box-shadow: 0 0 0 3px #999
+
+input, textarea, select
+  &.ng-invalid.ng-touched
+    + .validation-text
+      visibility: visible
+  + .validation-text
+    visibility: hidden

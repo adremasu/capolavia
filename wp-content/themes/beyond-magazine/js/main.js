@@ -4454,9 +4454,11 @@ jQuery(document).ready(function($){
 
   subscribeApp.controller("configCtrl", [
     '$scope', '$http', function($scope, $http) {
+      var copyValues;
       $scope.current_step = 'length';
       $scope.subscription = {};
       $scope.subscription.length = false;
+      $scope.message = 'Qualcosa è andato storto';
       $scope.goToStep = function(event, size) {
         $scope.current_step = size;
         return event.preventDefault();
@@ -4468,12 +4470,22 @@ jQuery(document).ready(function($){
           return 'hidden_step';
         }
       };
-      return $scope.subscribeSave = function(e) {
+      copyValues = function(o, n) {
+        if (typeof $scope.user !== 'undefined') {
+          if (!$scope.subscription.different_address) {
+            return $scope.user.invoice = n;
+          } else {
+            return $scope.user.invoice = {};
+          }
+        }
+      };
+      $scope.subscribeSave = function(e) {
         var request;
         e.preventDefault();
         request = {
           action: "save_new_subscription",
-          subscription: $scope.subscription
+          subscription: $scope.subscription,
+          user: $scope.user
         };
         return $http({
           method: "POST",
@@ -4487,9 +4499,20 @@ jQuery(document).ready(function($){
             $scope.goToStep(e, 'payment');
             $scope.price = data.price;
             return $scope.paypal_ID = data.paypal_ID;
+          } else {
+            if (data.message) {
+              $scope.message = data.message;
+            }
+            return $scope.showMessage($scope.message);
           }
         });
       };
+      $scope.showMessage = function(message) {
+        return jQuery('#myModal').modal();
+      };
+      return $scope.$watch('subscription', function(oldValue, newValue) {
+        return copyValues(oldValue, newValue);
+      }, true);
     }
   ]);
 
@@ -4537,15 +4560,39 @@ jQuery(document).ready(function($){
   bookingApp = angular.module('bookingApp', []);
 
   bookingApp.controller("bookingController", [
-    '$scope', function($scope) {
-      return $scope.saveBooking = function() {
-        var productsData, userData;
+    '$scope', '$http', function($scope, $http) {
+      $scope.loading = false;
+      $scope.success = false;
+      console.log($scope.success);
+      $scope.saveBooking = function(e) {
+        var date, productsData, request, userData;
+        e.preventDefault();
+        $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
+        date = $scope.date;
         if ($scope.booking_form.$valid) {
-          return console.log(booking_form);
+          request = {
+            action: "book_products",
+            products: productsData,
+            user: userData,
+            date: date
+          };
+          return $http({
+            method: "POST",
+            url: "/wp-admin/admin-ajax.php",
+            data: jQuery.param(request),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            }
+          }).success(function(data) {
+            $scope.loading = false;
+            $scope.success = data.success;
+            return $scope.userMessage = data.userMessage;
+          });
         }
       };
+      return $scope.recap = function(e) {};
     }
   ]);
 

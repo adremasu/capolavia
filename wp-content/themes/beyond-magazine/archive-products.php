@@ -2,8 +2,20 @@
 get_header();?>
 <?php
 global $wp_query;
-query_posts( array('post_type' => array( 'products' ),'showposts' => -1, 'paged'=>$paged )
-);?>
+$args = array(
+    'post_type' => array( 'products' ),
+    'showposts' => -1,
+    'paged'=>$paged,
+    'meta_key' => 'disponibilita',
+    'meta_value' => '1'
+
+);
+$the_query = new WP_Query( $args );
+
+/* Restore original Post Data */
+
+
+?>
 <div class="row" id="kt-main" >
     <div class="col-md-12">
         <div id="kt-latest-title" class="h3">
@@ -12,7 +24,10 @@ query_posts( array('post_type' => array( 'products' ),'showposts' => -1, 'paged'
     </div>
     <div>
         <?php
-        if(have_posts()) : ?>
+        // The Loop
+
+        if ( $the_query->have_posts() ) :
+        ?>
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="product">Cerca i prodotti</label>
@@ -24,11 +39,15 @@ query_posts( array('post_type' => array( 'products' ),'showposts' => -1, 'paged'
 
             <div data-ng-init="products = [
                 <?php
-                while(have_posts()) : the_post();
-                ?>
+                if ( $the_query->have_posts() ) :
+
+                    ?>
+                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
                         <?php
                         $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small_square' );
                         $url = $thumb['0'];
+                        $p = $post;
                         ?>
                         {'name': '<?php the_title(); ?>',
                             'thumb': '<?php echo $url; ?>',
@@ -36,12 +55,11 @@ query_posts( array('post_type' => array( 'products' ),'showposts' => -1, 'paged'
                         },
 
                         <?php
-
                         endwhile;
+                    endif;
 
                         ?>                ]">
             </div>
-
 
 
             <div data-ng-repeat="product in products | filter: search | orderBy: 'name'">
@@ -63,7 +81,11 @@ query_posts( array('post_type' => array( 'products' ),'showposts' => -1, 'paged'
             </div>
         </div>
         <?php
-    endif; ?>
+
+    endif;
+        wp_reset_postdata();
+
+        ?>
 
 </div>
 <?php

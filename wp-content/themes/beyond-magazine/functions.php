@@ -1,16 +1,18 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . '/google-api-php-client/src');
 
 define('MY_WORDPRESS_FOLDER',$_SERVER['DOCUMENT_ROOT']);
 define('MY_THEME_FOLDER',str_replace("\\",'/',dirname(__FILE__)));
 define('MY_THEME_PATH','/' . substr(MY_THEME_FOLDER,stripos(MY_THEME_FOLDER,'wp-content')));
 add_action('admin_init','my_meta_init');
+
 function my_meta_init()
 {
 // review the function reference for parameter details
 // http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 // http://codex.wordpress.org/Function_Reference/wp_enqueue_style
 //wp_enqueue_script('my_meta_js', MY_THEME_PATH . '/custom/meta.js', array('jquery'));
-    wp_enqueue_style('my_meta_css', MY_THEME_PATH . '/custom/meta.css');
+    wp_enqueue_style('my_meta_css', ltrim(MY_THEME_PATH, 'http:') . '/custom/meta.css');
 // review the function reference for parameter details
 // http://codex.wordpress.org/Function_Reference/add_meta_box
 // add a meta box for each of the wordpress page types: posts and pages
@@ -21,6 +23,7 @@ function my_meta_init()
 // add a callback function to save any data a user enters in
     add_action('save_post','my_meta_save');
 }
+
 function my_meta_setup()
 {
     global $post;
@@ -65,6 +68,8 @@ function my_meta_save($post_id)
     }
     return $post_id;
 }
+
+
 function my_meta_clean(&$arr)
 {
     if (is_array($arr))
@@ -99,11 +104,16 @@ function my_meta_clean(&$arr)
 
 require_once('libs/class-tgm-plugin-activation.php');
 require_once('libs/subscription.php');
+require_once('libs/bookings.php');
 require_once('libs/subscription-ajax.php');
+require_once('libs/book_products-ajax.php');
 //require_once('libs/class-holidays.php');
 
 
 require_once('vendor/autoload.php');
+
+add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+
 define('CREDENTIALS_PATH',  __DIR__ . '/calendar-php-quickstart.json');
 define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
 
@@ -318,7 +328,7 @@ function beyond_load_scripts() {
 
     //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
     //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-    wp_enqueue_script('beyond_init',get_template_directory_uri().'/main.min.js',array('jquery'),null, null);
+    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'http:').'/main.min.js',array('jquery'),'12', null);
 
     wp_localize_script('beyond_init', 'init_vars', array(
         'label' => __('Menu', 'beyondmagazine')
@@ -336,13 +346,13 @@ function beyond_load_styles()
 //        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
 //        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
 //        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-    wp_enqueue_style( 'beyond_style', get_stylesheet_uri(),'','','all' );
+    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'http:'),'','','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
 
 function beyond_add_ie_html5_shim () {
     echo '<!--[if lt IE 9]>';
-    echo '<script src="'.get_template_directory_uri().'/js/html5shiv.js"></script>';
+    echo '<script src="'.ltrim(get_template_directory_uri(), '').'/js/html5shiv.js"></script>';
     echo '<![endif]-->';
 }
 add_action('wp_head', 'beyond_add_ie_html5_shim');
@@ -387,6 +397,15 @@ function beyond_widgets_init() {
         'description' => __('This is the header sidebar.', 'beyondmagazine' ),
         'before_widget' => '<div id="%1$s" class="headerwidget widget %2$s">',
         'after_widget'  => '</div>'
+    ));
+    register_sidebar(array(
+        'name' => __('Mobile Blog Sidebar', 'beyondmagazine' ),
+        'id'   => 'mobile-blog-sidebar',
+        'description' => __('This is the mobile blog sidebar.', 'beyondmagazine' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h2><a href="#" class="h3"></a>',
+        'after_title'   => '</h2>'
     ));
 }
 add_action( 'widgets_init', 'beyond_widgets_init' );
@@ -751,7 +770,8 @@ add_action( 'save_post', 'icon_save_meta_box_data' );
 
 //analytics
 function GAnalytics() {
-    if ( !is_admin() ) {
+    $domain = ltrim(bloginfo('wpurl'), 'http://');
+    if ( !is_admin() && ($domain=='capolavia.it') ) {
 
         echo "<script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

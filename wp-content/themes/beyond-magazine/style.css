@@ -10360,6 +10360,9 @@ h3.product-name {
   height: 250px;
   padding-top: 20px;
 }
+.transfer-wrapper h4, .paypal-wrapper h4 {
+  margin-bottom: 10px;
+}
 .transfer-wrapper table, .paypal-wrapper table {
   border: none;
   width: 100%;
@@ -10371,6 +10374,15 @@ h3.product-name {
 
 .booking-product-wrapper {
   margin-top: 24px;
+}
+
+#booking-wrapper label {
+  width: 100%;
+}
+#booking-wrapper .success-message {
+  border: 1px solid #42A942;
+  padding: 1em;
+  border-radius: 1em;
 }
 
 .custom_form input.radio:empty {
@@ -10423,6 +10435,13 @@ h3.product-name {
 }
 .custom_form input.radio:focus ~ label:before {
   box-shadow: 0 0 0 3px #999;
+}
+
+input.ng-invalid.ng-touched + .validation-text, textarea.ng-invalid.ng-touched + .validation-text, select.ng-invalid.ng-touched + .validation-text {
+  visibility: visible;
+}
+input + .validation-text, textarea + .validation-text, select + .validation-text {
+  visibility: hidden;
 }
 
 .djb_baileyregular {
@@ -10711,7 +10730,6 @@ dd {
   -webkit-box-shadow: 0px 0px 5px 0px #42A942;
   -moz-box-shadow: 0px 0px 5px 0px #42A942;
   box-shadow: 0px 0px 5px 0px #42A942;
-  margin-bottom: 20px;
   padding-top: 20px;
 }
 @media screen and (min-width: 900px) {
@@ -11377,5 +11395,26 @@ div.post {
   .menu-item a {
     background-color: white;
     background-image: none;
+  }
+}
+.glyphicon-refresh-animate {
+  -animation: spin 0.7s infinite linear;
+  -webkit-animation: spin2 0.7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
   }
 }

@@ -21,10 +21,8 @@ class save_new_subscriptionClass
         $data = $_POST;
 
         $subscription = $data['subscription'];
-        $user = $data['subscription']['user'];
+        $this->user = $data['user'];
         $this->subscription = $subscription;
-        $this->email = $user[email];
-        $this->user = $user;
         $this->blacklist = $subscription['products'];
         $this->IDs = array(
             '3S' => array(
@@ -69,7 +67,7 @@ class save_new_subscriptionClass
         if ($this->saveData()) {
             echo json_encode($this->response);
         } else {
-            echo 'no';
+            echo json_encode($this->response);
         }
 
         wp_die();
@@ -77,9 +75,15 @@ class save_new_subscriptionClass
 
     public function saveData(){
         //check if email address exists
-        if( email_exists( $this->email )) {
+        $user = $this->user;
+        if( email_exists( $user[email] )) {
             $this->error[] = 'email_exists';
+            $response['error'] = $this->error;
+            $response['message'] = 'Email già registrata';
+            $this->response = $response;
+
             return false;
+
 
         } else {
             // get price and Paypal button for the chosen option
@@ -90,8 +94,8 @@ class save_new_subscriptionClass
             $this->setNewSubscription($this->user_id);
 
             $response['user_id'] = $this->user_id;
+            $response['error'] = $this->error;
             if (is_array($response['error']))    {
-                $response['error'] = $this->error;
                 $response['success'] = false;
             } else {
                 $response['success'] = true;
@@ -127,8 +131,8 @@ class save_new_subscriptionClass
 
     private function setNewSubscription($user_id){
         if (is_int($user_id)){
-            $post_title = $this->email.' - '.$this->chosen_subscription;
             $user_data = $this->user;
+            $post_title = $user_data[email].' - '.$this->chosen_subscription;
             $args = array(
                 'post_type'     => 'subscriptions',
                 'post_title'    => $post_title,

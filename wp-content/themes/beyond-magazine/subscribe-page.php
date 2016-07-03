@@ -88,7 +88,7 @@ get_header();?>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
-                                <input type="email" data-ng-model="subscription.user.email"  required class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="email" data-ng-model="user.email"  required class="form-control" id="inputEmail3" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
@@ -109,26 +109,32 @@ get_header();?>
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Nome</label>
                             <div class="col-sm-10">
-                                <input type="text" data-ng-model="subscription.user.name"  required class="form-control" id="name" placeholder="Nome">
+                                <input type="text" data-ng-model="user.name"  required class="form-control" id="name" placeholder="Nome">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Cognome</label>
+                            <label for="surname" class="col-sm-2 control-label">Cognome</label>
                             <div class="col-sm-10">
-                                <input type="text" data-ng-model="subscription.user.last_name" required class="form-control" id="surname" placeholder="Cognome">
+                                <input type="text" data-ng-model="user.last_name" required class="form-control" id="surname" placeholder="Cognome">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Codice Fiscale</label>
+                            <label for="fiscale" class="col-sm-2 control-label">Codice Fiscale</label>
                             <div class="col-sm-10">
-                                <input type="text" data-ng-model="subscription.user.fiscale" required fiscale class="form-control" id="surname" placeholder="Codice Fiscale">
+                                <input type="text" data-ng-model="user.fiscale" required fiscale class="form-control" id="fiscale" placeholder="Codice Fiscale">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="piva" class="col-sm-2 control-label">Partiva IVA</label>
+                            <div class="col-sm-10">
+                                <input type="text" data-ng-model="user.piva" class="form-control" id="piva" placeholder="Partita IVA (facoltativo)">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="address" class="col-sm-2 control-label">Indirizzo a cui ricevere la cassetta</label>
                             <div class="col-sm-10">
-                                <input type="text" data-ng-model="subscription.user.address"  required class="form-control" id="address" placeholder="via e n° civico">
+                                <input type="text" data-ng-model="subscription.address"  required class="form-control" id="address" placeholder="via e n° civico">
                             </div>
                         </div>
 
@@ -137,17 +143,17 @@ get_header();?>
                             <label for="city" class="col-sm-2 control-label"></label>
 
                             <div class="col-xs-2">
-                                <input type="text" data-ng-model="subscription.user.zip" required class="form-control" placeholder="CAP">
+                                <input type="text" data-ng-model="subscription.zip" required class="form-control" placeholder="CAP">
                             </div>
                             <div class="col-xs-4">
-                                <input type="text" data-ng-model="subscription.user.city" required class="form-control" placeholder="Comune">
+                                <input type="text" data-ng-model="subscription.city" required class="form-control" placeholder="Comune">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="delivery_day" class="col-sm-2 control-label">Giorno di consegna</label>
                             <div class="col-sm-6">
-                                <select required data-ng-model="subscription.user.delivery_day" class="form-control" id="delivery_day" name="delivery_day">
+                                <select required data-ng-model="subscription.delivery_day" class="form-control" id="delivery_day" name="delivery_day">
                                     <option value="3">Mercoledì</option>
                                     <option value="5">Venerdì</option>
                                 </select>
@@ -157,7 +163,7 @@ get_header();?>
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Telefono</label>
                             <div class="col-sm-10">
-                                <input type="tel" data-ng-model="subscription.user.phone" required class="form-control" id="phone" placeholder="telefono">
+                                <input type="tel" data-ng-model="user.phone" required class="form-control" id="phone" placeholder="telefono">
                             </div>
                         </div>
 
@@ -165,29 +171,29 @@ get_header();?>
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
                                     <label>
-                                        <input data-ng-model="subscription.user.same_address" type="checkbox"> L'indirizzo di fatturazione è diverso da quello di consegna
+                                        <input data-ng-model="subscription.different_address" type="checkbox"> L'indirizzo di fatturazione è diverso da quello di consegna
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div data-ng-show="subscription.user.same_address">
-                            <div class="col-md-offset-2 col-md-10"><h4>Indirizzo di fatturazione</h4    ></div>
+                        <div data-ng-show="subscription.different_address">
+                            <div class="col-md-offset-2 col-md-10"><h4>Indirizzo di fatturazione</h4></div>
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Nome</label>
+                                <label for="name" class="col-sm-2 control-label">Nome o ragione sociale</label>
                                 <div class="col-sm-10">
-                                    <input type="text" data-ng-model="subscription.user.invoice.name" class="form-control" id="name" placeholder="Nome">
+                                    <input type="text" data-ng-model="user.invoice.name" class="form-control" id="name" placeholder="Nome">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name" class="col-sm-2 control-label">Cognome</label>
                                 <div class="col-sm-10">
-                                    <input type="text" data-ng-model="subscription.user.invoice.last_name" class="form-control" id="surname" placeholder="Cognome">
+                                    <input type="text" data-ng-model="user.invoice.last_name" class="form-control" id="surname" placeholder="Cognome">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="address" class="col-sm-2 control-label">Indirizzo di fatturazione</label>
                                 <div class="col-sm-10">
-                                    <input type="text" data-ng-model="subscription.user.invoice.address"  class="form-control" id="address" placeholder="via e n° civico">
+                                    <input type="text" data-ng-model="user.invoice.address"  class="form-control" id="address" placeholder="via e n° civico">
                                 </div>
                             </div>
 
@@ -196,10 +202,10 @@ get_header();?>
                                 <label for="city" class="col-sm-2 control-label"></label>
 
                                 <div class="col-xs-2">
-                                    <input type="text" data-ng-model="subscription.user.invoice.zip" class="form-control" placeholder="CAP" maxlength="5">
+                                    <input type="text" data-ng-model="user.invoice.zip" class="form-control" placeholder="CAP" maxlength="5">
                                 </div>
                                 <div class="col-xs-4">
-                                    <input type="text" data-ng-model="subscription.user.invoice.city" class="form-control" placeholder="Comune">
+                                    <input type="text" data-ng-model="user.invoice.city" class="form-control" placeholder="Comune">
                                 </div>
                             </div>
                         </div>
@@ -236,8 +242,24 @@ get_header();?>
                     </div>
                 </div>
             </div>
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Errore</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{message}}</p>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
         </div>
     </div>
+
 <?php
 get_footer();
 ?>

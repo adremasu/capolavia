@@ -42,11 +42,20 @@ endif;
         </div>
         <div class="kt-articles">
             <div class="row">
-            <?php while( $beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
+                <article class="col-md-6 visible-xs-block">
+                    <div class="w
+                     clearfix">
+                        <?php dynamic_sidebar( 'mobile-blog-sidebar' ); ?>
+                    </div>
+                </article>
+                <?php while( $beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
             <article class="col-md-6">
                 <div class="kt-article clearfix">
                     <a href="<?php the_permalink();?>">
-                    <?php if(has_post_thumbnail()):the_post_thumbnail('post-list',array('class'=>'img-responsive')); endif;?>
+                    <?php
+                    if(has_post_thumbnail()):
+                        echo ltrim(get_the_post_thumbnail( null, 'post-list',array('class'=>'img-responsive') ), 'http:');
+                    endif;?>
                     </a>
                     <h2>
                         <a href="<?php the_permalink();?>" title="<?php the_title();?>" class="h3">
@@ -73,7 +82,7 @@ endif;
       <?php endif; wp_reset_postdata();?>
 
     </div><!-- .kt-articles end here -->
-    <div class="col-md-4">
+    <div class="col-md-4 hidden-xs">
     <?php get_template_part( 'sidebar' ); ?>
     </div>
 </div>
