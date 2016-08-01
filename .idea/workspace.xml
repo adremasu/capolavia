@@ -4,329 +4,14 @@
     <bookmark url="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" line="135" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e61095c0-a34b-480d-aa52-b3161ceeb09d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/calligra.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/calligra.z" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/images/fb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/images/insta.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/images/twitter.png" />
+    <list default="true" id="e61095c0-a34b-480d-aa52-b3161ceeb09d" name="Default" comment="booking_app">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.htpasswd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/20k_c1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/20k_c2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/FAQ.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/__construct.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/acceptpagebreak.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/addfont.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/addlink.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/addpage.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/aliasnbpages.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/calligra.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/cell.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/changelog.htm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/_client_secret.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/client_secret_108086348119377074393.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/close.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/countries.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/courier.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/courierb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/courierbi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/courieri.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1250.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1251.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1252.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1253.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1254.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1255.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1257.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp1258.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/cp874.map" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/dev_key.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/email_templates.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/error.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/footer.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forbidden.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/fpdf.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/fpdf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/getpageheight.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/getpagewidth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/getstringwidth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/getx.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/gety.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/header.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/helvetica.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/helveticab.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/helveticabi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/helveticai.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/image.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/index.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/index.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/install.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-1.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-11.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-15.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-16.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-2.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-4.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-5.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-7.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/iso-8859-9.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/koi8-r.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/koi8-u.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/license.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/line.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/link.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/ln.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/makefont.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/makefont.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/multicell.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/output.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/pageno.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/pdf-bookings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/rect.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setauthor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setautopagebreak.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setcompression.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setcreator.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setdisplaymode.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setdrawcolor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setfillcolor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setfont.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setfontsize.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setkeywords.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setleftmargin.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setlinewidth.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setlink.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setmargins.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setrightmargin.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setsubject.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/settextcolor.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/settitle.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/settopmargin.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setx.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/setxy.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/sety.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/symbol.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/text.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/times.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/timesb.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/timesbi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/timesi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/makefont/ttfparser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto1.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto2.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto2.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto3.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto4.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto5.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto6.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto6.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto7.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/tutorial/tuto7.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/doc/write.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/fpdf/font/zapfdingbats.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/images/boom.png" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/images/boom.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/images/hawk.png" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/images/hawk.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/images/hoek.png" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/images/hoek.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/images/logo.png" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/images/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/.sass-cache/b13df2d9e9a2ba57de1ec3e1d770d83a4c27b094/style.sassc" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/.sass-cache/b13df2d9e9a2ba57de1ec3e1d770d83a4c27b094/style.sassc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/.travis.yml" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/.travis.yml" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/.travis.yml" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/.travis.yml" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/.travis.yml" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/LICENSE" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/LICENSE" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/LICENSE" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/LICENSE" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/LICENSE" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/LICENSE" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/Makefile" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/Makefile" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/Makefile" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/Makefile" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/Makefile" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/README.md" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/README.md" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/README.md" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/README.md" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/README.md" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/packages/jshint/README.md" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/packages/jshint/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_booking.sass" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_booking.sass" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/arguments.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/arguments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/arguments.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/arguments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/async/lib/async.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/async/lib/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/async/lib/async.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/async/lib/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/node_modules/async/lib/async.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/node_modules/async/lib/async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/completion/bash" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/completion/bash" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/node-uuid/benchmark/bench.sh" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/node-uuid/benchmark/bench.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/fs-extra/node_modules/rimraf/bin.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/fs-extra/node_modules/rimraf/bin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/yargs/test/_/bin.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/yargs/test/_/bin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-docco2/node_modules/docco/node_modules/fs-extra/node_modules/rimraf/bin.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-docco2/node_modules/docco/node_modules/fs-extra/node_modules/rimraf/bin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/optimist/test/_/bin.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/optimist/test/_/bin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/rimraf/bin.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/rimraf/bin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/booking.coffee" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/booking.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/browser.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/browser.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/browser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-coffee/node_modules/coffee-script/bin/cake" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-coffee/node_modules/coffee-script/bin/cake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/coffee-script/bin/cake" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/coffee-script/bin/cake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/cat.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/cat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/choice.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/choice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/choice.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/choice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/lib/cli.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/lib/cli.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/supports-color/cli.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/supports-color/cli.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/client.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/client.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/mkdirp/bin/cmd.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/mkdirp/bin/cmd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/mkdirp/bin/cmd.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/mkdirp/bin/cmd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-coffee/node_modules/coffee-script/bin/coffee" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-coffee/node_modules/coffee-script/bin/coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/coffee-script/bin/coffee" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/coffee-script/bin/coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/command.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/command.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/constants.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/constants.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/exit/test/fixtures/create-files.sh" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/exit/test/fixtures/create-files.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/crypto.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/crypto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/crypto.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/crypto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/node_modules/ycssmin/cssmin.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/node_modules/ycssmin/cssmin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/node_modules/ycssmin/bin/cssmin" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/node_modules/ycssmin/bin/cssmin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-docco2/node_modules/docco/bin/docco" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-docco2/node_modules/docco/bin/docco" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/echo.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/echo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/lib/escape.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/lib/escape.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/bin/escodegen.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/bin/escodegen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/bin/esgenerate.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/bin/esgenerate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/node_modules/esprima/bin/esparse.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/node_modules/esprima/bin/esparse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/esprima/bin/esparse.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/esprima/bin/esparse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/esprima/bin/esparse.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/esprima/bin/esparse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/node_modules/esprima/bin/esvalidate.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/node_modules/esprima/bin/esvalidate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/esprima/bin/esvalidate.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/esprima/bin/esvalidate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/esprima/bin/esvalidate.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/esprima/bin/esvalidate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/grunt-legacy-util/test/fixtures/exec.sh" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/grunt-legacy-util/test/fixtures/exec.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/uid-number/get-uid-gid.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/uid-number/get-uid-gid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/glob.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/glob.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/bin/grunt" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/bin/grunt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/bin/handlebars" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/bin/handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/header.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/help.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/help.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/help.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/help.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/bin/hint" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/bin/hint" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/config-chain/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/config-chain/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/lib/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/test/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/lib/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/test/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/lib/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/lib/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/test/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/bin/js-yaml.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/bin/js-yaml.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/bin/js-yaml.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/bin/js-yaml.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/http-signature/node_modules/ctype/tools/jsl.conf" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/http-signature/node_modules/ctype/tools/jsl.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/http-signature/node_modules/ctype/tools/jsstyle" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/http-signature/node_modules/ctype/tools/jsstyle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/bin/lessc" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/bin/lessc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/long_desc.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/long_desc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/js/main.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-docco2/node_modules/docco/node_modules/marked/bin/marked" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-docco2/node_modules/docco/node_modules/marked/bin/marked" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/message.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/message.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/node_modules/nopt/examples/my-program.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/node_modules/nopt/examples/my-program.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/nopt/examples/my-program.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/nopt/examples/my-program.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/examples/my-program.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/examples/my-program.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/nopt/examples/my-program.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/nopt/examples/my-program.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/nopt/examples/my-program.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/nopt/examples/my-program.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/nargs.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/nargs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/nargs.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/nargs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/node_modules/nopt/bin/nopt.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/node_modules/nopt/bin/nopt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/nopt/bin/nopt.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/nopt/bin/nopt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/bin/nopt.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/node_modules/noptify/node_modules/nopt/bin/nopt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/nopt/bin/nopt.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/nopt/bin/nopt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/nopt/bin/nopt.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/nopt/bin/nopt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/examples/offset.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/examples/offset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/boom/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/cryptiles/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/node_modules/ycssmin/package.json" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-include-bootstrap/node_modules/grunt-contrib-less/node_modules/less/node_modules/ycssmin/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/parents.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/parents.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/parents.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/parents.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/parse.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/test/parse.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/test/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-coffee/node_modules/coffee-script/lib/coffee-script/parser.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-coffee/node_modules/coffee-script/lib/coffee-script/parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/coffee-script/lib/coffee-script/parser.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/coffee-script/lib/coffee-script/parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/bin/phantomjs" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/bin/phantomjs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/prefix_chars.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/prefix_chars.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/prefix_chars.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/prefix_chars.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/progress.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/progress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/readme.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/readme.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/source-map/test/run-tests.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/node_modules/source-map/test/run-tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/node_modules/source-map/test/run-tests.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/escodegen/node_modules/source-map/test/run-tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/run-tests.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/test/run-tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/test/run-tests.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/test/run-tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/run.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/form-data/node_modules/combined-stream/node_modules/delayed-stream/test/run.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/semver/bin/semver" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/npmconf/node_modules/semver/bin/semver" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/semver/bin/semver" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/semver/bin/semver" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/server.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/server.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/sort.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/sort.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/spinner.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/spinner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/static.coffee" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/static.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/static.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jshint/node_modules/jshint/node_modules/cli/examples/static.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/stringify.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/stringify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/test/stringify.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/test/stringify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/sub_commands.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/sub_commands.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/sub_commands.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/sub_commands.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription-ajax.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription-ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/sum.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/js-yaml/node_modules/argparse/examples/sum.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/sum.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/sum.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/plugins/tables.php" afterPath="$PROJECT_DIR$/wp-content/plugins/tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test-clone.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test-clone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test-moz-ast.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test-moz-ast.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test-smart.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test-smart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/tmp/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test1.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test2.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test3.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/hoek/test/modules/test3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/examples/time.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/node_modules/sntp/examples/time.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/bin/tiny-lr" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/bin/tiny-lr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/bin/uglifyjs" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-uglify/node_modules/uglify-js/bin/uglifyjs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/bin/uglifyjs" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/handlebars/node_modules/uglify-js/bin/uglifyjs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/bin/update-livereload" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-watch/node_modules/tiny-lr/bin/update-livereload" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/uri.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/uri.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/example/usage.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/example/usage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/utils.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/lib/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/utils.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/hawk/test/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/utils.js" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/qs/lib/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/node-uuid/bin/uuid" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/request/node_modules/node-uuid/bin/uuid" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/which/bin/which" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/which/bin/which" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/which/bin/which" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-template-jasmine-istanbul/node_modules/istanbul/node_modules/which/bin/which" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/which/bin/which" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt/node_modules/which/bin/which" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/completion/zsh" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-cli/completion/zsh" />
     </list>
     <ignored path="capolavia.blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -358,10 +43,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="book-page.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="book-page.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25" vertical-offset="1470" max-vertical-offset="4875">
+            <state vertical-scroll-proportion="0.7404022" vertical-offset="1335" max-vertical-offset="4875">
               <caret line="116" column="58" selection-start-line="116" selection-start-column="58" selection-end-line="116" selection-end-column="58" />
               <folding>
                 <marker date="1469887576613" expanded="true" signature="6819:7249" placeholder="..." />
@@ -385,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="584">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -684,32 +369,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="capolavia.blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="capolavia.blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beyond-magazine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -751,6 +410,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="google-calendar-events" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="google-calendar-events" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -933,13 +618,26 @@
       <option name="project" value="LOCAL" />
       <updated>1467567557569</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="booking_app">
+      <created>1470058971803</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1470058971803</updated>
+    </task>
+    <task id="LOCAL-00011" summary="booking_app second part">
+      <created>1470059152749</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1470059152749</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1282" height="753" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -947,7 +645,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22617124" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42335767" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -957,7 +655,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23222749" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -991,7 +688,9 @@
     <MESSAGE value="update to wp 4.5.1" />
     <MESSAGE value="legal footer" />
     <MESSAGE value="booking_page" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking_page" />
+    <MESSAGE value="booking_app" />
+    <MESSAGE value="booking_app second part" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking_app second part" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>$PROJECT_DIR$</wordpressPath>
@@ -1394,9 +1093,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="584">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25" vertical-offset="1470" max-vertical-offset="4875">
+        <state vertical-scroll-proportion="0.7404022" vertical-offset="1335" max-vertical-offset="4875">
           <caret line="116" column="58" selection-start-line="116" selection-start-column="58" selection-end-line="116" selection-end-column="58" />
           <folding>
             <marker date="1469887576613" expanded="true" signature="6819:7249" placeholder="..." />
@@ -1416,14 +1123,6 @@
             <marker date="1469887576613" expanded="true" signature="10107:10523" placeholder="..." />
             <marker date="1469887576613" expanded="true" signature="10268:10480" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="584">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
