@@ -22,6 +22,7 @@ class save_new_subscriptionClass
 
         $subscription = $data['subscription'];
         $this->user = $data['user'];
+        $this->email = $this->user['email'];
         $this->subscription = $subscription;
         $this->blacklist = $subscription['products'];
         $this->IDs = array(
@@ -131,6 +132,7 @@ class save_new_subscriptionClass
 
     private function setNewSubscription($user_id){
         if (is_int($user_id)){
+
             $user_data = $this->user;
             $post_title = $user_data[email].' - '.$this->chosen_subscription;
             $args = array(
@@ -169,6 +171,7 @@ class save_new_subscriptionClass
     }
 
     private function setNewUser(){
+
         $user_id = wp_create_user( $this->email, $this->user[password1], $this->email );
         $user = new WP_User( $user_id );
         $user->set_role('customer');

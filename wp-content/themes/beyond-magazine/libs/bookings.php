@@ -53,9 +53,57 @@ class bookings{
 
         add_action( 'save_post', array( $this, 'save' ) );
 
+        add_action('admin_enqueue_scripts', array( $this, 'enqueue_js' ));
+
 
     }
+
     public function save($post_id){
+        /*
+         * We need to verify this came from the our screen and with proper authorization,
+         * because save_post can be triggered at other times.
+         */
+
+        // Check if our nonce is set.
+        if ( ! isset( $_POST['sub_inner_custom_box_nonce'] ) ) {
+            return $post_id;
+        }
+
+        $nonce = $_POST['sub_inner_custom_box_nonce'];
+
+        // Verify that the nonce is valid.
+        if ( ! wp_verify_nonce( $nonce, 'sub_inner_custom_box' ) ) {
+            return $post_id;
+        }
+
+        /*
+         * If this is an autosave, our form has not been submitted,
+         * so we don't want to do anything.
+         */
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return $post_id;
+        }
+
+        // Check the user's permissions.
+        if ( 'page' == $_POST['post_type'] ) {
+            if ( ! current_user_can( 'edit_page', $post_id ) ) {
+                return $post_id;
+            }
+        } else {
+            if ( ! current_user_can( 'edit_post', $post_id ) ) {
+                return $post_id;
+            }
+        }
+
+        /* OK, it's safe for us to save the data now. */
+
+        // Sanitize the user input.
+
+        $subscription_data =  $_POST['products'];
+        $user_data =  $_POST['userData'];
+        // Update the meta field.
+        update_post_meta( $post_id, 'products', $subscription_data );
+        update_post_meta( $post_id, 'userData', $user_data );
 
     }
 
@@ -70,33 +118,123 @@ class bookings{
         );
     }
 
+    public function enqueue_js( $hook ) {
+        if ('post.php' != $hook) {
+            return;
+        }
+        wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
+        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js' );
+    }
     public function bookings_metabox($post){
+        wp_nonce_field( 'sub_inner_custom_box', 'sub_inner_custom_box_nonce' );
+
         $products_meta = get_post_meta($post->ID, 'products', true);
         $user_meta = get_post_meta($post->ID, 'userData', true);
+        $date = get_post_meta($post->ID, 'date', true);
+        echo "<div ng-app='bookingsApp' ng-controller='ProductsController'>";
+        echo "<div ng-init='products = ".json_encode($products_meta)."'></div>";
         echo "<table>";
-        echo '<thead><tr><th>Prodotto</th><th>Peso</th><th>Pezzi</th></tr></thead>';
+        echo '<thead><tr><th></th><th>Prodotto</th><th>Peso</th><th>Pezzi</th></tr></thead>';
+        echo "
+            <tr data-ng-repeat = '(id, product) in products'>
+                <td>
+                    <a href='#' data-ng-click='deleteProduct(\$event, id)' class='button'>X</a>
+                    <input value='{{product.name}}' type='hidden' name='products[{{id}}][name]'>
+                </td>
+                <td>{{product.name}}</td>
+                <td><input name='products[{{id}}][weight][qt]' data-ng-model='product.weight.qt'><input value='{{product.weight.mu}}' type='hidden' name='products[{{id}}][weight][mu]'>{{product.weight.mu}}</td>
+                <td><input name='products[{{id}}][items][qt]' data-ng-model='product.items.qt'><input value='{{product.items.mu}}' type='hidden' name='products[{{id}}][items][mu]'>{{product.items.mu}}</td>
+            </tr>";
         foreach($products_meta as $id => $product){
+
+
+
             $product_name = $product['name'];
-            if ($product['weight']['qt']){
-                $weight = $product['weight']['qt'].$product['weight']['mu'];
+            if (!$product['weight']['qt']){
+                $product['weight']['qt'] = 0;
+            }
+            if (!$product['items']['qt']){
+                $product['items']['qt'] = 0;
+            }
+            if ($product['weight']['mu']){
+                $weight = "<input data-ng-model='meta[\"products\"][\"$id\"][\"weight\"]' value='".$product['weight']['qt']."' name='meta[products][$id][weight]'> ".$product['weight']['mu'];
             } else {
                 $weight = '';
             }
-            if ($product['items']['qt']){
-                $items = $product['items']['qt'].$product['items']['mu'];
+            if ($product['items']['mu']){
+                $items = "<input data-ng-model='meta[\"products\"][\"$id\"][\"items\"]' value='".$product['items']['qt']."' name='meta[products][$id][items]'> ".$product['items']['mu'];
             } else {
                 $items = '';
             }
 
-            echo "<tr>
-                <td>$product_name</td>
+
+
+/*            echo "<tr>
+                <td><a href='#' class='button'>X</a></td><td>$product_name</td>
                 <td>".$weight."</td>
                 <td>".$items."</td>
                 </tr>";
+*/
         }
+
         echo "</table>";
+        add_thickbox(); ?>
+            <div id="add-product" style="display:none;">
+                <h4>Aggiungi un prodotto</h4>
+                <p>
+                    <select id="newProductSelect" update-new-product STYLE="margin-top: -3px" data-ng-model="newProduct.name">
+                        <?php
+                        $args = array(
+                            'posts_per_page'    => -1,
+                            'orderby'           => 'title',
+                            'order'             => 'ASC',
+                            'post_type'         => 'products',
+                            'post_status'       => 'publish');
 
+                            $_products = get_posts($args);
+                        foreach ($_products as $_id => $_product){
+                            $meta = get_post_meta($_product->ID,'_my_meta', true);
 
+                            echo "<option
+                                data-weight='$meta[weight]'
+                                data-weight_name='$meta[weight_name]'
+                                data-items='$meta[items]'
+                                data-items_name='$meta[items_name]'
+                                data-id='$_product->ID'
+                                >$_product->post_title</option>";
+                        }
+                        ?>
+                    </select>
+                    <input type="text" size="5" style="width: 100px" placeholder="{{newProduct.items.mu}}" data-ng-hide="!showNPItems" data-ng-model="newProduct.items.qt">
+                    <input style="width: 100px" type="text" size="5"  placeholder="{{newProduct.weight.mu}}" data-ng-hide="!showNPWeight" data-ng-model="newProduct.weight.qt">
+                </p>
+                <?php
+                ?>
+                <a class='button' data-ng-click='addProduct()'>Aggiungi</a>
+            </div>
+
+            <a href="#TB_inline?width=600&height=150&inlineId=add-product" class="button thickbox">Aggiungi prodotto</a>
+        <?php
+        echo "<table>";
+        if ($user_meta[delivery]){
+            $yes = 'checked';
+            $no = '';
+        } else {
+            $no = 'checked';
+            $yes = '';
+
+        }
+        $dates = '';
+        echo "<tr><td><label for='date'>Data</label></td><td>".date('d/m/Y', $date)."";
+        echo "</td></tr>";
+        echo "<tr><td><label for='userData[name]'>Nome</label></td><td><input type='text' name='userData[name]' value='".$user_meta[name]."'/></td></tr>";
+        echo "<tr><td><label for='userData[email]'>Indirizzo E-mail</label></td><td><input type='text' name='userData[email]' value='".$user_meta[email]."'/></td></tr>";
+        echo "<tr><td><label for='userData[phone]'>Telefono</label></td><td><input type='text' name='userData[phone]' value='".$user_meta[phone]."'/></td></tr>";
+        echo "<tr><td><label for='userData[delivery]'>Consegna a domicilio</label></td><td><input type='radio' ".$yes." name='userData[delivery]' value='1'/>Sì<input type='radio' ".$no." name='userData[delivery]' value='0'/>No</td></tr>";
+        echo "<tr><td><label for='userData[address]'>Indirizzo di consegna</label></td><td><input type='text' name='userData[address]' value='".$user_meta[address]."'/></td></tr>";
+        echo "<tr><td><label for='userData[notes]'>Note</label></td><td><textarea cols='50' rows='10' name='userData[notes]'>".$user_meta[notes]."</textarea></td></tr>";
+        echo "</table>";
+        echo "</div>";
 
     }
 }

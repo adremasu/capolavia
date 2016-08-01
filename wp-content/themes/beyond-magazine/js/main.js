@@ -4563,18 +4563,23 @@ jQuery(document).ready(function($){
     '$scope', '$http', function($scope, $http) {
       $scope.loading = false;
       $scope.success = false;
-      console.log($scope.success);
       $scope.saveBooking = function(e) {
-        var date, productsData, request, userData;
+        var date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
         date = $scope.date;
         if ($scope.booking_form.$valid) {
+          selectedProducts = {};
+          for (product in productsData) {
+            if (productsData[product]['weight'] || productsData[product]['items']) {
+              selectedProducts[product] = productsData[product];
+            }
+          }
           request = {
             action: "book_products",
-            products: productsData,
+            products: selectedProducts,
             user: userData,
             date: date
           };
@@ -4588,7 +4593,13 @@ jQuery(document).ready(function($){
           }).success(function(data) {
             $scope.loading = false;
             $scope.success = data.success;
-            return $scope.userMessage = data.userMessage;
+            $scope.userMessage = data.userMessage;
+            return jQuery('#myModal').modal('hide');
+          }).error(function() {
+            $scope.loading = false;
+            $scope.success = data["false"];
+            jQuery('#myModal').modal('hide');
+            return $scope.userMessage = 'Ops! Qualcosa è andato storto';
           });
         }
       };

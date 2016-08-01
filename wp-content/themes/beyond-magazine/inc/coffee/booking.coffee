@@ -3,7 +3,6 @@ bookingApp = angular.module('bookingApp', [])
 bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
   $scope.loading = false
   $scope.success = false
-  console.log $scope.success
   $scope.saveBooking = (e)->
     e.preventDefault()
     $scope.loading = true
@@ -13,9 +12,13 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
 
     # se il form è valido invia l'ordine
     if ($scope.booking_form.$valid)
+      selectedProducts = {}
+      for product of productsData
+        if productsData[product]['weight'] || productsData[product]['items']
+          selectedProducts[product] = productsData[product]
       request = {
         action:   "book_products"
-        products: productsData
+        products: selectedProducts
         user:     userData
         date:     date
       }
@@ -25,10 +28,21 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
         data: jQuery.param(request)
         headers:
           "Content-Type": "application/x-www-form-urlencoded"
-      ).success (data) ->
+      )
+      .success (data) ->
         $scope.loading = false
         $scope.success = data.success
         $scope.userMessage = data.userMessage
+        jQuery('#myModal').modal('hide')
+      .error ->
+        $scope.loading = false
+        $scope.success = data.false
+        $scope.userMessage = 'Ops! Qualcosa è andato storto'
+        jQuery('#myModal').modal('hide')
+
+  $scope.completed = ->
+    false
+
   $scope.recap = (e) ->
 
 ]

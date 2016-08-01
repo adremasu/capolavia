@@ -72,13 +72,30 @@ foreach ($results->getItems() as $item) {
 
 ?>
 
-    <div class="row" id="kt-main" data-ng-app="bookingApp">
-        <div class="col-md-12">
-            <div id="kt-latest-title" class="h3">
-                <p><span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?></span></p>
+    <div class="row" id="kt-main" data-ng-app="bookingApp"  data-ng-controller="bookingController">
+        <div ng-show="::false" style="position: fixed; height: 100%; width: 100%; background-color: #353535; top: 0; left: 0; z-index: 10000; opacity: 0.5">
+            <div style="position: relative; top: 50%; display: table; margin: 0 auto; font-size: 26px; color: #CCC;">
+                Sto caricando...
             </div>
         </div>
-        <div id="booking-wrapper" class="col-md-12" data-ng-controller="bookingController">
+        <div class="col-md-12" ng-cloack>
+            <div id="kt-latest-title" class="h3" >
+                <p data-ng-hide="success"><span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?></span></p>
+                <p data-ng-show="success" ><span>La tua prenotazione per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?> è stata registrata.</span></p>
+            </div>
+        </div>
+        <div class="col-md-12 description" data-ng-hide="success">
+
+            <?php
+            the_content();
+            ?>
+            <p>
+                Sono qui elencati i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?>.
+            </p>
+        </div>
+
+
+        <div id="booking-wrapper" class="col-md-12">
             <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -90,7 +107,7 @@ foreach ($results->getItems() as $item) {
                             <p>Nome: {{user.name}}</p>
                             <p>Indirizzo e-mail: {{user.email}}</p>
                             <p>Telefono: {{user.phone}}</p>
-                            <table class="table table-striped">
+                            <table class="table">
                                 <tr data-ng-hide="!product.weight && !product.items" data-ng-repeat="product in products">
                                     <td>{{product.name}}</td>
                                     <td data-ng-if="product.items">{{product.items}} {{product.items_name}}</td>
@@ -104,28 +121,34 @@ foreach ($results->getItems() as $item) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Modifica</button>
-                            <button type="button" class="btn btn-primary">Conferma ordine</button>
+                            <button type="button" data-ng-click="saveBooking($event)" class="btn btn-success">
+                                <span data-ng-show="loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                                Conferma ordine
+                            </button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
 
-            <div class="row" data-ng-show="success" >
-                <div class="col-md-12 ">
-                    <p class="alert alert-success">
+            <div class="row" data-ng-show="success" ng-cloak >
+                <div class="col-md-12 col-xs-12">
+                    <p class="alert text-center alert-success">
                         {{userMessage}}
                     </p>
                 </div>
             </div>
-            <div data-ng-hide="success">
+
+            <div data-ng-hide="success" ng-cloak>
 
                 <div class="row">
                 <?php
-
+                $is_odd = false;
                 foreach ($array_products as $product) {
+                    $is_odd = !$is_odd;
+                    if ($is_odd){ $odd_class = 'odd';} else {$odd_class = 'even';}
                     $url = $product[guid];
                     $_price = get_post_meta($product[ID], 'prezzo', true);
-                    $price = ($_price ? ' a ' . $_price : '');
+                    $price = ($_price ? $_price : '');
                     $_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($product[ID]), 'small_square');
                     $stock = get_post_meta($product[ID], '_my_meta', true);
                     $has_weight = $stock[weight];
@@ -134,13 +157,13 @@ foreach ($results->getItems() as $item) {
                     $items_name = $stock[items_name];
                     $thumbnail = (has_post_thumbnail($product[ID]) ? $_thumbnail[0] : get_header_image());
                     $html_code .= '
-                        <div class="booking-product-wrapper col-xs-12 col-md-6">
+                        <div class="booking-product-wrapper col-xs-12 col-sm-6 '.$odd_class.'">
                         <div class="row">
-                            <div class="col-md-4" >
+                            <div class="col-md-4 text-center">
                                 <img src="' . $thumbnail . '" alt="' . $product[post_title] . $price . '"/>
                             </div>
                             <div class="col-md-8">
-                                <p class="product-name"><h4>' . $product[post_title] .'</h4><h5>'. $price . '</h5></p>';
+                                <p class="product-name text-center"><h4>' . $product[post_title] .'</h4><h5>'. $price . '</h5></p>';
                     $product_name = addslashes($product[post_title]);
                     $html_code .= "
 
@@ -154,25 +177,43 @@ foreach ($results->getItems() as $item) {
                                 <div class='booking-qty-selectors-wrapper row'>";
 
                     if ($has_items){
-                    $html_code .= '<div class="form-group col-xs-6">
+                    $html_code .= '<div class="form-group col-xs-12 col-md-6">
                                         <label class="sr-only" for="'.$product[ID].'">Pezzi</label>
                                         <div class="input-group">
-                                          <input type="number" data-ng-model="products['.$product[ID].'][\'items\']" class="form-control" id="'.$product[ID].'" placeholder="n°" name="products['.$product[ID].'][items]">
+                                          <input type="number" data-ng-disabled="products['.$product[ID].'][\'weight\']" data-ng-model="products['.$product[ID].'][\'items\']" class="form-control" id="'.$product[ID].'" placeholder="n°" name="products['.$product[ID].'][items]">
                                           <div class="input-group-addon">'.$items_name.'</div>
                                         </div>
 
-                                    </div>';}
-                    if ($has_weight){
-
-
-                    $html_code  .= '<div class="form-group col-xs-6">
-                                        <label class="sr-only" for="'.$product[ID].'">Peso (in '.$weight_name.')</label>
+                                    </div>';
+                    } else {
+                        $html_code  .= '<div class="form-group col-xs-12 col-md-6" style="visibility: hidden">
+                                        <label class="sr-only" for="'.$product[ID].'"></label>
                                         <div class="input-group">
-                                          <input type="number" data-ng-model="products['.$product[ID].'][\'weight\']" class="form-control" id="'.$product[ID].'" placeholder="peso"  name="products['.$product[ID].'][weight]">
-                                          <div class="input-group-addon">'.$weight_name.'</div>
+                                          <input type="number" class="form-control">
+                                          <div class="input-group-addon"></div>
                                         </div>
                                     </div>';
                     }
+                    if ($has_weight){
+
+
+                    $html_code  .= '<div class="form-group col-xs-12 col-md-6">
+                                        <label class="sr-only" for="'.$product[ID].'">Peso (in '.$weight_name.')</label>
+                                        <div class="input-group">
+                                          <input type="number" data-ng-disabled="products['.$product[ID].'][\'items\']" data-ng-model="products['.$product[ID].'][\'weight\']" class="form-control" id="'.$product[ID].'" placeholder="peso"  name="products['.$product[ID].'][weight]">
+                                          <div class="input-group-addon">'.$weight_name.'</div>
+                                        </div>
+                                    </div>';
+                    } else {
+                        $html_code  .= '<div class="form-group col-xs-12 col-md-6" style="visibility: hidden">
+                                        <label class="sr-only" for="'.$product[ID].'"></label>
+                                        <div class="input-group">
+                                          <input type="number" class="form-control">
+                                          <div class="input-group-addon"></div>
+                                        </div>
+                                    </div>';
+                    }
+
                     $html_code  .= '</div>
                             </div>
                         </div>
@@ -183,23 +224,26 @@ foreach ($results->getItems() as $item) {
                 ?>
 
                 </div>
-                <div class="row" >
+                <div class="row">
+                    <div class="col-md-12 col-xs-12"><p>&nbsp;</p></div>
+                </div>
+                <div class="row" ng-cloak >
                     <form class="custom_form" novalidate action="" id="booking-form" name="booking_form">
-                        <div class="col-xs-6">
+                        <div class="col-xs-12 col-md-6">
                             <label for="name"> Nome*
                                 <input required data-ng-model="user.name" type="text" name="name" class="input-lg form-control"/>
                                 <p class="validation-text">Inserisci il tuo nome</p>
                             </label>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-12 col-md-6">
                             <label for="email"> Indirizzo e-mail*
                                 <input required data-ng-model="user.email" type="email" name="email" class="input-lg form-control"/>
                                 <p class="validation-text">Inserisci un indirizzo e-mail valido</p>
                             </label>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-12 col-md-6">
                             <label for="phone"> Telefono
-                                <input data-ng-model="user.phone" type="phone" name="phone" class="input-lg form-control"/>
+                                <input required data-ng-model="user.phone" type="phone" name="phone" class="input-lg form-control"/>
                             </label>
                         </div>
 
@@ -211,7 +255,7 @@ foreach ($results->getItems() as $item) {
                                 }
                                 ?>
                         <div ng-init="date = '<?php echo strtotime($start['dateTime']);?>'"></div>
-                        <div class="col-md-12">
+                        <div class="col-xs-12 col-md-12">
                             <div class="row" style="margin-top: 1em">
                                 <label style="margin:0" class="col-md-12" for="delivery-check">Scegli la modalità di consegna
                                 </label>
@@ -237,25 +281,34 @@ foreach ($results->getItems() as $item) {
                             </div>
 
                         </div>
+                        <div class="col-md-12 col-xs-12">
+                            <strong>La consegna a domicilio o il ritiro in azienda avverranno in ogni caso <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).' tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
+                        </div>
 
-
-                        <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
                             <div class="form-group">
                                 <label for="notes">Note:</label>
                                 <textarea id="notes" placeholder="Inserisci qui eventuali note" class="form-control" name="notes" data-ng-model="user.notes" id="" cols="30" rows="5"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <strong>La consegna avverrà in ogni caso <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).' tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
-                        </div>
-                        <div class="col-md-12">
+
+                        <div class="col-md-12 col-xs-12 visible-xs-block visible-sm-block">
                             <div class="form-group">
-                                <button data-toggle="modal" data-target="#myModal" data-ng-click="$event.preventDefault()" class="btn btn-success btn-lg" data-ng-disabled="!booking_form.$valid">
-                                    <span data-ng-show="loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                                <button data-toggle="modal" data-target="#myModal" data-ng-click="$event.preventDefault()" class="btn-block btn btn-success btn-lg" data-ng-disabled="!booking_form.$valid">
                                     Ordina
                                 </button>
                             </div>
                         </div>
+                        <div class="col-md-12 col-xs-12 hidden-xs hidden-sm">
+                            <div class="form-group">
+                                <button data-toggle="modal" data-target="#myModal" data-ng-click="$event.preventDefault()" class="btn btn-success btn-lg" data-ng-disabled="!booking_form.$valid">
+                                    Ordina
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-xs-12"><p><i>*campi obbligatori</i></p></div>
+                        <div class="col-md-12 col-xs-12"><p><small>Questo non è un sito di vendita on-line; si tratta di un'applicazione per facilitare l'ordine da parte dei clienti. La prenotazione non impegna legalmente alcuna delle due parti.</small></p></div>
                     </form>
 
                 </div>

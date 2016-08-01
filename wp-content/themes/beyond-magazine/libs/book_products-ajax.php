@@ -27,11 +27,12 @@ class book_productsClass {
         $this->products = $_POST['products'];
         $this->userData = $_POST['user'];
         $this->date = $_POST['date'];
+        $this->delivery = $this->userData['delivery'];
 
         $this->getBookingProducts();
 
         if ($this->saveBooking()){
-            $this->userMessage = 'grazie per aver prenotato, riceverai la conferma all\'indirizzo email da te utilizzato.';
+            $this->userMessage = 'Grazie per aver prenotato, riceverai la conferma all\'indirizzo email da te indicato.';
             $this->success = true;
         } else  {
 
@@ -50,7 +51,7 @@ class book_productsClass {
     private function saveBooking(){
         if ($this->isNewBooking()){
 
-            if ($this->sendUserEmail()){
+            if ($this->sendUserEmail() && $this->sendAdminEmail()){
 
                 return $this->saveNewBooking();
             }
@@ -59,12 +60,14 @@ class book_productsClass {
         }
     }
 
-    private function sendUserEmail(){
-        $emailAddress = $this->userData['email'];
-        $emailMessage = '';
+
+    private function _orderEmail(){
+        $this->emailMessage = '';
         $products = ($this->productsJson ? $this->productsJson : $this->getBookingProducts());
-        $emailMessage .= "<table>";
-        $emailMessage .= '<thead><tr><th>Prodotto</th><th>Peso</th><th>Pezzi</th></tr></thead>';
+
+
+
+        $this->emailMessage .= "<table width='100%'>";
         foreach($products as $id => $product){
             $product_name = $product['name'];
             if ($product['weight']['qt']){
@@ -77,18 +80,71 @@ class book_productsClass {
             } else {
                 $items = '';
             }
-
-            $emailMessage .= "<tr>
-                <td>$product_name</td>
-                <td>".$weight."</td>
-                <td>".$items."</td>
-                </tr>";
+            if ($weight || $items){
+                $this->emailMessage .= "<tr>
+                <td>$product_name</td>";
+                if ($weight){
+                    $this->emailMessage .= "<td>".$weight."</td>";
+                }
+                if($items){
+                    $this->emailMessage .= "<td>".$items."</td>";
+                }
+                $this->emailMessage .= "</tr>";
+            }
         }
+        $this->emailMessage .= "</table>";
+        $this->emailMessage .= "<table width='100%'>";
+        $this->emailMessage .= "<tr>";
+        if ($this->delivery){
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
+        } else {
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." in azienda (via Rodolfo Rossi 101)</td>";
+
+        }
+        $this->emailMessage .= "</tr>";
+
+        $this->emailMessage .= "</table>";
+
+
+        return $this->emailMessage;
+    }
+
+    private function sendAdminEmail(){
+        $emailAddress = get_option('admin_email');
+        $date = date_i18n('l j F Y', $this->date);
+        $emailMessage = '<p>Ordine per '.$date.'</p>';
+
+        $emailMessage .= $this->_orderEmail();
+        $customerEmail = $this->userData['email'];
+        if (wp_mail($emailAddress, 'Ordine da '.$customerEmail. ' ('.$this->userData["name"].')' , $emailMessage)){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    private function sendUserEmail(){
+        $emailAddress = $this->userData['email'];
+        $date = date_i18n('l j F Y \d\a\l\l\e H:i', $this->date);
+        $emailTemplate = new emailTemplate();
+        $emailMessage = $emailTemplate->getTopTemplate($date);
+        $emailMessage .= "<table width='100%'>";
+        $emailMessage .= "<tr>";
+        $emailMessage .= "<td><b>Gentile ".$this->userData['name'].", abbiamo ricevuto da te il seguente ordine</b></td>";
+        $emailMessage .= "</tr>";
+
         $emailMessage .= "</table>";
+        $emailMessage .= $this->_orderEmail();
+        $emailMessage .= $emailTemplate->getTemplate_bottom();
+        $header = 'From: Sapori di Capolavia <ordini@capolavia.it>' . "\r\n";
 
-        wp_mail($emailAddress, 'Ordine confermato', $emailMessage);
+        if(wp_mail($emailAddress, 'Ordine confermato', $emailMessage, $header)){
+            return true;
+        } else {
+            return false;
+        }
 
-        return true;
 
     }
 
@@ -129,20 +185,15 @@ class book_productsClass {
     */
     public function getBookingProducts(){
         $_products = $this->products;
-        foreach ($_products as $_id => $_product){
+        foreach ($_products as $id => $_product){
 
-            $id = substr($_id, 1);
             $product = get_post($id);
             $product_meta = get_post_meta($id,'_my_meta', true);
             $product_name = $product->post_title;
-            $k = array_keys($_product);
-            $qt = $k[0];
-            $measure = $_product[$qt];
-            $mu_name = $product_meta[$qt.'_name'];
 
             // get requested weight
             if (array_key_exists('weight', $_product) && $_product['weight']){
-                $w_qt = $measure;
+                $w_qt = $_product['weight'];
             } else {
                 $w_qt = '';
             }
@@ -155,7 +206,7 @@ class book_productsClass {
 
             // get requested items
             if (array_key_exists('items', $_product) && $_product['items']){
-                $i_qt = $measure;
+                $i_qt = $_product['items'];
             } else {
                 $i_qt = '';
             }

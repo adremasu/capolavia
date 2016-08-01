@@ -66,7 +66,7 @@ $URI = 'http://'.$_SERVER[HTTP_HOST].$Path;
                         <a class="blog-title" href="<?php echo esc_url(home_url()); ?>">
                             <?php echo get_bloginfo('name');?>
                         </a><br/>
-                        <a class="kt-grey blog-description" href="<?php echo esc_url(home_url()); ?>">
+                        <a class="hidden-xs kt-grey blog-description" href="<?php echo esc_url(home_url()); ?>">
                         <?php echo get_bloginfo('description');?>
                         </a>
                     </h1>

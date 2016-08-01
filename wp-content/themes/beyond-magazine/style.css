@@ -10384,6 +10384,21 @@ h3.product-name {
   padding: 1em;
   border-radius: 1em;
 }
+#booking-wrapper input::-webkit-outer-spin-button,
+#booking-wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#booking-wrapper input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
 
 .custom_form input.radio:empty {
   margin-left: -999px;

@@ -1,4 +1,5 @@
 <?php
+
 set_include_path(get_include_path() . PATH_SEPARATOR . '/google-api-php-client/src');
 
 define('MY_WORDPRESS_FOLDER',$_SERVER['DOCUMENT_ROOT']);
@@ -100,6 +101,7 @@ function my_meta_clean(&$arr)
 }
 
 
+require_once('vendor/autoload.php');
 
 
 require_once('libs/class-tgm-plugin-activation.php');
@@ -107,10 +109,14 @@ require_once('libs/subscription.php');
 require_once('libs/bookings.php');
 require_once('libs/subscription-ajax.php');
 require_once('libs/book_products-ajax.php');
+require_once('libs/options.php');
+require_once('libs/GoogleCalendar.php');
+require_once('libs/email_templates.php');
+require_once('libs/pdf-bookings.php');
+
 //require_once('libs/class-holidays.php');
 
 
-require_once('vendor/autoload.php');
 
 add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
@@ -328,7 +334,7 @@ function beyond_load_scripts() {
 
     //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
     //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'http:').'/main.min.js',array('jquery'),'12', null);
+    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'http:').'/main.min.js',array('jquery'),'10', null);
 
     wp_localize_script('beyond_init', 'init_vars', array(
         'label' => __('Menu', 'beyondmagazine')
@@ -770,7 +776,7 @@ add_action( 'save_post', 'icon_save_meta_box_data' );
 
 //analytics
 function GAnalytics() {
-    $domain = ltrim(bloginfo('wpurl'), 'http://');
+    $domain = ltrim(get_bloginfo('wpurl'), 'http://');
     if ( !is_admin() && ($domain=='capolavia.it') ) {
 
         echo "<script>

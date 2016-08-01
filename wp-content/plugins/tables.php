@@ -38,9 +38,10 @@ class Products_List extends WP_List_Table {
      *
      * @return mixed
      */
-    public static function get_products( $per_page = 5, $page_number = 1 ) {
+    public function get_products($meta_key = null, $meta_value = null) {
         $type = 'products';
-        $_order_by = $_GET['orderby'];
+        $_order_by = ($_GET['orderby'] ? $_GET['orderby'] : 'post_title');
+
         switch($_order_by){
             case 'title':
             case 'author':
@@ -48,13 +49,14 @@ class Products_List extends WP_List_Table {
             case 'type':
             case 'post_title':
                 $order_by = $_order_by;
-                $meta_key = '';
+                $this->order_by = $_order_by;
                 break;
             default:
                 $order_by = 'meta_value_num';
-                $meta_key  = $_order_by;
+                $this->order_by = $_order_by;
+
         }
-        $order = $_GET['order'];
+        $order = ($_GET['order'] ? $_GET['order'] : 'ASC');
 
         $args=array(
             'post_type' => $type,
@@ -63,7 +65,9 @@ class Products_List extends WP_List_Table {
             'caller_get_posts'=> 1,
             'orderby' => $order_by,
             'order' => $order,
-            'meta_key' => $meta_key
+            'meta_key' => $meta_key,
+            'meta_value' => $meta_value
+
         );
         $my_query = null;
         $my_query = new WP_Query($args);
@@ -100,10 +104,12 @@ class Products_List extends WP_List_Table {
     public static function record_count() {
         $type = 'products';
         $args=array(
+            'orderby' => 'title',
             'post_type' => $type,
             'post_status' => 'publish',
             'posts_per_page' => -1,
-            'caller_get_posts'=> 1
+            'caller_get_posts'=> 1,
+            'nopaging' => true
         );
         $my_query = null;
         $my_query = new WP_Query($args);
@@ -261,22 +267,9 @@ class Products_List extends WP_List_Table {
      * get the code for newsletter
      */
     public function get_newsletter_code(){
-        $my_query = new WP_Query(
-            array(
-                'post_type' => 'products',
-                'nopaging'=> true,
-                'orderby' => 'title',
-                'order' => 'ASC',
-                'meta_query' => array(
-                    array(
-                        'key' => 'disponibilita',
-                        'value' => '1'
-                    )
-                )
 
-            )
-        );
-        $products =  $my_query->posts;
+        $products =  $this->get_products('disponibilita', '1');
+
         $array_products = json_decode(json_encode($products),TRUE);
         $html_code = "";
         foreach ($array_products as $product){
@@ -396,9 +389,7 @@ class SP_Plugin {
     }
 
 
-    /**
-     * Plugin settings page
-     */
+
     public function plugin_settings_page() {
         echo '<style type="text/css">';
         echo '.wp-list-table .column-cb { width: 30%; }';
@@ -415,7 +406,8 @@ class SP_Plugin {
                             <form method="post">
                                 <?php
                                 $this->products_obj->prepare_items();
-                                $this->products_obj->display(); ?>
+                                $this->products_obj->display();
+                                ?>
                                 <button class="" >Codice per newsletter</button>
                                 <br/>
                                 <textarea name="" id="" cols="100" rows="10">
