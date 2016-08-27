@@ -101,9 +101,11 @@ class bookings{
 
         $subscription_data =  $_POST['products'];
         $user_data =  $_POST['userData'];
+        $date =  $_POST['date'];
         // Update the meta field.
         update_post_meta( $post_id, 'products', $subscription_data );
         update_post_meta( $post_id, 'userData', $user_data );
+        update_post_meta( $post_id, 'date', $date/1000 );
 
     }
 
@@ -122,17 +124,32 @@ class bookings{
         if ('post.php' != $hook) {
             return;
         }
+        wp_enqueue_style('plugin_name-admin-ui-css',
+            'https://code.jquery.com/ui/jquery-ui-git.css',
+            false,
+            PLUGIN_VERSION,
+            false);
         wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
         wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js' );
+        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js' );
+        wp_enqueue_script( 'jquery-ui-core' );
+        wp_enqueue_script( 'jquery-ui-datepicker' );
     }
     public function bookings_metabox($post){
         wp_nonce_field( 'sub_inner_custom_box', 'sub_inner_custom_box_nonce' );
 
         $products_meta = get_post_meta($post->ID, 'products', true);
         $user_meta = get_post_meta($post->ID, 'userData', true);
-        $date = get_post_meta($post->ID, 'date', true);
+        $date = ( (int) get_post_meta($post->ID, 'date', true)) ;
         echo "<div ng-app='bookingsApp' ng-controller='ProductsController'>";
-        echo "<div ng-init='products = ".json_encode($products_meta)."'></div>";
+        if ($products_meta){
+            echo "<div data-ng-init='products = ".json_encode($products_meta)."'></div>";
+        } else {
+            echo "<div data-ng-init='products = {}'></div>";
+        }
+        echo '        <script type = "text/template" getdate>
+            {"data_type":"date", "data":'.json_encode($date*1000).'}
+        </script>';
         echo "<table>";
         echo '<thead><tr><th></th><th>Prodotto</th><th>Peso</th><th>Pezzi</th></tr></thead>';
         echo "
@@ -169,12 +186,6 @@ class bookings{
 
 
 
-/*            echo "<tr>
-                <td><a href='#' class='button'>X</a></td><td>$product_name</td>
-                <td>".$weight."</td>
-                <td>".$items."</td>
-                </tr>";
-*/
         }
 
         echo "</table>";
@@ -224,8 +235,8 @@ class bookings{
             $yes = '';
 
         }
-        $dates = '';
-        echo "<tr><td><label for='date'>Data</label></td><td>".date('d/m/Y', $date)."";
+        echo "<tr><td><label for='date'>Data</label></td><td><a href='#!' class='button' id='pickertrigger'>{{date | date:'d/M/yyyy'}}</a>";
+        echo "<input id='date' name='date' data-ng-model='date' type='text' style='display:none'>";
         echo "</td></tr>";
         echo "<tr><td><label for='userData[name]'>Nome</label></td><td><input type='text' name='userData[name]' value='".$user_meta[name]."'/></td></tr>";
         echo "<tr><td><label for='userData[email]'>Indirizzo E-mail</label></td><td><input type='text' name='userData[email]' value='".$user_meta[email]."'/></td></tr>";
@@ -236,5 +247,20 @@ class bookings{
         echo "</table>";
         echo "</div>";
 
+
     }
 }
+
+function get_month_events() {
+    $month = $_POST['month'];
+    $year = $_POST['year'];
+    if ($month && $year) {
+        $admin = new bookings_admin();
+        $admin->getMonthEventsByDate($month, $year);
+    }
+    wp_die();
+}
+
+
+add_action('wp_ajax_get_month_events', 'get_month_events');
+add_action('wp_ajax_nopriv_get_month_events', 'get_month_events');

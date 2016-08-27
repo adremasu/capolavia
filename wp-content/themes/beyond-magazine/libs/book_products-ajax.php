@@ -110,13 +110,15 @@ class book_productsClass {
     }
 
     private function sendAdminEmail(){
-        $emailAddress = get_option('admin_email');
+        $emailAddress = get_option('booking_email_address');
         $date = date_i18n('l j F Y', $this->date);
         $emailMessage = '<p>Ordine per '.$date.'</p>';
 
         $emailMessage .= $this->_orderEmail();
         $customerEmail = $this->userData['email'];
-        if (wp_mail($emailAddress, 'Ordine da '.$customerEmail. ' ('.$this->userData["name"].')' , $emailMessage)){
+        $header = 'From: '.$this->userData["name"].' <'.$this->userData['email'].'>' . "\r\n";
+
+        if (wp_mail($emailAddress, 'Ordine da '.$customerEmail. ' ('.$this->userData["name"].')' , $emailMessage, $header)){
             return true;
         } else {
             return false;

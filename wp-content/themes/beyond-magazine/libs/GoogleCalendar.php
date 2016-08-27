@@ -73,7 +73,7 @@ class Calendar {
         return update_option('booking_options[calendarId]', $this->id);
     }
 
-    public function getEvents($eventsNumber = 1, $timeMin = 'today' ){
+    public function getEvents($eventsNumber = 1, $timeMin = 'today', $timeMax = 'last day of this month' ){
 
 
         $optParams = array(
@@ -81,6 +81,7 @@ class Calendar {
             'orderBy' => 'startTime',
             'singleEvents' => TRUE,
             'timeMin' => date('c', strtotime($timeMin)),
+            'timeMax' => date('c', strtotime($timeMax)),
         );
 
         $results = $this->service->events->listEvents($this->calendarId, $optParams);

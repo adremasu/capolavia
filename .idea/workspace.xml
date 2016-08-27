@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" line="135" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" line="152" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e61095c0-a34b-480d-aa52-b3161ceeb09d" name="Default" comment="booking_app">
@@ -9,9 +9,53 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/_client_secret.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/client_secret_108086348119377074393.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/dev_key.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/mediaelement/flashmediaelement.swf" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/flashmediaelement.swf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/plupload/plupload.flash.swf" afterPath="$PROJECT_DIR$/wp-includes/js/plupload/plupload.flash.swf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/.sass-cache/b13df2d9e9a2ba57de1ec3e1d770d83a4c27b094/style.sassc" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/.sass-cache/b13df2d9e9a2ba57de1ec3e1d770d83a4c27b094/style.sassc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/wp-tinymce.js.gz" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/wp-tinymce.js.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/about.php" afterPath="$PROJECT_DIR$/wp-admin/about.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/ajax-actions.php" afterPath="$PROJECT_DIR$/wp-admin/includes/ajax-actions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-oembed.php" afterPath="$PROJECT_DIR$/wp-includes/class-oembed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-manager.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-manager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-media-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-media-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-site-icon-control.php" afterPath="$PROJECT_DIR$/wp-includes/customize/class-wp-customize-site-icon-control.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-widgets.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-widgets.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-media-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-media-list-table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/default-filters.php" afterPath="$PROJECT_DIR$/wp-includes/default-filters.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/theme-compat/embed-content.php" afterPath="$PROJECT_DIR$/wp-includes/theme-compat/embed-content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/embed.php" afterPath="$PROJECT_DIR$/wp-includes/embed.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/formatting.php" afterPath="$PROJECT_DIR$/wp-includes/formatting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/jquery-migrate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/jquery/jquery.js" afterPath="$PROJECT_DIR$/wp-includes/js/jquery/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/load.php" afterPath="$PROJECT_DIR$/wp-includes/load.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-views.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-views.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/media-views.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-views.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/mediaelement/mediaelement-and-player.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/mediaelement/mediaelement-and-player.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/nav-menus.php" afterPath="$PROJECT_DIR$/wp-admin/nav-menus.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/options.php" afterPath="$PROJECT_DIR$/wp-admin/options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php" afterPath="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/pluggable.php" afterPath="$PROJECT_DIR$/wp-includes/pluggable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/tinymce/plugins/wplink/plugin.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/post-template.php" afterPath="$PROJECT_DIR$/wp-includes/post-template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/post.php" afterPath="$PROJECT_DIR$/wp-admin/includes/post.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.html" afterPath="$PROJECT_DIR$/readme.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/revision.php" afterPath="$PROJECT_DIR$/wp-admin/revision.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/script-loader.php" afterPath="$PROJECT_DIR$/wp-includes/script-loader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-admin/includes/upgrade.php" afterPath="$PROJECT_DIR$/wp-admin/includes/upgrade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-includes/version.php" afterPath="$PROJECT_DIR$/wp-includes/version.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-config-sample.php" afterPath="$PROJECT_DIR$/wp-config-sample.php" />
     </list>
     <ignored path="capolavia.blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,38 +87,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="book-page.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php">
+      <file leaf-file-name="bookings.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7404022" vertical-offset="1335" max-vertical-offset="4875">
-              <caret line="116" column="58" selection-start-line="116" selection-start-column="58" selection-end-line="116" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.6639839" vertical-offset="1875" max-vertical-offset="4080">
+              <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
               <folding>
-                <marker date="1469887576613" expanded="true" signature="6819:7249" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="6861:7249" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="6924:7067" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="7118:7249" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="7396:7781" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="7980:8609" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="8146:8267" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="8146:8565" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="8732:8750" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="8751:9167" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="8912:9124" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="9311:9965" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="9498:9922" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="10088:10106" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="10107:10523" placeholder="..." />
-                <marker date="1469887576613" expanded="true" signature="10268:10480" placeholder="..." />
+                <element signature="e#6#86#0#PHP" expanded="true" />
+                <element signature="e#7769#7790#0#HTML" expanded="true" />
+                <element signature="e#7927#7951#0#HTML" expanded="true" />
+                <element signature="e#9115#9135#0#HTML" expanded="true" />
+                <element signature="e#9266#9286#0#HTML" expanded="true" />
+                <marker date="1472303522415" expanded="true" signature="5770:5812" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="5770:5857" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="5881:5897" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="6054:6137" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="6054:6767" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="6075:6104" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="6075:6137" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="7856:7888" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="8605:8980" placeholder="..." />
+                <marker date="1472303522415" expanded="true" signature="10123:10135" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2250">
+              <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
+              <folding>
+                <marker date="1472133644058" expanded="true" signature="2987:3170" placeholder="..." />
+                <marker date="1472133644058" expanded="true" signature="3020:3061" placeholder="..." />
+                <marker date="1472133644058" expanded="true" signature="3020:3138" placeholder="..." />
+                <marker date="1472133644058" expanded="false" signature="3073:3089" placeholder="..." />
+                <marker date="1472133644058" expanded="true" signature="3987:4267" placeholder="..." />
+                <marker date="1472133644058" expanded="true" signature="4341:4578" placeholder="..." />
+                <marker date="1472133644058" expanded="true" signature="4374:4546" placeholder="..." />
+                <marker date="1472133644058" expanded="true" signature="4670:4950" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoogleCalendar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="2010">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="book-page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3189" max-vertical-offset="5130">
+              <caret line="335" column="4" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="4" />
+              <folding>
+                <marker date="1470823410620" expanded="true" signature="7687:8072" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="8271:8900" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="8437:8856" placeholder="..." />
+                <marker date="1470823410620" expanded="false" signature="9023:9041" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="9042:9458" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="9203:9415" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="9602:10256" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="9789:10213" placeholder="..." />
+                <marker date="1470823410620" expanded="false" signature="10379:10397" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="10398:10814" placeholder="..." />
+                <marker date="1470823410620" expanded="true" signature="10559:10771" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bookings_admin-ajax.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1410">
+              <caret line="57" column="36" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -83,21 +177,21 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1304" max-vertical-offset="13770">
-              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7500" max-vertical-offset="13125">
+              <caret line="511" column="23" selection-start-line="511" selection-start-column="0" selection-end-line="512" selection-end-column="0" />
               <folding>
-                <marker date="1469796761510" expanded="true" signature="24124:24168" placeholder="..." />
-                <marker date="1469796761510" expanded="true" signature="24169:24861" placeholder="..." />
-                <marker date="1469796761510" expanded="true" signature="24873:25128" placeholder="..." />
-                <marker date="1469796761510" expanded="true" signature="24973:25075" placeholder="..." />
-                <marker date="1469796761510" expanded="true" signature="30453:30909" placeholder="..." />
-                <marker date="1469796761510" expanded="true" signature="30489:30732" placeholder="{...}" />
-                <marker date="1469796761510" expanded="true" signature="30540:30588" placeholder="{...}" />
-                <marker date="1469796761510" expanded="true" signature="30936:31451" placeholder="..." />
-                <marker date="1469796761510" expanded="true" signature="30974:31114" placeholder="{...}" />
-                <marker date="1469796761510" expanded="true" signature="30992:31104" placeholder="{&quot;appId&quot;: '940504799317225'...}" />
-                <marker date="1469796761510" expanded="true" signature="31141:31399" placeholder="{...}" />
-                <marker date="1469796761510" expanded="true" signature="31517:31565" placeholder="..." />
+                <marker date="1471873573231" expanded="false" signature="24170:24214" placeholder="..." />
+                <marker date="1471873573231" expanded="true" signature="24215:24907" placeholder="..." />
+                <marker date="1471873573231" expanded="true" signature="24919:25174" placeholder="..." />
+                <marker date="1471873573231" expanded="false" signature="25019:25121" placeholder="..." />
+                <marker date="1471873573231" expanded="true" signature="30499:30955" placeholder="..." />
+                <marker date="1471873573231" expanded="true" signature="30535:30778" placeholder="{...}" />
+                <marker date="1471873573231" expanded="true" signature="30586:30634" placeholder="{...}" />
+                <marker date="1471873573231" expanded="true" signature="30982:31497" placeholder="..." />
+                <marker date="1471873573231" expanded="true" signature="31020:31160" placeholder="{...}" />
+                <marker date="1471873573231" expanded="true" signature="31038:31150" placeholder="{&quot;appId&quot;: '940504799317225'...}" />
+                <marker date="1471873573231" expanded="true" signature="31187:31445" placeholder="{...}" />
+                <marker date="1471873573231" expanded="true" signature="31563:31611" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -106,70 +200,31 @@
       <file leaf-file-name="book_products-ajax.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1822" max-vertical-offset="3990">
-              <caret line="138" column="61" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="61" />
+            <state vertical-scroll-proportion="-3.75" vertical-offset="1590" max-vertical-offset="4095">
+              <caret line="112" column="57" selection-start-line="112" selection-start-column="57" selection-end-line="112" selection-end-column="57" />
               <folding>
-                <marker date="1469714676084" expanded="true" signature="2283:2322" placeholder="..." />
+                <element signature="e#6#86#0#PHP" expanded="true" />
+                <marker date="1472133658574" expanded="true" signature="2283:2322" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pdf-bookings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/pdf-bookings.php">
+      <file leaf-file-name="admin.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1275">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state vertical-scroll-proportion="-2.7777777" vertical-offset="0" max-vertical-offset="2385">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GoogleCalendar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php">
+      <file leaf-file-name="main.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1995">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/google-api-php-client/src/Google/Client.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="10605">
-              <caret line="75" column="3" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/google-calendar-events/vendor/google/apiclient/src/Google/Client.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="10620">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/vendor/google/apiclient/src/Google/Client.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="10605">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Calendar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/google-api-php-client/src/Google/Service/Calendar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="57750">
-              <caret line="35" column="57" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="210">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -218,16 +273,11 @@
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/style.sass" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_forms.sass" />
         <option value="$PROJECT_DIR$/wp-content/plugins/fpdf/fpdf.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/header.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_booking.sass" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/booking.coffee" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription-ajax.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/email_templates.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/google-calendar-events/vendor/google/apiclient/src/Google/Service/Calendar.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/vendor/google/apiclient/src/Google/Service/Calendar.php" />
@@ -235,19 +285,23 @@
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/vendor/google/apiclient/src/Google/Client.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/google-calendar-events/vendor/google/apiclient/src/Google/Client.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/google-api-php-client/src/Google/Client.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee" />
+        <option value="$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1282" />
-    <option name="height" value="753" />
+    <option name="width" value="1280" />
+    <option name="height" value="752" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -275,6 +329,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,6 +345,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-includes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -387,7 +474,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beyond-magazine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,37 +504,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
+              <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="google-calendar-events" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="capolavia.blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="capolavia.blog" />
+              <option name="myItemId" value="beyond-magazine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="google-calendar-events" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -453,17 +530,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
+              <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fpdf" />
+              <option name="myItemId" value="beyond-magazine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -499,10 +579,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/images" />
       <recent name="$PROJECT_DIR$/wp-content/plugins" />
       <recent name="$PROJECT_DIR$/wp-content/themes/beyond-magazine" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/wp-content/themes/beyond-magazine/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -533,15 +613,15 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="cc77a0cc-5dc4-4455-bac5-2390aa1ec75a" server_name="Capolavia.it">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="cc77a0cc-5dc4-4455-bac5-2390aa1ec75a" server_name="Capolavia.it">
       <method />
     </configuration>
     <list size="1">
@@ -630,35 +710,41 @@
       <option name="project" value="LOCAL" />
       <updated>1470059152749</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="booking_app">
+      <created>1470059411893</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1470059411893</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1282" height="753" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="24" width="1280" height="752" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22617124" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22572815" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4158576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31962025" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42335767" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31121644" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3085443" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23101266" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23222749" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3206951" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -688,9 +774,9 @@
     <MESSAGE value="update to wp 4.5.1" />
     <MESSAGE value="legal footer" />
     <MESSAGE value="booking_page" />
-    <MESSAGE value="booking_app" />
     <MESSAGE value="booking_app second part" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking_app second part" />
+    <MESSAGE value="booking_app" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking_app" />
   </component>
   <component name="WordPressConfiguration" enabled="true">
     <wordpressPath>$PROJECT_DIR$</wordpressPath>
@@ -704,7 +790,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php</url>
-          <line>86</line>
+          <line>139</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -712,65 +798,21 @@
           <line>35</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php</url>
+          <line>18</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-includes/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.297989" vertical-offset="1970" max-vertical-offset="79200">
-          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-admin/async-upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-load.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/node_modules/phantomjs/node_modules/fs-extra/node_modules/rimraf/node_modules/glob/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.385" vertical-offset="506" max-vertical-offset="930">
-          <caret line="44" column="731" selection-start-line="44" selection-start-column="731" selection-end-line="44" selection-end-column="731" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/css/wp-auth-check.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="1950">
-          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_subscribe.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1800">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/sass/_forms.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="900">
           <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="210">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -785,13 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.9166665" vertical-offset="1409" max-vertical-offset="1755">
           <caret line="105" column="10" selection-start-line="105" selection-start-column="10" selection-end-line="105" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/general-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8554913" vertical-offset="38592" max-vertical-offset="53700">
-          <caret line="2535" column="9" selection-start-line="2535" selection-start-column="9" selection-end-line="2535" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -816,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3525" vertical-offset="27189" max-vertical-offset="92070">
-          <caret line="1827" column="9" selection-start-line="1827" selection-start-column="9" selection-end-line="1827" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/fpdf/doc/ln.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="573">
@@ -834,16 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="28416" max-vertical-offset="29955">
           <caret line="1987" column="0" selection-start-line="1987" selection-start-column="0" selection-end-line="1987" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="1515">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="e#6#85#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -861,38 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/main.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="0" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="795">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2519" max-vertical-offset="4200">
-          <caret line="184" column="27" selection-start-line="184" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="813" max-vertical-offset="1635">
           <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1155">
-          <caret line="14" column="40" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -952,20 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/booking.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="211" max-vertical-offset="810">
-          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/subscribe.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="1485">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription-ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2327" max-vertical-offset="2910">
@@ -973,21 +949,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="794" max-vertical-offset="3690">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="14" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/google-calendar-events/vendor/google/apiclient/src/Google/Service/Calendar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.25" vertical-offset="312" max-vertical-offset="58260">
           <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -995,14 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.125" vertical-offset="267" max-vertical-offset="58245">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/email_templates.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42970297" vertical-offset="3638" max-vertical-offset="4935">
-          <caret line="262" column="47" selection-start-line="262" selection-start-column="47" selection-end-line="262" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1010,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="210">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,21 +978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1822" max-vertical-offset="3990">
-          <caret line="138" column="61" selection-start-line="138" selection-start-column="41" selection-end-line="138" selection-end-column="61" />
-          <folding>
-            <marker date="1469714676084" expanded="true" signature="2283:2322" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/google-calendar-events/vendor/google/apiclient/src/Google/Client.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="10620">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="10605">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="10605">
           <caret line="75" column="3" selection-start-line="75" selection-start-column="3" selection-end-line="75" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,36 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1275">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1304" max-vertical-offset="13770">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding>
-            <marker date="1469796761510" expanded="true" signature="24124:24168" placeholder="..." />
-            <marker date="1469796761510" expanded="true" signature="24169:24861" placeholder="..." />
-            <marker date="1469796761510" expanded="true" signature="24873:25128" placeholder="..." />
-            <marker date="1469796761510" expanded="true" signature="24973:25075" placeholder="..." />
-            <marker date="1469796761510" expanded="true" signature="30453:30909" placeholder="..." />
-            <marker date="1469796761510" expanded="true" signature="30489:30732" placeholder="{...}" />
-            <marker date="1469796761510" expanded="true" signature="30540:30588" placeholder="{...}" />
-            <marker date="1469796761510" expanded="true" signature="30936:31451" placeholder="..." />
-            <marker date="1469796761510" expanded="true" signature="30974:31114" placeholder="{...}" />
-            <marker date="1469796761510" expanded="true" signature="30992:31104" placeholder="{&quot;appId&quot;: '940504799317225'...}" />
-            <marker date="1469796761510" expanded="true" signature="31141:31399" placeholder="{...}" />
-            <marker date="1469796761510" expanded="true" signature="31517:31565" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1995">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,31 +1010,213 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="584">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/email_templates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2430" max-vertical-offset="5010">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/menu.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="583">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/subscribe.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="632" max-vertical-offset="1485">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/main.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="0" column="30" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/subscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="4200">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-admin/js/xfn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/booking.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="810">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/images/wpspin.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/images/spinner.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/images/spinner-2x.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/images/wpspin-2x.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/main.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/GoogleCalendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="2010">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7500" max-vertical-offset="13125">
+          <caret line="511" column="23" selection-start-line="511" selection-start-column="0" selection-end-line="512" selection-end-column="0" />
+          <folding>
+            <marker date="1471873573231" expanded="false" signature="24170:24214" placeholder="..." />
+            <marker date="1471873573231" expanded="true" signature="24215:24907" placeholder="..." />
+            <marker date="1471873573231" expanded="true" signature="24919:25174" placeholder="..." />
+            <marker date="1471873573231" expanded="false" signature="25019:25121" placeholder="..." />
+            <marker date="1471873573231" expanded="true" signature="30499:30955" placeholder="..." />
+            <marker date="1471873573231" expanded="true" signature="30535:30778" placeholder="{...}" />
+            <marker date="1471873573231" expanded="true" signature="30586:30634" placeholder="{...}" />
+            <marker date="1471873573231" expanded="true" signature="30982:31497" placeholder="..." />
+            <marker date="1471873573231" expanded="true" signature="31020:31160" placeholder="{...}" />
+            <marker date="1471873573231" expanded="true" signature="31038:31150" placeholder="{&quot;appId&quot;: '940504799317225'...}" />
+            <marker date="1471873573231" expanded="true" signature="31187:31445" placeholder="{...}" />
+            <marker date="1471873573231" expanded="true" signature="31563:31611" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/general-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34732825" vertical-offset="52213" max-vertical-offset="53700">
+          <caret line="3498" column="9" selection-start-line="3498" selection-start-column="9" selection-end-line="3498" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings_admin-ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1410">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/book-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7404022" vertical-offset="1335" max-vertical-offset="4875">
-          <caret line="116" column="58" selection-start-line="116" selection-start-column="58" selection-end-line="116" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3189" max-vertical-offset="5130">
+          <caret line="335" column="4" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="4" />
           <folding>
-            <marker date="1469887576613" expanded="true" signature="6819:7249" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="6861:7249" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="6924:7067" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="7118:7249" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="7396:7781" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="7980:8609" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="8146:8267" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="8146:8565" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="8732:8750" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="8751:9167" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="8912:9124" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="9311:9965" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="9498:9922" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="10088:10106" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="10107:10523" placeholder="..." />
-            <marker date="1469887576613" expanded="true" signature="10268:10480" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="7687:8072" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="8271:8900" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="8437:8856" placeholder="..." />
+            <marker date="1470823410620" expanded="false" signature="9023:9041" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="9042:9458" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="9203:9415" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="9602:10256" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="9789:10213" placeholder="..." />
+            <marker date="1470823410620" expanded="false" signature="10379:10397" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="10398:10814" placeholder="..." />
+            <marker date="1470823410620" expanded="true" signature="10559:10771" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2250">
+          <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
+          <folding>
+            <marker date="1472133644058" expanded="true" signature="2987:3170" placeholder="..." />
+            <marker date="1472133644058" expanded="true" signature="3020:3061" placeholder="..." />
+            <marker date="1472133644058" expanded="true" signature="3020:3138" placeholder="..." />
+            <marker date="1472133644058" expanded="false" signature="3073:3089" placeholder="..." />
+            <marker date="1472133644058" expanded="true" signature="3987:4267" placeholder="..." />
+            <marker date="1472133644058" expanded="true" signature="4341:4578" placeholder="..." />
+            <marker date="1472133644058" expanded="true" signature="4374:4546" placeholder="..." />
+            <marker date="1472133644058" expanded="true" signature="4670:4950" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/book_products-ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="1590" max-vertical-offset="4095">
+          <caret line="112" column="57" selection-start-line="112" selection-start-column="57" selection-end-line="112" selection-end-column="57" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="true" />
+            <marker date="1472133658574" expanded="true" signature="2283:2322" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/inc/coffee/admin.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7777777" vertical-offset="0" max-vertical-offset="2385">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/beyond-magazine/libs/bookings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6639839" vertical-offset="1875" max-vertical-offset="4080">
+          <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="true" />
+            <element signature="e#7769#7790#0#HTML" expanded="true" />
+            <element signature="e#7927#7951#0#HTML" expanded="true" />
+            <element signature="e#9115#9135#0#HTML" expanded="true" />
+            <element signature="e#9266#9286#0#HTML" expanded="true" />
+            <marker date="1472303522415" expanded="true" signature="5770:5812" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="5770:5857" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="5881:5897" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="6054:6137" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="6054:6767" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="6075:6104" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="6075:6137" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="7856:7888" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="8605:8980" placeholder="..." />
+            <marker date="1472303522415" expanded="true" signature="10123:10135" placeholder="..." />
           </folding>
         </state>
       </provider>

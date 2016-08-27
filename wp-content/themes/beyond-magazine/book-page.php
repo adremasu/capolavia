@@ -56,6 +56,7 @@ $service = new Google_Service_Calendar($client);
 
 // Print the next 10 events on the user's calendar.
 $calendarId = 'r7t3hsima10qg4m7ioai4dp0ek@group.calendar.google.com';
+$deliveryCalendarId = 'kl71f97tksv8ed0gggvf1bg5ok@group.calendar.google.com';
 $optParams = array(
     'maxResults' => 1,
     'orderBy' => 'startTime',
@@ -66,8 +67,14 @@ $events = $service->events->listEvents($calendarId);
 
 $results = $service->events->listEvents($calendarId, $optParams);
 
+$deliveries = $service->events->listEvents($deliveryCalendarId, $optParams);
+
 foreach ($results->getItems() as $item) {
     $start = $item->getStart();
+}
+foreach ($deliveries->getItems() as $delivery) {
+    $deliveryStart = $delivery->getStart();
+    $deliveryEnd = $delivery->getEnd();
 }
 
 ?>
@@ -243,7 +250,7 @@ foreach ($results->getItems() as $item) {
                         </div>
                         <div class="col-xs-12 col-md-6">
                             <label for="phone"> Telefono
-                                <input required data-ng-model="user.phone" type="phone" name="phone" class="input-lg form-control"/>
+                                <input data-ng-model="user.phone" type="phone" name="phone" class="input-lg form-control"/>
                             </label>
                         </div>
 
@@ -266,7 +273,9 @@ foreach ($results->getItems() as $item) {
                                         <div data-ng-show="user.delivery == 1">
                                             <input data-ng-disabled="user.delivery != 1" data-ng-required="user.delivery == 1" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
                                         </div>
-
+                                        <p class="hidden-xs">
+                                            La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])) ?></span></strong>
+                                        </p>
                                     </div>
 
                                 </div>
@@ -277,12 +286,20 @@ foreach ($results->getItems() as $item) {
                                         <label for="in-company"> Ritiro in azienda
                                         </label>
                                     </div>
+                                    <p class="hidden-xs">
+                                        Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
+                                    </p>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-md-12 col-xs-12">
-                            <strong>La consegna a domicilio o il ritiro in azienda avverranno in ogni caso <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).' tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
+                        <div class="col-md-12 col-xs-12 visible-xs-block">
+                            <p>
+                                Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
+                            </p>
+                            <p>
+                                La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])) ?></span></strong>
+                            </p>
                         </div>
 
                         <div class="col-md-12 col-xs-12">

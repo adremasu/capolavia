@@ -11,7 +11,28 @@ class bookings_admin {
     public function __construct(){
 
     }
+    public function getMonthEventsByDate($month, $year){
+        $calendar =  new Calendar();
 
+        $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+        $intMonth = $month - 1;
+        $stringMonth = $months[$intMonth];
+
+        if ($month == 12){
+            $nextMonth = 0;
+            $nextMonthYear = $year + 1;
+        } else {
+            $nextMonth = $month;
+            $nextMonthYear = $year;
+        }
+        $stringNextMonth = $months[$nextMonth];
+
+        $timeMin = 'first day of '.$stringMonth.' '.$year;
+        $timeMax = 'first day of '.$stringNextMonth.' '.$nextMonthYear;
+        $events = $calendar->getEvents(30, $timeMin, $timeMax);
+        echo json_encode($events);
+    }
     // @returns: product weight and items MU
     public function getProductMetaById($id){
 
@@ -34,7 +55,7 @@ class bookings_admin {
                 $w_mu = '';
             }
 
-            // get requested items
+            // get requested itemails
             if (array_key_exists('items', $_product) && $_product['items']){
                 $i_qt = $_product['items'];
             } else {
@@ -69,4 +90,4 @@ class bookings_admin {
 
     }
 
-} 
+}

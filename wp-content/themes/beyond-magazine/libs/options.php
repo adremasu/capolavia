@@ -14,6 +14,8 @@ class OptionsPage {
 
     function __construct() {
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+        add_action( 'admin_init', array( $this, 'booking_settings_init' ) );
+
     }
 
     function admin_menu() {
@@ -24,7 +26,58 @@ class OptionsPage {
             basename(__FILE__),
             array($this, 'settings_page')
         );
+        add_submenu_page('edit.php?post_type=bookings',
+            'Opzioni prenotazioni',
+            'Opzioni prenotazioni',
+            'edit_posts',
+            'bookings_options_page.php',
+            array($this, 'bookings_options_page')
+        );
 
+    }
+    function booking_settings_init(  ) {
+
+        register_setting( 'booking_settings', 'booking_email_address' );
+
+        add_settings_section(
+            'bookings_options',
+            __( 'Impostazioni delle prenotazioni', 'beyondmagazine' ),
+            'bookings_options_page',
+            'capolavia'
+        );
+        add_settings_field(
+            'booking_email',
+            __( 'Email di amministrazione'),
+            array(this, 'email_field_callback'),
+            'bookings_options_page',
+            'bookings_options'
+        );
+
+    }
+
+    function  bookings_options_page() {
+        ?>
+        <div class="wrap">
+            <h1>Impostazioni delle prenotazioni</h1>
+
+            <form method="post" action="options.php">
+                <?php settings_fields( 'booking_settings' ); ?>
+                <?php do_settings_sections( 'booking_settings' );
+                ?>
+
+                <table class="form-table">
+                    <tr valign="top">
+                        <th scope="row">Indirizzo E-mail per gestione ordini</th>
+                        <td><input type="text" name="booking_email_address" value="<?php echo esc_attr( get_option('booking_email_address') ); ?>" /></td>
+                    </tr>
+
+                </table>
+
+                <?php submit_button(); ?>
+
+            </form>
+        </div>
+    <?php
     }
     function  settings_page() {
         ?>
@@ -91,5 +144,6 @@ class OptionsPage {
 
 }
 add_action('admin_menu' , new OptionsPage());
+
 
 
