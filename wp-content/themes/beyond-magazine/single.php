@@ -54,8 +54,9 @@
                     </div>
 
                 </div>
-                <meta itemprop="datePublished" content="<?php the_date('Y-m-d') ;?>"/>
-                <p class="small col-md-8"><?php the_date(_x( 'F j, Y', 'daily archives date format' )) ;?> <?php echo __('in','beyondmagazine');?> <?php echo get_the_category_list(','); ?> &nbsp;
+                <meta itemprop="datePublished" content="<?php echo get_the_date(get_option( 'date_format')) ;?>"/>
+                <p class="small col-md-8">Pubblicato in data: <?php echo get_the_date(get_option( 'date_format'));?>,
+                    <?php echo __('in','beyondmagazine');?> <?php echo get_the_category_list(','); ?> &nbsp;
                 &nbsp; <i class="glyphicon glyphicon-comment small"></i>
                 <?php comments_number( __('No Comments'), __('1 Comment'),__('% Comments')); ?></p>
 

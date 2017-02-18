@@ -3,13 +3,52 @@ subscribeApp.controller "configCtrl", [
   '$scope'
   '$http'
   ($scope, $http) ->
-    $scope.current_step = 'length'
+    $scope.current_step = 'intro'
     $scope.subscription = {}
     $scope.subscription.length = false
     $scope.message = 'Qualcosa è andato storto'
-    $scope.goToStep = (event, size) ->
-      $scope.current_step = size
+    $scope.goToStep = (event, step) ->
+      console.log step
+      $scope.current_step = step
+      jQuery('html, body').animate { scrollTop: jQuery('#kt-latest-title').offset().top }, 1000
+      if (step == 'length')
+        console.log step
+        $scope.getSubscriptionPrices()
+
       event.preventDefault()
+
+
+    #todo: finish here
+    $scope.getSubscriptionPrices = ->
+      request = {
+        action: "get_subscription_prices"
+      }
+      $http(
+        method: "POST"
+        url: "/wp-admin/admin-ajax.php"
+        data: jQuery.param(request)
+        headers:
+          "Content-Type": "application/x-www-form-urlencoded"
+      ).success (data) ->
+        if (data.success == true)
+          _prices = data.IDs
+          _size = $scope.subscription.size
+          if _size
+            _subs =[
+              '3' + _size
+              '6' + _size
+              '12' + _size
+            ]
+          subs = []
+          for sub in _subs
+            subs[sub] = _prices[sub]
+            console.log sub
+          console.log prices
+          true
+        else
+          return false
+
+
     $scope.show = (step) ->
       if ($scope.current_step == step)
         return 'current_step'

@@ -20,7 +20,7 @@ class OptionsPage {
 
     function admin_menu() {
         add_submenu_page('edit.php?post_type=bookings',
-            'Custom Post Type Admin',
+            'Riepilogo prenotazioni',
             'Riepilogo prenotazioni',
             'edit_posts',
             basename(__FILE__),
@@ -38,6 +38,8 @@ class OptionsPage {
     function booking_settings_init(  ) {
 
         register_setting( 'booking_settings', 'booking_email_address' );
+        register_setting( 'booking_settings', 'booking_calendar_id' );
+        register_setting( 'booking_settings', 'booking_google_developer_key' );
 
         add_settings_section(
             'bookings_options',
@@ -70,6 +72,14 @@ class OptionsPage {
                         <th scope="row">Indirizzo E-mail per gestione ordini</th>
                         <td><input type="text" name="booking_email_address" value="<?php echo esc_attr( get_option('booking_email_address') ); ?>" /></td>
                     </tr>
+                    <tr valign="top">
+                        <th scope="row">Google Calendar ID</th>
+                        <td><input type="text" name="booking_calendar_id" value="<?php echo esc_attr( get_option('booking_calendar_id') ); ?>" /></td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Google Developer Key</th>
+                        <td><input type="text" name="booking_google_developer_key" value="<?php echo esc_attr( get_option('booking_google_developer_key') ); ?>" /></td>
+                    </tr>
 
                 </table>
 
@@ -81,11 +91,11 @@ class OptionsPage {
     }
     function  settings_page() {
         ?>
-        <h1>Opzioni prenotazioni</h1>
+        <h1>Riepilogo prenotazioni</h1>
 
             <?php
             $calendar = new Calendar();
-            $events = $calendar->getEvents();
+            $events = $calendar->getEvents(1, 'today');
             foreach($events as $event){
                 $date =  date('U',strtotime($event['dateTime']));
                 echo '<h3>Prenotazioni per '.date_i18n('l j F ',strtotime($event['dateTime'])).'</h3>';
@@ -96,9 +106,10 @@ class OptionsPage {
                     $meta = $booking->meta;
                     $products = $meta['products'];
                     $name = $meta['userData']['name'];
+                    $bookingLink = get_edit_post_link($booking->ID);
                     echo "<table >
                         <thead>
-                        <tr><th colspan='3' style='text-align: left'>$name</th></tr>
+                        <tr><th colspan='3' style='text-align: left'>$name</th><th><a href='".$bookingLink."'>[modifica]</a></th></tr>
                         </thead>
                         <tbody>";
                     foreach ($products as $key => $product){
@@ -110,11 +121,16 @@ class OptionsPage {
                         $productCollection[$key]['weight']['qt'] = $productCollection[$key]['weight']['qt'] + $product['weight']['qt'];
                         $productCollection[$key]['items']['qt'] = $productCollection[$key]['items']['qt'] + $product['items']['qt'];
 
-                        echo "<tr>
-                            <td>".$product['name']."</td>
-                            <td>".$product['weight']['qt'].' '.$product['weight']['mu']."</td>
-                            <td>".$product['items']['qt'].' '.$product['items']['mu']."</td>
-                            </tr>";
+                        echo "<tr>";
+                        echo "<td>".$product['name']."</td>";
+
+                        if($product['weight']['qt']){
+                            echo "<td>".$product['weight']['qt'].' '.$product['weight']['mu']."</td>";
+                        }
+                        if($product['items']['qt']){
+                            echo "<td>".$product['items']['qt'].' '.$product['items']['mu']."</td>";
+                        }
+                        echo "</tr>";
                     }
 
 
@@ -125,6 +141,14 @@ class OptionsPage {
                         <tr><th>Prodotto</th><th>Peso</th><th>Pezzi</th></tr>
                         </thead>
                         <tbody>";
+                // Obtain a list of columns
+                foreach ($productCollection as $key => $row) {
+                    $prodName[$key]  = $row['name'];
+                }
+                // Sort the data with volume descending, edition ascending
+                // Add $data as the last parameter, to sort by the common key
+                array_multisort($prodName, SORT_ASC, $productCollection);
+
                 foreach ($productCollection as $product){
 
                     echo "<tr>
@@ -140,6 +164,7 @@ class OptionsPage {
         <?php
 
         echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'">Stampa riassunto prenotazioni</a>';
+        echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'&format=TT">Prenotazioni in CSV</a>';
     }
 
 }

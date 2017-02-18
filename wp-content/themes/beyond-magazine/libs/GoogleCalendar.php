@@ -6,17 +6,22 @@
  * Time: 15.43
  */
 class Calendar {
-    var $calendarId = 'r7t3hsima10qg4m7ioai4dp0ek@group.calendar.google.com';
-    var $DEV_KEY = 'AIzaSyAjQWG185xA0VuVJyT2k8hagupYYd4DrRQ';
+    var $calendarId = '';
+    var $DEV_KEY = '';
 
     public function __construct(){
+        #get google API access
+        $this->calendarId = get_option('booking_calendar_id');
+        $this->DEV_KEY = get_option('booking_google_developer_key');
 
         $this->tomorrow = date('c', strtotime('tomorrow'));
         date_default_timezone_set('Europe/Rome');
         define('APPLICATION_NAME', 'Gestione consegne');
         define('CREDENTIALS_PATH', get_template_directory() . '/calendar-php-quickstart.json');
 
+
         $this->id = get_option('booking_options[calendarId]');
+
         define('CLIENT_SECRET_PATH', get_template_directory() . '/client_secret.json');
 
         define('SCOPES', implode(' ', array(
@@ -73,7 +78,7 @@ class Calendar {
         return update_option('booking_options[calendarId]', $this->id);
     }
 
-    public function getEvents($eventsNumber = 1, $timeMin = 'today', $timeMax = 'last day of this month' ){
+    public function getEvents($eventsNumber = 1, $timeMin = 'today', $timeMax = 'first day of next month' ){
 
 
         $optParams = array(
@@ -85,7 +90,6 @@ class Calendar {
         );
 
         $results = $this->service->events->listEvents($this->calendarId, $optParams);
-
         foreach ($results->getItems() as $item) {
             $events[] = $item->getStart();
         }
@@ -96,6 +100,10 @@ class Calendar {
         if (!$date){
             return false;
         } else {
+            $_approxDate = date('d-m-Y', $date);
+            $a = strptime($_approxDate, '%d-%m-%Y');
+            $timestamp = mktime(0, 0, 0, $a['tm_mon']+1, $a['tm_mday'], $a['tm_year']+1900);
+            $dayAfterTimestamp = mktime(0, 0, 0, $a['tm_mon']+1, $a['tm_mday']+1, $a['tm_year']+1900);
             $my_query = new WP_Query(
                 array(
                     'post_type' => 'bookings',
@@ -105,7 +113,9 @@ class Calendar {
                     'meta_query' => array(
                         array(
                             'key' => 'date',
-                            'value' => $date
+                            'value'   => array( $timestamp, $dayAfterTimestamp ),
+                            'type'    => 'numeric',
+                            'compare' => 'BETWEEN',
                         )
                     )
 

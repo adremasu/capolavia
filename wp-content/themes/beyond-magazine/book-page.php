@@ -121,7 +121,7 @@ foreach ($deliveries->getItems() as $delivery) {
                                     <td data-ng-if="product.weight">{{product.weight}} {{product.weight_name}}</td>
                                 </tr>
                             </table>
-                            <p>Note: <br>{{user.note}}</p>
+                            <p>Note: <br>{{user.notes}}</p>
                             <p data-ng-if="user.delivery == '1'">Consegna presso:{{user.address}}</p>
                             <p data-ng-if="user.delivery == '0'">Ritiro in azienda in via Rodolfo Rossi 101, Rovigo(loc. Grignano Polesine)</p>
 
@@ -154,6 +154,9 @@ foreach ($deliveries->getItems() as $delivery) {
                     $is_odd = !$is_odd;
                     if ($is_odd){ $odd_class = 'odd';} else {$odd_class = 'even';}
                     $url = $product[guid];
+                    $content = $product[post_content];
+                    $content = apply_filters('the_content', $content);
+                    $content = str_replace(']]>', ']]&gt;', $content);
                     $_price = get_post_meta($product[ID], 'prezzo', true);
                     $price = ($_price ? $_price : '');
                     $_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($product[ID]), 'small_square');
@@ -163,14 +166,19 @@ foreach ($deliveries->getItems() as $delivery) {
                     $weight_name = $stock[weight_name];
                     $items_name = $stock[items_name];
                     $thumbnail = (has_post_thumbnail($product[ID]) ? $_thumbnail[0] : get_header_image());
+                    //                                 <img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')"  src="' . $thumbnail . '" alt="' . $product[post_title] . $price . '"/>
+                            //                                 <i data-ng-click="select('.$product[ID].')"  data-toggle="modal" data-target="#productModal" class="info-button fa fa-2x fa-info" aria-hidden="true"></i>
+
+
                     $html_code .= '
                         <div class="booking-product-wrapper col-xs-12 col-sm-6 '.$odd_class.'">
                         <div class="row">
                             <div class="col-md-4 text-center">
-                                <img src="' . $thumbnail . '" alt="' . $product[post_title] . $price . '"/>
-                            </div>
+
+
+<img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')"  src="' . $thumbnail . '" alt="' . $product[post_title] . $price . '"/>                            </div>
                             <div class="col-md-8">
-                                <p class="product-name text-center"><h4>' . $product[post_title] .'</h4><h5>'. $price . '</h5></p>';
+                                <p class="product-name text-center"><h4>' . $product[post_title] .' <i class="info-point fa fa-question-circle" aria-hidden="true" data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')"  ></i></h4><h5>'. $price . '</h5></p>';
                     $product_name = addslashes($product[post_title]);
                     $html_code .= "
 
@@ -178,7 +186,8 @@ foreach ($deliveries->getItems() as $delivery) {
                                 data-ng-init='
                                 products[$product[ID]][\"name\"] = \"$product_name\";
                                 products[$product[ID]][\"items_name\"] =\"$items_name\";
-                                products[$product[ID]][\"weight_name\"] =\"$weight_name\"
+                                products[$product[ID]][\"weight_name\"] =\"$weight_name\";
+
                                 '>
                                 </div>
                                 <div class='booking-qty-selectors-wrapper row'>";
@@ -271,6 +280,7 @@ foreach ($deliveries->getItems() as $delivery) {
                                         <input class="radio input-lg" required data-ng-model="user.delivery" id="delivery" type="radio" value="1" name="delivery"/>
                                         <label for="delivery">Consegna a domicilio (2€)</label>
                                         <div data-ng-show="user.delivery == 1">
+                                            <label for="address">Dove vuoi ricevere la verdura? *</label>
                                             <input data-ng-disabled="user.delivery != 1" data-ng-required="user.delivery == 1" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
                                         </div>
                                         <p class="hidden-xs">
@@ -331,7 +341,25 @@ foreach ($deliveries->getItems() as $delivery) {
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="productModalLabel">{{selectedProduct.name}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/wp-includes/js/thickbox/loadingAnimation.gif" class="loading_gif">
+                        {{selectedProduct.content}}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 <?php
 get_footer();
 ?>

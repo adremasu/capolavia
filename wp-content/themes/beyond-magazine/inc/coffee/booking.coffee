@@ -3,6 +3,7 @@ bookingApp = angular.module('bookingApp', [])
 bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
   $scope.loading = false
   $scope.success = false
+  $scope.selectedProduct = {}
   $scope.saveBooking = (e)->
     e.preventDefault()
     $scope.loading = true
@@ -44,6 +45,30 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
     false
 
   $scope.recap = (e) ->
-
+  $scope.select = (id) ->
+    gif = jQuery('.loading_gif')
+    if (id != $scope.selectedProduct.id)
+      gif.show()
+      $scope.selectedProduct.name = ''
+      $scope.selectedProduct.content = ''
+      $scope.selectedProduct.id = id
+      request = {
+        action:   "get_product_info"
+        id: id
+      }
+      $http(
+        method: "POST"
+        url: "/wp-admin/admin-ajax.php"
+        data: jQuery.param(request)
+        headers:
+          "Content-Type": "application/x-www-form-urlencoded"
+      ) .success (data) ->
+          $scope.selectedProduct.name = data.name
+          $scope.selectedProduct.content = data.content
+          $scope.selectedProduct.img = data.img
+          gif.hide()
+    else
+      gif.hide()
+      return
 ]
 bookingApp

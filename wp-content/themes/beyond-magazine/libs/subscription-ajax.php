@@ -7,33 +7,54 @@
  */
 function save_new_subscription() {
 
-    new save_new_subscriptionClass();
+    $subscription = new subscriptionClass();
+    $subscription->saveData();
+}
+
+function get_subscription_prices() {
+
+    $subscription = new subscriptionClass();
+
+    $ids = $subscription->IDs;
+    echo json_encode($ids);
 }
 
 
 add_action('wp_ajax_save_new_subscription', 'save_new_subscription');
 add_action('wp_ajax_nopriv_save_new_subscription', 'save_new_subscription');
 
-class save_new_subscriptionClass
+add_action('wp_ajax_get_get_subscription_prices', 'get_subscription_prices');
+add_action('wp_ajax_nopriv_get_subscription_prices', 'get_subscription_prices');
+
+class subscriptionClass
 {
     public function __construct()
     {
         $data = $_POST;
-
+        if ($data['action'] == 'get_subscription_prices'){
+            $ids_ajax = true;
+        } else {
+            $ids_ajax =  false;
+        }
         $subscription = $data['subscription'];
         $this->user = $data['user'];
         $this->email = $this->user['email'];
         $this->subscription = $subscription;
         $this->blacklist = $subscription['products'];
+        $this->getIDs($ids_ajax);
+        $this->getChosenSubscription();
+        wp_die();
+    }
+
+    public function getIDs($ajax = false){
         $this->IDs = array(
             '3S' => array(
                 'paypal_ID' =>'URRPETNYHGP2N',
                 'price' => '125'
             ),
-
             '3M' =>array(
                 'paypal_ID' =>'',
-                'price' => '195'
+                'price' => '187'
             ),
             '3L' =>array(
                 'paypal_ID' =>'',
@@ -64,16 +85,57 @@ class save_new_subscriptionClass
                 'price' => '940'
             )
         );
-        $this->chosen_subscription = $subscription['length'].strtoupper($subscription['size']);
-        if ($this->saveData()) {
-            echo json_encode($this->response);
+        $this->prices = array(
+            '3S' => array(
+                'price' => '125'
+            ),
+            '3M' =>array(
+                'price' => '187'
+            ),
+            '3L' =>array(
+                'price' => '250'
+            ),
+            '6S' =>array(
+                'price' => '245'
+            ),
+            '6M' =>array(
+                'price' => '367'
+            ),
+            '6L' =>array(
+                'price' => '490'
+            ),
+            '12S' =>array(
+                'price' => '470'
+            ),
+            '12M' =>array(
+                'price' => '705'
+            ),
+            '12L' =>array(
+                'price' => '940'
+            )
+        );
+        if (!$ajax){
+            return $this->IDs;
         } else {
-            echo json_encode($this->response);
+            echo json_encode(array(
+                'success'   => true,
+                'IDs'       => $this->prices
+            ));
         }
-
-        wp_die();
     }
 
+    public function getChosenSubscription(){
+
+        $subscription = $this->subscription;
+        if (isset($subscription['length']) && isset($subscription['size'])){
+            $this->chosen_subscription = $subscription['length'].strtoupper($subscription['size']);
+
+        } else {
+            $this->chosen_subscription = false;
+        }
+        return $this->chosen_subscription;
+
+    }
     public function saveData(){
         //check if email address exists
         $user = $this->user;
@@ -105,6 +167,7 @@ class save_new_subscriptionClass
             $this->response = $response;
             return true;
         }
+        echo json_encode($this->response);
     }
 
     private function getPrice(){

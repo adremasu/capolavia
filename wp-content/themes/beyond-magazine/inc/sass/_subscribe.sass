@@ -3,31 +3,54 @@
   float: left
   position: relative
   min-height: 340px
+  margin-top: 1em
+
   > label
     cursor: pointer
     position: absolute
-    background: $color-border
-    border-color: $color-input-border
+    background: white
+    border-color: #8ed68e
     border-width: 1em
     border-style: solid
     border-radius: 2em
+    color: #FF9E00
     width: 90%
     margin: 0 auto
     left: 0
     right: 0
     height: 90%
+    &:hover
+      box-shadow: 0px 0px 20px #999999
     span
       display: block
       text-align: center
     .main
-      font-size: 12em
+      font-size: 160px
       line-height: 1em
     .secondary
       font-size: 2em
+      line-height: 1em
+    .subscription-discount
+      margin-top: .5em
+      padding-top: .5em
+      border-top: 1px solid $color-primary
+      color: #666666
+    .discount-percent
+      color: $color-secondary
+      font-size: 2em
+      line-height: 1em
+
   input:checked ~ label
     background: white
-    border-color: $color-primary
-    color: $color-secondary
+    border-color: #42A942
+    color: #E10000
+    width: 95%
+    height: 95%
+    margin-top: -2.5%
+    -webkit-transition: all .2s
+    transition: all .2s
+
+
 .step-nav
   margin-bottom: 20px
   button
@@ -35,16 +58,16 @@
 .ng-hide
   transition: all 0.5s ease
 .step-wrapper
-  -webkit-transition: 1s linear all
-  transition: 1s linear all
+  -webkit-transition: .5s linear all
+  transition: .5s linear all
   opacity: 1
   height: auto
   overflow: hidden
   &.hidden_step
     opacity: 0
     height: 0
-    -webkit-transition: 1.5s linear all
-    transition: 1.5s linear all
+    -webkit-transition: .5s linear all
+    transition: .5s linear all
   /* remember to add this */
 .form-horizontal
   .control-label

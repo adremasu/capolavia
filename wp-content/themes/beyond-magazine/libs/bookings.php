@@ -121,7 +121,7 @@ class bookings{
     }
 
     public function enqueue_js( $hook ) {
-        if ('post.php' != $hook) {
+        if ('post.php' != $hook && 'post-new.php' != $hook) {
             return;
         }
         wp_enqueue_style('plugin_name-admin-ui-css',
@@ -130,8 +130,7 @@ class bookings{
             PLUGIN_VERSION,
             false);
         wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
-        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js' );
-        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js' );
+        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js', array(), '5.5' );
         wp_enqueue_script( 'jquery-ui-core' );
         wp_enqueue_script( 'jquery-ui-datepicker' );
     }
@@ -141,6 +140,25 @@ class bookings{
         $products_meta = get_post_meta($post->ID, 'products', true);
         $user_meta = get_post_meta($post->ID, 'userData', true);
         $date = ( (int) get_post_meta($post->ID, 'date', true)) ;
+        echo "<style type='text/css'>
+            #ui-datepicker-div td.not_available a{
+                background-color: #dddddd;
+                color: #999999
+            }
+            #ui-datepicker-div td.available a{
+                background-color: lightblue;
+                color: black;
+            }
+            #ui-datepicker-div .ui-datepicker-today td.available a{
+                text-decoration: underline;
+
+            }
+            #ui-datepicker-div td.ui-datepicker-today a{
+                color: red;
+
+            }
+
+            </style>";
         echo "<div ng-app='bookingsApp' ng-controller='ProductsController'>";
         if ($products_meta){
             echo "<div data-ng-init='products = ".json_encode($products_meta)."'></div>";

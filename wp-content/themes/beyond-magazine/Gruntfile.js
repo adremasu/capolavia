@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 
         concat: {
             dist: {
-                src: [ 'js/angular.min.js', 'js/angular-animate.min.js','js/angular-route.js','js/dirPagination.js','js/bootstrap.js', 'js/jquery.slicknav.js', 'js/init.js', 'libs/main/main.js','libs/main/controller.js', 'libs/main/menu.js', 'libs/main/subscribe.js', 'libs/main/booking.js'],
+                src: [ 'js/angular.min.js', 'js/angular-animate.min.js','js/angular-sanitize.js','js/select.js', 'js/ui-bootstrap-tpls.min.js','js/angular-route.js','js/dirPagination.js','js/bootstrap.js', 'js/jquery.slicknav.js', 'js/init.js', 'libs/main/main.js','libs/main/controller.js', 'libs/main/menu.js', 'libs/main/subscribe.js', 'libs/main/booking.js'],
                 dest: 'js/main.js'
             }
         },

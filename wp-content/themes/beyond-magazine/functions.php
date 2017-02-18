@@ -19,7 +19,7 @@ function my_meta_init()
 // add a meta box for each of the wordpress page types: posts and pages
     foreach (array('products') as $type)
     {
-        add_meta_box('my_all_meta', 'My Custom Meta Box', 'my_meta_setup', $type, 'normal', 'high');
+        add_meta_box('my_all_meta', 'Gestione inventario', 'my_meta_setup', $type, 'normal', 'high');
     }
 // add a callback function to save any data a user enters in
     add_action('save_post','my_meta_save');
@@ -335,7 +335,7 @@ function beyond_load_scripts() {
 
     //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
     //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'http:').'/main.min.js',array('jquery'),'10', null);
+    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'http:').'/main.min.js',array('jquery'),'12', null);
 
     wp_localize_script('beyond_init', 'init_vars', array(
         'label' => __('Menu', 'beyondmagazine')
@@ -353,7 +353,7 @@ function beyond_load_styles()
 //        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
 //        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
 //        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'http:'),'','','all' );
+    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'http:'),'','2016.12.12','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
 

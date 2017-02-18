@@ -51,6 +51,7 @@ endif;
                 <?php while( $beyond_my_query->have_posts() ) : $beyond_my_query->the_post(); ?>
             <article class="col-md-6">
                 <div class="kt-article clearfix">
+                    <time><?php echo get_the_date(get_option( 'date_format'));?></time>
                     <a href="<?php the_permalink();?>">
                     <?php
                     if(has_post_thumbnail()):

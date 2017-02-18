@@ -10,10 +10,46 @@ function book_products() {
 
     new book_productsClass();
 }
+function get_product_info() {
+
+    new get_product_infoClass();
+}
 
 
 add_action('wp_ajax_book_products', 'book_products');
 add_action('wp_ajax_nopriv_book_products', 'book_products');
+
+add_action('wp_ajax_get_product_info', 'get_product_info');
+add_action('wp_ajax_nopriv_get_product_info', 'get_product_info');
+
+
+class get_product_infoClass {
+
+    public function __construct(){
+        $this->id = $_POST['id'];
+        echo $this->get_product_info();
+        wp_die();
+    }
+    public function get_product_info() {
+        if ($this->id){
+            $_post = get_post($this->id);
+            if ($_post->post_type == 'products'){
+                $product = [];
+                $product['name'] = $_post->post_title;
+                $product['content'] = strip_tags($_post->post_content);
+                $thumb_id = get_post_thumbnail_id($this->id);
+                $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+                $product['img'] =  $thumb_url[0];
+                return json_encode($product);
+            } else  {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+}
+
 
 class book_productsClass {
     var $products = array();
@@ -27,6 +63,7 @@ class book_productsClass {
         $this->products = $_POST['products'];
         $this->userData = $_POST['user'];
         $this->date = $_POST['date'];
+        $this->notes = $this->userData['notes'];
         $this->delivery = $this->userData['delivery'];
 
         $this->getBookingProducts();
@@ -101,6 +138,10 @@ class book_productsClass {
             $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." in azienda (via Rodolfo Rossi 101)</td>";
 
         }
+        $this->emailMessage .= "</tr>";
+        $this->emailMessage .= "<tr>";
+        $this->emailMessage .= "<td>NOTE: ".$this->notes."</td>";
+
         $this->emailMessage .= "</tr>";
 
         $this->emailMessage .= "</table>";
