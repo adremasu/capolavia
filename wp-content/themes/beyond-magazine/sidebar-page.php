@@ -3,6 +3,7 @@
  * Template Name: Sidebar Page
  */
 get_header();?>
+ciao
     <div class="row" id="kt-main">
         <div class="col-md-8">
             <?php if(have_posts()):while(have_posts()):the_post();?>

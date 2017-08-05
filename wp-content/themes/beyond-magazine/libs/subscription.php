@@ -16,83 +16,6 @@ class subscription {
     }
 
     public function __construct() {
-        $post_type = 'deliveries';
-        $labels = array(
-            'name'               => _x( 'Consegna', 'post type general name', 'beyondmagazine' ),
-            'singular_name'      => _x( 'Consegna', 'post type singular name', 'beyondmagazine' ),
-            'menu_name'          => _x( 'Consegne', 'admin menu', 'beyondmagazine' ),
-            'name_admin_bar'     => _x( 'Consegna', 'add new on admin bar', 'beyondmagazine' ),
-            'add_new'            => _x( 'Aggiungi nuova', 'Consegna', 'beyondmagazine' ),
-            'add_new_item'       => __( 'Aggiungi nuova Consegna', 'beyondmagazine' ),
-            'new_item'           => __( 'Nuova Consegna', 'beyondmagazine' ),
-            'edit_item'          => __( 'Modifica Consegna', 'beyondmagazine' ),
-            'view_item'          => __( 'Vedi Consegna', 'beyondmagazine' ),
-            'all_items'          => __( 'Tutti le Consegne', 'beyondmagazine' ),
-            'search_items'       => __( 'Cerca Consegne', 'beyondmagazine' ),
-            'not_found'          => __( 'Nessuna Consegna trovata.', 'beyondmagazine' ),
-            'not_found_in_trash' => __( 'Nessuna Consegna trovata nel cestino.', 'beyondmagazine' )
-        );
-
-        $args = array(
-            'labels'             => $labels,
-            'description'        => __( 'Descrizione.', 'beyondmagazine' ),
-            'public'             => true,
-            'publicly_queryable' => true,
-            'show_ui'            => true,
-            'show_in_menu'       => true,
-            'menu_icon'          => 'dashicons-awards',
-            'query_var'          => true,
-            'rewrite'            => array( 'slug' => 'deliveries' ),
-            'capability_type'    => 'post',
-            'has_archive'        => true,
-            'hierarchical'       => false,
-            'menu_position'      => null,
-            'supports'           => array( 'title')
-        );
-        register_post_type( $post_type, $args );
-
-        p2p_register_connection_type( array(
-            'name' => 'deliveries_to_subscriptions',
-            'from' => 'subscriptions',
-            'to' => 'deliveries',
-            'cardinality' => 'one-to-many',
-            'admin_box' => array(
-                'show' => 'from',
-                'context' => 'advanced'
-            ),
-
-            'fields' => array(
-                'count' => array(
-                    'title' => 'Count',
-                    'type' => 'text',
-                    'default_cb' => array ($this,'deliveries_count'),
-                )
-            )
-        ) );
-        p2p_register_connection_type( array(
-            'name' => 'products_to_deliveries',
-            'from' => 'deliveries',
-            'to' => 'products',
-            'cardinality' => 'one-to-many',
-            'admin_box' => array(
-                'show' => 'from',
-                'context' => 'advanced'
-            ),
-
-            'fields' => array(
-                'quantity' => array(
-                    'title' => 'Quantità',
-                    'type' => 'text',
-                ),
-                'price' => array(
-                    'title' => 'Prezzo',
-                    'type' => 'text',
-                ),
-
-            )
-        ) );
-
-
         $post_type = 'subscriptions';
         $labels = array(
             'name'               => _x( 'Abbonamenti', 'post type general name', 'beyondmagazine' ),
@@ -127,12 +50,15 @@ class subscription {
             'supports'           => array( 'title')
         );
         register_post_type( $post_type, $args );
-
         add_action( 'add_meta_boxes_subscriptions', array( $this, 'add_subscriptions_meta_box' ) );
 
         add_action( 'save_post', array( $this, 'save' ) );
-        $result = add_role( 'customer', __('Cliente' ),
+        $result = add_role( 'customer', __(
+
+                'Cliente' ),
+
             array(
+
                 'read' => true, // true allows this capability
                 'edit_posts' => false, // Allows user to edit their own posts
                 'edit_pages' => false, // Allows user to edit pages
@@ -140,6 +66,7 @@ class subscription {
                 'create_posts' => false, // Allows user to create new posts
                 'manage_categories' => false, // Allows user to manage post categories
                 'publish_posts' => false, // Allows the user to publish, otherwise posts stays in draft mode
+
             )
 
         );
@@ -160,7 +87,6 @@ class subscription {
 
         ) );
         p2p_register_connection_type( array(
-            'id' => 'blacklist',
             'name' => 'blacklist',
             'from' => 'subscriptions',
             'cardinality' => 'one-to-many',
@@ -168,7 +94,7 @@ class subscription {
             'title' => array( 'from' => 'Blacklist'),
             'admin_box' => array(
                 'show' => 'from',
-                'context' => 'side'
+                'context' => 'advanced'
             ),
             'to_labels' => array(
                 'singular_name' => __( 'Prodotti'),
@@ -184,10 +110,6 @@ class subscription {
 
 
 
-    }
-    public function deliveries_count($post_id){
-        $count = count(p2p_type( 'deliveries_to_subscriptions' )->get_connected( $post_id->p2p_from )->posts);
-        return $count;
     }
     public function save_customer_profile_fields( $user_id ) {
 

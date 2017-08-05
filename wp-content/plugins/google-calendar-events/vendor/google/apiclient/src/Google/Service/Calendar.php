@@ -30,8 +30,7 @@
  */
 class Google_Service_Calendar extends Google_Service
 {
-
-    /** Manage your calendars. */
+  /** Manage your calendars. */
   const CALENDAR =
       "https://www.googleapis.com/auth/calendar";
   /** View your calendars. */
@@ -55,7 +54,6 @@ class Google_Service_Calendar extends Google_Service
    */
   public function __construct(Google_Client $client)
   {
-
     parent::__construct($client);
     $this->rootUrl = 'https://www.googleapis.com/';
     $this->servicePath = 'calendar/v3/';

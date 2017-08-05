@@ -1,0 +1,169 @@
+# Translation of Stable (latest release) in Italian
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-07-11 14:47:24+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#: admin/box.php:48
+msgid "Are you sure you want to delete all connections?"
+msgstr "Confermi la rimozione di tutte le relazioni?"
+
+#: admin/box.php:140
+msgid "Search"
+msgstr "Cerca"
+
+#: admin/box.php:230
+msgid "previous"
+msgstr "precedente"
+
+#: admin/box.php:231
+msgid "next"
+msgstr "successivo"
+
+#: admin/box.php:232
+msgid "of"
+msgstr "di"
+
+#: admin/dropdown-user.php:32
+msgid "Filter"
+msgstr "Filtro"
+
+#: admin/factory.php:88
+msgid " (from)"
+msgstr " (da)"
+
+#: admin/factory.php:89
+msgid " (to)"
+msgstr " (a)"
+
+#: admin/field-delete.php:7
+msgid "Delete all connections"
+msgstr "Cancella tutte le relazioni"
+
+#: admin/field-delete.php:16
+msgid "Delete connection"
+msgstr "Cancella relazione"
+
+#: admin/tools-page.php:7
+msgid "Connection Types"
+msgstr "Tipologie di Relazione"
+
+#: admin/tools-page.php:41
+msgid "<em>%s</em> is not a registered connection type."
+msgstr "<em>%s</em> non é una tipologia di relazione registrata."
+
+#: admin/tools-page.php:50
+msgid "Converted %1$s connections from <em>%2$s</em> to <em>%3$s</em>."
+msgstr "Convertite %1$s relazioni da <em>%2$s</em> a <em>%3$s</em>."
+
+#: admin/tools-page.php:64
+msgid "Name"
+msgstr "Nome"
+
+#: admin/tools-page.php:65
+msgid "Information"
+msgstr "Informazioni"
+
+#: admin/tools-page.php:66
+msgid "Connections"
+msgstr "Relazioni"
+
+#: admin/tools-page.php:74
+msgid "No connection types registered."
+msgstr "Nessuna tipologia di relazione registrata."
+
+#: admin/tools-page.php:76
+msgid "To register a connection type, see <a href=\"%s\">the wiki</a>."
+msgstr "Per registrare una tipologia di relazione, vedi <a href=\"%s\">il wiki</a>."
+
+#: admin/tools-page.php:93
+msgid "Convert to registered connection type:"
+msgstr "Converti una tipologia di relazione registrata."
+
+#: admin/tools-page.php:129
+msgid "Go"
+msgstr "Vai"
+
+#: vendor/scribu/lib-posts-to-posts/connection-type.php:91
+msgid "Create connections"
+msgstr "Crea una connessione"
+
+#: vendor/scribu/lib-posts-to-posts/connection-type.php:109
+msgid "Connected %s"
+msgstr "Relazioni %s"
+
+#: vendor/scribu/lib-posts-to-posts/side-user.php:16
+msgid "Users"
+msgstr "Utenti"
+
+#: vendor/scribu/lib-posts-to-posts/side-user.php:25
+msgid "User"
+msgstr "Utente"
+
+#: vendor/scribu/lib-posts-to-posts/side-user.php:26
+msgid "Search Users"
+msgstr "Cerca utenti"
+
+#: vendor/scribu/lib-posts-to-posts/side-user.php:27
+msgid "No users found."
+msgstr "Nessun utente trovato."
+
+#. #-#-#-#-#  tmp-posts-to-posts.pot (Posts 2 Posts 1.6.4)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: vendor/scribu/lib-posts-to-posts/widget.php:19
+msgid "Posts 2 Posts"
+msgstr "Posts 2 Posts"
+
+#: vendor/scribu/lib-posts-to-posts/widget.php:20
+msgid "A list of posts connected to the current post"
+msgstr "Elenco dei contenuti relazionati"
+
+#: vendor/scribu/lib-posts-to-posts/widget.php:37
+msgid "Title:"
+msgstr "Titolo:"
+
+#: vendor/scribu/lib-posts-to-posts/widget.php:44
+msgid "Connection type:"
+msgstr "Tipo relazione:"
+
+#: vendor/scribu/lib-posts-to-posts/widget.php:49
+msgid "Connection listing:"
+msgstr "Elenco relazioni:"
+
+#: vendor/scribu/lib-posts-to-posts/widget.php:55
+msgid "connected"
+msgstr "in relazione"
+
+#: vendor/scribu/lib-posts-to-posts/widget.php:56
+msgid "related"
+msgstr "in relazione"
+
+#: vendor/scribu/scb-framework/AdminPage.php:228
+msgid "Settings <strong>saved</strong>."
+msgstr "Impostazioni <strong>salvate</strong>"
+
+#: vendor/scribu/scb-framework/AdminPage.php:467
+msgid "Settings"
+msgstr "Impostazioni"
+
+#. Plugin URI of the plugin/theme
+msgid "http://scribu.net/wordpress/posts-to-posts"
+msgstr "http://scribu.net/wordpress/posts-to-posts"
+
+#. Description of the plugin/theme
+msgid "Create many-to-many relationships between all types of posts."
+msgstr "Crea relazioni da molti a molti tra le varie tipologia di post type."
+
+#. Author of the plugin/theme
+msgid "scribu"
+msgstr "scribu"
+
+#. Author URI of the plugin/theme
+msgid "http://scribu.net/"
+msgstr "http://scribu.net/"

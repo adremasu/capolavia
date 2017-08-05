@@ -53,7 +53,7 @@ if ($date) {
                 $pdf->SetFont('Arial', 'B', 10);
                 $pdf->MultiCell(0,4, $phoneText);
 
-            }
+            } 
             $data = '';
             $pdf->SetFont('Arial', '', 10);
 

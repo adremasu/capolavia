@@ -174,11 +174,9 @@ foreach ($deliveries->getItems() as $delivery) {
                         <div class="booking-product-wrapper col-xs-12 col-sm-6 '.$odd_class.'">
                         <div class="row">
                             <div class="col-md-4 text-center">
-
-
 <img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')"  src="' . $thumbnail . '" alt="' . $product[post_title] . $price . '"/>                            </div>
                             <div class="col-md-8">
-                                <p class="product-name text-center"><h4>' . $product[post_title] .' <i class="info-point fa fa-question-circle" aria-hidden="true" data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')"  ></i></h4><h5>'. $price . '</h5></p>';
+                                <p class="product-name text-center"><h4 data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')" >' . $product[post_title] .'</h4><h5>'. $price . '</h5></p>';
                     $product_name = addslashes($product[post_title]);
                     $html_code .= "
 

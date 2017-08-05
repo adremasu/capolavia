@@ -153,10 +153,6 @@ class bookings{
                 text-decoration: underline;
 
             }
-            #ui-datepicker-div td.ui-datepicker-today a{
-                color: red;
-
-            }
 
             </style>";
         echo "<div ng-app='bookingsApp' ng-controller='ProductsController'>";

@@ -12,7 +12,7 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 .idea
-wp-content/themes/beyond-magazine/node_modules
+wp-content/themes/beyond-magazine/node_modules/
 wp-content/themes/beyond-magazine/client_secret_108086348119377074393.json
 wp-content/themes/beyond-magazine/client_secret.json
 wp-content/themes/beyond-magazine/dev_key.php

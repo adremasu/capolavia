@@ -16,10 +16,33 @@ bookingsApp.controller "ProductsController", ['$scope','$http', ($scope, $http) 
     dateFormat: '@'
 
     beforeShow: ->
-      console.log $scope.date
       jQuery(@).datepicker('setDate', new Date($scope.date))
 
+    beforeShowDay: (date)->
+      savedDate = new Date($scope.date)
+      checkDate = new Date(date)
 
+      availableDates = $scope.monthEvents
+      availability = 'not_available'
+      if typeof $scope.monthEvents isnt 'undefined'
+        $scope.monthEvents.push savedDate
+        check = (eventDate) ->
+          _eventDay = eventDate.getDate().toString()
+          _eventMonth = eventDate.getMonth().toString()
+          _eventYear = eventDate.getFullYear().toString()
+          eventDateString  = _eventYear + _eventMonth + _eventDay
+          _Day = checkDate.getDate().toString()
+          _Month = checkDate.getMonth().toString()
+          _Year = checkDate.getFullYear().toString()
+
+          DateString  = _Year + _Month + _Day
+          _availability = (eventDateString == DateString)
+          if _availability is true
+            availability = 'available'
+
+        check eventDate for eventDate in $scope.monthEvents
+
+      [true, availability]
 
 
     onChangeMonthYear: (Y,m,d)->
