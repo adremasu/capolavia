@@ -65,6 +65,7 @@ class book_productsClass {
         $this->date = $_POST['date'];
         $this->notes = $this->userData['notes'];
         $this->delivery = $this->userData['delivery'];
+        $this->phone = $this->userData['phone'];
 
         $this->getBookingProducts();
 
@@ -98,7 +99,7 @@ class book_productsClass {
     }
 
 
-    private function _orderEmail(){
+    private function _orderEmail($isAdmin = false){
         $this->emailMessage = '';
         $products = ($this->productsJson ? $this->productsJson : $this->getBookingProducts());
 
@@ -143,7 +144,11 @@ class book_productsClass {
         $this->emailMessage .= "<td>NOTE: ".$this->notes."</td>";
 
         $this->emailMessage .= "</tr>";
-
+        if ($isAdmin) {
+          $this->emailMessage .= "<tr>";
+          $this->emailMessage .= "<td>TELEFONO: <a href='tel:".$this->phone."'>".$this->phone."</a> </td>";
+          $this->emailMessage .= "</tr>";
+        }
         $this->emailMessage .= "</table>";
 
 
@@ -155,7 +160,7 @@ class book_productsClass {
         $date = date_i18n('l j F Y', $this->date);
         $emailMessage = '<p>Ordine per '.$date.'</p>';
 
-        $emailMessage .= $this->_orderEmail();
+        $emailMessage .= $this->_orderEmail(true);
         $customerEmail = $this->userData['email'];
         $header = 'From: '.$this->userData["name"].' <'.$this->userData['email'].'>' . "\r\n";
 
