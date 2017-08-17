@@ -13,7 +13,7 @@ function my_meta_init()
 // http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 // http://codex.wordpress.org/Function_Reference/wp_enqueue_style
 //wp_enqueue_script('my_meta_js', MY_THEME_PATH . '/custom/meta.js', array('jquery'));
-    wp_enqueue_style('my_meta_css', ltrim(MY_THEME_PATH, 'http:') . '/custom/meta.css');
+    wp_enqueue_style('my_meta_css', ltrim(MY_THEME_PATH, 'https:') . '/custom/meta.css');
 // review the function reference for parameter details
 // http://codex.wordpress.org/Function_Reference/add_meta_box
 // add a meta box for each of the wordpress page types: posts and pages
@@ -335,7 +335,7 @@ function beyond_load_scripts() {
 
     //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
     //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'http:').'/main.min.js',array('jquery'),'12', null);
+    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'https:').'/main.min.js',array('jquery'),'12', null);
 
     wp_localize_script('beyond_init', 'init_vars', array(
         'label' => __('Menu', 'beyondmagazine')
@@ -353,7 +353,7 @@ function beyond_load_styles()
 //        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
 //        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
 //        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'http:'),'','2016.12.12','all' );
+    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2016.12.12','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
 
@@ -777,7 +777,7 @@ add_action( 'save_post', 'icon_save_meta_box_data' );
 
 //analytics
 function GAnalytics() {
-    $domain = ltrim(get_bloginfo('wpurl'), 'http://');
+    $domain = ltrim(get_bloginfo('wpurl'), 'https://');
     if ( !is_admin() && ($domain=='capolavia.it') ) {
 
         echo "<script>

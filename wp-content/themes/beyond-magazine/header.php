@@ -13,7 +13,7 @@
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-precomposed_144x144.png">
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php wp_title('|',true,'right'); ?></title>    
+    <title><?php wp_title('|',true,'right'); ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
     <?php
     if (is_home() || is_front_page()){
@@ -42,7 +42,7 @@
 <?php $products_archive=get_post_type_archive_link( 'products' );?>
 <?php
 $Path = $_SERVER['REQUEST_URI'];
-$URI = 'http://'.$_SERVER[HTTP_HOST].$Path;
+$URI = 'https://'.$_SERVER[HTTP_HOST].$Path;
 ?>
 <body <?php body_class(); ?> <?php if ($products_archive == $URI){?>data-ng-app="productsApp" <?php } ?>>
  <div class="kt-wrapper">
@@ -50,7 +50,7 @@ $URI = 'http://'.$_SERVER[HTTP_HOST].$Path;
          <?php dynamic_sidebar( 'header-sidebar' ); ?>
      <?php endif; ?>
         <div class="container">
-        
+
             <div class="row">
                 <?php if (get_header_image() != ''){    ?>
 
