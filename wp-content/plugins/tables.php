@@ -62,7 +62,7 @@ class Products_List extends WP_List_Table {
             'post_type' => $type,
             'post_status' => 'publish',
             'posts_per_page' => -1,
-            'caller_get_posts'=> 1,
+            //'caller_get_posts'=> 1,
             'orderby' => $order_by,
             'order' => $order,
             'meta_key' => $meta_key,
@@ -78,7 +78,9 @@ class Products_List extends WP_List_Table {
             $availability = get_post_meta( $product[ID], 'disponibilita', TRUE);
             $product['availability'] = $availability;
             $result[]=$product;
+            var_dump(get_post_meta($product[ID], '', TRUE));
         }
+        var_dump(count($result));
 
         return $result;
     }
