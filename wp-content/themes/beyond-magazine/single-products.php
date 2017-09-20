@@ -69,7 +69,6 @@
 
                 <?php
                 $availability = get_post_meta( $post->ID, 'disponibilita', TRUE);
-                var_dump(get_post_meta($post->ID, '', TRUE));
 
                 switch($post_template){
                     case null:
