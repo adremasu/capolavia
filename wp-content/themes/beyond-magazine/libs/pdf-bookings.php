@@ -10,6 +10,10 @@
 $date = $_GET['date'];
 $format = $_GET['format'];
 
+function cmp($a, $b)
+{
+    return strcmp($a["name"], $b["name"]);
+}
 
 if ($date) {
 
@@ -36,7 +40,7 @@ if ($date) {
             $name = $meta['userData']['name'];
             $delivery = $meta['userData']['delivery'];
             $phone = $meta['userData']['phone'];
-
+            usort($products, "cmp");
             if ($delivery) {
                 $pdf->SetFont('Arial', 'U', 10);
                 $deliveryText = ' [CONSEGNA A DOMICILIO: ' . $meta['userData']['address'] . ']';
@@ -53,7 +57,7 @@ if ($date) {
                 $pdf->SetFont('Arial', 'B', 10);
                 $pdf->MultiCell(0,4, $phoneText);
 
-            } 
+            }
             $data = '';
             $pdf->SetFont('Arial', '', 10);
 
@@ -103,6 +107,8 @@ if ($date) {
             $id = $booking->ID;
             $meta = $booking->meta;
             $products = $meta['products'];
+            usort($products, "cmp");
+
             foreach ($products as $key => $product) {
                 $productCollection[$key]['name'] = $product['name'];
                 $productCollection[$key]['weight']['mu'] = $product['weight']['mu'];

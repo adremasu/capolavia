@@ -169,6 +169,3 @@ class OptionsPage {
 
 }
 add_action('admin_menu' , new OptionsPage());
-
-
-

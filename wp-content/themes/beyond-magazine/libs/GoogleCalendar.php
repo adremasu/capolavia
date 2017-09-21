@@ -80,7 +80,6 @@ class Calendar {
 
     public function getEvents($eventsNumber = 1, $timeMin = 'today', $timeMax = 'first day of next month' ){
 
-
         $optParams = array(
             'maxResults' => $eventsNumber,
             'orderBy' => 'startTime',
@@ -90,6 +89,7 @@ class Calendar {
         );
 
         $results = $this->service->events->listEvents($this->calendarId, $optParams);
+
         foreach ($results->getItems() as $item) {
             $events[] = $item->getStart();
         }
