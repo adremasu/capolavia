@@ -4,7 +4,8 @@
     <?php if(have_posts()):while(have_posts()):the_post();?>
         <div <?php post_class('kt-article'); ?> id="post-<?php the_ID(); ?>">
             <?php
-                if (function_exists('get_field')){
+
+            if (function_exists('get_field')){
                     $images = get_field('galleria');
                     $post_template = get_field('tipo_di_post');
                 }
@@ -89,6 +90,9 @@
               'connected_type' => 'products_to_recipes',
               'connected_items' => get_queried_object(),
               'nopaging' => true,
+              'orderby' => 'title',
+              'order' => 'ASC'
+
             ) );
             if ( $connected->have_posts() ) :
                 ?>
