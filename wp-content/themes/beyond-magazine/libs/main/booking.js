@@ -42,10 +42,13 @@
           }).error(function() {
             $scope.loading = false;
             $scope.success = data["false"];
-            jQuery('#myModal').modal('hide');
-            return $scope.userMessage = 'Ops! Qualcosa è andato storto';
+            $scope.userMessage = 'Ops! Qualcosa è andato storto';
+            return jQuery('#myModal').modal('hide');
           });
         }
+      };
+      $scope.completed = function() {
+        return false;
       };
       return $scope.recap = function(e) {};
     }

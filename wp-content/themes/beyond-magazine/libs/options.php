@@ -33,6 +33,13 @@ class OptionsPage {
             'bookings_options_page.php',
             array($this, 'bookings_options_page')
         );
+        add_submenu_page('edit.php?post_type=bookings',
+            'Gestione prenotazioni',
+            'Gestione prenotazioni',
+            'edit_posts',
+            'booking_manager.php',
+            array($this, 'booking_manager_page')
+        );
 
     }
     function booking_settings_init(  ) {
@@ -55,9 +62,18 @@ class OptionsPage {
             'bookings_options'
         );
 
-    }
 
-    function  bookings_options_page() {
+    }
+    function booking_manager_page() {
+      ?>
+      <div class="wrap">
+        <h2>Prenotazioni</h2>
+        
+      </div>
+
+      <?php
+    }
+    function bookings_options_page() {
         ?>
         <div class="wrap">
             <h1>Impostazioni delle prenotazioni</h1>
