@@ -9,6 +9,8 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
     productsData = $scope.products
     userData = $scope.user
     date = $scope.date
+    e.target
+    console.log e.target
 
     # se il form è valido invia l'ordine
     if ($scope.booking_form.$valid)

@@ -15,9 +15,23 @@ class OptionsPage {
     function __construct() {
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
         add_action( 'admin_init', array( $this, 'booking_settings_init' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_js' ));
 
     }
-
+    public function enqueue_js( $hook ) {
+        if ('post.php' != $hook && 'post-new.php' != $hook) {
+            return;
+        }
+        wp_enqueue_style('plugin_name-admin-ui-css',
+            'https://code.jquery.com/ui/jquery-ui-git.css',
+            false,
+            PLUGIN_VERSION,
+            false);
+        wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
+        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js', array(), '5.5' );
+        wp_enqueue_script( 'jquery-ui-core' );
+        wp_enqueue_script( 'jquery-ui-datepicker' );
+    }
     function admin_menu() {
         add_submenu_page('edit.php?post_type=bookings',
             'Riepilogo prenotazioni',
@@ -68,7 +82,9 @@ class OptionsPage {
       ?>
       <div class="wrap">
         <h2>Prenotazioni</h2>
-        
+          <div ng-app='bookingmanagerApp' ng-controller='perdateController'>
+          </div>
+
       </div>
 
       <?php

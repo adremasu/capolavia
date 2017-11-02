@@ -121,9 +121,7 @@ class bookings{
     }
 
     public function enqueue_js( $hook ) {
-        if ('post.php' != $hook && 'post-new.php' != $hook) {
-            return;
-        }
+
         wp_enqueue_style('plugin_name-admin-ui-css',
             'https://code.jquery.com/ui/jquery-ui-git.css',
             false,

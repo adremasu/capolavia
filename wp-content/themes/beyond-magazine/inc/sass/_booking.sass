@@ -21,3 +21,52 @@
   height: 100%
   background: black
 
+.custom_form input.radio
+  &:empty
+    margin-left: -999px
+    ~ label
+      position: relative
+      float: left
+      line-height: 2.5em
+      text-indent: 2em
+      margin-bottom: 1em
+      cursor: pointer
+      -webkit-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+      padding-right: 1em
+      &:before
+        position: absolute
+        display: block
+        top: 0
+        bottom: 0
+        left: 0
+        content: ""
+        width: 2.5em
+        background: #D1D3D4
+        border-radius: 3px 0 0 3px
+  ~ label
+    border-radius: 3px
+    border: 1px solid #D1D3D4
+  &:hover:not(:checked) ~ label
+    color: #888
+    &:before
+      content: "✔"
+      text-indent: 0.9em
+      color: #C2C2C2
+  &:checked ~ label
+    color: #777
+    &:before
+      content: "✔"
+      text-indent: 0.9em
+      color: white
+      background-color: #42A942
+  &:focus ~ label:before
+    box-shadow: 0 0 0 3px #999
+
+input.ng-invalid.ng-touched + .validation-text, textarea.ng-invalid.ng-touched + .validation-text, select.ng-invalid.ng-touched + .validation-text
+  visibility: visible
+
+input + .validation-text, textarea + .validation-text, select + .validation-text
+  visibility: hidden

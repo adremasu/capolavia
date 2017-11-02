@@ -53,12 +53,8 @@ class subscription {
         add_action( 'add_meta_boxes_subscriptions', array( $this, 'add_subscriptions_meta_box' ) );
 
         add_action( 'save_post', array( $this, 'save' ) );
-        $result = add_role( 'customer', __(
-
-                'Cliente' ),
-
+        $result = add_role( 'customer', __('Cliente' ),
             array(
-
                 'read' => true, // true allows this capability
                 'edit_posts' => false, // Allows user to edit their own posts
                 'edit_pages' => false, // Allows user to edit pages
@@ -66,9 +62,7 @@ class subscription {
                 'create_posts' => false, // Allows user to create new posts
                 'manage_categories' => false, // Allows user to manage post categories
                 'publish_posts' => false, // Allows the user to publish, otherwise posts stays in draft mode
-
             )
-
         );
         p2p_register_connection_type( array(
             'name' => 'subscription_owner',
@@ -107,9 +101,42 @@ class subscription {
         add_action( 'edit_user_profile', array( $this,'show_customer_profile_fields') );
         add_action( 'personal_options_update',  array( $this, 'save_customer_profile_fields') );
         add_action( 'edit_user_profile_update',  array( $this, 'save_customer_profile_fields') );
+        add_action( 'after_setup_theme', array( $this, 'remove_admin_bar'));
+        add_action('admin_menu',  array( $this, 'remove_dashboard'));
 
 
 
+
+    }
+    /* Remove the "Dashboard" from the admin menu for non-admin users */
+    public function remove_dashboard () {
+        global $current_user, $menu, $submenu;
+        get_currentuserinfo();
+
+        if( ! in_array( 'administrator', $current_user->roles ) ) {
+            reset( $menu );
+            $page = key( $menu );
+            while( ( __( 'Dashboard' ) != $menu[$page][0] ) && next( $menu ) ) {
+                $page = key( $menu );
+            }
+            if( __( 'Dashboard' ) == $menu[$page][0] ) {
+                unset( $menu[$page] );
+            }
+            reset($menu);
+            $page = key($menu);
+            while ( ! $current_user->has_cap( $menu[$page][1] ) && next( $menu ) ) {
+                $page = key( $menu );
+            }
+            if ( preg_match( '#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI'] ) &&
+                ( 'index.php' != $menu[$page][2] ) ) {
+                    wp_redirect( get_option( 'siteurl' ) . '/wp-admin/edit.php');
+            }
+        }
+    }
+    public function remove_admin_bar() {
+      if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+      }
     }
     public function save_customer_profile_fields( $user_id ) {
 

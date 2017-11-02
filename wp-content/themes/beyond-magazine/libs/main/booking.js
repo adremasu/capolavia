@@ -14,6 +14,7 @@
         productsData = $scope.products;
         userData = $scope.user;
         date = $scope.date;
+        console.log(e.target);
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
           for (product in productsData) {
