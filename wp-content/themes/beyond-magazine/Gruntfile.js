@@ -13,15 +13,23 @@ module.exports = function (grunt) {
         },
         coffee: {
             modules: {
+              files: [
+                  {
+                      expand: true,
+                      cwd: 'inc/coffee/',
+                      src: ['*.coffee'],
+                      dest: 'libs/main',
+                      ext: '.js'
+                  },
                 files: [
                     {
                         expand: true,
-                        cwd: 'inc/coffee/',
+                        cwd: 'inc/coffee/admin',
                         src: ['*.coffee'],
                         dest: 'libs/main',
                         ext: '.js'
                     }
-                ]
+              ]
             },
             tests: {
                 files: [

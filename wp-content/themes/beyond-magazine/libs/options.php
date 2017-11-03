@@ -28,7 +28,7 @@ class OptionsPage {
             PLUGIN_VERSION,
             false);
         wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
-        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/inc/coffee/admin.js', array(), '5.5' );
+        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/libs/main/admin.js', array(), '5.6' );
         wp_enqueue_script( 'jquery-ui-core' );
         wp_enqueue_script( 'jquery-ui-datepicker' );
     }
@@ -82,7 +82,8 @@ class OptionsPage {
       ?>
       <div class="wrap">
         <h2>Prenotazioni</h2>
-          <div ng-app='bookingmanagerApp' ng-controller='perdateController'>
+          <div ng-app='bookingmanagerApp' >
+            ciao
           </div>
 
       </div>

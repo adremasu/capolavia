@@ -151,3 +151,9 @@ bookingsApp.directive "getdate", ->
     scope[data.data_type] = data.data
 
 bookingsApp
+
+bookingmanagerApp = angular.module('bookingmanagerApp', [])
+bookingsApp.controller "perdateController", ['$scope','$http', ($scope, $http) ->
+]
+
+bookingmanagerApp

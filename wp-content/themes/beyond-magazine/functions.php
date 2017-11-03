@@ -111,6 +111,7 @@ require_once('libs/bookings_admin-ajax.php');
 require_once('libs/subscription-ajax.php');
 require_once('libs/book_products-ajax.php');
 require_once('libs/options.php');
+require_once('libs/bookingManager.php');
 require_once('libs/GoogleCalendar.php');
 require_once('libs/email_templates.php');
 require_once('libs/pdf-bookings.php');

@@ -4570,6 +4570,7 @@ jQuery(document).ready(function($){
         productsData = $scope.products;
         userData = $scope.user;
         date = $scope.date;
+        e.target;
         console.log(e.target);
         if ($scope.booking_form.$valid) {
           selectedProducts = {};

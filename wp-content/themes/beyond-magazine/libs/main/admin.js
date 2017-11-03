@@ -1,5 +1,5 @@
 (function() {
-  var bookingsApp;
+  var bookingmanagerApp, bookingsApp;
 
   bookingsApp = angular.module('bookingsApp', []);
 
@@ -165,5 +165,11 @@
   });
 
   bookingsApp;
+
+  bookingmanagerApp = angular.module('bookingmanagerApp', []);
+
+  bookingsApp.controller("perdateController", ['$scope', '$http', function($scope, $http) {}]);
+
+  bookingmanagerApp;
 
 }).call(this);
