@@ -101,10 +101,12 @@ class subscription {
         add_action( 'edit_user_profile', array( $this,'show_customer_profile_fields') );
         add_action( 'personal_options_update',  array( $this, 'save_customer_profile_fields') );
         add_action( 'edit_user_profile_update',  array( $this, 'save_customer_profile_fields') );
-        add_action( 'after_setup_theme', array( $this, 'remove_admin_bar'));
         add_action('admin_menu',  array( $this, 'remove_dashboard'));
 
 
+        if (!current_user_can('administrator') && !is_admin()) {
+          add_filter('show_admin_bar', '__return_false');
+        }
 
 
     }
@@ -133,11 +135,7 @@ class subscription {
             }
         }
     }
-    public function remove_admin_bar() {
-      if (!current_user_can('administrator') && !is_admin()) {
-        show_admin_bar(false);
-      }
-    }
+
     public function save_customer_profile_fields( $user_id ) {
 
         if ( !current_user_can( 'edit_user', $user_id ) )

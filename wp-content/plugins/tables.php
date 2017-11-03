@@ -78,6 +78,7 @@ class Products_List extends WP_List_Table {
             $availability = get_post_meta( $product[ID], 'disponibilita', TRUE);
             $product['availability'] = $availability;
             $result[]=$product;
+
         }
 
         return $result;
@@ -91,7 +92,6 @@ class Products_List extends WP_List_Table {
      * @param int $value availability
      */
     public static function update_product( $id, $value ) {
-
         update_post_meta($id, "disponibilita", $value);
     }
 
@@ -220,7 +220,7 @@ class Products_List extends WP_List_Table {
     public function get_sortable_columns() {
         $sortable_columns = array(
             'post_title' => array( 'post_title', true ),
-            'availability' => array( 'disponibilita', true )
+            'availability' => array('disponibilita',  false)
         );
 
         return $sortable_columns;

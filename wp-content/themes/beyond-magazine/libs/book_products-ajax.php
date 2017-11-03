@@ -188,12 +188,10 @@ class book_productsClass {
         $header = 'From: Sapori di Capolavia <ordini@capolavia.it>' . "\r\n";
 
         if(wp_mail($emailAddress, 'Ordine confermato', $emailMessage, $header)){
-          die('true');
 
             return true;
 
         } else {
-          die('false');
             return false;
         }
 
