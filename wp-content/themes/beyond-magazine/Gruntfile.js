@@ -21,7 +21,6 @@ module.exports = function (grunt) {
                       dest: 'libs/main',
                       ext: '.js'
                   },
-                files: [
                     {
                         expand: true,
                         cwd: 'inc/coffee/admin',
@@ -70,7 +69,7 @@ module.exports = function (grunt) {
 
         watch: {
             coffee: {
-                files: ['inc/coffee/*.coffee'],
+                files: ['inc/coffee/*.coffee', 'inc/coffee/admin/*.coffee'],
                 tasks: ['coffee', 'concat', 'uglify']
             },
             compass: {

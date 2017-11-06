@@ -168,7 +168,34 @@
 
   bookingmanagerApp = angular.module('bookingmanagerApp', []);
 
-  bookingsApp.controller("perdateController", ['$scope', '$http', function($scope, $http) {}]);
+  bookingmanagerApp.controller("perdateController", [
+    '$scope', '$http', function($scope, $http) {
+      var datepickerOptions;
+      datepickerOptions = {
+        "dateFormat": "mm,dd,yy"
+      };
+      jQuery('#startDatepicker').datepicker(datepickerOptions);
+      jQuery('#endDatepicker').datepicker(datepickerOptions);
+      return $scope.getBookings = function() {
+        var request;
+        request = {
+          action: "getBookingsByDate",
+          start: $scope.start,
+          end: $scope.end
+        };
+        return $http({
+          method: "POST",
+          url: "/wp-admin/admin-ajax.php",
+          data: jQuery.param(request),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }).success(function(data) {
+          return jQuery('#postContainer').html(data);
+        });
+      };
+    }
+  ]);
 
   bookingmanagerApp;
 

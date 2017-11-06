@@ -273,6 +273,16 @@ function get_month_events() {
     wp_die();
 }
 
+function getBookingsByDate(){
+  $start = $_POST['start'];
+  $end = $_POST['end'];
+  if ($start && $end){
+    $request = new bookings_admin();
+    $request->getBookingsByDate($start, $end);
+  }
+}
 
 add_action('wp_ajax_get_month_events', 'get_month_events');
 add_action('wp_ajax_nopriv_get_month_events', 'get_month_events');
+add_action('wp_ajax_getBookingsByDate', 'getBookingsByDate');
+add_action('wp_ajax_nopriv_getBookingsByDate', 'getBookingsByDate');

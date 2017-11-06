@@ -11,6 +11,114 @@ class bookings_admin {
     public function __construct(){
 
     }
+
+    public function getBookingsByDate($start, $end){
+
+      $start = explode(',', $start);
+      $end = explode(",", $end);
+      $_start = mktime(0,0,0,strval($start[0]),strval($start[1]),strval($start[2]));
+      $_end = mktime(0,0,0,strval($end[0]),strval($end[1]),strval($end[2]));
+
+      $args = array(
+        'post_type' => 'bookings',
+        'posts_per_page' => '-1',
+        'orderby' => 'date',
+        'meta_query' => array(
+            array(
+              'key'     => 'date',
+              'value'   => array( $_start, $_end ),
+              'compare' => 'BETWEEN'
+            )
+          )
+
+
+      );
+      $query = new WP_Query( $args );
+      $completeProductList = [];
+      $productsList = [];
+      $productCollection = [];
+      if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) {
+          $query->the_post();
+          $id = get_the_ID();
+          $products = get_post_meta($id, 'products', TRUE);
+          foreach ($products as $key => $product) {
+            //if ($product['items']['qt']) {echo $product['name'].'->'.$product['items']['qt'].' pz.<br>';}
+            //if ($product['weight']['qt']) {echo $product['name'].'->'.$product['weight']['qt'].'kg<br>';}
+              $productCollection[$key]['name'] = $product['name'];
+              $productCollection[$key]['weight']['mu'] = $product['weight']['mu'];
+              $productCollection[$key]['items']['mu'] = $product['items']['mu'];
+              $productCollection[$key]['weight']['qt'] = $productCollection[$key]['weight']['qt'] + $product['weight']['qt'];
+              $productCollection[$key]['items']['qt'] = $productCollection[$key]['items']['qt'] + $product['items']['qt'];
+              $_CSVBookings[$id]['orders'][$key]['weight']['mu'] = $product['weight']['mu'];
+              $_CSVBookings[$id]['orders'][$key]['weight']['qt'] = $product['weight']['qt'];
+              $_CSVBookings[$id]['orders'][$key]['items']['mu'] = $product['items']['mu'];
+              $_CSVBookings[$id]['orders'][$key]['items']['qt'] = $product['items']['qt'];
+              $completeProductList[$key] = $product['name'];
+          }
+
+          $customerName = $meta['userData']['name'];
+
+          foreach ($products as $product){
+              $productsList[] = $product['name'];
+          }
+        }
+        echo '----<br>';
+      }
+
+
+      //
+
+      foreach ($productCollection as $key => $row) {
+          $prodNames[$key]  = $row['name'];
+      }
+      ksort($prodNames);
+      ksort($productCollection);
+
+      // Sort the data with volume descending, edition ascending
+      // Add $data as the last parameter, to sort by the common key
+      $CSVproductsQts = 'Totale, ,';
+      foreach ($productCollection as $product){
+        if ($product['weight']['qt']){
+          echo $product['name'].'->'.$product['weight']['qt'].' Kg<br>';
+        }
+          if ($product['weight']['qt']){
+              $CSVproductsQts .= $product['weight']['qt'].' '.$product['weight']['mu'].' ';
+          }
+          if ($product['items']['qt']){
+            echo $product['name'].'->'.$product['items']['qt'].' pz.<br>';
+          }
+          if ($product['items']['qt']){
+              $CSVproductsQts .= $product['items']['qt'].' pz.';
+          }
+          $CSVproductsQts .= ',';
+
+      }
+      $CSVproductsQts .= "\n";
+      //echo $CSVproductsQts;
+
+      /*
+      //The Loop
+      if ( $query->have_posts() ) {
+      	echo '<ul>';
+      	while ( $query->have_posts() ) {
+      		$query->the_post();
+          echo '<li>' . get_the_title() . '</li>';
+          echo '<li>' . get_post_meta(get_the_ID(),'products', TRUE) . '</li>';
+
+      	}
+      	echo '</ul>';
+      	// Restore original Post Data
+      	wp_reset_postdata();
+      } else {
+      	// no posts found
+      }
+      */
+      wp_die();
+
+    }
+
+
     public function getMonthEventsByDate($month, $year){
         $calendar =  new Calendar();
 

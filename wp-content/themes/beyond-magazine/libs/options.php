@@ -52,7 +52,7 @@ class OptionsPage {
             'Gestione prenotazioni',
             'edit_posts',
             'booking_manager.php',
-            array($this, 'booking_manager_page')
+            array('BookingManager', 'init')
         );
 
     }
@@ -78,18 +78,7 @@ class OptionsPage {
 
 
     }
-    function booking_manager_page() {
-      ?>
-      <div class="wrap">
-        <h2>Prenotazioni</h2>
-          <div ng-app='bookingmanagerApp' >
-            ciao
-          </div>
 
-      </div>
-
-      <?php
-    }
     function bookings_options_page() {
         ?>
         <div class="wrap">

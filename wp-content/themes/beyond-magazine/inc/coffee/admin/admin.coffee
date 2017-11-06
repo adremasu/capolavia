@@ -153,7 +153,28 @@ bookingsApp.directive "getdate", ->
 bookingsApp
 
 bookingmanagerApp = angular.module('bookingmanagerApp', [])
-bookingsApp.controller "perdateController", ['$scope','$http', ($scope, $http) ->
+
+bookingmanagerApp.controller "perdateController", ['$scope','$http', ($scope, $http) ->
+  datepickerOptions = {
+    "dateFormat": "mm,dd,yy"
+  }
+  jQuery('#startDatepicker').datepicker(datepickerOptions)
+  jQuery('#endDatepicker').datepicker(datepickerOptions)
+
+  $scope.getBookings = ->
+    request = {
+      action: "getBookingsByDate"
+      start: $scope.start
+      end: $scope.end
+    }
+    $http(
+      method: "POST"
+      url: "/wp-admin/admin-ajax.php"
+      data: jQuery.param(request)
+      headers:
+        "Content-Type": "application/x-www-form-urlencoded"
+    ).success (data)->
+      jQuery('#postContainer').html(data)
 ]
 
 bookingmanagerApp
