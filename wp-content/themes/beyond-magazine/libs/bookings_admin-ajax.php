@@ -97,23 +97,6 @@ class bookings_admin {
       $CSVproductsQts .= "\n";
       //echo $CSVproductsQts;
 
-      /*
-      //The Loop
-      if ( $query->have_posts() ) {
-      	echo '<ul>';
-      	while ( $query->have_posts() ) {
-      		$query->the_post();
-          echo '<li>' . get_the_title() . '</li>';
-          echo '<li>' . get_post_meta(get_the_ID(),'products', TRUE) . '</li>';
-
-      	}
-      	echo '</ul>';
-      	// Restore original Post Data
-      	wp_reset_postdata();
-      } else {
-      	// no posts found
-      }
-      */
       wp_die();
 
     }

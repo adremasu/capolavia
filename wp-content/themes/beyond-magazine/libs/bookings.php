@@ -151,7 +151,9 @@ class bookings{
                 text-decoration: underline;
 
             }
-
+            input.productQtyInput{
+              width: 60px;
+            }
             </style>";
         echo "<div ng-app='bookingsApp' ng-controller='ProductsController'>";
         if ($products_meta){
@@ -171,8 +173,8 @@ class bookings{
                     <input value='{{product.name}}' type='hidden' name='products[{{id}}][name]'>
                 </td>
                 <td>{{product.name}}</td>
-                <td><input name='products[{{id}}][weight][qt]' data-ng-model='product.weight.qt'><input value='{{product.weight.mu}}' type='hidden' name='products[{{id}}][weight][mu]'>{{product.weight.mu}}</td>
-                <td><input name='products[{{id}}][items][qt]' data-ng-model='product.items.qt'><input value='{{product.items.mu}}' type='hidden' name='products[{{id}}][items][mu]'>{{product.items.mu}}</td>
+                <td><input class='productQtyInput'  name='products[{{id}}][weight][qt]' data-ng-model='product.weight.qt'><input value='{{product.weight.mu}}' type='hidden' name='products[{{id}}][weight][mu]'>{{product.weight.mu}}</td>
+                <td><input class='productQtyInput'  name='products[{{id}}][items][qt]' data-ng-model='product.items.qt'><input value='{{product.items.mu}}' type='hidden' name='products[{{id}}][items][mu]'>{{product.items.mu}}</td>
             </tr>";
         foreach($products_meta as $id => $product){
 
