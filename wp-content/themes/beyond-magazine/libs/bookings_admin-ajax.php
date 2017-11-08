@@ -46,9 +46,15 @@ class bookings_admin {
             //if ($product['items']['qt']) {echo $product['name'].'->'.$product['items']['qt'].' pz.<br>';}
             //if ($product['weight']['qt']) {echo $product['name'].'->'.$product['weight']['qt'].'kg<br>';}
               $productCollection[$key]['name'] = $product['name'];
+              if ($product['weight']['mu'] == "g"){
+                $productWeightInKg = ($product['weight']['qt'])/1000;
+              } else {
+                $productWeightInKg = $product['weight']['qt'];
+
+              }
               $productCollection[$key]['weight']['mu'] = $product['weight']['mu'];
               $productCollection[$key]['items']['mu'] = $product['items']['mu'];
-              $productCollection[$key]['weight']['qt'] = $productCollection[$key]['weight']['qt'] + $product['weight']['qt'];
+              $productCollection[$key]['weight']['qt'] = $productCollection[$key]['weight']['qt'] + $productWeightInKg;
               $productCollection[$key]['items']['qt'] = $productCollection[$key]['items']['qt'] + $product['items']['qt'];
               $_CSVBookings[$id]['orders'][$key]['weight']['mu'] = $product['weight']['mu'];
               $_CSVBookings[$id]['orders'][$key]['weight']['qt'] = $product['weight']['qt'];
