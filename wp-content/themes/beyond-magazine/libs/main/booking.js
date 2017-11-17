@@ -14,8 +14,7 @@
         productsData = $scope.products;
         userData = $scope.user;
         date = $scope.date;
-        e.target;
-        console.log(e.target);
+        e.target.disabled = true;
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
           for (product in productsData) {
@@ -40,12 +39,19 @@
             $scope.loading = false;
             $scope.success = data.success;
             $scope.userMessage = data.userMessage;
-            return jQuery('#myModal').modal('hide');
+            jQuery('#myModal').modal('hide');
+            e.target.disabled = false;
+            if (!data.success) {
+              return jQuery('#errorModal').modal('show');
+            }
           }).error(function() {
             $scope.loading = false;
             $scope.success = data["false"];
             $scope.userMessage = 'Ops! Qualcosa è andato storto';
-            return jQuery('#myModal').modal('hide');
+            jQuery('#myModal').modal('hide');
+            console.log('fail');
+            jQuery('#errorModal').modal('show');
+            return e.target.disabled = false;
           });
         }
       };

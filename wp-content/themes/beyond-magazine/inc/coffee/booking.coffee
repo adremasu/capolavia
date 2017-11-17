@@ -9,8 +9,7 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
     productsData = $scope.products
     userData = $scope.user
     date = $scope.date
-    e.target
-    console.log e.target
+    e.target.disabled =  true
 
     # se il form è valido invia l'ordine
     if ($scope.booking_form.$valid)
@@ -36,11 +35,18 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
         $scope.success = data.success
         $scope.userMessage = data.userMessage
         jQuery('#myModal').modal('hide')
+        e.target.disabled = false
+        if !data.success
+          jQuery('#errorModal').modal('show')
+
       .error ->
         $scope.loading = false
         $scope.success = data.false
         $scope.userMessage = 'Ops! Qualcosa è andato storto'
         jQuery('#myModal').modal('hide')
+        console.log 'fail'
+        jQuery('#errorModal').modal('show')
+        e.target.disabled = false
 
   $scope.completed = ->
     false

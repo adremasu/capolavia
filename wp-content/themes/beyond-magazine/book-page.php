@@ -103,39 +103,58 @@ foreach ($deliveries->getItems() as $delivery) {
 
 
         <div id="booking-wrapper" class="col-md-12">
-            <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Riepilogo</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Nome: {{user.name}}</p>
-                            <p>Indirizzo e-mail: {{user.email}}</p>
-                            <p>Telefono: {{user.phone}}</p>
-                            <table class="table">
-                                <tr data-ng-hide="!product.weight && !product.items" data-ng-repeat="product in products">
-                                    <td>{{product.name}}</td>
-                                    <td data-ng-if="product.items">{{product.items}} {{product.items_name}}</td>
-                                    <td data-ng-if="product.weight">{{product.weight}} {{product.weight_name}}</td>
-                                </tr>
-                            </table>
-                            <p>Note: <br>{{user.notes}}</p>
-                            <p data-ng-if="user.delivery == '1'">Consegna presso:{{user.address}}</p>
-                            <p data-ng-if="user.delivery == '0'">Ritiro in azienda in via Rodolfo Rossi 101, Rovigo(loc. Grignano Polesine)</p>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Modifica</button>
-                            <button type="button" data-ng-click="saveBooking($event)" class="btn btn-success">
-                                <span data-ng-show="loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
-                                Conferma ordine
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
+          <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Riepilogo</h4>
+                      </div>
+                      <div class="modal-body">
+                          <p>Nome: {{user.name}}</p>
+                          <p>Indirizzo e-mail: {{user.email}}</p>
+                          <p>Telefono: {{user.phone}}</p>
+                          <table class="table">
+                              <tr data-ng-hide="!product.weight && !product.items" data-ng-repeat="product in products">
+                                  <td>{{product.name}}</td>
+                                  <td data-ng-if="product.items">{{product.items}} {{product.items_name}}</td>
+                                  <td data-ng-if="product.weight">{{product.weight}} {{product.weight_name}}</td>
+                              </tr>
+                          </table>
+                          <p>Note: <br>{{user.notes}}</p>
+                          <p data-ng-if="user.delivery == '1'">Consegna presso:{{user.address}}</p>
+                          <p data-ng-if="user.delivery == '0'">Ritiro in azienda in via Rodolfo Rossi 101, Rovigo(loc. Grignano Polesine)</p>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Modifica</button>
+                          <button type="button" data-ng-click="saveBooking($event)" class="btn btn-success">
+                              <span data-ng-show="loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                              Conferma ordine
+                          </button>
+                      </div>
+                  </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+          <div class="modal fade" tabindex="-1" role="dialog" id="errorModal">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Riepilogo</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Ooooops! Qualcosa è andato storto, prova a ripetere l'operazione o <a href="<?php echo get_site_url().'/contacts'; ?>">contattaci</a></p>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                      </div>
+                  </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
 
             <div class="row" data-ng-show="success" ng-cloak >
                 <div class="col-md-12 col-xs-12">
