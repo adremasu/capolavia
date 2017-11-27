@@ -3,6 +3,10 @@ bookingApp = angular.module('bookingApp', [])
 bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
   $scope.loading = false
   $scope.success = false
+  if jQuery('#loginModal').length
+    jQuery('#loginModal').modal('show')
+
+
   $scope.saveBooking = (e)->
     e.preventDefault()
     $scope.loading = true

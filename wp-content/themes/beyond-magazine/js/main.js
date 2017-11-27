@@ -4563,6 +4563,9 @@ jQuery(document).ready(function($){
     '$scope', '$http', function($scope, $http) {
       $scope.loading = false;
       $scope.success = false;
+      if (jQuery('#loginModal').length) {
+        jQuery('#loginModal').modal('show');
+      }
       $scope.saveBooking = function(e) {
         var date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();

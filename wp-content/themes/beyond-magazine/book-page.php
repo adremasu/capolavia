@@ -143,7 +143,7 @@ foreach ($deliveries->getItems() as $delivery) {
                   <div class="modal-content">
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">Riepilogo</h4>
+                          <h4 class="modal-title">Abbiamo sbagliato qualcosa! Forse una talpa ci ha mangiato il server!</h4>
                       </div>
                       <div class="modal-body">
                         <p>Ooooops! Qualcosa è andato storto, prova a ripetere l'operazione o <a href="<?php echo get_site_url().'/contacts'; ?>">contattaci</a></p>
@@ -154,8 +154,26 @@ foreach ($deliveries->getItems() as $delivery) {
                   </div><!-- /.modal-content -->
               </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
-
-
+          <?php if (!is_user_logged_in()) { ?>
+          <div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Effettua il login ed ottieni uno sconto del 5%!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>Effettua il login ed ottieni uno sconto del 5%!</p>
+                        <p><?php wp_login_form(); ?></p>
+                        <p> <?php do_action( 'wordpress_social_login' ); ?> </p>
+                        <p<button type="button" class="btn btn-default" data-dismiss="modal">No, grazie. Effettuo l'ordine senza registrarmi.</button></p>
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                  </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <?php } ?>
             <div class="row" data-ng-show="success" ng-cloak >
                 <div class="col-md-12 col-xs-12">
                     <p class="alert text-center alert-success">
