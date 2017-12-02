@@ -233,7 +233,7 @@ foreach ($deliveries->getItems() as $delivery) {
                     $html_code  .= '<div class="form-group col-xs-12 col-md-6">
                                         <label class="sr-only" for="'.$product[ID].'">Peso (in '.$weight_name.')</label>
                                         <div class="input-group">
-                                          <input type="number" data-ng-disabled="products['.$product[ID].'][\'items\']" data-ng-model="products['.$product[ID].'][\'weight\']" class="form-control" id="'.$product[ID].'" placeholder="peso"  name="products['.$product[ID].'][weight]">
+                                          <input type="number" data-ng-disabled="products['.$product[ID].'][\'items\']" data-ng-model="products['.$product[ID].'][\'weight\']" class="form-control" id="'.$product[ID].'" placeholder="0.0"  name="products['.$product[ID].'][weight]">
                                           <div class="input-group-addon">'.$weight_name.'</div>
                                         </div>
                                     </div>';
