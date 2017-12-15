@@ -203,10 +203,6 @@ foreach ($deliveries->getItems() as $delivery) {
                     $weight_name = $stock[weight_name];
                     $items_name = $stock[items_name];
                     $thumbnail = (has_post_thumbnail($product[ID]) ? $_thumbnail[0] : get_header_image());
-                    //                                 <img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')"  src="' . $thumbnail . '" alt="' . $product[post_title] . $price . '"/>
-                            //                                 <i data-ng-click="select('.$product[ID].')"  data-toggle="modal" data-target="#productModal" class="info-button fa fa-2x fa-info" aria-hidden="true"></i>
-
-
                     $html_code .= '
                         <div class="booking-product-wrapper col-xs-12 col-sm-6 '.$odd_class.'">
                         <div class="row">
@@ -215,6 +211,7 @@ foreach ($deliveries->getItems() as $delivery) {
                             <div class="col-md-8">
                                 <p class="product-name text-center"><h4 data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product[ID].')" >' . $product[post_title] .'</h4><h5>'. $price . '</h5></p>';
                     $product_name = addslashes($product[post_title]);
+
                     $html_code .= "
 
                                 <div
@@ -245,13 +242,12 @@ foreach ($deliveries->getItems() as $delivery) {
                                         </div>
                                     </div>';
                     }
+
                     if ($has_weight){
-
-
                     $html_code  .= '<div class="form-group col-xs-12 col-md-6">
                                         <label class="sr-only" for="'.$product[ID].'">Peso (in '.$weight_name.')</label>
                                         <div class="input-group">
-                                          <input type="number" data-ng-disabled="products['.$product[ID].'][\'items\']" data-ng-model="products['.$product[ID].'][\'weight\']" class="form-control" id="'.$product[ID].'" placeholder="peso"  name="products['.$product[ID].'][weight]">
+                                          <input type="number" data-ng-disabled="products['.$product[ID].'][\'items\']" data-ng-model="products['.$product[ID].'][\'weight\']" class="form-control" id="'.$product[ID].'" placeholder="0.0"  name="products['.$product[ID].'][weight]">
                                           <div class="input-group-addon">'.$weight_name.'</div>
                                         </div>
                                     </div>';

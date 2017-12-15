@@ -80,7 +80,6 @@ class Products_List extends WP_List_Table {
             $result[]=$product;
 
         }
-
         return $result;
     }
 
@@ -266,21 +265,81 @@ class Products_List extends WP_List_Table {
     /*
      * get the code for newsletter
      */
-    public function get_newsletter_code(){
+    public function get_newsletter_code($year = ''){
 
         $products =  $this->get_products('disponibilita', '1');
-
         $array_products = json_decode(json_encode($products),TRUE);
+        $array_products_2018 = json_decode(json_encode($products),TRUE);
+        $productsNumber = count($array_products_2018);
+
+        $first_array_slice = array_slice($array_products, 0, $productsNumber/2, true);
+        $second_array_slice = array_slice($array_products, $productsNumber/2, $productsNumber, true);
+
         $html_code = "";
+        $html_code_2018 = '<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+<![endif]-->
+<tbody class="mcnBoxedTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 80%;-webkit-text-size-adjust: 80%;">
+
+<!--[if gte mso 9]>
+<td align="center" valign="top" width="300">
+<![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="mcnBoxedTextContentContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 80%;-webkit-text-size-adjust: 80%;">
+                    <tbody><tr>
+
+                        <td class="mcnBoxedTextContentColumn" style="padding-top: 9px;padding-right: 0;padding-bottom: 9px;padding-left: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 80%;-webkit-text-size-adjust: 80%;">
+
+                            <table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 80%;-webkit-text-size-adjust: 80%;">
+                                <tbody><tr>
+                                    <td valign="top" class="" style="color: #42a942;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 150%;">
+                                        <ul style="padding:0 20px; margin:0; ">';
+        foreach ($first_array_slice as $product){
+          $url = $product[guid];
+          $_price = get_post_meta( $product[ID], 'prezzo', true );
+          $price =  ($_price ? 'a '.$_price  : '' );
+          $html_code_2018 .= '<li style="text-align: left;mso-line-height-rule: exactly;-ms-text-size-adjust: 80%;-webkit-text-size-adjust: 80%;font-weight: bold;"><span style="color:#42a942; font-size:15px;">'.$product[post_title] .' ('. $price.')</span></li>';
+        }
+
+        $html_code_2018 .= '                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--[if gte mso 9]>
+</td>
+<![endif]-->
+
+<!--[if gte mso 9]>
+<td align="center" valign="top" width="300">
+<![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="mcnBoxedTextContentContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+
+                        <td class="mcnBoxedTextContentColumn" style="padding-top: 9px;padding-right: 0;padding-bottom: 9px;padding-left: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                            <table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <tbody><tr>
+                                    <td valign="top" class="" style="color: #42a942;font-family: Helvetica;font-size: 14px;font-weight: normal;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 150%;">
+                                        <ul style="padding:0 20px; margin:0;">';
+        foreach ($second_array_slice as $product){
+          $url = $product[guid];
+          $_price = get_post_meta( $product[ID], 'prezzo', true );
+          $price =  ($_price ? 'a '.$_price  : '' );
+          $html_code_2018 .= '<li style="font-weight:bold; text-align: left;mso-line-height-rule: exactly;-ms-text-size-adjust: 80%;-webkit-text-size-adjust: 80%;"><span style="color:#42a942; font-size:15px;">'.$product[post_title] .' ('. $price.')</span></li>';
+
+        }
         foreach ($array_products as $product){
             $url = $product[guid];
             $_price = get_post_meta( $product[ID], 'prezzo', true );
-            $price =  ($_price ? ' a '.$_price  : '' );
+            $price =  ($_price ? 'a '.$_price  : '' );
             $_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($product[ID]), 'small_square');
 
             $thumbnail = ( has_post_thumbnail($product[ID]) ? $_thumbnail[0] : get_header_image());
             $html_code .= '
-
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock">
                     <tbody class="mcnCaptionBlockOuter">
                         <tr>
@@ -300,7 +359,7 @@ class Products_List extends WP_List_Table {
                                             <table class="mcnCaptionRightTextContentContainer" align="right" border="0" cellpadding="0" cellspacing="0" width="396">
                                                 <tbody><tr>
                                                     <td valign="top" class="mcnTextContent" style="font-size: 18px; font-style: normal; font-weight: normal; line-height: 200%; text-align: left;">
-                                                        <a class="link" href="'.$url.'">'.$product[post_title] . $price.'</a>
+                                                        <a class="link" href="'.$url.'">'.$product[post_title] .' '. $price.'</a>
                                                     </td>
                                                 </tr>
                                             </tbody></table>
@@ -312,7 +371,31 @@ class Products_List extends WP_List_Table {
                     </tbody>
                 </table>';
         }
-        return $html_code;
+        $html_code_2018 .= '</ul>
+
+                                              </td>
+                                          </tr>
+                                      </tbody></table>
+                                  </td>
+                              </tr>
+                          </tbody></table>
+          <!--[if gte mso 9]>
+          </td>
+          <![endif]-->
+
+          <!--[if gte mso 9]>
+                          </tr>
+                          </table>
+          <![endif]-->
+                      </td>
+                  </tr>
+              </tbody>
+          </table>';
+        if ($year == "2018"){
+          return $html_code_2018;
+        } else {
+          return $html_code;
+        }
 
     }
     public function process_bulk_action() {
@@ -374,14 +457,20 @@ class SP_Plugin {
     }
 
     public function plugin_menu() {
-
-        $hook = add_menu_page(
+      $hook = add_submenu_page('edit.php?post_type=products',
+          'Gestione disponibilità',
+          'Gestione disponibilità',
+          'edit_posts',
+          'wp_list_table_class.php',
+          [ $this, 'plugin_settings_page' ]
+      );
+        /*$hook = add_menu_page(
             'Gestione disponibilità',
             'Disponibilità',
             'manage_options',
             'wp_list_table_class',
             [ $this, 'plugin_settings_page' ]
-        );
+        );*/
 
         add_action( "load-$hook", [ $this, 'screen_option' ] );
 
@@ -404,20 +493,23 @@ class SP_Plugin {
                         <div class="meta-box-sortables ui-sortable">
                             <form method="post">
                                 <?php
-                                $this->products_obj->prepare_items();
-                                $this->products_obj->display();
+                                  $this->products_obj->prepare_items();
+                                  $this->products_obj->display();
                                 ?>
                                 <button class="" >Codice per newsletter</button>
                                 <br/>
                                 <textarea name="" id="" cols="100" rows="10">
-                                <?php echo $this->products_obj->get_newsletter_code(); ?>
+                                  <?php echo $this->products_obj->get_newsletter_code(); ?>
+                                </textarea><br/>
+                                <h4>Newsletter 2018</h4>
+                                <textarea name="" id="" cols="100" rows="10">
+                                  <?php echo $this->products_obj->get_newsletter_code('2018'); ?>
                                 </textarea>
-                            </form>
-
+                              <form>
                         </div>
                     </div>
                 </div>
-                <br class="clear">
+                <br class="clear"/>
             </div>
         </div>
     <?php
