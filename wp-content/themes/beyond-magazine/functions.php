@@ -336,7 +336,7 @@ function beyond_load_scripts() {
 
     //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
     //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'https:').'/main.min.js',array('jquery'),'12', null);
+    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'https:').'/main.min.js',array('jquery'),'13', null);
 
     wp_localize_script('beyond_init', 'init_vars', array(
         'label' => __('Menu', 'beyondmagazine')
