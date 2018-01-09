@@ -44,12 +44,30 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
         $scope.success = data.false
         $scope.userMessage = 'Ops! Qualcosa è andato storto'
         jQuery('#myModal').modal('hide')
-        console.log 'fail'
         jQuery('#errorModal').modal('show')
         e.target.disabled = false
 
   $scope.completed = ->
     false
+  $scope.select = (productId) ->
+    jQuery('#productLoadingGif').show()
+    $scope.selectedProduct = {}
+    $scope.selectedProduct.id = productId
+    request = {
+      action:   "get_product_info"
+      id: productId
+    }
+    $http(
+      method: "POST"
+      url: "/wp-admin/admin-ajax.php"
+      data: jQuery.param(request)
+      headers:
+        "Content-Type": "application/x-www-form-urlencoded"
+    )
+    .success (data) ->
+      $scope.selectedProduct = data
+      jQuery('#productLoadingGif').hide()
+
 
   $scope.recap = (e) ->
 

@@ -362,8 +362,13 @@ foreach ($deliveries->getItems() as $delivery) {
                         <h4 class="modal-title" id="productModalLabel">{{selectedProduct.name}}</h4>
                     </div>
                     <div class="modal-body">
-                        <img src="/wp-includes/js/thickbox/loadingAnimation.gif" class="loading_gif">
-                        {{selectedProduct.content}}
+                      <div class="row">
+                        <img src="/wp-includes/js/thickbox/loadingAnimation.gif" id="productLoadingGif" class="loading_gif">
+                        <img src="{{selectedProduct.img}}" id="productImage" class="productImage col-xs-12 col-md-6">
+                        <div class="productBody col-xs-12 col-md-6">
+                            {{selectedProduct.content}}
+                        </div>
+                      </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>

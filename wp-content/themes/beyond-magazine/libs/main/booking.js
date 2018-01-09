@@ -49,7 +49,6 @@
             $scope.success = data["false"];
             $scope.userMessage = 'Ops! Qualcosa è andato storto';
             jQuery('#myModal').modal('hide');
-            console.log('fail');
             jQuery('#errorModal').modal('show');
             return e.target.disabled = false;
           });
@@ -57,6 +56,27 @@
       };
       $scope.completed = function() {
         return false;
+      };
+      $scope.select = function(productId) {
+        var request;
+        jQuery('#productLoadingGif').show();
+        $scope.selectedProduct = {};
+        $scope.selectedProduct.id = productId;
+        request = {
+          action: "get_product_info",
+          id: productId
+        };
+        return $http({
+          method: "POST",
+          url: "/wp-admin/admin-ajax.php",
+          data: jQuery.param(request),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }).success(function(data) {
+          $scope.selectedProduct = data;
+          return jQuery('#productLoadingGif').hide();
+        });
       };
       return $scope.recap = function(e) {};
     }

@@ -38,7 +38,7 @@ class get_product_infoClass {
                 $product['name'] = $_post->post_title;
                 $product['content'] = strip_tags($_post->post_content);
                 $thumb_id = get_post_thumbnail_id($this->id);
-                $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+                $thumb_url = wp_get_attachment_image_src($thumb_id,'medium', true);
                 $product['img'] =  $thumb_url[0];
                 return json_encode($product);
             } else  {
