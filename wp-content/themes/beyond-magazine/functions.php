@@ -12,7 +12,6 @@ function my_meta_init()
 // review the function reference for parameter details
 // http://codex.wordpress.org/Function_Reference/wp_enqueue_script
 // http://codex.wordpress.org/Function_Reference/wp_enqueue_style
-//wp_enqueue_script('my_meta_js', MY_THEME_PATH . '/custom/meta.js', array('jquery'));
     wp_enqueue_style('my_meta_css', ltrim(MY_THEME_PATH, 'https:') . '/custom/meta.css');
 // review the function reference for parameter details
 // http://codex.wordpress.org/Function_Reference/add_meta_box
@@ -333,11 +332,24 @@ LOAD CSS AND JS STYLES
  *
  ***/
 function beyond_load_scripts() {
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); // no php needed above it
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'admin_print_styles', 'print_emoji_styles' ); // php is not closed in the last line
+    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'https:').'/main.min.js','13', null);
+    //remove jQuery
+    add_filter( 'wp_default_scripts', 'change_default_jquery' );
 
-    //wp_enqueue_script('beyond_bootstrap', get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'),'',true);
-    //wp_enqueue_script('beyond_slicknav',get_template_directory_uri().'/js/jquery.slicknav.min.js',array('jquery'),'',true);
-    wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'https:').'/main.min.js',array('jquery'),'13', null);
+    function change_default_jquery( &$scripts){
+        if(!is_admin()){
+            $scripts->remove( 'jquery');
+        }
+    }
 
+    function my_deregister_scripts(){
+      wp_deregister_script( 'wp-embed' );
+    }
+    add_action( 'wp_footer', 'my_deregister_scripts' );
     wp_localize_script('beyond_init', 'init_vars', array(
         'label' => __('Menu', 'beyondmagazine')
     ));

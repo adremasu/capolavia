@@ -74,23 +74,7 @@ $URI = 'https://'.$_SERVER[HTTP_HOST].$Path;
                 </div>
 
             </div>
-<!--            <div class="row">-->
-<!--                <div class="col-md-2 col-md-offset-6" id="facebook-like">-->
-<!--                    <div class="fb-like" data-href="https://www.facebook.com/saporidicapolavia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>-->
-<!--                </div>-->
-<!--                <div class="col-md-2">-->
-<!---->
-<!--                    <div class="g-follow" data-annotation="bubble" data-height="20" data-href="https://plus.google.com/111014905723921272096" data-rel="publisher"></div>-->
-<!--                    <script src="https://apis.google.com/js/platform.js" async defer>-->
-<!--                        {lang: 'it'}-->
-<!--                    </script>-->
-<!--                </div>-->
-<!--                <div class="col-md-2" id="twitter-follow">-->
-<!---->
-<!--                    <a href="https://twitter.com/capolavia" class="twitter-follow-button" data-show-count="false">Follow @capolavia</a>-->
-<!--                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
-<!--                </div>-->
-<!--            </div>-->
+
             <div class="row" id="kt-header-img">
                 <div id="kt-main-nav">
                     <?php $beyond_menu_args =  array('location'=>'primary',
