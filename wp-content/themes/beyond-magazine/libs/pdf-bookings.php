@@ -93,8 +93,7 @@ if ($date) {
         }
         $pdf->Output("report.pdf", "I");
     }
-    if ($format == 'TT'){
-
+   if ($format == 'TT'){
         header("Content-type: text/csv");
         header("Content-Disposition: attachment; filename=bookings.csv");
         header("Pragma: no-cache");
@@ -107,7 +106,6 @@ if ($date) {
             $id = $booking->ID;
             $meta = $booking->meta;
             $products = $meta['products'];
-            usort($products, "cmp");
 
             foreach ($products as $key => $product) {
                 $productCollection[$key]['name'] = $product['name'];
@@ -121,6 +119,7 @@ if ($date) {
                 $_CSVBookings[$id]['orders'][$key]['items']['qt'] = $product['items']['qt'];
                 $completeProductList[$key] = $product['name'];
             }
+
             $customerName = $meta['userData']['name'];
             $_CSVBookings[$id]['name'] = $customerName;
 
@@ -136,32 +135,31 @@ if ($date) {
                 $productsList[] = $product['name'];
             }
         }
+        asort($productCollection);
+        asort($completeProductList);
+        asort($productsList);
 
         foreach ($productCollection as $key => $row) {
             $prodNames[$key]  = $row['name'];
         }
-        ksort($prodNames);
-        ksort($productCollection);
         // Sort the data with volume descending, edition ascending
         // Add $data as the last parameter, to sort by the common key
         $CSVproductsQts = 'Totale, ,';
-        foreach ($productCollection as $product){
-            if ($product['weight']['qt']){
-                $CSVproductsQts .= $product['weight']['qt'].' '.$product['weight']['mu'].' ';
+        foreach ($productCollection as $key => $Cproduct){
+            if ($Cproduct['weight']['qt']){
+                $CSVproductsQts .= $Cproduct['weight']['qt'].' '.$Cproduct['weight']['mu'].' ';
             }
-            if ($product['items']['qt']){
-                $CSVproductsQts .= $product['items']['qt'].' pz.';
+            if ($Cproduct['items']['qt']){
+                $CSVproductsQts .= $Cproduct['items']['qt'].' pz.';
             }
             $CSVproductsQts .= ',';
 
         }
         $CSVproductsQts .= "\n";
-        $completeProductList = array_unique($completeProductList);
-        $productsList = array_unique($productsList);
 
         $CSVProductsList =  "Prodotti,Cons.,";
-        foreach($prodNames as $key => $product){
-            $nameParts = explode(' ',$product);
+        foreach($prodNames as $key => $_productName){
+            $nameParts = explode(' ',$_productName);
             $productName = '';
             foreach ($nameParts as $namePart){
                 $part = ((strlen($namePart)>4) ? substr($namePart,0,3).'.' : $namePart);
@@ -173,30 +171,33 @@ if ($date) {
 
         $CSVOrders = '';
 
+        asort($completeProductList);
+        $i=0;
+        foreach ($completeProductList as $key => $value) {
+          $orderedProductList[] = $key;
+        }
+
         foreach ($_CSVBookings as &$booking){
             $CSVOrders .= $booking['name'].',';
             $CSVOrders .= $booking['delivery'].',';
             $orders = $booking['orders'];
-            foreach ($orders as $order){
-                foreach ($completeProductList as $key => &$prod){
-                    if (!array_key_exists($key, $booking['orders'])){
-                        $booking['orders'][$key]['weight']['qt'] = '-';
-                        $booking['orders'][$key]['weight']['mu'] = '-';
-                        $booking['orders'][$key]['items']['qt'] = '-';
-                        $booking['orders'][$key]['items']['mu'] = '-';
+                foreach ($orderedProductList as $key => &$prod){
+
+                  if (!array_key_exists($prod, $booking['orders'])){
+                      $CSVOrders .= '--,';
+                  } else {
+                    if ($booking['orders'][$prod]['weight']['qt']){
+                        $CSVOrders .= $booking['orders'][$prod]['weight']['qt'];
+                        $CSVOrders .= $booking['orders'][$prod]['weight']['mu'].',';
+                    } elseif ($booking['orders'][$prod]['items']['qt']){
+                        $CSVOrders .= $booking['orders'][$prod]['items']['qt'];
+                        $CSVOrders .= 'pz.,';
                     }
-                }
-                ksort($booking['orders']);
+                  }
+
+
             }
-            foreach ($booking['orders'] as $key => $order) {
-                if ($order['weight']['qt']){
-                    $CSVOrders .= $order['weight']['qt'];
-                    $CSVOrders .= $order['weight']['mu'].',';
-                } elseif ($order['items']['qt']){
-                    $CSVOrders .= $order['items']['qt'];
-                    $CSVOrders .= 'pz.,';
-                }
-            }
+
             $CSVOrders .= '"'.$booking['address'].'",';
             $CSVOrders .= '"'.$booking['notes'].'",';
 
