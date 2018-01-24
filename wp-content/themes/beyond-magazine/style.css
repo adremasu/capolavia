@@ -10013,6 +10013,9 @@ button.close {
   cursor: pointer;
 }
 
+.slicknav_menu li {
+  width: 100%;
+}
 .slicknav_menu .slicknav_menutxt {
   display: block;
   line-height: 1.188em;
