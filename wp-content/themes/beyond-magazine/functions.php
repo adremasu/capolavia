@@ -114,6 +114,7 @@ require_once('libs/bookingManager.php');
 require_once('libs/GoogleCalendar.php');
 require_once('libs/email_templates.php');
 require_once('libs/pdf-bookings.php');
+require_once('libs/client-customer-class.php');
 
 //require_once('libs/class-holidays.php');
 
@@ -361,21 +362,18 @@ add_action('wp_enqueue_scripts', 'beyond_load_scripts');
 
 function beyond_load_styles()
 {
-//        wp_enqueue_style( 'beyond_bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
-//        wp_enqueue_style( 'beyond_bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
-//        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
-//        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
-//        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2016.12.12','all' );
+    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2018.01.24','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
-
+/*
+Legacy code for IE9 -- bleah!
 function beyond_add_ie_html5_shim () {
     echo '<!--[if lt IE 9]>';
     echo '<script src="'.ltrim(get_template_directory_uri(), '').'/js/html5shiv.js"></script>';
     echo '<![endif]-->';
 }
 add_action('wp_head', 'beyond_add_ie_html5_shim');
+*/
 /***
  *
 SIDEBARS INITIALIZATION
@@ -836,6 +834,7 @@ function my_add_excerpts_to_pages() {
 
 //add post list image size
 add_image_size( "post-list", 287, 215, true );
+add_image_size( "home-carousel", 1138, 640, true );
 add_image_size( "gallery", 518, 388, true );
 add_image_size( "small_square", 250, 250, true );
 
