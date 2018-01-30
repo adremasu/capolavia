@@ -187,6 +187,7 @@ class OptionsPage {
 
         echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'">Stampa riassunto prenotazioni</a>';
         echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'&format=TT">Prenotazioni in CSV</a>';
+        echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'&format=ODS">Prenotazioni in CSV</a>';
     }
 
 }

@@ -21,7 +21,7 @@ if ($date) {
     $calendar = new Calendar();
     $bookings = $calendar->getBookingsByDate($date);
 
-    if ($format != 'TT'){
+    if (!$format){
         $pdf->AddPage();
 
         $pdf->SetFont('Arial', 'B', 20);
@@ -92,8 +92,7 @@ if ($date) {
 
         }
         $pdf->Output("report.pdf", "I");
-    }
-   if ($format == 'TT'){
+    } elseif ($format == 'TT'){
         header("Content-type: text/csv");
         header("Content-Disposition: attachment; filename=bookings.csv");
         header("Pragma: no-cache");
@@ -207,6 +206,11 @@ if ($date) {
         echo $CSVProductsList." \n";
         echo $CSVOrders."\n";
         echo $CSVproductsQts;
+    } elseif ($format == 'ODS'){
+      if (class_exists('GoogleSheets')){
+        $file = new GoogleSheets();
+      }
+
     }
 
     die();
