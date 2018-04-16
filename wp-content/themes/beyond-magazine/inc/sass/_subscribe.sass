@@ -40,6 +40,8 @@
   opacity: 1
   height: auto
   overflow: hidden
+  h3
+    text-align: center
   &.hidden_step
     opacity: 0
     height: 0
@@ -50,6 +52,8 @@
   .control-label
     max-height: 2em
     overflow: visible
+#taxcode
+  text-transform: uppercase
 .blacklist
   .products-wrapper
     margin-bottom: 20px
@@ -84,9 +88,7 @@
           background: $color-primary
           border-radius: 3px 0 0 3px
     &:hover:not(:checked) ~ label
-      color: #888
       &:before
-        content: '\2717'
         text-indent: .9em
         color: #C2C2C2
     &:checked ~ label
@@ -112,3 +114,34 @@
     width: 100%
 #payment-step
   margin-bottom: 20px
+#subscription_loginform
+  input, label
+    display: block
+  input
+    padding: 6px
+    border-radius: 3px
+    border: 1px solid rgb(204, 204, 204)
+  .login-username, .login-password
+    clear: both
+    display: block
+    label
+      float: left
+      display: block
+      width: 24%
+      text-align: left
+    input
+      float: left
+  .login-remember
+    clear: both
+    margin-left: 24%
+    margin-top: 1em
+    float: left
+    label
+      display: inline-flex
+      input
+        margin-right: 1em
+  .login-submit
+    clear: both
+    input
+      width: 30%
+      margin-left: 24%

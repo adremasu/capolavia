@@ -18,13 +18,10 @@ class save_new_subscriptionClass
 {
     public function __construct()
     {
-        $data = $_POST;
-
-        $subscription = $data['subscription'];
+        $data = $_POST['subscription'];
         $this->user = $data['user'];
         $this->email = $this->user['email'];
-        $this->subscription = $subscription;
-        $this->blacklist = $subscription['products'];
+        $this->blacklist = $data['products'];
         $this->IDs = array(
             '3S' => array(
                 'paypal_ID' =>'URRPETNYHGP2N',
@@ -64,7 +61,8 @@ class save_new_subscriptionClass
                 'price' => '940'
             )
         );
-        $this->chosen_subscription = $subscription['length'].strtoupper($subscription['size']);
+        $this->chosen_subscription = $data['length'].strtoupper($data['size']);
+
         if ($this->saveData()) {
             echo json_encode($this->response);
         } else {
@@ -113,7 +111,7 @@ class save_new_subscriptionClass
             $id = $IDs[$this->chosen_subscription]['price'];
             return $id;
         } else {
-            $this->error[] = 'paypal_button';
+            $this->error[] = 'paypal_button_price';
             return false;
         }
     }
@@ -124,7 +122,7 @@ class save_new_subscriptionClass
             $id = $IDs[$this->chosen_subscription]['paypal_ID'];
             return $id;
         } else {
-            $this->error[] = 'paypal_button';
+            $this->error[] = 'paypal_button_id';
             return false;
         }
 
@@ -166,7 +164,7 @@ class save_new_subscriptionClass
             }
 
         } else {
-            $this->error[] = 'no_user_id';
+            $this->error[] = $this->name.$this->user[password1].$this->email;
         }
     }
 

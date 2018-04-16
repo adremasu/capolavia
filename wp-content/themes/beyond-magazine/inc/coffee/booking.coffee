@@ -34,7 +34,7 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
         $scope.loading = false
         $scope.success = data.success
         $scope.userMessage = data.userMessage
-        jQuery('#myModal').modal('hide')
+        jQuery('#myModal').modal('show')
         e.target.disabled = false
         if !data.success
           jQuery('#errorModal').modal('show')

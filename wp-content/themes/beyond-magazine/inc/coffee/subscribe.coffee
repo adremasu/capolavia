@@ -7,8 +7,10 @@ subscribeApp.controller "configCtrl", [
     $scope.subscription = {}
     $scope.subscription.length = false
     $scope.message = 'Qualcosa è andato storto'
-    $scope.goToStep = (event, size) ->
-      $scope.current_step = size
+    $scope.goToStep = (event, step) ->
+      jQuery('html, body').animate({ scrollTop: 0 }, 'fast')
+
+      $scope.current_step = step
       event.preventDefault()
     $scope.show = (step) ->
       if ($scope.current_step == step)
@@ -24,7 +26,6 @@ subscribeApp.controller "configCtrl", [
 
     $scope.subscribeSave = (e)->
       e.preventDefault()
-
       request = {
         action: "save_new_subscription"
         subscription: $scope.subscription
@@ -47,7 +48,8 @@ subscribeApp.controller "configCtrl", [
           $scope.showMessage($scope.message)
 
     $scope.showMessage = (message) ->
-      jQuery('#myModal').modal()
+      jQuery('#messageModal').modal()
+      console.log message
     $scope.$watch 'subscription', (oldValue, newValue)->
       copyValues(oldValue, newValue)
     , true

@@ -15,6 +15,9 @@ get_header();?>
             <form name="subscription_form" novalidate action="">
 
                 <div data-ng-class="show('length')" id="first-step" data-step="1" class="step-wrapper row">
+                    <div class="col-md-12 length-title">
+                      <h3>Scegli la durata dell'abbonamento</h3>
+                    </div>
                     <div class="col-md-4 col-xs-12 square subscription_length" data-subscription_length="3">
                         <input id="L3" data-ng-model="subscription.length" type="radio" required name="subscription_length" value="3" class="hidden"/>
                         <label for="L3" class="length"><span class="main">3</span><span class="secondary">mesi</span></label>
@@ -27,9 +30,12 @@ get_header();?>
                         <input id="L12" data-ng-model="subscription.length" type="radio" required name="subscription_length" value="12" class="hidden"/>
                         <label for="L12" class="length"><span class="main">12</span><span class="secondary">mesi</span></label>
                     </div>
-                    <div class="col-md-offset-6 col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-disabled="!subscription.length" data-ng-click="goToStep($event, 'size')">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
+                    <div class="col-xs-12 col-md-offset-6 col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-disabled="!subscription.length" data-ng-click="goToStep($event, 'size')">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
                 </div>
                 <div data-ng-class="show('size')" id="second-step" data-step="2" class="step-wrapper row">
+                    <div class="col-md-12 size-title">
+                      <h3>Scegli la taglia del tuo abbonamento</h3>
+                    </div>
                     <div class="col-md-4 col-xs-12 square subscription_size" data-subscription_length="3">
                         <input id="Ss" data-ng-model="subscription.size" type="radio" required name="subscription_size" value="s" class="hidden"/>
                         <label for="Ss" class="size"><span class="main">S</span><span class="secondary">3-4 kg</span></label>
@@ -42,14 +48,17 @@ get_header();?>
                         <input id="Sl" data-ng-model="subscription.size" type="radio" required name="subscription_size" value="l" class="hidden"/>
                         <label for="Sl" class="size"><span class="main">L</span><span class="secondary">7-8 kg</span></label>
                     </div>
-                    <div class="col-md-6 step-nav"><button class="btn-lg btn btn-default" data-ng-click="goToStep($event, 'length')"><i class="glyphicon glyphicon-chevron-left"></i> Torna </button></div>
-                    <div class="col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-disabled="!subscription.size" data-ng-click="goToStep($event, 'blacklist')">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
+                    <div class="col-xs-12 col-md-6 step-nav"><button class="btn-lg btn btn-default" data-ng-click="goToStep($event, 'length')"><i class="glyphicon glyphicon-chevron-left"></i> Torna </button></div>
+                    <div class="col-xs-12 col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-disabled="!subscription.size" data-ng-click="goToStep($event, 'blacklist')">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
 
                 </div>
                 <div data-ng-class="show('blacklist')" id="third-step" data-step="3" class="step-wrapper row blacklist">
                     <div class="col-md-12 products-wrapper">
                         <div class="row">
+                          <div class="col-md-12 blacklist-title">
+
                             <h3>Scegli i prodotti che non vuoi ricevere</h3>
+                          </div>
                         <?php
                         $args = array(
                             'post_type' => 'products',
@@ -64,7 +73,7 @@ get_header();?>
                             while ( $the_query->have_posts() ) {
                                 $the_query->the_post();
                                 ?>
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-xs-12">
                                     <input class="checkbox" data-ng-model="subscription.products.P<?php the_ID();?>" id="P<?php the_ID(); ?>" type="checkbox" value="0" name="products[<?php the_ID();?>]"/>
                                     <label for="P<?php the_ID(); ?>"> <?php the_title(); ?>
                                     </label>
@@ -79,25 +88,35 @@ get_header();?>
                         ?>
                         </div>
                     </div>
-                    <div class="col-md-6 step-nav"><button class="btn-lg btn btn-default" data-ng-click="goToStep($event, 'size')"><i class="glyphicon glyphicon-chevron-left"></i> Torna </button></div>
-                    <div class="col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-click="goToStep($event, 'user_data')">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
+                    <div class="col-md-6 col-xs-12 step-nav"><button class="btn-lg btn btn-default" data-ng-click="goToStep($event, 'size')"><i class="glyphicon glyphicon-chevron-left"></i> Torna </button></div>
+                    <div class="col-md-6 col-xs-12 step-nav"><button class="btn-lg btn btn-success" data-ng-click="goToStep($event, 'user_data')">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
 
                 </div>
                 <div data-ng-show="current_step === 'user_data'" id="fourth-step" data-step="4" class="step-wrapper row">
-                    <div class="form-horizontal">
-                        <div class="form-group">
+                    <div class="form-horizontal col-xs-12">
+                      <?php if (is_user_logged_in()){
+                          $hidden_field_class = 'hidden';
+                          $_user = wp_get_current_user();
+                          $_user_id = $_user->ID;
+                          $user =  get_user_meta($_user_id);
+                          var_dump($user);
+                       } else {
+                         $hidden_field_class = '';
+                       }
+                       ?>
+                        <div class="form-group <?php echo $hidden_field_class; ?>">
                             <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
                                 <input type="email" data-ng-model="subscription.user.email"  required class="form-control" id="inputEmail3" placeholder="Email">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?php echo $hidden_field_class; ?>">
                             <label for="inputPassword" class="col-sm-2 control-label">Scegli una password</label>
                             <div class="col-sm-10">
                                 <input type="password" required class="form-control" id="password1" name="password1" placeholder="Scegli una password" data-ng-model="subscription.password1" ng-required="" />
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?php echo $hidden_field_class; ?>">
                             <label for="password2" class="col-sm-2 control-label">Ripeti la password:</label>
                             <div class="col-sm-10">
                                 <input type="password" required id="password2" placeholder="Ripeti la password" class="form-control" name="password2" ng-model="subscription.password2" ng-required="" pw-check="password1" />
@@ -106,22 +125,23 @@ get_header();?>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group <?php echo $hidden_field_class; ?>">
                             <label for="name" class="col-sm-2 control-label">Nome</label>
                             <div class="col-sm-10">
                                 <input type="text" data-ng-model="subscription.user.name"  required class="form-control" id="name" placeholder="Nome">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Cognome</label>
+                        <div class="form-group <?php echo $hidden_field_class; ?>">
+                            <label for="surname" class="col-sm-2 control-label">Cognome</label>
                             <div class="col-sm-10">
                                 <input type="text" data-ng-model="subscription.user.last_name" required class="form-control" id="surname" placeholder="Cognome">
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Codice Fiscale</label>
+                            <label for="taxcode" class="col-sm-2 control-label">Codice Fiscale</label>
                             <div class="col-sm-10">
-                                <input type="text" data-ng-model="subscription.user.fiscale" required fiscale class="form-control" id="surname" placeholder="Codice Fiscale">
+                                <input type="text" data-ng-model="subscription.user.fiscale" required fiscale class="form-control" id="taxcode" placeholder="Codice Fiscale">
                             </div>
                         </div>
 
@@ -134,12 +154,11 @@ get_header();?>
 
 
                         <div class="form-group">
-                            <label for="city" class="col-sm-2 control-label"></label>
 
-                            <div class="col-xs-2">
+                            <div class="col-md-offset-2 col-md-2 col-xs-6">
                                 <input type="text" data-ng-model="subscription.user.zip" required class="form-control" placeholder="CAP">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-6 col-md-4">
                                 <input type="text" data-ng-model="subscription.user.city" required class="form-control" placeholder="Comune">
                             </div>
                         </div>
@@ -155,7 +174,7 @@ get_header();?>
                         </div>
 
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Telefono</label>
+                            <label for="phone" class="col-sm-2 control-label">Telefono</label>
                             <div class="col-sm-10">
                                 <input type="tel" data-ng-model="subscription.user.phone" required class="form-control" id="phone" placeholder="telefono">
                             </div>
@@ -173,21 +192,21 @@ get_header();?>
                         <div data-ng-show="subscription.user.same_address">
                             <div class="col-md-offset-2 col-md-10"><h4>Indirizzo di fatturazione</h4    ></div>
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Nome</label>
+                                <label for="delivery_name" class="col-sm-2 control-label">Nome</label>
                                 <div class="col-sm-10">
-                                    <input type="text" data-ng-model="subscription.user.invoice.name" class="form-control" id="name" placeholder="Nome">
+                                    <input type="text" data-ng-model="subscription.user.invoice.name" class="form-control" id="delivery_name" placeholder="Nome">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Cognome</label>
+                                <label for="delivery_surname" class="col-sm-2 control-label">Cognome</label>
                                 <div class="col-sm-10">
-                                    <input type="text" data-ng-model="subscription.user.invoice.last_name" class="form-control" id="surname" placeholder="Cognome">
+                                    <input type="text" data-ng-model="subscription.user.invoice.last_name" class="form-control" id="delivery_surname" placeholder="Cognome">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="address" class="col-sm-2 control-label">Indirizzo di fatturazione</label>
+                                <label for="delivery_address" class="col-sm-2 control-label">Indirizzo di fatturazione</label>
                                 <div class="col-sm-10">
-                                    <input type="text" data-ng-model="subscription.user.invoice.address"  class="form-control" id="address" placeholder="via e n° civico">
+                                    <input type="text" data-ng-model="subscription.user.invoice.address"  class="form-control" id="delivery_address" placeholder="via e n° civico">
                                 </div>
                             </div>
 
@@ -205,13 +224,13 @@ get_header();?>
                         </div>
                     </div>
 
-                    <div class="col-md-6 step-nav"><button class="btn-lg btn btn-default" data-ng-click="goToStep($event, 'blacklist')"><i class="glyphicon glyphicon-chevron-left"></i> Torna </button></div>
-                    <div class="col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-disabled="!subscription_form.$valid" data-ng-click="subscribeSave($event)">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
+                    <div class="col-xs-12 col-md-6 step-nav"><button class="btn-lg btn btn-default" data-ng-click="goToStep($event, 'blacklist')"><i class="glyphicon glyphicon-chevron-left"></i> Torna </button></div>
+                    <div class="col-xs-12 col-md-6 step-nav"><button class="btn-lg btn btn-success" data-ng-disabled="!subscription_form.$valid" data-ng-click="subscribeSave($event)">Continua <i class="glyphicon glyphicon-chevron-right"></i></button></div>
 
                 </div>
             </form>
 
-            <div data-ng-class="show('payment')" id="payment-step" data-step="4" class="step-wrapper row text-center">
+            <div data-ng-show="current_step === 'payment'" data-ng-class="show('payment')" id="payment-step" data-step="4" class="step-wrapper row text-center">
                 <div class="col-md-12 payment-title">
                     <h3>Scegli il metodo di pagamento</h3>
                 </div>
@@ -236,8 +255,50 @@ get_header();?>
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ciao! È bello rivederti! </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Un account con questo indirizzo e-mail è già presente nel sito di Capolavia.
+                    Effettua il log in!
+                    <?php
+                    $args = array(
+                    	'echo'           => true,
+                    	'remember'       => true,
+                    	'redirect'       => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
+                    	'form_id'        => 'subscription_loginform',
+                    	'id_username'    => 'user_login',
+                    	'id_password'    => 'user_pass',
+                    	'id_remember'    => 'rememberme',
+                    	'id_submit'      => 'wp-submit',
+                    	'label_username' => __( 'Username o indirizzo e-mail' ),
+                    	'label_password' => __( 'Password' ),
+                    	'label_remember' => __( 'Ricordami' ),
+                    	'label_log_in'   => __( 'Log In' ),
+                    	'value_username' => '',
+                    	'value_remember' => true
+                    );
+
+                    wp_login_form( $args );
+
+                    ?>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
+
 <?php
 get_footer();
 ?>
