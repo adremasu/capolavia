@@ -277,13 +277,20 @@ foreach ($deliveries->getItems() as $delivery) {
                         </div>
 
                                 <?php
+
                                 foreach ($results->getItems() as $item) {
                                     $start = $item->getStart();
                                     $end = $item->getEnd();
-                                    //echo '<input type="hidden" name="date" data-ng-model="date" data-ng-value="'.strtotime($start['dateTime']).'" / >';
                                 }
+                                $sdate = new DateTime($start['dateTime'], new DateTimeZone(date_default_timezone_get()));
                                 ?>
-                        <div ng-init="date = '<?php echo strtotime($start['dateTime']);?>'"></div>
+                                <?php
+
+                                ?>
+                        <div ng-init="date = '<?php echo date_i18n('U',strtotime($start['dateTime'])) + date(Z);?>'"></div>
+                        <?php
+                        //date_default_timezone_set('Europe/Rome');
+                        ?>
                         <div class="col-xs-12 col-md-12">
                             <div class="row" style="margin-top: 1em">
                                 <label style="margin:0" class="col-md-12" for="delivery-check">Scegli la modalità di consegna
