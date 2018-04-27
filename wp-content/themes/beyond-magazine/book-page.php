@@ -280,6 +280,7 @@ foreach ($deliveries->getItems() as $delivery) {
 
                                 foreach ($results->getItems() as $item) {
                                     $start = $item->getStart();
+                                    var_dump($start);
                                     $end = $item->getEnd();
                                 }
                                 $sdate = new DateTime($start['dateTime'], new DateTimeZone(date_default_timezone_get()));
@@ -287,7 +288,8 @@ foreach ($deliveries->getItems() as $delivery) {
                                 <?php
 
                                 ?>
-                        <div ng-init="date = '<?php echo date_i18n('U',strtotime($start['dateTime'])) + date(Z);?>'"></div>
+                                <div ng-init="date = '<?php echo date_i18n('U',strtotime($start['dateTime'])) + date(Z);?>'"></div>
+                                <div ng-init="delivery_date = '<?php echo date_i18n('U',strtotime($deliveryStart['dateTime'])) + date(Z);?>'"></div>
                         <?php
                         //date_default_timezone_set('Europe/Rome');
                         ?>

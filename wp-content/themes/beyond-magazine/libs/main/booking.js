@@ -5,15 +5,18 @@
 
   bookingApp.controller("bookingController", [
     '$scope', '$http', function($scope, $http) {
+      var a, emailDate;
       $scope.loading = false;
       $scope.success = false;
+      a = true ? 5 : 10;
+      emailDate = $scope.delivery ? $scope.delivery_date : $scope.date;
       $scope.saveBooking = function(e) {
         var date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
-        date = $scope.date;
+        date = $scope.emailDate;
         e.target.disabled = true;
         if ($scope.booking_form.$valid) {
           selectedProducts = {};

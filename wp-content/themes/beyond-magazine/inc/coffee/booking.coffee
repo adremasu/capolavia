@@ -3,12 +3,15 @@ bookingApp = angular.module('bookingApp', [])
 bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
   $scope.loading = false
   $scope.success = false
+  a = if true then 5 else 10
+
+  emailDate = if $scope.delivery then $scope.delivery_date else $scope.date
   $scope.saveBooking = (e)->
     e.preventDefault()
     $scope.loading = true
     productsData = $scope.products
     userData = $scope.user
-    date = $scope.date
+    date = $scope.emailDate
     e.target.disabled =  true
 
     # se il form è valido invia l'ordine

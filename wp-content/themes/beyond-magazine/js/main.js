@@ -4566,15 +4566,18 @@ jQuery(document).ready(function($){
 
   bookingApp.controller("bookingController", [
     '$scope', '$http', function($scope, $http) {
+      var a, emailDate;
       $scope.loading = false;
       $scope.success = false;
+      a = true ? 5 : 10;
+      emailDate = $scope.delivery ? $scope.delivery_date : $scope.date;
       $scope.saveBooking = function(e) {
         var date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
-        date = $scope.date;
+        date = $scope.emailDate;
         e.target.disabled = true;
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
@@ -4644,27 +4647,5 @@ jQuery(document).ready(function($){
   ]);
 
   bookingApp;
-
-}).call(this);
-
-(function() {
-  var customerAreaApp;
-
-  customerAreaApp = angular.module('customerAreaApp', []);
-
-  customerAreaApp.controller("profileController", ['$scope', '$http', function($scope, $http) {}]);
-
-  customerAreaApp.directive('userData', function() {
-    return {
-      link: function($scope, element, attr, ctrl) {
-        var data;
-        data = element[0].innerHTML;
-        data = JSON.parse(data);
-        return $scope.userData = data;
-      }
-    };
-  });
-
-  customerAreaApp;
 
 }).call(this);
