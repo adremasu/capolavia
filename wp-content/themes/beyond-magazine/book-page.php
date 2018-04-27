@@ -280,7 +280,6 @@ foreach ($deliveries->getItems() as $delivery) {
 
                                 foreach ($results->getItems() as $item) {
                                     $start = $item->getStart();
-                                    var_dump($start);
                                     $end = $item->getEnd();
                                 }
                                 $sdate = new DateTime($start['dateTime'], new DateTimeZone(date_default_timezone_get()));
