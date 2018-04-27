@@ -224,8 +224,8 @@ td[class="spechide"]
 
 
 public function getTemplate_bottom(){
-    $fb_icon = get_bloginfo('stylesheet_directory'). '/images/fb.png';
-    $tw_icon = get_bloginfo('stylesheet_directory'). '/images/twitter.png';
+    $fb_icon = get_bloginfo('stylesheet_directory'). '/img/fb.svg';
+    $tw_icon = get_bloginfo('stylesheet_directory'). '/img/twitter.svg';
     $template = '
                                 </div>
                               </div>
