@@ -298,7 +298,7 @@ foreach ($deliveries->getItems() as $delivery) {
                                 </label>
                                 <div class="col-md-6">
                                     <div class="radio">
-                                        <input class="radio input-lg" required data-ng-model="user.delivery" id="delivery" type="radio" value="1" name="delivery"/>
+                                        <input class="radio input-lg" required data-ng-model="user.delivery" id="delivery" type="radio" value="1" name="delivery" data-ng-change="deliveryChange()"/>
                                         <label for="delivery">Consegna a domicilio (2€)</label>
                                         <div data-ng-show="user.delivery == 1">
                                             <label for="address">Dove vuoi ricevere la verdura? *</label>
@@ -313,7 +313,7 @@ foreach ($deliveries->getItems() as $delivery) {
                                 <div class="col-md-6">
 
                                     <div class="radio">
-                                        <input class="radio input-lg" required data-ng-model="user.delivery" id="in-company" type="radio" value="0" name="delivery"/>
+                                        <input class="radio input-lg" required data-ng-model="user.delivery"  data-ng-change="deliveryChange()" id="in-company" type="radio" value="0" name="delivery"/>
                                         <label for="in-company"> Ritiro in azienda
                                         </label>
                                     </div>

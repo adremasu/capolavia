@@ -4566,11 +4566,13 @@ jQuery(document).ready(function($){
 
   bookingApp.controller("bookingController", [
     '$scope', '$http', function($scope, $http) {
-      var a, emailDate;
+      var a;
       $scope.loading = false;
       $scope.success = false;
       a = true ? 5 : 10;
-      emailDate = $scope.delivery ? $scope.delivery_date : $scope.date;
+      $scope.deliveryChange = function() {
+        return $scope.emailDate = $scope.user.delivery === '1' ? $scope.delivery_date : $scope.date;
+      };
       $scope.saveBooking = function(e) {
         var date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();

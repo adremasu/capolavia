@@ -5,7 +5,9 @@ bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
   $scope.success = false
   a = if true then 5 else 10
 
-  emailDate = if $scope.delivery then $scope.delivery_date else $scope.date
+  $scope.deliveryChange = ->
+    $scope.emailDate = if $scope.user.delivery == '1' then $scope.delivery_date else $scope.date
+
   $scope.saveBooking = (e)->
     e.preventDefault()
     $scope.loading = true
