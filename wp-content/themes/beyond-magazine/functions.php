@@ -336,7 +336,6 @@ function beyond_load_scripts() {
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
     remove_action( 'admin_print_styles', 'print_emoji_styles' ); // php is not closed in the last line
-    //wp_enqueue_script('beyond_init',ltrim(get_template_directory_uri(),'').'/main.min.js','spanic', null);
     wp_register_script('main_js', ltrim(get_template_directory_uri(),'').'/main.min.js', null ,'2018.05.12', false);
     wp_enqueue_script('main_js');
     add_filter( 'wp_default_scripts', 'change_default_jquery' );
@@ -359,16 +358,26 @@ function beyond_load_scripts() {
     if ( is_singular() && get_option( 'thread_comments' ) )
         wp_enqueue_script( 'comment-reply' );
 }
+
+
+function add_async_attribute($tag, $handle) {
+   // add script handles to the array below
+   $scripts_to_async = array('main_js', 'jQuery');
+
+   foreach($scripts_to_async as $async_script) {
+      if ($async_script === $handle) {
+         return str_replace(' src', ' async="async" src', $tag);
+      }
+   }
+   return $tag;
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
 add_action('wp_enqueue_scripts', 'beyond_load_scripts');
 
 function beyond_load_styles()
 {
-//        wp_enqueue_style( 'beyond_bootstrap-theme', get_template_directory_uri().'/css/bootstrap-theme.min.css','','','all' );
-//        wp_enqueue_style( 'beyond_bootstrap', get_template_directory_uri(). '/css/bootstrap.min.css','','','all' );
-//        wp_enqueue_style( 'beyond_slicknav',get_template_directory_uri().'/css/slicknav.css','','','all');
-//        wp_enqueue_style( 'beyond_elegant-font',get_template_directory_uri().'/fonts/elegant_font/HTML_CSS/style.css','','','all');
-//        wp_enqueue_style( 'beyond_openSans',get_template_directory_uri().'/css/web_fonts/opensans_regular_macroman/stylesheet.css','','','all');
-    wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2016.12.12','all' );
+  wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2016.12.12','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
 
