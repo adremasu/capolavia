@@ -1,22 +1,22 @@
 === WP Open Graph ===
-Contributors: nickyurov
-Donate link: Webmoney Z239075088440
+Contributors: custom4web
+Donate link: https://codecanyon.net/user/custom4web/portfolio
 Tags: open graph, wp, opengraph, open, graph, seo, metadata, facebook, facebook open graph, protocol
 Requires at least: 3.3
-Tested up to: 3.5.2
-Stable tag: 1.5
+Tested up to: 4.9.8
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to add facebook open graph protocol to your blog
+This plugin allows you to add facebook open graph protocol to your WordPress website.
 
 == Description ==
 
 You can add facebook meta data (open graph protocol) to any post/page/content type, edit it and enjoy your blog sharing.
-WP Open Graph automaticly extract data from post title, excerpt, "All In One Seo Pack" or "Wordpress Seo by Yoast" plugins. It use post thumbnails(featured image) or presetted default image as og:image.
+WP Open Graph automaticly extract data from post title, excerpt, "All In One Seo Pack" or "Wordpress Seo by Yoast" plugins. It use post thumbnails (featured images) or the default image as og:image.
 
 Also you can edit this data for any post, static home page and index blog page.
-Plugin automatically adds data for any taxonomy archives(tags, categories, custom taxonomies) from term title and description.
+Plugin automatically adds data for any taxonomy archives (tags, categories, custom taxonomies) from term title and description.
 
 == Installation ==
 
@@ -38,6 +38,8 @@ http://ogp.me/
 2. Open Graph HTML code
 
 == Changelog ==
+
+1.6 Minor changes and bugfix.
 
 1.5 Support of new All-in-One Seo Pack options.
 

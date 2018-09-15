@@ -1,12 +1,20 @@
 <?php 
 /**
-Plugin name: WP Open Graph
-Plugin URI: http://wordpress.org/plugins/wp-open-graph/
-Description: WP Open Graph allows custom input open graph meta data to any content type. (Or use data from All-In-One-Seo-Pack or Wordpress-Seo-By-Yoast)
-Version: 1.5
-Author: Nick Yurov
-Author URI: http://nickyurov.com
-*/
+ * Plugin name: WP Open Graph
+ * Plugin URI:  https://wordpress.org/plugins/wp-open-graph/
+ * Description: WP Open Graph allows custom input open graph meta data to any content type. (Or use data from All-In-One-Seo-Pack or Wordpress-Seo-By-Yoast)
+ * Version:     1.6
+ * Author:      Custom4Web
+ * Author URI:  https://www.custom4web.com/
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+
 //Main Admin Setting
 require_once 'main.admin.class.php';
 NY_OG_Main_Admin::init();

@@ -1,3 +1,9 @@
+<?php
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+?>
 <h1>WP Open Graph</h1>
 <p>Facebook Open Graph Protocol main settings.</p>
 <h2>Basic Settings</h2>

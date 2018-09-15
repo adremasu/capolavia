@@ -1,26 +1,31 @@
 <?php
-class NY_OG_Admin{
+/**
+ * Class NY_OG_Admin
+ */
 
-	public function __construct(){
-		add_action( 'add_meta_boxes', array($this, 'add_og_custom_box') );
-		add_action( 'save_post', array($this, '_save_postdata') );			
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+
+class NY_OG_Admin {
+
+	public function __construct() {
+		add_action( 'add_meta_boxes', array( $this, 'add_og_custom_box' ) );
+		add_action( 'save_post', array( $this, '_save_postdata' ) );
 	}
 
-	public function add_og_custom_box(){
-		add_meta_box(
-			'ny_open_graph',
-			'Open Graph Data', 
-			array($this, 'og_custom_box'),
-			'',
-			'advanced',
-			'default'
-		);
+	public function add_og_custom_box() {
+		add_meta_box( 'ny_open_graph', 'Open Graph Data', array(
+				$this,
+				'og_custom_box',
+			), '', 'advanced', 'default' );
 	}
 
-	public function og_custom_box( $post ){
-		$metatitle = get_post_meta($post->ID, '_og_title', TRUE);
-		$metadescription = get_post_meta($post->ID, '_og_description', TRUE);
-		$metatype = get_post_meta($post->ID, '_og_type', TRUE);
+	public function og_custom_box( $post ) {
+		$metatitle       = get_post_meta( $post->ID, '_og_title', true );
+		$metadescription = get_post_meta( $post->ID, '_og_description', true );
+		$metatype        = get_post_meta( $post->ID, '_og_type', true );
 		?>		
 		<table>
 			<tr>
@@ -59,34 +64,31 @@ class NY_OG_Admin{
 	<?php
 	}
 
-	public function _save_postdata( $post_id ){
-		$title = stripslashes($_POST['ny_og_title']);
+	public function _save_postdata( $post_id ) {
+		$title       = $_POST['ny_og_title'];
 		$description = $_POST['ny_og_description'];
-		$type = $_POST['ny_og_type'];
+		$type        = $_POST['ny_og_type'];
 
-		$allpostmeta=get_post_custom($post_id);
-		if (array_key_exists('_og_title', $allpostmeta)){
-			update_post_meta($post_id, '_og_title', $title);
+		$allpostmeta = get_post_custom( $post_id );
+		if ( array_key_exists( '_og_title', $allpostmeta ) ) {
+			update_post_meta( $post_id, '_og_title', $title );
+		} else {
+			add_post_meta( $post_id, '_og_title', $title, true );
 		}
-		else {
-			add_post_meta($post_id, '_og_title', $title, TRUE);
+		if ( array_key_exists( '_og_type', $allpostmeta ) ) {
+			update_post_meta( $post_id, '_og_type', $type );
+		} else {
+			add_post_meta( $post_id, '_og_type', $type, true );
 		}
-		if (array_key_exists('_og_type', $allpostmeta)){
-			update_post_meta($post_id, '_og_type', $type);
-		}
-		else {
-			add_post_meta($post_id, '_og_type', $type, TRUE);
-		}
-		if (array_key_exists('_og_description', $allpostmeta)){
-			update_post_meta($post_id, '_og_description', $description);
-		}
-		else {
-			add_post_meta($post_id, '_og_description', $description, TRUE);
+		if ( array_key_exists( '_og_description', $allpostmeta ) ) {
+			update_post_meta( $post_id, '_og_description', $description );
+		} else {
+			add_post_meta( $post_id, '_og_description', $description, true );
 		}
 	}
 
 	function _fb_snippet() {
-		if (isset($_GET['post'])) {
+		if ( isset( $_GET['post'] ) ) {
 			$post_id = (int) $_GET['post'];
 		}
 		

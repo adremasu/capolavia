@@ -1,54 +1,40 @@
 
-<div class="postbox">
-    <h3>Plugin Data Storage Path</h3>
+<div class="sucuriscan-panel">
+    <h3 class="sucuriscan-title">Data Storage</h3>
 
     <div class="inside">
-        <p>
-            This is the directory where the plugin will store the security logs, the list of
-            files marked as fixed in the core integrity tool, the cache for the malware
-            scanner and 3rd-party plugin metadata. The directory is blocked from public
-            visibility if <strong>and only if</strong> the site is being hosted by the
-            Apache web server. Additionally, every PHP file has an exit point in its header
-            to prevent the content to be printed.
-        </p>
-
-        <div class="sucuriscan-inline-alert-warning">
-            <p>
-                Note that the virtual protection added by the plugin to these files is not bullet
-                proof, it may be bypassed and depending on the configuration of the server it may
-                leak information, but this is better than to store the data in the database and
-                wait for a SQL injection to be used to attack the rest of the site.
-            </p>
-        </div>
-
-        <div class="sucuriscan-inline-alert-info">
-            <p>
-                There are some entries in the options table that will be moved to a plain text
-                file during the development of the next version of the plugin, this is part of
-                a plan to include a way to import and export the settings of this extension to
-                other sites in an easy way. This is necessary as importing data into a database
-                may open security holes <em>(depending on how the code is written)</em> to reduce
-                the risk we will use plain text files which makes things a bit safer.
-            </p>
-        </div>
-
-        <div class="sucuriscan-hstatus sucuriscan-hstatus-2">
-            <span class="sucuriscan-monospace">%%SUCURI.DatastorePath%%</span>
-        </div>
-
-        <p>
-            Some people may prefer to use a folder that is not in the document root of the
-            website to add another layer of protection to the data, feel free to change this
-            path if you want, make sure to use absolute paths.
-        </p>
-
-        <form action="%%SUCURI.URL.Settings%%" method="post">
-            <input type="hidden" name="sucuriscan_page_nonce" value="%%SUCURI.PageNonce%%" />
-            <span class="sucuriscan-input-group">
-                <label>Data storage path:</label>
-                <input type="text" name="sucuriscan_datastore_path" class="input-text" />
-            </span>
-            <button type="submit" class="button-primary">Proceed</button>
-        </form>
+        <p>This is the directory where the plugin will store the security logs, the list of files marked as fixed in the core integrity tool, the cache for the malware scanner and 3rd-party plugin metadata. The plugin requires write permissions in this directory as well as the files contained in it. If you prefer to keep these files in a non-public directory <em>(one level up the document root)</em> please define a constant in the <em>"wp-config.php"</em> file named <em>"SUCURI_DATA_STORAGE"</em> with the absolute path to the new directory.</p>
     </div>
+
+    <div class="sucuriscan-hstatus sucuriscan-hstatus-2">
+        <span class="sucuriscan-monospace">%%SUCURI.Storage.Path%%</span>
+    </div>
+
+    <form action="%%SUCURI.URL.Settings%%#general" method="post">
+        <input type="hidden" name="sucuriscan_page_nonce" value="%%SUCURI.PageNonce%%" />
+        <input type="hidden" name="sucuriscan_reset_storage" value="1" />
+
+        <table class="wp-list-table widefat sucuriscan-table">
+            <thead>
+                <tr>
+                    <td id="cb" class="manage-column column-cb check-column">
+                        <label class="screen-reader-text" for="cb-select-all-1">Select All</label>
+                        <input id="cb-select-all-1" type="checkbox">
+                    </td>
+                    <th class="manage-column">File Path</th>
+                    <th class="manage-column">File Size</th>
+                    <th class="manage-column">Status</th>
+                    <th class="manage-column">Writable</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                %%%SUCURI.Storage.Files%%%
+            </tbody>
+        </table>
+
+        <p>
+            <button type="submit" class="button button-primary">Delete</button>
+        </p>
+    </form>
 </div>
