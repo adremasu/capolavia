@@ -1,6 +1,10 @@
 bookingApp = angular.module('bookingApp', [])
 
+bookingApp.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
+   $locationProvider.html5Mode(true)
+]
 bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
+  paramValue = $location.search().myParam
   $scope.loading = false
   $scope.success = false
   a = if true then 5 else 10

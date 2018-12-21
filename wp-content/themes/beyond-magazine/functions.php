@@ -114,6 +114,7 @@ require_once('libs/bookingManager.php');
 require_once('libs/GoogleCalendar.php');
 require_once('libs/email_templates.php');
 require_once('libs/pdf-bookings.php');
+require_once('libs/class-booking-user.php');
 
 //require_once('libs/class-holidays.php');
 

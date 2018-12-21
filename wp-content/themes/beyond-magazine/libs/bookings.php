@@ -45,7 +45,7 @@ class bookings{
             'has_archive'        => true,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'supports'           => array( 'title')
+            'supports'           => array( 'title','author')
         );
         register_post_type( $post_type, $args );
 
@@ -54,7 +54,10 @@ class bookings{
         add_action( 'save_post', array( $this, 'save' ) );
 
         add_action('admin_enqueue_scripts', array( $this, 'enqueue_js' ));
-
+        add_filter( 'mailchimp_sync_user_data', function( $data, $user ) {
+            $data['EUID'] = $user->field_name;
+            return $data;
+        }, 10, 2 );
 
     }
 

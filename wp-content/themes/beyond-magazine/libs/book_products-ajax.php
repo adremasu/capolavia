@@ -88,6 +88,7 @@ class book_productsClass {
 
     private function saveBooking(){
         if ($this->isNewBooking()){
+          return $this->saveNewBooking();
 
             if ($this->sendUserEmail() && $this->sendAdminEmail()){
 
@@ -289,9 +290,16 @@ class book_productsClass {
     }
     private function saveNewBooking(){
         $this->hash = md5($this->date.$this->userData['email']);
+        $post_author = get_user_by('email', $this->userData['email']);
+        if ($post_author){
+          $post_author_ID = $post_author->ID;
+        } else {
+          $post_author_ID = '';
+        }
         $args = array(
             'post_title' => date('Y_m_d', $this->date).' '.$this->userData['email'],
             'post_type' => 'bookings',
+            'post_author' => $post_author->ID,
             'meta_input' => array(
                 'userData' => $this->userData,
                 'products' => $this->productsJson,

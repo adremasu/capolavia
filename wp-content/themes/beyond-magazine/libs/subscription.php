@@ -58,6 +58,7 @@ class subscription {
                 'read' => true, // true allows this capability
                 'edit_posts' => false, // Allows user to edit their own posts
                 'edit_pages' => false, // Allows user to edit pages
+                'edit_published_posts' => true,
                 'edit_others_posts' => false, // Allows user to edit others posts not just their own
                 'create_posts' => false, // Allows user to create new posts
                 'manage_categories' => false, // Allows user to manage post categories
@@ -110,7 +111,32 @@ class subscription {
 
 
     }
-    /* Remove the "Dashboard" from the admin menu for non-admin users */
+    public function add_bookings_column(){
+      function new_customer_methods( $customermethods ) {
+        $customermethods['bookings'] = 'Prenotazioni';
+        return $customermethods;
+      }
+      add_filter( 'user_customermethods', 'new_customer_methods', 10, 1 );
+
+
+      function new_modify_user_table( $column ) {
+          $column['bookings'] = 'Prenotazioni';
+          return $column;
+      }
+      add_filter( 'manage_users_columns', 'new_modify_user_table' );
+
+      function new_modify_user_table_row( $val, $column_name, $user_id ) {
+          switch ($column_name) {
+              case 'phone' :
+                  return get_the_author_meta( 'phone', $user_id );
+                  break;
+              default:
+          }
+          return $val;
+      }
+      add_filter( 'manage_users_custom_column', 'new_modify_user_table_row', 10, 3 );
+    }
+      /* Remove the "Dashboard" from the admin menu for non-admin users */
     public function remove_dashboard () {
         global $current_user, $menu, $submenu;
         get_currentuserinfo();
@@ -146,18 +172,29 @@ class subscription {
     }
     public function show_customer_profile_fields( $user ) {
         $meta = get_the_author_meta( 'customer', $user->ID );
+        $allmeta = get_user_meta($user->ID );
+
+        var_dump($allmeta);
         ?>
 
         <table class="form-table">
 
-            <tr>
-                <th><label for="fiscale">Codice fiscale</label></th>
+          <tr>
+              <th><label for="fiscale">Codice fiscale</label></th>
 
-                <td>
-                    <input type="text" name="customer[fiscale]" id="fiscale" value="<?php echo esc_attr( $meta[fiscale] ); ?>" class="regular-text" /><br />
-                    <span class="description">Codice fiscale</span>
-                </td>
-            </tr>
+              <td>
+                  <input type="text" name="customer[fiscale]" id="fiscale" value="<?php echo esc_attr( $meta[fiscale] ); ?>" class="regular-text" /><br />
+                  <span class="description">Codice fiscale</span>
+              </td>
+          </tr>
+          <tr>
+              <th><label for="fiscale">Mailchimp ID</label></th>
+
+              <td>
+                  <input type="text" name="customer[EUID]" id="EUID" value="<?php echo esc_attr( $allmeta['EUID'][0] ); ?>" class="regular-text" /><br />
+                  <span class="description">Mailchimp ID</span>
+              </td>
+          </tr>
             <tr>
                 <th><label for="phone">Recapito telefonico</label></th>
 

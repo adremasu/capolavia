@@ -12,6 +12,7 @@ define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
 define('SCOPES', implode(' ', array(
         Google_Service_Calendar::CALENDAR_READONLY)
 ));
+
 /**
  * Expands the home directory alias '~' to the full path.
  * @param string $path the path to expand.
@@ -63,6 +64,7 @@ $optParams = array(
     'singleEvents' => TRUE,
     'timeMin' => date('c', strtotime('tomorrow')),
 );
+
 $events = $service->events->listEvents($calendarId);
 
 $results = $service->events->listEvents($calendarId, $optParams);
@@ -76,7 +78,9 @@ foreach ($deliveries->getItems() as $delivery) {
     $deliveryStart = $delivery->getStart();
     $deliveryEnd = $delivery->getEnd();
 }
-
+$EUID = $_GET['uid'];
+#$_user = new BookingUser($EUID);
+#$user = $_user->get_user_data();
 ?>
 
     <div class="row" id="kt-main" data-ng-app="bookingApp"  data-ng-controller="bookingController">
@@ -87,7 +91,11 @@ foreach ($deliveries->getItems() as $delivery) {
         </div>
         <div class="col-md-12" ng-cloack>
             <div id="kt-latest-title" class="h3" >
-                <p data-ng-hide="success"><span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?></span></p>
+
+                <p data-ng-hide="success">
+
+                  <span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?></span>
+                </p>
                 <p data-ng-show="success" ><span>La tua prenotazione per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?> è stata registrata.</span></p>
             </div>
         </div>
@@ -267,6 +275,7 @@ foreach ($deliveries->getItems() as $delivery) {
                         <div class="col-xs-12 col-md-6">
                             <label for="email"> Indirizzo e-mail*
                                 <input required data-ng-model="user.email" type="email" name="email" class="input-lg form-control"/>
+                                <input data-ng-model="user.euid" type="hidden" name="euid"/>
                                 <p class="validation-text">Inserisci un indirizzo e-mail valido</p>
                             </label>
                         </div>

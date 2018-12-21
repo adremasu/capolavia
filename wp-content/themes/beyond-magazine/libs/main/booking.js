@@ -3,9 +3,16 @@
 
   bookingApp = angular.module('bookingApp', []);
 
+  bookingApp.config([
+    '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+      return $locationProvider.html5Mode(true);
+    }
+  ]);
+
   bookingApp.controller("bookingController", [
     '$scope', '$http', function($scope, $http) {
-      var a;
+      var a, paramValue;
+      paramValue = $location.search().myParam;
       $scope.loading = false;
       $scope.success = false;
       a = true ? 5 : 10;
