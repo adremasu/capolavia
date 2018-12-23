@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+  <?php $obj_id = get_queried_object_id(); ?>
+    <base href="<?php echo get_permalink( $obj_id ); ?>">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 

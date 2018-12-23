@@ -1,9 +1,9 @@
-bookingApp = angular.module('bookingApp', [])
+bookingApp = angular.module('bookingApp', ['ngRoute'])
 
 bookingApp.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
    $locationProvider.html5Mode(true)
 ]
-bookingApp.controller "bookingController", ['$scope','$http', ($scope, $http) ->
+bookingApp.controller "bookingController", ['$scope','$http', '$location', ($scope, $http, $location) ->
   paramValue = $location.search().myParam
   $scope.loading = false
   $scope.success = false

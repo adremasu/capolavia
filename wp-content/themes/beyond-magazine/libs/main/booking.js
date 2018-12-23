@@ -1,7 +1,7 @@
 (function() {
   var bookingApp;
 
-  bookingApp = angular.module('bookingApp', []);
+  bookingApp = angular.module('bookingApp', ['ngRoute']);
 
   bookingApp.config([
     '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -10,7 +10,7 @@
   ]);
 
   bookingApp.controller("bookingController", [
-    '$scope', '$http', function($scope, $http) {
+    '$scope', '$http', '$location', function($scope, $http, $location) {
       var a, paramValue;
       paramValue = $location.search().myParam;
       $scope.loading = false;
