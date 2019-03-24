@@ -10378,6 +10378,10 @@ button.close {
   margin-left: 15px;
 }
 
+.admin-bar .slicknav_menu {
+  margin-top: 46px;
+}
+
 .product-thumb {
   display: block;
   width: 100%;
@@ -11037,6 +11041,7 @@ dd {
 #kt-main-nav ul li a {
   display: block;
   padding: 0 2px;
+  text-align: center;
 }
 #kt-main-nav ul.sub-menu {
   display: none;
