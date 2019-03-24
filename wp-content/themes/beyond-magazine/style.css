@@ -10267,6 +10267,7 @@ button.close {
 }
 .slicknav_nav ul, .slicknav_nav li {
   display: block;
+  width: 100%;
 }
 .slicknav_nav .slicknav_arrow {
   font-size: 0.8em;
@@ -10275,9 +10276,6 @@ button.close {
 .slicknav_nav .slicknav_item {
   display: block;
   cursor: pointer;
-}
-.slicknav_nav a {
-  display: block;
 }
 .slicknav_nav .slicknav_item a {
   display: inline;
@@ -10353,6 +10351,10 @@ button.close {
   margin: 2px 5px;
   text-decoration: none;
   color: #fff;
+  display: block;
+  background-color: white;
+  background-image: none !important;
+  text-align: center;
 }
 .slicknav_nav .slicknav_item a {
   padding: 0;
@@ -10975,7 +10977,7 @@ dd {
 }
 @media only screen and (max-device: 768px) and (min-device: 320px), (max-width: 900px) {
   .kt-wrapper {
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
 @media screen and (min-width: 900px) {
@@ -11034,7 +11036,7 @@ dd {
 }
 #kt-main-nav ul li a {
   display: block;
-  padding: 0 15px;
+  padding: 0 2px;
 }
 #kt-main-nav ul.sub-menu {
   display: none;
