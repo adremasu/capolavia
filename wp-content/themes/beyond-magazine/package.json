@@ -4,6 +4,7 @@
   "author": "Awesome Glossy-FE-Team",
   "description": "our nice dev environment to take FE to the next level ;)",
   "devDependencies": {
+    "coffee-script": "~1.6.3",
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.1.1",
     "grunt-contrib-compass": "~0.2.0",
