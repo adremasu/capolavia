@@ -803,7 +803,7 @@ add_action( 'save_post', 'icon_save_meta_box_data' );
 //analytics
 function GAnalytics() {
     $domain = ltrim(get_bloginfo('wpurl'), 'https://');
-    if ( !is_admin() && ($domain=='capolavia.it') ) {
+    if ( !is_admin() && ($domain=='capolavia.it' || $domain == 'agrinido.capolavia.it') ) {
 
         echo "<script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
