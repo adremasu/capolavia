@@ -10013,9 +10013,6 @@ button.close {
   cursor: pointer;
 }
 
-.slicknav_menu li {
-  width: 100%;
-}
 .slicknav_menu .slicknav_menutxt {
   display: block;
   line-height: 1.188em;
@@ -10095,6 +10092,9 @@ button.close {
 
 /* Button Text */
 .slicknav_menu {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
   background: #4c4c4c;
   padding: 5px;
 }
@@ -10756,6 +10756,11 @@ dd {
     position: relative;
   }
 }
+@media screen and (max-width: 768px) {
+  .kt-wrapper {
+    padding-top: 150px;
+  }
+}
 
 #kt-logo h1 {
   font-size: 1.8em;
@@ -10777,6 +10782,10 @@ dd {
 /*------------------- */
 /* Navigation Menu */
 /*------------------- */
+.current_page_item a {
+  font-weight: bold;
+}
+
 #kt-main-nav ul {
   padding: 0;
   list-style: none;
@@ -10809,7 +10818,6 @@ dd {
   top: 0;
 }
 #kt-main-nav .sub-menu {
-  border-bottom: 2px solid #0E4FA3;
   background: #ffffff;
 }
 #kt-main-nav .sub-menu li {
