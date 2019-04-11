@@ -10046,6 +10046,7 @@ button.close {
 }
 .slicknav_nav ul, .slicknav_nav li {
   display: block;
+  width: 100%;
 }
 .slicknav_nav .slicknav_arrow {
   font-size: 0.8em;
@@ -10054,9 +10055,6 @@ button.close {
 .slicknav_nav .slicknav_item {
   display: block;
   cursor: pointer;
-}
-.slicknav_nav a {
-  display: block;
 }
 .slicknav_nav .slicknav_item a {
   display: inline;
@@ -10094,7 +10092,8 @@ button.close {
 .slicknav_menu {
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 999;
+  top: 0;
   background: #4c4c4c;
   padding: 5px;
 }
@@ -10131,6 +10130,10 @@ button.close {
   margin: 2px 5px;
   text-decoration: none;
   color: #fff;
+  display: block;
+  background-color: white;
+  background-image: none !important;
+  text-align: center;
 }
 .slicknav_nav .slicknav_item a {
   padding: 0;
@@ -10152,6 +10155,10 @@ button.close {
 }
 .slicknav_nav .slicknav_txtnode {
   margin-left: 15px;
+}
+
+.admin-bar .slicknav_menu {
+  margin-top: 46px;
 }
 
 .product-thumb {
@@ -10751,6 +10758,11 @@ dd {
   box-shadow: 0px 0px 5px 0px #42A942;
   padding-top: 20px;
 }
+@media only screen and (max-device: 768px) and (min-device: 320px), (max-width: 900px) {
+  .kt-wrapper {
+    margin-top: 40px;
+  }
+}
 @media screen and (min-width: 900px) {
   .kt-wrapper {
     position: relative;
@@ -10811,7 +10823,8 @@ dd {
 }
 #kt-main-nav ul li a {
   display: block;
-  padding: 0 15px;
+  padding: 0 2px;
+  text-align: center;
 }
 #kt-main-nav ul.sub-menu {
   display: none;

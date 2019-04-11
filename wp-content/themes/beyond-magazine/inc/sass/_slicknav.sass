@@ -38,14 +38,13 @@
   clear: both
   ul, li
     display: block
+    width: 100%
   .slicknav_arrow
     font-size: 0.8em
     margin: 0 0 0 0.4em
   .slicknav_item
     display: block
     cursor: pointer
-  a
-    display: block
   .slicknav_item a
     display: inline
 
@@ -81,8 +80,9 @@
 
 .slicknav_menu
   position: fixed
-  width: 100% 
-  z-index: 9999
+  width: 100%
+  z-index: 999
+  top: 0
   .slicknav_menutxt
     color: #FFF
     font-weight: bold
@@ -114,6 +114,10 @@
     margin: 2px 5px
     text-decoration: none
     color: #fff
+    display: block
+    background-color: white
+    background-image: none !important
+    text-align: center
   .slicknav_item
     a
       padding: 0
@@ -132,3 +136,5 @@
     color: #222
   .slicknav_txtnode
     margin-left: 15px
+.admin-bar .slicknav_menu
+  margin-top: 46px
