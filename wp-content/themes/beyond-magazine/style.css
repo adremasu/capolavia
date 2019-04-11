@@ -10813,6 +10813,7 @@ dd {
   top: auto;
   left: auto;
   z-index: 10000;
+  width: 100%;
 }
 #kt-main-nav .sub-menu li:hover > .sub-menu {
   display: inline-block;
@@ -10830,19 +10831,15 @@ dd {
   display: none;
   top: 0;
 }
-#kt-main-nav .sub-menu {
-  background: #ffffff;
-}
 #kt-main-nav .sub-menu li {
   position: relative;
-  width: 160px;
   float: none;
   margin-right: 0px !important;
-  border-bottom: 1px solid rgba(5, 79, 2, 0.2);
 }
 #kt-main-nav .sub-menu li a {
   font-size: 14px;
   line-height: 40px;
+  margin-right: 30px;
 }
 #kt-main-nav .sub-menu li > .sub-menu {
   background: #fdfdfd;
