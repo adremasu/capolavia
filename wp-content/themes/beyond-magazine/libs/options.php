@@ -6,10 +6,6 @@
  * Time: 0.01
  */
 
-
-
-
-
 class OptionsPage {
 
     function __construct() {
@@ -19,9 +15,20 @@ class OptionsPage {
 
     }
     public function enqueue_js( $hook ) {
-        if ('post.php' != $hook && 'post-new.php' != $hook) {
+
+      if ( isset( $_GET['page']) && $_GET['page'] == 'analysis_page.php' ){
+        wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
+
+        wp_register_script('google_charts', 'https://www.gstatic.com/charts/loader.js');
+        wp_register_script('analysis_page', get_bloginfo('template_directory'). '/libs/main/analysis_page.js');
+        wp_enqueue_script('google_charts');
+        wp_enqueue_script('analysis_page');
+
+      }
+      if ('post.php' != $hook && 'post-new.php' != $hook) {
             return;
         }
+
         wp_enqueue_style('plugin_name-admin-ui-css',
             'https://code.jquery.com/ui/jquery-ui-git.css',
             false,
@@ -33,12 +40,19 @@ class OptionsPage {
         wp_enqueue_script( 'jquery-ui-datepicker' );
     }
     function admin_menu() {
-        add_submenu_page('edit.php?post_type=bookings',
-            'Riepilogo prenotazioni',
-            'Riepilogo prenotazioni',
-            'edit_posts',
-            basename(__FILE__),
-            array($this, 'settings_page')
+      add_submenu_page('edit.php?post_type=bookings',
+          'Riepilogo prenotazioni',
+          'Riepilogo prenotazioni',
+          'edit_posts',
+          basename(__FILE__),
+          array($this, 'settings_page')
+      );
+      add_submenu_page('edit.php?post_type=bookings',
+          'Analisi prenotazioni',
+          'Analisi prenotazioni',
+          'edit_posts',
+          'analysis_page.php',
+          array($this, 'analysis_page')
         );
         add_submenu_page('edit.php?post_type=bookings',
             'Opzioni prenotazioni',
@@ -78,7 +92,99 @@ class OptionsPage {
 
 
     }
+    function analysis_page(){
 
+
+      echo "<h1>Analisi prenotazioni</h1>";
+
+
+      echo "<div ng-app='analysisApp' ng-controller='ChartsController'>";
+
+
+
+      $args = array(
+        'numberposts'      => -1,
+        'order'            => 'DESC',
+        'post_type'        => 'bookings',
+        'post_status'       => 'any'
+    );
+      $bookings = get_posts($args);
+      $productArgs = array(
+          'numberposts'      => -1,
+          'order'            => 'ASC',
+          'post_type'        => 'products',
+          'post_status'       => 'any',
+          'orderby'           => 'title'
+      );
+      $products = get_posts($productArgs);
+      $emailAddresses = array();
+      if (isset($_POST['emailAddress'])){
+        $emailAddress = $_POST['emailAddress'];
+      }
+      if (isset($_POST['product'])){
+        $product = $_POST['emailAddress'];
+      }
+      foreach ($bookings as $booking) {
+        $bookingEmail = get_post_meta($booking->ID, 'userData', true);
+        $booking->products = get_post_meta($booking->ID, 'products', true);
+        $booking->email = $bookingEmail['email'];
+        $emailAddresses[] = strtolower($booking->email);
+
+        if (!$emailAddress ){
+          $booking->week = date("Y-W", strtotime($booking->post_date));
+          $weeks[] = $booking->week;
+        } else {
+          if ($emailAddress == $booking->email){
+            $booking->week = date("Y-W", strtotime($booking->post_date));
+            $weeks[] = $booking->week;
+          } else {
+            $booking->week = date("Y-W", strtotime($booking->post_date));
+            $noWeeks[] = $booking->week;
+          }
+        }
+
+
+      }
+
+      $bookingsCount = array_count_values($weeks);
+
+      $noBookingsCount = array_count_values($noWeeks);
+      foreach($noBookingsCount as $date => $number){
+        $noBookingsCount[$date] = 0;
+      }
+      if ($noBookingsCount){
+        $bookingsCount = array_merge($noBookingsCount, $bookingsCount);
+      }
+      $weeksString = '';
+      foreach ($bookingsCount as $key => $value) {
+        $weeksString .= '["'.$key.'",'.$value.'],';
+      }
+
+      $weeksString = substr($weeksString,0,-1);
+
+      $emailAddresses = array_unique($emailAddresses);
+      asort($emailAddresses);
+      echo "<form action='/wp-admin/edit.php?post_type=bookings&page=analysis_page.php' method='POST'>";
+      echo "<select name='emailAddress'><option value=''>Tutte le prenotazioni</option>'";
+      foreach ($emailAddresses as $emailAddress) {
+        echo '<option value="'.$emailAddress.'">'.$emailAddress.'</option>';
+      }
+      echo "</select>";
+
+      echo "<select name='product'><option value=''>Tutte i prodotti</option>'";
+      foreach ($products as $product) {
+        echo '<option value="'.$product->ID.'">'.$product->post_title.'</option>';
+      }
+      echo "</select><input type='submit' value='Cerca'></form>";
+
+//      var_dump($bookings);
+
+
+      echo '        <script type = "text/template" getdata>
+          {"data_type":"dates", "data":'."[$weeksString]".'}
+      </script>';
+      echo '<div id="chart_div"></div></div>';
+    }
     function bookings_options_page() {
         ?>
         <div class="wrap">
@@ -111,6 +217,7 @@ class OptionsPage {
         </div>
     <?php
     }
+
     function  settings_page() {
         ?>
         <h1>Riepilogo prenotazioni</h1>
@@ -181,9 +288,7 @@ class OptionsPage {
                 }
                 echo "</tbody>
                         </table>";
-            } ?>
-
-        <?php
+            }
 
         echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'">Stampa riassunto prenotazioni</a>';
         echo '<a target="_blank" class="button" href="edit.php?post_type=bookings&page=pdf-bookings.php&date='.$date.'&format=TT">Prenotazioni in CSV</a>';

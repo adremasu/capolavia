@@ -22,6 +22,7 @@ function my_meta_init()
     }
 // add a callback function to save any data a user enters in
     add_action('save_post','my_meta_save');
+
 }
 
 function my_meta_setup()
