@@ -20,7 +20,7 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        ftp-server: ftp://ftp.capolavia.it:21/
-        ftp-username: github@capolavia.it
+        ftp-server: ftp://ftp.capolavia.it/
+        ftp-username: buddywp@capolavia.it
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        git-ftp-args: --insecure # if your certificate is setup correctly this can be removed
+        #git-ftp-args: --insecure if your ertificate is setup correctly this can be removed
