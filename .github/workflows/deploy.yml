@@ -21,7 +21,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
         ftp-server: ftp://ftp.capolavia.it/
-        ftp-username: buddywp@capolavia.it
+        ftp-username: github@capolavia.it
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: /public_html
         #git-ftp-args: --insecure if your ertificate is setup correctly this can be removed
