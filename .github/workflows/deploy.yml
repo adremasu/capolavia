@@ -20,7 +20,6 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        ftp-server: ftp://ftp.capolavia.it/
+        ftp-server: ftp://ftp.capolavia.it:21/
         ftp-username: github
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-     
