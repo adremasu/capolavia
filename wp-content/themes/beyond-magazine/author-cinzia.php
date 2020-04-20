@@ -26,7 +26,7 @@ add_action( 'pre_get_posts','so20175501_pre_get_posts' );
           <?php
             $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
             $allmeta = get_user_meta($curauth->ID,'customer');
-            echo '<img height="300" Width="300" src="'.$allmeta[0]['custom_pic'].'">';
+            echo '<img width="100%" src="'.$allmeta[0]['custom_pic'].'">';
             ?>
          </div>
         <div class="col-md-8"><?php echo $curauth->user_description; ?>
