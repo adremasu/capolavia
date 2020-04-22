@@ -88,8 +88,6 @@ class book_productsClass {
 
     private function saveBooking(){
         if ($this->isNewBooking()){
-          return $this->saveNewBooking();
-
             if ($this->sendUserEmail() && $this->sendAdminEmail()){
 
                 return $this->saveNewBooking();
@@ -137,7 +135,7 @@ class book_productsClass {
         if ($this->delivery){
             $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
         } else {
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." in azienda (via Rodolfo Rossi 101)</td>";
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." in azienda (via Rodolfo Rossi,66)</td>";
 
         }
         $this->emailMessage .= "</tr>";
