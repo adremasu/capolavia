@@ -94,9 +94,9 @@ $EUID = $_GET['uid'];
 
                 <p data-ng-hide="success">
 
-                  <span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?></span>
+                  <span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?></span>
                 </p>
-                <p data-ng-show="success" ><span>La tua prenotazione per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?> è stata registrata.</span></p>
+                <p data-ng-show="success" ><span>La tua prenotazione per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?> è stata registrata.</span></p>
             </div>
         </div>
         <div class="col-md-12 description" data-ng-hide="success">
@@ -105,7 +105,7 @@ $EUID = $_GET['uid'];
             the_content();
             ?>
             <p>
-                Sono qui elencati i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])) ?>.
+                Sono qui elencati i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?>.
             </p>
         </div>
 
@@ -314,7 +314,7 @@ $EUID = $_GET['uid'];
                                             <input data-ng-disabled="user.delivery != 1" data-ng-required="user.delivery == 1" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
                                         </div>
                                         <p class="hidden-xs">
-                                            La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])) ?></span></strong>
+                                            La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])+ date(Z)).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])+ date(Z)) ?></span></strong>
                                         </p>
                                     </div>
 
@@ -327,7 +327,7 @@ $EUID = $_GET['uid'];
                                         </label>
                                     </div>
                                     <p class="hidden-xs">
-                                        Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
+                                        Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])+ date(Z)).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($end['dateTime'])+ date(Z)) ?></span></strong>
                                     </p>
                                 </div>
                             </div>
@@ -335,10 +335,10 @@ $EUID = $_GET['uid'];
                         </div>
                         <div class="col-md-12 col-xs-12 visible-xs-block">
                             <p>
-                                Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])).' e le '.date_i18n('G:i',strtotime($end['dateTime'])) ?></span></strong>
+                                Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($end['dateTime'])+ date(Z)) ?></span></strong>
                             </p>
                             <p>
-                                La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])) ?></span></strong>
+                                La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])+ date(Z)) ?></span></strong>
                             </p>
                         </div>
 
