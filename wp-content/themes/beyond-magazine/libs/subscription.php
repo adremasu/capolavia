@@ -173,8 +173,6 @@ class subscription {
     public function show_customer_profile_fields( $user ) {
         $meta = get_the_author_meta( 'customer', $user->ID );
         $allmeta = get_user_meta($user->ID );
-
-        var_dump($allmeta);
         ?>
 
         <table class="form-table">
@@ -187,6 +185,25 @@ class subscription {
                   <span class="description">Codice fiscale</span>
               </td>
           </tr>
+
+          <tr>
+              <th><label for="custom_pic">Indirizzo immagine</label></th>
+
+              <td>
+                  <input type="text" name="customer[custom_pic]" id="custom_pic" value="<?php echo esc_attr( $meta[custom_pic] ); ?>" class="regular-text" /><br />
+                  <span class="description">url</span>
+              </td>
+          </tr>
+
+          <tr>
+              <th><label for="whatsapp">Contatto WA</label></th>
+
+              <td>
+                  <input type="text" name="customer[whatsapp]" id="whatsapp" value="<?php echo esc_attr( $meta[whatsapp] ); ?>" class="regular-text" /><br />
+                  <span class="description">inserire il numero di telefono</span>
+              </td>
+          </tr>
+
           <tr>
               <th><label for="fiscale">Mailchimp ID</label></th>
 

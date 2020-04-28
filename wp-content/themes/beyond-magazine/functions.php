@@ -117,9 +117,6 @@ require_once('libs/email_templates.php');
 require_once('libs/pdf-bookings.php');
 require_once('libs/class-booking-user.php');
 
-//require_once('libs/class-holidays.php');
-
-
 
 add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
@@ -877,7 +874,7 @@ function create_post_type() {
             'public' => true,
             'has_archive' => 'recipe',
             'rewrite' => array('slug' => 'recipe'),
-            'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
+            'supports' => array('thumbnail', 'title', 'editor', 'revisions', 'author'),
 
         )
     );
