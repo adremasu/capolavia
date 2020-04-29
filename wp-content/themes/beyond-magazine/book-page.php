@@ -132,7 +132,7 @@ $EUID = $_GET['uid'];
                           </table>
                           <p>Note: <br>{{user.notes}}</p>
                           <p data-ng-if="user.delivery == '1'">Consegna presso:{{user.address}}</p>
-                          <p data-ng-if="user.delivery == '0'">Ritiro in azienda in via Rodolfo Rossi 101, Rovigo(loc. Grignano Polesine)</p>
+                          <p data-ng-if="user.delivery == '0'">Ritiro in azienda in via Rodolfo Rossi 66, Rovigo(loc. Grignano Polesine)</p>
 
                       </div>
                       <div class="modal-footer">
