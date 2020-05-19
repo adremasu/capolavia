@@ -165,34 +165,22 @@ if (isset($update["message"])) {
   processMessage($update["message"]);
 }
 ?>
-    <div class="row" id="kt-main">
-        <div class="col-md-12">
-            <div id="kt-latest-title" class="h3">
-                <p><span>I prodotti</span></p>
-            </div>
-        </div>
-
-        <div class="col-md-12">
-
-    <?php
-                $type = 'products';
-                $args=array(
-                    'post_type' => $type,
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'caller_get_posts'=> 1
-                );
-                $my_query = null;
-                $my_query = new WP_Query($args);
-                $queryJson = json_encode($my_query);
-                echo $queryJson;
-
-                wp_reset_query();  // Restore global post data stomped by the_post().
-                ?>
 
 
-
-        </div>
-    </div>
 <?php
-?>
+/*
+  $type = 'products';
+  $args=array(
+      'post_type' => $type,
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'caller_get_posts'=> 1
+  );
+  $my_query = null;
+  $my_query = new WP_Query($args);
+  $queryJson = json_encode($my_query);
+  echo $queryJson;
+
+  wp_reset_query();  // Restore global post data stomped by the_post().
+*/
+  ?>
