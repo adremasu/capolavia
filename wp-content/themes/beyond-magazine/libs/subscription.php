@@ -203,6 +203,22 @@ class subscription {
                   <span class="description">inserire il numero di telefono</span>
               </td>
           </tr>
+          <tr>
+              <th><label for="whatsapp">Pagina google Maps</label></th>
+
+              <td>
+                  <input type="text" name="customer[gmaps]" id="gmaps" value="<?php echo esc_attr( $meta[gmaps] ); ?>" class="regular-text" /><br />
+                  <span class="description">inserire il linbk a google Maps</span>
+              </td>
+          </tr>
+          <tr>
+              <th><label for="whatsapp">Contatto Facebook</label></th>
+
+              <td>
+                  <input type="text" name="customer[facebook]" id="facebook" value="<?php echo esc_attr( $meta[facebook] ); ?>" class="regular-text" /><br />
+                  <span class="description">inserire il link alla pagina facebook</span>
+              </td>
+          </tr>
 
           <tr>
               <th><label for="fiscale">Mailchimp ID</label></th>

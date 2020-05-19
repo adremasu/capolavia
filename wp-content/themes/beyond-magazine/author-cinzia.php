@@ -9,14 +9,13 @@ add_action( 'pre_get_posts','so20175501_pre_get_posts' );
     <div class="row" id="kt-main">
         <div class="col-md-12">
             <div id="kt-latest-title" class="h3">
-                <p><span>Le ricette</span></p>
+                <p><h2>Le ricette della Cucina dei Girasoli</h2></p>
             </div>
         </div>
 
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h2>La cucina dei Girasoli di Cinzia Cezza :</h2>
         </div>
       </div>
       <div class="row">
@@ -29,11 +28,28 @@ add_action( 'pre_get_posts','so20175501_pre_get_posts' );
             echo '<img width="100%" src="'.$allmeta[0]['custom_pic'].'">';
             ?>
          </div>
-        <div class="col-md-8"><?php echo $curauth->user_description; ?>
-          <a href="https://wa.me/<?php echo $allmeta[0]['whatsapp']?>">
-            Ricevi il listino via whatsapp
-          </a>
-        </div>
+         <div class="col-md-8"><?php echo $curauth->user_description; ?><br>
+           <?php if ($allmeta[0]['whatsapp']){ ?>
+             <a href="https://wa.me/<?php echo $allmeta[0]['whatsapp']?>" class="btn btn-primary">
+               <i class="fa fa-whatsapp fa-2x" aria-hidden="true"> </i> Ricevi il listino via whatsapp
+             </a>
+           <?php  }  ?>
+           <?php if ($allmeta[0]['facebook']){ ?>
+
+           <a href="<?php echo $allmeta[0]['facebook']?>" class="btn btn-primary">
+             <i class="fa fa-facebook-official fa-2x" aria-hidden="true"> </i> Seguici su Facebook
+           </a>
+         <?php  }  ?>
+
+           <?php if ($allmeta[0]['gmaps']){ ?>
+
+           <a href="<?php echo $allmeta[0]['gmaps']?>" class="btn btn-primary">
+             <i class="fa  fa-map-marker fa-2x" aria-hidden="true"> </i> Trovaci su Google Maps
+           </a>
+         <?php  }  ?>
+
+         </div>
+
       </div>
       <div class="row">
         <!-- The Loop -->
@@ -49,9 +65,10 @@ add_action( 'pre_get_posts','so20175501_pre_get_posts' );
                       $url = $thumb['0'];
                       ?>
                       <div class="product-image" style="background-image: url(<?php echo $url; ?>)">
-                          <div class="search-bg"><i class="fa fa-search fa-5x"></i>
-                          </div>
-                          <h3 class="h4 product-name"><?php  echo $recipe->post_title; ?></h3>
+                        <div class="search-bg">
+                          <i class="fa fa-search fa-5x"></i>
+                        </div>
+                        <h3 class="h4 product-name"><?php  echo $recipe->post_title; ?></h3>
 
                       </div>
                   </a>
