@@ -178,6 +178,13 @@ class subscription {
         <table class="form-table">
 
           <tr>
+            <th><label for="recipes_author">Autore di ricette</label></th>
+
+              <td>
+                  <input <?php if (esc_attr( $meta[recipes_author])) echo "checked";?> type="checkbox" name="customer[recipes_author]" id="recipes_author" value="1" class="regular-text" />                  <span class="description">È autore di ricette</span>
+              </td>
+          </tr>
+          <tr>
               <th><label for="fiscale">Codice fiscale</label></th>
 
               <td>

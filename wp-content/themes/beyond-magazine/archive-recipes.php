@@ -7,10 +7,22 @@ get_header();?>
             </div>
         </div>
         <?php
+        $at_least_one_author_recipe = 0;
         if(have_posts()) : while(have_posts()) : the_post();
             ?>
             <div class="product-box col-md-3 col-xxs-12 col-xs-6">
                 <div class="kt-article">
+                  <?php
+                  $author_meta = get_the_author_meta('customer');
+                  $authorID = get_the_author_meta('ID');
+                  if (is_array($author_meta) && $author_meta['recipes_author']){
+                    $at_least_one_author_recipe = 1;
+                    $author_url = get_author_posts_url($authorID);
+                    ?>
+                    <img src="<?php echo get_template_directory_uri();?>/img/Sunflower-icon.png" class="sunflower-icon"/>
+                    <?php
+                  }
+                  ?>
                     <a href="<?php echo get_permalink(); ?>">
                         <?php
                         $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small_square' );
@@ -27,7 +39,17 @@ get_header();?>
             </div>
 
         <?php
-        endwhile; endif; ?>
+        endwhile; endif;
+        if($at_least_one_author_recipe) { ?>
+            <div class="col-xs-12">
+              <div class="legend-frame">
+                <img src="<?php echo get_template_directory_uri();?>/img/Sunflower-icon.png" class="sunflower-icon-legend"/>
+                <span> Ricette a cura della <a href="<?php echo $author_url;?>">Cucina dei Girasoli</a>
+              </div>
+            </div>
+            <?php
+        }
+        ?>
 
     </div>
 <?php

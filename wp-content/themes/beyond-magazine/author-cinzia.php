@@ -59,6 +59,7 @@ add_action( 'pre_get_posts','so20175501_pre_get_posts' );
         foreach ($recipes as $recipe) { ?>
           <div class="product-box col-md-3 col-xxs-12 col-xs-6">
               <div class="kt-article">
+                <img src="<?php echo get_template_directory_uri();?>/img/Sunflower-icon.png" class="sunflower-icon"/>
                   <a href="<?php echo get_permalink($recipe->ID); ?>">
                       <?php
                       $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($recipe->ID), 'small_square' );
