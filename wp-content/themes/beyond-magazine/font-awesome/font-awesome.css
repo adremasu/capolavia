@@ -693,6 +693,10 @@
   content: "";
 }
 
+.fa-telegram:before {
+  content: "";
+}
+
 .fa-facebook-square:before {
   content: "";
 }
