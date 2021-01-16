@@ -67,7 +67,7 @@
 /* [+] col-xxs- */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Copyright 2011-2016 , Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -8571,7 +8571,9 @@ button.close {
 .fa-twitter-square:before {
   content: "";
 }
-
+.fa-telegram:before {
+  content: "";
+}
 .fa-facebook-square:before {
   content: "";
 }
