@@ -14,12 +14,17 @@ function plugin_name_route_api($req) {
     $params = $req->get_params();
     //$auth_token = $headers['authorization'][0];
 
-    /*if ( $token != $auth_token ) {
+    /*if ( $token != $auth_token ) { 
         return new WP_Error( '401', esc_html__( 'Not Authorized', 'text_domain' ), array( 'status' => 401 ) );
     }*/
     //var_dump($params);
     $json = json_encode($params);
-    var_dump($json);
+    //var_dump($json);
+    $my_post = array(
+      'post_title'    => wp_strip_all_tags( 'pagamento' ),
+      'post_type'     => 'feedings'
+          );
+    wp_insert_post($my_post);
 
     //echo json_encode(["message" => "Authorized"]);
 }
