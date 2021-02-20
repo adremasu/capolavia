@@ -116,6 +116,7 @@ require_once('libs/GoogleCalendar.php');
 require_once('libs/email_templates.php');
 require_once('libs/pdf-bookings.php');
 require_once('libs/class-booking-user.php');
+require_once('libs/chickenFeeder.php');
 
 
 add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
