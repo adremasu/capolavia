@@ -19,7 +19,12 @@ function plugin_name_route_api($req) {
     }*/
     //var_dump($params);
     $json = json_encode($params);
-    var_dump($json);
+    //var_dump($json);
+    $my_post = array(
+      'post_title'    => wp_strip_all_tags( 'pagamento' ),
+      'post_type'     => 'feedings'
+          );
+    wp_insert_post($my_post);
 
     //echo json_encode(["message" => "Authorized"]);
 }
