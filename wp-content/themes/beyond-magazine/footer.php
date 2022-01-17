@@ -64,7 +64,7 @@
                                 <br />
                                 I contenuti di questo sito sono distribuiti con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Internazionale  4.0</a>. Condividi allo stesso modo.
                                 <br/>
-                                <span class="impressum">Capolavia Azienda Agricola di Marchetto Andrea, via Rodolfo Rossi 101, Rovigo (RO) - C.F. MRCNDR84B11H620W - P.I. 01523680294</span>
+                                <span class="impressum">Capolavia Azienda Agricola di Marchetto Andrea, via Rodolfo Rossi 66, Rovigo (RO) - C.F. MRCNDR84B11H620W - P.I. 01523680294</span>
                             </p>
                         </div>
                     </div>
