@@ -815,7 +815,7 @@ function GAnalytics() {
 
         </script>";
     }
-    echo "<script>
+    /*echo "<script>
     window.fbAsyncInit = function() {
         FB.init({
           appId      : '940504799317225',
@@ -835,7 +835,7 @@ function GAnalytics() {
   {lang: 'it', parsetags: 'explicit'}
 </script>
     ";
-
+*/
 }
 add_action('wp_footer', 'GAnalytics', 100);
 
