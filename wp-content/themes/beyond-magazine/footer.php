@@ -59,7 +59,7 @@
                         <div class="kt-copyright-column">
                             <p>
                                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-                                    <img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
+                                    <img alt="Licenza Creative Commons" width="80" height="15" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" />
                                 </a>
                                 <br />
                                 I contenuti di questo sito sono distribuiti con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Internazionale  4.0</a>. Condividi allo stesso modo.
