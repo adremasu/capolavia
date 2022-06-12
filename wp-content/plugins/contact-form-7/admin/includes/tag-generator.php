@@ -19,7 +19,8 @@ class WPCF7_TagGenerator {
 	public function add( $id, $title, $callback, $options = array() ) {
 		$id = trim( $id );
 
-		if ( '' === $id || ! wpcf7_is_name( $id ) ) {
+		if ( '' === $id
+		or ! wpcf7_is_name( $id ) ) {
 			return false;
 		}
 
@@ -27,7 +28,8 @@ class WPCF7_TagGenerator {
 			'title' => $title,
 			'content' => 'tag-generator-panel-' . $id,
 			'options' => $options,
-			'callback' => $callback );
+			'callback' => $callback,
+		);
 
 		return true;
 	}
@@ -40,9 +42,11 @@ class WPCF7_TagGenerator {
 				'<a href="#TB_inline?width=900&height=500&inlineId=%1$s" class="thickbox button" title="%2$s">%3$s</a>',
 				esc_attr( $panel['content'] ),
 				esc_attr( sprintf(
+					/* translators: %s: title of form-tag like 'email' or 'checkboxes' */
 					__( 'Form-tag Generator: %s', 'contact-form-7' ),
 					$panel['title'] ) ),
-				esc_html( $panel['title'] ) );
+				esc_html( $panel['title'] )
+			);
 		}
 
 		echo '</span>';
@@ -56,7 +60,8 @@ class WPCF7_TagGenerator {
 			$options = array_merge( $options, array(
 				'id' => $id,
 				'title' => $panel['title'],
-				'content' => $panel['content'] ) );
+				'content' => $panel['content'],
+			) );
 
 			if ( is_callable( $callback ) ) {
 				echo sprintf( '<div id="%s" class="hidden">',

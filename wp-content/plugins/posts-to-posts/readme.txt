@@ -1,12 +1,14 @@
 === Posts 2 Posts ===
 
-Contributors: scribu, ciobi  
-Tags: connections, custom post types, relationships, many-to-many, users  
-Requires at least: 3.9  
-Tested up to: 4.3  
-Stable tag: 1.6.5  
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+Contributors: scribu, ciobi, ayecode, stiofansisland
+Tags: connections, custom post types, relationships, many-to-many, users
+Requires at least: 4.5
+Requires PHP: 5.6
+Tested up to: 5.9
+Stable tag: 1.7
+
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Efficient many-to-many connections between posts, pages, custom post types, users.
 
@@ -27,7 +29,9 @@ Additionally, you can create many-to-many relationships between posts and users.
 
 = Support & Maintenance =
 
-I, scribu, will not be offering support (either free or paid) for this plugin anymore.
+AyeCode Ltd have committed to security and maintenance updates due to this plugins requirement in our [List Manager Extension.](https://wpgeodirectory.com/downloads/list-manager/)
+
+~~I, scribu, will not be offering support (either free or paid) for this plugin anymore.~~
 
 If you want to help maintain the plugin, fork it [on github](https://github.com/scribu/wp-posts-to-posts) and open pull requests.
 
@@ -38,7 +42,7 @@ Links: [**Documentation**](http://github.com/scribu/wp-posts-to-posts/wiki) | [P
 See [Installing Plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
 
 After activating it, refer to the [Basic usage](https://github.com/scribu/wp-posts-to-posts/wiki/Basic-usage) tutorial.
- 
+
 Additional info can be found on the [wiki](http://github.com/scribu/wp-posts-to-posts/wiki).
 
 == Frequently Asked Questions ==
@@ -56,6 +60,13 @@ Additional info can be found on the [wiki](http://github.com/scribu/wp-posts-to-
 5. Connection Types screen
 
 == Changelog ==
+
+= 1.7 =
+* Update Mustache package to support PHP 8.
+
+= 1.6.6 =
+* AyeCode Ltd have committed to security and maintenance updates - INFO
+* Deprecated PHP notices showing with latest WordPress - FIXED
 
 = 1.6.5 =
 * fixed error when Mustache is already loaded. props ApatheticG

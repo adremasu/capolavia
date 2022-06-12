@@ -4,9 +4,9 @@
 ** Akismet API: http://akismet.com/development/api/
 **/
 
-add_filter( 'wpcf7_spam', 'wpcf7_akismet' );
+add_filter( 'wpcf7_spam', 'wpcf7_akismet', 10, 2 );
 
-function wpcf7_akismet( $spam ) {
+function wpcf7_akismet( $spam, $submission ) {
 	if ( $spam ) {
 		return $spam;
 	}
@@ -32,9 +32,15 @@ function wpcf7_akismet( $spam ) {
 	$c['user_ip'] = $_SERVER['REMOTE_ADDR'];
 	$c['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 	$c['referrer'] = $_SERVER['HTTP_REFERER'];
-
-	// http://blog.akismet.com/2012/06/19/pro-tip-tell-us-your-comment_type/
 	$c['comment_type'] = 'contact-form';
+
+	$datetime = date_create_immutable(
+		'@' . $submission->get_meta( 'timestamp' )
+	);
+
+	if ( $datetime ) {
+		$c['comment_date_gmt'] = $datetime->format( DATE_ATOM );
+	}
 
 	if ( $permalink = get_permalink() ) {
 		$c['permalink'] = $permalink;
@@ -43,90 +49,153 @@ function wpcf7_akismet( $spam ) {
 	$ignore = array( 'HTTP_COOKIE', 'HTTP_COOKIE2', 'PHP_AUTH_PW' );
 
 	foreach ( $_SERVER as $key => $value ) {
-		if ( ! in_array( $key, (array) $ignore ) )
+		if ( ! in_array( $key, (array) $ignore ) ) {
 			$c["$key"] = $value;
+		}
 	}
 
-	return wpcf7_akismet_comment_check( $c );
+	$c = apply_filters( 'wpcf7_akismet_parameters', $c );
+
+	if ( wpcf7_akismet_comment_check( $c ) ) {
+		$spam = true;
+
+		$submission->add_spam_log( array(
+			'agent' => 'akismet',
+			'reason' => __( "Akismet returns a spam response.", 'contact-form-7' ),
+		) );
+	} else {
+		$spam = false;
+	}
+
+	return $spam;
 }
 
-function wpcf7_akismet_is_available() {
-	if ( is_callable( array( 'Akismet', 'get_api_key' ) ) ) { // Akismet v3.0+
-		return (bool) Akismet::get_api_key();
-	}
 
-	if ( function_exists( 'akismet_get_key' ) ) {
-		return (bool) akismet_get_key();
+/**
+ * Returns true if Akismet is active and has a valid API key.
+ */
+function wpcf7_akismet_is_available() {
+	if ( is_callable( array( 'Akismet', 'get_api_key' ) ) ) {
+		return (bool) Akismet::get_api_key();
 	}
 
 	return false;
 }
 
+
+/**
+ * Returns an array of parameters based on the current form submission.
+ * Returns false if Akismet is not active on the contact form.
+ */
 function wpcf7_akismet_submitted_params() {
+	$akismet_tags = array_filter(
+		wpcf7_scan_form_tags(),
+		function ( $tag ) {
+			$akismet_option = $tag->get_option( 'akismet',
+				'(author|author_email|author_url)',
+				true
+			);
+
+			return (bool) $akismet_option;
+		}
+	);
+
+	if ( ! $akismet_tags ) { // Akismet is not active on this contact form.
+		return false;
+	}
+
 	$params = array(
 		'author' => '',
 		'author_email' => '',
 		'author_url' => '',
-		'content' => '' );
-
-	$has_akismet_option = false;
+		'content' => '',
+	);
 
 	foreach ( (array) $_POST as $key => $val ) {
-		if ( '_wpcf7' == substr( $key, 0, 6 ) || '_wpnonce' == $key ) {
+		if ( '_wpcf7' == substr( $key, 0, 6 )
+		or '_wpnonce' == $key ) {
 			continue;
 		}
 
-		if ( is_array( $val ) ) {
-			$val = implode( ', ', wpcf7_array_flatten( $val ) );
-		}
-
-		$val = trim( $val );
-
-		if ( 0 == strlen( $val ) ) {
-			continue;
-		}
-
-		if ( $tags = wpcf7_scan_shortcode( array( 'name' => $key ) ) ) {
-			$tag = $tags[0];
-			$tag = new WPCF7_Shortcode( $tag );
-
-			$akismet = $tag->get_option( 'akismet',
-				'(author|author_email|author_url)', true );
-
-			if ( $akismet ) {
-				$has_akismet_option = true;
-
-				if ( 'author' == $akismet ) {
-					$params[$akismet] = trim( $params[$akismet] . ' ' . $val );
-				} elseif ( '' == $params[$akismet] ) {
-					$params[$akismet] = $val;
-				}
+		$vals = array_filter(
+			wpcf7_array_flatten( $val ),
+			function ( $val ) {
+				return '' !== trim( $val );
 			}
+		);
+
+		if ( empty( $vals ) ) {
+			continue;
 		}
 
-		$params['content'] .= "\n\n" . $val;
+		if ( $tags = wpcf7_scan_form_tags( array( 'name' => $key ) ) ) {
+			$tag = $tags[0];
+
+			$akismet_option = $tag->get_option( 'akismet',
+				'(author|author_email|author_url)',
+				true
+			);
+
+			if ( 'author' === $akismet_option ) {
+				$params['author'] = sprintf(
+					'%s %s',
+					$params['author'],
+					implode( ' ', $vals )
+				);
+
+				continue;
+			}
+
+			if ( 'author_email' === $akismet_option
+			and '' === $params['author_email'] ) {
+				$params['author_email'] = $vals[0];
+				continue;
+			}
+
+			if ( 'author_url' === $akismet_option
+			and '' === $params['author_url'] ) {
+				$params['author_url'] = $vals[0];
+				continue;
+			}
+
+			$vals = array_filter(
+				$vals,
+				function ( $val ) use ( $tag ) {
+					if ( wpcf7_form_tag_supports( $tag->type, 'selectable-values' )
+					and in_array( $val, $tag->labels ) ) {
+						return false;
+					} else {
+						return true;
+					}
+				}
+			);
+		}
+
+		if ( $vals ) {
+			$params['content'] .= "\n\n" . implode( ', ', $vals );
+		}
 	}
 
-	if ( ! $has_akismet_option ) {
-		return false;
-	}
-
-	$params['content'] = trim( $params['content'] );
+	$params = array_map( 'trim', $params );
 
 	return $params;
 }
 
-function wpcf7_akismet_comment_check( $comment ) {
-	global $akismet_api_host, $akismet_api_port;
 
+/**
+ * Sends data to Akismet.
+ *
+ * @param array $comment Submission and environment data.
+ * @return bool True if Akismet called it spam, or false otherwise.
+ */
+function wpcf7_akismet_comment_check( $comment ) {
 	$spam = false;
 	$query_string = wpcf7_build_query( $comment );
 
-	if ( is_callable( array( 'Akismet', 'http_post' ) ) ) { // Akismet v3.0+
+	if ( is_callable( array( 'Akismet', 'http_post' ) ) ) {
 		$response = Akismet::http_post( $query_string, 'comment-check' );
 	} else {
-		$response = akismet_http_post( $query_string, $akismet_api_host,
-			'/1.1/comment-check', $akismet_api_port );
+		return $spam;
 	}
 
 	if ( 'true' == $response[1] ) {
@@ -139,5 +208,3 @@ function wpcf7_akismet_comment_check( $comment ) {
 
 	return apply_filters( 'wpcf7_akismet_comment_check', $spam, $comment );
 }
-
-?>
