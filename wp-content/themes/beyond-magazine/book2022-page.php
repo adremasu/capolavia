@@ -59,26 +59,34 @@ $service = new Google_Service_Calendar($client);
 
 $storeCalendarId = esc_attr( get_option('booking_store_calendar_id') );
 $deliveryCalendarId = esc_attr( get_option('booking_delivery_calendar_id') );
-
+$maxResults = esc_attr( get_option('booking_eventsnumber_min') );
 $optParams = array(
-    'maxResults' => 1,
+    'maxResults' => $maxResults,
     'orderBy' => 'startTime',
     'singleEvents' => TRUE,
-    'timeMin' => date('c', strtotime('tomorrow')),
+    'timeMin' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_min') ).' days')),
 );
 
-$events = $service->events->listEvents($calendarId);
+#$storeEvents = $service->events->listEvents($storeCalendarId);
 
-$results = $service->events->listEvents($calendarId, $optParams);
+$storeEventsObj = $service->events->listEvents($calendarId, $optParams);
+$storeEventsList = array();
 
-$deliveries = $service->events->listEvents($deliveryCalendarId, $optParams);
+$deliveriyEventsObj = $service->events->listEvents($deliveryCalendarId, $optParams);
+$deliveryEventsList = array();
 
-foreach ($results->getItems() as $item) {
-    $start = $item->getStart();
+$i = 0;
+foreach ($storeEventsObj->getItems() as $event) {    
+    $storeEvents[$i]['start'] = $event->getStart();
+    $storeEvents[$i]['end'] = $event->getEnd();
+    $i++;
 }
-foreach ($deliveries->getItems() as $delivery) {
-    $deliveryStart = $delivery->getStart();
-    $deliveryEnd = $delivery->getEnd();
+
+$i = 0;
+foreach ($deliveriyEventsObj->getItems() as $event) {
+    $deliveryEvents[$i]['start'] = $event->getStart();
+    $deliveryEvents[$i]['end'] = $event->getEnd();
+    $i++;
 }
 $EUID = $_GET['uid'];
 #$_user = new BookingUser($EUID);
@@ -88,7 +96,7 @@ $EUID = $_GET['uid'];
     <div class="row" id="kt-main" data-ng-app="bookingApp"  data-ng-controller="bookingController">
         <div ng-show="::false" style="position: fixed; height: 100%; width: 100%; background-color: #353535; top: 0; left: 0; z-index: 10000; opacity: 0.5">
             <div style="position: relative; top: 50%; display: table; margin: 0 auto; font-size: 26px; color: #CCC;">
-                Sto caricando...
+                Controllo cosa c'è nell'orto...
             </div>
         </div>
         <div class="col-md-12" ng-cloack>
@@ -287,22 +295,31 @@ $EUID = $_GET['uid'];
                             </label>
                         </div>
 
-                                <?php
-
-                                foreach ($results->getItems() as $item) {
-                                    $start = $item->getStart();
-                                    $end = $item->getEnd();
-                                }
-                                $sdate = new DateTime($start['dateTime'], new DateTimeZone(date_default_timezone_get()));
-                                ?>
-                                <?php
-
-                                ?>
-                                <div ng-init="date = '<?php echo date_i18n('U',strtotime($start['dateTime'])) + date(Z);?>'"></div>
-                                <div ng-init="delivery_date = '<?php echo date_i18n('U',strtotime($deliveryStart['dateTime'])) + date(Z);?>'"></div>
                         <?php
-                        //date_default_timezone_set('Europe/Rome');
+
+                        foreach ($results->getItems() as $item) {
+                            $start = $item->getStart();
+                            $end = $item->getEnd();
+                        }
+
+                        echo '<ul>';
+
+                        foreach($deliveryEvents() as $event){
+                            echo '<li>';
+                            var_dump($event);
+                            echo date_i18n('l j F Y',strtotime($event['start'])+ date(Z));
+                            echo date_i18n('l j F Y',strtotime($event['end'])+ date(Z));
+                            echo '</li>';
+
+                        }
+
+
+                        $sdate = new DateTime($start['dateTime'], new DateTimeZone(date_default_timezone_get()));
                         ?>
+
+                        <div ng-init="date = '<?php echo date_i18n('U',strtotime($start['dateTime'])) + date(Z);?>'"></div>
+                        <div ng-init="delivery_date = '<?php echo date_i18n('U',strtotime($deliveryStart['dateTime'])) + date(Z);?>'"></div>
+
                         <div class="col-xs-12 col-md-12">
                             <div class="row" style="margin-top: 1em">
                                 <label style="margin:0" class="col-md-12" for="delivery-check">Scegli la modalità di consegna
