@@ -75,6 +75,12 @@ class OptionsPage {
         register_setting( 'booking_settings', 'booking_email_address' );
         register_setting( 'booking_settings', 'booking_calendar_id' );
         register_setting( 'booking_settings', 'booking_google_developer_key' );
+        register_setting( 'booking_settings', 'booking_store_calendar_id' );
+        register_setting( 'booking_settings', 'booking_delivery_calendar_id' );
+        register_setting( 'booking_settings', 'booking_searchdate_range_min' );
+        register_setting( 'booking_settings', 'booking_searchdate_range_max' );
+        register_setting( 'booking_settings', 'booking_eventsnumber_min' );
+        register_setting( 'booking_settings', 'booking_eventsnumber_max' );
 
         add_settings_section(
             'bookings_options',
@@ -208,9 +214,25 @@ class OptionsPage {
                         <th scope="row">Google Developer Key</th>
                         <td><input type="text" name="booking_google_developer_key" value="<?php echo esc_attr( get_option('booking_google_developer_key') ); ?>" /></td>
                     </tr>
-
+                    <tr valign="top">
+                        <th scope="row">Store Calendar ID</th>
+                        <td><input type="text" name="booking_store_calendar_id" value="<?php echo esc_attr( get_option('booking_store_calendar_id') ); ?>" /></td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Search date range MAX - MIN</th>
+                        <td><input type="text" name="booking_searchdate_range_min" value="<?php echo esc_attr( get_option('booking_delivery_calendar_id') ); ?>" /></td>
+                        <td><input type="text" name="booking_searchdate_range_max" value="<?php echo esc_attr( get_option('booking_delivery_calendar_id') ); ?>" /></td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Delivery Calendar ID</th>
+                        <td><input type="text" name="booking_delivery_calendar_id" value="<?php echo esc_attr( get_option('booking_delivery_calendar_id') ); ?>" /></td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Events number MAX - MIN</th>
+                        <td><input type="text" name="booking_eventsnumber_min" value="<?php echo esc_attr( get_option('booking_delivery_calendar_id') ); ?>" /></td>
+                        <td><input type="text" name="booking_eventsnumber_max" value="<?php echo esc_attr( get_option('booking_delivery_calendar_id') ); ?>" /></td>
+                    </tr>                    
                 </table>
-
                 <?php submit_button(); ?>
 
             </form>
