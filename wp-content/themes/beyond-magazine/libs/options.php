@@ -219,7 +219,7 @@ class OptionsPage {
                         <td><input type="text" name="booking_store_calendar_id" value="<?php echo esc_attr( get_option('booking_store_calendar_id') ); ?>" /></td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row">Search date range MAX - MIN</th>
+                        <th scope="row">Search date range MIN - MAX</th>
                         <td><input type="text" name="booking_searchdate_range_min" value="<?php echo esc_attr( get_option('booking_searchdate_range_min') ); ?>" /></td>
                         <td><input type="text" name="booking_searchdate_range_max" value="<?php echo esc_attr( get_option('booking_searchdate_range_max') ); ?>" /></td>
                     </tr>
@@ -228,7 +228,7 @@ class OptionsPage {
                         <td><input type="text" name="booking_delivery_calendar_id" value="<?php echo esc_attr( get_option('booking_delivery_calendar_id') ); ?>" /></td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row">Events number MAX - MIN</th>
+                        <th scope="row">Events number MIN - MAX</th>
                         <td><input type="text" name="booking_eventsnumber_min" value="<?php echo esc_attr( get_option('booking_eventsnumber_min') ); ?>" /></td>
                         <td><input type="text" name="booking_eventsnumber_max" value="<?php echo esc_attr( get_option('booking_eventsnumber_max') ); ?>" /></td>
                     </tr>                    

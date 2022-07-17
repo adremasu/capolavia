@@ -1,0 +1,86 @@
+{
+  "_from": "grunt-contrib-jasmine@~0.4.2",
+  "_id": "grunt-contrib-jasmine@0.4.2",
+  "_inBundle": false,
+  "_integrity": "sha1-PzYvSxzkB4qlbbnFpZhFzNOyUdc=",
+  "_location": "/grunt-contrib-jasmine",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "grunt-contrib-jasmine@~0.4.2",
+    "name": "grunt-contrib-jasmine",
+    "escapedName": "grunt-contrib-jasmine",
+    "rawSpec": "~0.4.2",
+    "saveSpec": null,
+    "fetchSpec": "~0.4.2"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/grunt-contrib-jasmine/-/grunt-contrib-jasmine-0.4.2.tgz",
+  "_shasum": "3f362f4b1ce4078aa56db9c5a59845ccd3b251d7",
+  "_spec": "grunt-contrib-jasmine@~0.4.2",
+  "_where": "/var/www/capolav.ia/public_html/wp-content/themes/beyond-magazine",
+  "author": {
+    "name": "Grunt Team",
+    "url": "http://gruntjs.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/gruntjs/grunt-contrib-jasmine/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Jarrod Overson",
+      "url": "http://jarrodoverson.com"
+    },
+    {
+      "name": "\"Cowboy\" Ben Alman",
+      "url": "http://benalman.com"
+    }
+  ],
+  "dependencies": {
+    "grunt-lib-phantomjs": "~0.3.0",
+    "rimraf": "~2.0.3"
+  },
+  "deprecated": false,
+  "description": "Run jasmine specs headlessly through PhantomJS.",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-internal": "~0.4.0",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "homepage": "https://github.com/gruntjs/grunt-contrib-jasmine",
+  "keywords": [
+    "gruntplugin",
+    "jasmine",
+    "unit",
+    "phantomjs",
+    "headless",
+    "tests"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/gruntjs/grunt-contrib-jasmine/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "name": "grunt-contrib-jasmine",
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gruntjs/grunt-contrib-jasmine.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "version": "0.4.2"
+}

@@ -54,40 +54,42 @@ $client->setApplicationName("My Application");
 $client->setDeveloperKey(DEV_KEY);
 
 $service = new Google_Service_Calendar($client);
-
 // Print the next 10 events on the user's calendar.
 
 $storeCalendarId = esc_attr( get_option('booking_store_calendar_id') );
 $deliveryCalendarId = esc_attr( get_option('booking_delivery_calendar_id') );
-$maxResults = esc_attr( get_option('booking_eventsnumber_min') );
+$maxResults = esc_attr( get_option('booking_eventsnumber_max') );
 $optParams = array(
     'maxResults' => $maxResults,
     'orderBy' => 'startTime',
     'singleEvents' => TRUE,
     'timeMin' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_min') ).' days')),
+    'timeMax' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_max') ).' days'))
 );
+$storeEvents = $service->events->listEvents($storeCalendarId);
+$storeEventsObj = $service->events->listEvents($storeCalendarId, $optParams);
 
-#$storeEvents = $service->events->listEvents($storeCalendarId);
-
-$storeEventsObj = $service->events->listEvents($calendarId, $optParams);
-$storeEventsList = array();
-
+$deliveryEvents = $service->events->listEvents($storeCalendarId);
 $deliveriyEventsObj = $service->events->listEvents($deliveryCalendarId, $optParams);
+
+$storeEventsList = array();
 $deliveryEventsList = array();
 
 $i = 0;
 foreach ($storeEventsObj->getItems() as $event) {    
-    $storeEvents[$i]['start'] = $event->getStart();
-    $storeEvents[$i]['end'] = $event->getEnd();
+    $storeEventsList[$i]['start'] = $event->getStart();
+    $storeEventsList[$i]['end'] = $event->getEnd();
     $i++;
 }
 
 $i = 0;
 foreach ($deliveriyEventsObj->getItems() as $event) {
-    $deliveryEvents[$i]['start'] = $event->getStart();
-    $deliveryEvents[$i]['end'] = $event->getEnd();
+    $deliveryEventsList[$i]['start'] = $event->getStart();
+    $deliveryEventsList[$i]['end'] = $event->getEnd();
     $i++;
 }
+
+
 $EUID = $_GET['uid'];
 #$_user = new BookingUser($EUID);
 #$user = $_user->get_user_data();
@@ -104,7 +106,7 @@ $EUID = $_GET['uid'];
 
                 <p data-ng-hide="success">
 
-                  <span>Ecco i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?></span>
+                  <span>Cosa ci mangiamo di buono oggi?</span>
                 </p>
                 <p data-ng-show="success" ><span>La tua prenotazione per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?> è stata registrata.</span></p>
             </div>
@@ -114,9 +116,6 @@ $EUID = $_GET['uid'];
             <?php
             the_content();
             ?>
-            <p>
-                Sono qui elencati i prodotti disponibili per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?>.
-            </p>
         </div>
 
 
@@ -295,28 +294,6 @@ $EUID = $_GET['uid'];
                             </label>
                         </div>
 
-                        <?php
-
-                        foreach ($results->getItems() as $item) {
-                            $start = $item->getStart();
-                            $end = $item->getEnd();
-                        }
-
-                        echo '<ul>';
-
-                        foreach($deliveryEvents() as $event){
-                            echo '<li>';
-                            var_dump($event);
-                            echo date_i18n('l j F Y',strtotime($event['start'])+ date(Z));
-                            echo date_i18n('l j F Y',strtotime($event['end'])+ date(Z));
-                            echo '</li>';
-
-                        }
-
-
-                        $sdate = new DateTime($start['dateTime'], new DateTimeZone(date_default_timezone_get()));
-                        ?>
-
                         <div ng-init="date = '<?php echo date_i18n('U',strtotime($start['dateTime'])) + date(Z);?>'"></div>
                         <div ng-init="delivery_date = '<?php echo date_i18n('U',strtotime($deliveryStart['dateTime'])) + date(Z);?>'"></div>
 
@@ -325,33 +302,74 @@ $EUID = $_GET['uid'];
                                 <label style="margin:0" class="col-md-12" for="delivery-check">Scegli la modalità di consegna
                                 </label>
                                 <div class="col-md-6">
-                                    <div class="radio">
-                                        <input class="radio input-lg" required data-ng-model="user.delivery" id="delivery" type="radio" value="1" name="delivery" data-ng-change="deliveryChange()"/>
-                                        <label for="delivery">Consegna a domicilio (2€)</label>
-                                        <div data-ng-show="user.delivery == 1">
-                                            <label for="address">Dove vuoi ricevere la verdura? *</label>
-                                            <input data-ng-disabled="user.delivery != 1" data-ng-required="user.delivery == 1" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
+                                    <div class="panel panel-default" id="panel-delivery">
+                                        <div class="panel-heading">
+                                            Consegna a domicilio (2€)
                                         </div>
-                                        <p class="hidden-xs">
-                                            La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])+ date(Z)).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])+ date(Z)) ?></span></strong>
-                                        </p>
-                                    </div>
+                                        <div class="panel-body">
+                                            <p class="list-group">
+                                            <?php 
+                                            foreach ($deliveryEventsList as $event){
+                                            $start=$event['start'];
+                                            $end = $event['end'];
+                                            ?>                                          
+                                            <label for="delivery">
+                                                <button id="D_<?php echo strtotime($start->dateTime).'_D'?>" type="button" data-ng-click="dateSelect(<?php 
+                                            
+                                            echo strtotime($start->dateTime)+ date(Z).", 'delivery', "?>$event)" class="list-group-item mode-selector">
 
+                                                    <i class="fa fa-truck"></i> <?php 
+                                            
+                                            echo date_i18n('l j F Y',strtotime($start->dateTime)+ date(Z)).
+                                            '<strong> tra le '.date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z)).'</strong>'; ?>
+                                                </button>
+                                            </label>
+
+                                            <?php        
+                                            }
+                                            ?>      
+                                                <div class="radio">
+                                                    <input class="radio input-lg" required data-ng-model="mode" id="delivery" type="radio" value="delivery" name="mode" data-ng-change="deliverySelect()"/>
+                                                </div>
+                                            </p>                               
+
+                                            <div data-ng-show="mode == 'delivery'">
+                                                <label for="address">Dove vuoi ricevere la verdura? *</label>
+                                                <input data-ng-disabled="mode == 'store'" data-ng-required="mode == 'delivery'" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="panel panel-default" id="panel-store">
+                                        <div class="panel-heading">
+                                            Ritiro in azienda                                     
+                                        </div>
+                                        <div class="panel-body">
+                                            <p class="list-group">
 
-                                    <div class="radio">
-                                        <input class="radio input-lg" required data-ng-model="user.delivery"  data-ng-change="deliveryChange()" id="in-company" type="radio" value="0" name="delivery"/>
-                                        <label for="in-company"> Ritiro in azienda
-                                        </label>
+                                     
+                                         <?php                                     
+                                         foreach($storeEventsList as $event){
+                                                $start = $event['start'];
+                                                $end = $event['end'];
+                                                echo "<label for='store'><button id='D_".strtotime($start->dateTime)."_S' type='button' data-ng-click='dateSelect(";
+                                                echo strtotime($start->dateTime)+ date(Z);
+                                                echo ",\"store\",\$event)' class='list-group-item mode-selector'><i class='fa fa-map-marker'></i>";
+                                                echo date_i18n('l j F Y',strtotime($start->dateTime)+ date(Z))." <strong> tra le"; 
+                                                echo date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z));
+                                                echo "</strong>
+                                                </button>
+                                                </label>"; 
+                                         }?>
+                                        </div>
+                                        <div class="radio">
+                                                        <input class="radio input-lg" required data-ng-model="mode" id="store" type="radio" value="store" name="mode" data-ng-change="deliverySelect()"/>
+                                                    </div>
                                     </div>
-                                    <p class="hidden-xs">
-                                        Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])+ date(Z)).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($end['dateTime'])+ date(Z)) ?></span></strong>
-                                    </p>
                                 </div>
-                            </div>
-
-                        </div>
                         <div class="col-md-12 col-xs-12 visible-xs-block">
                             <p>
                                 Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($end['dateTime'])+ date(Z)) ?></span></strong>
@@ -417,3 +435,4 @@ $EUID = $_GET['uid'];
 <?php
 get_footer();
 ?>
+ 
