@@ -12,6 +12,22 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
   $scope.deliveryChange = ->
     $scope.emailDate = if $scope.user.delivery == '1' then $scope.delivery_date else $scope.date
 
+  $scope.dateSelect = (date, mode, event)->
+    $scope.date = date
+    $scope.mode = mode
+    prevModeSelected = jQuery('.panel-success')
+    newModeSelected = jQuery('#panel-'+mode) 
+    clickedButtonId = event.currentTarget.id
+
+    prevModeSelected.removeClass('panel-success').addClass('panel-default')
+    prevModeSelected.find('button').removeClass('list-group-item-success')
+    newModeSelected.addClass('panel-success').removeClass('panel-default')
+    jQuery('#'+clickedButtonId).addClass('list-group-item-success')
+
+
+    return false
+
+    
   $scope.saveBooking = (e)->
     e.preventDefault()
     $scope.loading = true

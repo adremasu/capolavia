@@ -1,0 +1,85 @@
+{
+  "_from": "grunt-contrib-compass@~0.2.0",
+  "_id": "grunt-contrib-compass@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-F2QloIQpOLaLkqwAceayJnWbChQ=",
+  "_location": "/grunt-contrib-compass",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "grunt-contrib-compass@~0.2.0",
+    "name": "grunt-contrib-compass",
+    "escapedName": "grunt-contrib-compass",
+    "rawSpec": "~0.2.0",
+    "saveSpec": null,
+    "fetchSpec": "~0.2.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/grunt-contrib-compass/-/grunt-contrib-compass-0.2.0.tgz",
+  "_shasum": "176425a0842938b68b92ac0071e6b226759b0a14",
+  "_spec": "grunt-contrib-compass@~0.2.0",
+  "_where": "/var/www/capolav.ia/public_html/wp-content/themes/beyond-magazine",
+  "author": {
+    "name": "Grunt Team",
+    "url": "http://gruntjs.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/gruntjs/grunt-contrib-compass/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Sindre Sorhus",
+      "url": "http://github.com/sindresorhus"
+    }
+  ],
+  "dependencies": {
+    "grunt-lib-contrib": "~0.5.2",
+    "tmp": "0.0.16"
+  },
+  "deprecated": false,
+  "description": "Compile Sass to CSS using Compass",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-internal": "~0.4.2",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "homepage": "https://github.com/gruntjs/grunt-contrib-compass",
+  "keywords": [
+    "gruntplugin",
+    "compass",
+    "scss",
+    "sass",
+    "css",
+    "compile",
+    "preprocessor",
+    "style"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/gruntjs/grunt-contrib-compass/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "name": "grunt-contrib-compass",
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gruntjs/grunt-contrib-compass.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "version": "0.2.0"
+}

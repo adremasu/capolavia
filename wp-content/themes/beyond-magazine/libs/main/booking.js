@@ -19,6 +19,19 @@
       $scope.deliveryChange = function() {
         return $scope.emailDate = $scope.user.delivery === '1' ? $scope.delivery_date : $scope.date;
       };
+      $scope.dateSelect = function(date, mode, event) {
+        var clickedButtonId, newModeSelected, prevModeSelected;
+        $scope.date = date;
+        $scope.mode = mode;
+        prevModeSelected = jQuery('.panel-success');
+        newModeSelected = jQuery('#panel-' + mode);
+        clickedButtonId = event.currentTarget.id;
+        prevModeSelected.removeClass('panel-success').addClass('panel-default');
+        prevModeSelected.find('button').removeClass('list-group-item-success');
+        newModeSelected.addClass('panel-success').removeClass('panel-default');
+        jQuery('#' + clickedButtonId).addClass('list-group-item-success');
+        return false;
+      };
       $scope.saveBooking = function(e) {
         var date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
