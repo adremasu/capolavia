@@ -1,3 +1,9 @@
+document.addEventListener 'wheel', (event) ->
+  if document.activeElement.type == 'number'
+    document.activeElement.blur()
+  return
+
+
 bookingApp = angular.module('bookingApp', ['ngRoute'])
 
 bookingApp.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
@@ -13,6 +19,8 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
     $scope.emailDate = if $scope.user.delivery == '1' then $scope.delivery_date else $scope.date
 
   $scope.dateSelect = (date, mode, event)->
+    console.log date
+    console.log mode
     $scope.date = date
     $scope.mode = mode
     prevModeSelected = jQuery('.panel-success')
@@ -33,7 +41,12 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
     $scope.loading = true
     productsData = $scope.products
     userData = $scope.user
-    date = $scope.emailDate
+    
+    #date value legacy: i have to keep the possibility to get emailDate value, 
+    #pofor a smooth update to 2022 version
+    date = if $scope.emailDate then $scope.emailDate else $scope.date
+    
+    bookingDate = $scope.date
     e.target.disabled =  true
 
     # se il form è valido invia l'ordine

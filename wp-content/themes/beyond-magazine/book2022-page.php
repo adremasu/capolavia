@@ -108,7 +108,7 @@ $EUID = $_GET['uid'];
 
                   <span>Cosa ci mangiamo di buono oggi?</span>
                 </p>
-                <p data-ng-show="success" ><span>La tua prenotazione per <?php echo date_i18n('l j F ',strtotime($start['dateTime'])+ date(Z)) ?> è stata registrata.</span></p>
+                <p data-ng-show="success" data-ng-cloak ><span>La tua prenotazione per {{ date*1000 | date : 'd MMMM'}} è stata registrata.</span></p>
             </div>
         </div>
         <div class="col-md-12 description" data-ng-hide="success">
@@ -139,6 +139,11 @@ $EUID = $_GET['uid'];
                                   <td data-ng-if="product.weight">{{product.weight}} {{product.weight_name}}</td>
                               </tr>
                           </table>
+                          <p> Modalità: 
+                            <span data-ng-show="mode=='delivery'" >Consegna a domicilio ({{user.address}})</span>
+                            <span data-ng-show="mode=='store'">Ritiro in azienda</span>
+                          </p>
+                          <p> Data: {{ date*1000 | date : 'd MMMM'}} 
                           <p>Note: <br>{{user.notes}}</p>
                           <p data-ng-if="user.delivery == '1'">Consegna presso:{{user.address}}</p>
                           <p data-ng-if="user.delivery == '0'">Ritiro in azienda in via Rodolfo Rossi 66, Rovigo(loc. Grignano Polesine)</p>
@@ -320,8 +325,8 @@ $EUID = $_GET['uid'];
 
                                                     <i class="fa fa-truck"></i> <?php 
                                             
-                                            echo date_i18n('l j F Y',strtotime($start->dateTime)+ date(Z)).
-                                            '<strong> tra le '.date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z)).'</strong>'; ?>
+                                            echo date_i18n('<b>l</b> j F',strtotime($start->dateTime)+ date(Z)).
+                                            ' tra le '.date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z)); ?>
                                                 </button>
                                             </label>
 
@@ -357,10 +362,10 @@ $EUID = $_GET['uid'];
                                                 $end = $event['end'];
                                                 echo "<label for='store'><button id='D_".strtotime($start->dateTime)."_S' type='button' data-ng-click='dateSelect(";
                                                 echo strtotime($start->dateTime)+ date(Z);
-                                                echo ",\"store\",\$event)' class='list-group-item mode-selector'><i class='fa fa-map-marker'></i>";
-                                                echo date_i18n('l j F Y',strtotime($start->dateTime)+ date(Z))." <strong> tra le"; 
+                                                echo ",\"store\",\$event)' class='list-group-item mode-selector'><i class='fa fa-map-marker'></i> ";
+                                                echo date_i18n('<b>l</b> j F',strtotime($start->dateTime)+ date(Z))." tra le"; 
                                                 echo date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z));
-                                                echo "</strong>
+                                                echo "
                                                 </button>
                                                 </label>"; 
                                          }?>

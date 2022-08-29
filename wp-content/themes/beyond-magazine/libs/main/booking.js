@@ -1,6 +1,12 @@
 (function() {
   var bookingApp;
 
+  document.addEventListener('wheel', function(event) {
+    if (document.activeElement.type === 'number') {
+      document.activeElement.blur();
+    }
+  });
+
   bookingApp = angular.module('bookingApp', ['ngRoute']);
 
   bookingApp.config([
@@ -21,6 +27,8 @@
       };
       $scope.dateSelect = function(date, mode, event) {
         var clickedButtonId, newModeSelected, prevModeSelected;
+        console.log(date);
+        console.log(mode);
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -33,12 +41,13 @@
         return false;
       };
       $scope.saveBooking = function(e) {
-        var date, product, productsData, request, selectedProducts, userData;
+        var bookingDate, date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
-        date = $scope.emailDate;
+        date = $scope.emailDate ? $scope.emailDate : $scope.date;
+        bookingDate = $scope.date;
         e.target.disabled = true;
         if ($scope.booking_form.$valid) {
           selectedProducts = {};

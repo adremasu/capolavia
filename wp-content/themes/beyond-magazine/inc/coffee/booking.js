@@ -1,6 +1,12 @@
 (function() {
   var bookingApp;
 
+  document.addEventListener('wheel', function(event) {
+    if (document.activeElement.type === 'number') {
+      document.activeElement.blur();
+    }
+  });
+
   bookingApp = angular.module('bookingApp', ['ngRoute']);
 
   bookingApp.config([
@@ -34,6 +40,8 @@
         var clickedButtonId,
     newModeSelected,
     prevModeSelected;
+        console.log(date);
+        console.log(mode);
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -46,7 +54,8 @@
         return false;
       };
       $scope.saveBooking = function(e) {
-        var date,
+        var bookingDate,
+    date,
     product,
     productsData,
     request,
@@ -56,7 +65,11 @@
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
-        date = $scope.emailDate;
+        
+        //date value legacy: i have to keep the possibility to get emailDate value, 
+        //pofor a smooth update to 2022 version
+        date = $scope.emailDate ? $scope.emailDate : $scope.date;
+        bookingDate = $scope.date;
         e.target.disabled = true;
         // se il form è valido invia l'ordine
         if ($scope.booking_form.$valid) {

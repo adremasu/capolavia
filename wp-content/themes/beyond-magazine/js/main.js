@@ -299,6 +299,10 @@ SHORTMONTH:"Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" "),WEEKENDR
 negSuf:"",posPre:"\u00a4",posSuf:""}]},id:"en-us",pluralCat:function(a,c){var e=a|0,f=c;u===f&&(f=Math.min(b(a),3));Math.pow(10,f);return 1==e&&0==f?"one":"other"}})}]),B(X).ready(function(){Zd(X,yc)}))})(window,document);!window.angular.$$csp().noInlineStyle&&window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 //# sourceMappingURL=angular.min.js.map
 
+angular.module("ngLocale", [], ["$provide", function($provide) {
+var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "many", OTHER: "other"};
+$provide.value("$locale", {"NUMBER_FORMATS":{"DECIMAL_SEP":",","GROUP_SEP":".","PATTERNS":[{"minInt":1,"minFrac":0,"macFrac":0,"posPre":"","posSuf":"","negPre":"-","negSuf":"","gSize":3,"lgSize":3,"maxFrac":3},{"minInt":1,"minFrac":2,"macFrac":0,"posPre":"\u00A4 ","posSuf":"","negPre":"\u00A4 -","negSuf":"","gSize":3,"lgSize":3,"maxFrac":2}],"CURRENCY_SYM":"€"},"pluralCat":function (n) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;},"DATETIME_FORMATS":{"MONTH":["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],"SHORTMONTH":["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],"DAY":["domenica","lunedì","martedì","mercoledì","giovedì","venerdì","sabato"],"SHORTDAY":["dom","lun","mar","mer","gio","ven","sab"],"AMPMS":["m.","p."],"medium":"dd/MMM/y HH:mm:ss","short":"dd/MM/yy HH:mm","fullDate":"EEEE d MMMM y","longDate":"dd MMMM y","mediumDate":"dd/MMM/y","shortDate":"dd/MM/yy","mediumTime":"HH:mm:ss","shortTime":"HH:mm"},"id":"it-it"});
+}]);
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -5098,6 +5102,12 @@ jQuery(document).ready(function($){
 (function() {
   var bookingApp;
 
+  document.addEventListener('wheel', function(event) {
+    if (document.activeElement.type === 'number') {
+      document.activeElement.blur();
+    }
+  });
+
   bookingApp = angular.module('bookingApp', ['ngRoute']);
 
   bookingApp.config([
@@ -5118,6 +5128,8 @@ jQuery(document).ready(function($){
       };
       $scope.dateSelect = function(date, mode, event) {
         var clickedButtonId, newModeSelected, prevModeSelected;
+        console.log(date);
+        console.log(mode);
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -5130,12 +5142,13 @@ jQuery(document).ready(function($){
         return false;
       };
       $scope.saveBooking = function(e) {
-        var date, product, productsData, request, selectedProducts, userData;
+        var bookingDate, date, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
-        date = $scope.emailDate;
+        date = $scope.emailDate ? $scope.emailDate : $scope.date;
+        bookingDate = $scope.date;
         e.target.disabled = true;
         if ($scope.booking_form.$valid) {
           selectedProducts = {};

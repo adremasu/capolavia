@@ -10684,6 +10684,10 @@ input + .validation-text, textarea + .validation-text, select + .validation-text
   visibility: hidden;
 }
 
+#panel-store button, #panel-delivery button {
+  font-weight: normal;
+}
+
 body.lb-disable-scrolling {
   overflow: hidden;
 }
