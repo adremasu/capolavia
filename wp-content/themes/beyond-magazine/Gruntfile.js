@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
         concat: {
             dist: {
-                src: [ 'js/jquery-3.2.1.min.js','js/angular.min.js', 'js/angular-animate.min.js','js/angular-route.js','js/dirPagination.js','js/bootstrap.js', 'js/jquery.slicknav.js', 'js/lightbox.js', 'js/init.js', 'libs/main/main.js','libs/main/controller.js', 'libs/main/menu.js', 'libs/main/subscribe.js', 'libs/main/booking.js',  'libs/main/customerArea.js'],
+                src: [ 'js/jquery-3.2.1.min.js','js/angular.min.js','js/angular-locale_it-it.js', 'js/angular-animate.min.js','js/angular-route.js','js/dirPagination.js','js/bootstrap.js', 'js/jquery.slicknav.js', 'js/lightbox.js', 'js/init.js', 'libs/main/main.js','libs/main/controller.js', 'libs/main/menu.js', 'libs/main/subscribe.js', 'libs/main/booking.js',  'libs/main/customerArea.js'],
                 dest: 'js/main.js'
             }
         },
