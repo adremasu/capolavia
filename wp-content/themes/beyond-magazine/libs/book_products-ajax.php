@@ -132,10 +132,10 @@ class book_productsClass {
         $this->emailMessage .= "</table>";
         $this->emailMessage .= "<table width='100%'>";
         $this->emailMessage .= "<tr>";
-        if ($this->delivery){
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
+        if ($this->delivery != 'store'){
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
         } else {
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." in azienda (via Rodolfo Rossi,66)</td>";
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." in azienda (via Rodolfo Rossi,66)</td>";
 
         }
         $this->emailMessage .= "</tr>";
