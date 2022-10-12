@@ -25,12 +25,10 @@
     function($scope,
     $http,
     $location) {
-      var a,
-    paramValue;
+      var paramValue;
       paramValue = $location.search().myParam;
       $scope.loading = false;
       $scope.success = false;
-      a = true ? 5 : 10;
       $scope.deliveryChange = function() {
         return $scope.emailDate = $scope.user.delivery === '1' ? $scope.delivery_date : $scope.date;
       };
@@ -56,6 +54,7 @@
       $scope.saveBooking = function(e) {
         var bookingDate,
     date,
+    mode,
     product,
     productsData,
     request,
@@ -65,6 +64,7 @@
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
+        mode = $scope.mode;
         
         //date value legacy: i have to keep the possibility to get emailDate value, 
         //pofor a smooth update to 2022 version
@@ -83,7 +83,8 @@
             action: "book_products",
             products: selectedProducts,
             user: userData,
-            date: date
+            date: date,
+            mode: mode
           };
           return $http({
             method: "POST",

@@ -13,7 +13,6 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
   paramValue = $location.search().myParam
   $scope.loading = false
   $scope.success = false
-  a = if true then 5 else 10
 
   $scope.deliveryChange = ->
     $scope.emailDate = if $scope.user.delivery == '1' then $scope.delivery_date else $scope.date
@@ -41,6 +40,7 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
     $scope.loading = true
     productsData = $scope.products
     userData = $scope.user
+    mode = $scope.mode
     
     #date value legacy: i have to keep the possibility to get emailDate value, 
     #pofor a smooth update to 2022 version
@@ -60,6 +60,7 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
         products: selectedProducts
         user:     userData
         date:     date
+        mode:     mode
       }
       $http(
         method: "POST"
