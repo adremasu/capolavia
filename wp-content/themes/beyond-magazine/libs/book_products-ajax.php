@@ -103,8 +103,6 @@ class book_productsClass {
         $this->emailMessage = '';
         $products = ($this->productsJson ? $this->productsJson : $this->getBookingProducts());
 
-
-
         $this->emailMessage .= "<table width='100%'>";
         foreach($products as $id => $product){
             $product_name = $product['name'];
@@ -133,7 +131,8 @@ class book_productsClass {
         $this->emailMessage .= "</table>";
         $this->emailMessage .= "<table width='100%'>";
         $this->emailMessage .= "<tr>";
-        
+        $this->emailMessage .= $this->mode;
+
         if ($this->mode != 'store'){
             $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
         } else {
