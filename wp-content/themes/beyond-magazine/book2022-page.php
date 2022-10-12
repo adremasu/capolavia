@@ -66,29 +66,32 @@ $optParams = array(
     'timeMin' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_min') ).' days')),
     'timeMax' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_max') ).' days'))
 );
-$storeEvents = $service->events->listEvents($storeCalendarId);
-$storeEventsObj = $service->events->listEvents($storeCalendarId, $optParams);
 
+$storeEvents = $service->events->listEvents($storeCalendarId);
 $deliveryEvents = $service->events->listEvents($storeCalendarId);
-$deliveriyEventsObj = $service->events->listEvents($deliveryCalendarId, $optParams);
 
 $storeEventsList = array();
 $deliveryEventsList = array();
 
-$i = 0;
-foreach ($storeEventsObj->getItems() as $event) {    
-    $storeEventsList[$i]['start'] = $event->getStart();
-    $storeEventsList[$i]['end'] = $event->getEnd();
-    $i++;
-}
+if ($maxResults){
+    $storeEventsObj = $service->events->listEvents($storeCalendarId, $optParams);
+    $i = 0;
+    foreach ($storeEventsObj->getItems() as $event) {    
+        $storeEventsList[$i]['start'] = $event->getStart();
+        $storeEventsList[$i]['end'] = $event->getEnd();
+        $i++;
+    }
+    
+    $deliveriyEventsObj = $service->events->listEvents($deliveryCalendarId, $optParams);
+    $i = 0;
+    foreach ($deliveriyEventsObj->getItems() as $event) {
+        $deliveryEventsList[$i]['start'] = $event->getStart();
+        $deliveryEventsList[$i]['end'] = $event->getEnd();
+        $i++;
+    }
+} else {
 
-$i = 0;
-foreach ($deliveriyEventsObj->getItems() as $event) {
-    $deliveryEventsList[$i]['start'] = $event->getStart();
-    $deliveryEventsList[$i]['end'] = $event->getEnd();
-    $i++;
 }
-
 
 $EUID = $_GET['uid'];
 #$_user = new BookingUser($EUID);
@@ -306,47 +309,7 @@ $EUID = $_GET['uid'];
                             <div class="row" style="margin-top: 1em">
                                 <label style="margin:0" class="col-md-12" for="delivery-check">Scegli la modalità di consegna
                                 </label>
-                                <div class="col-md-6">
-                                    <div class="panel panel-default" id="panel-delivery">
-                                        <div class="panel-heading">
-                                            Consegna a domicilio (2€)
-                                        </div>
-                                        <div class="panel-body">
-                                            <p class="list-group">
-                                            <?php 
-                                            foreach ($deliveryEventsList as $event){
-                                            $start=$event['start'];
-                                            $end = $event['end'];
-                                            ?>                                          
-                                            <label for="delivery">
-                                                <button id="D_<?php echo strtotime($start->dateTime).'_D'?>" type="button" data-ng-click="dateSelect(<?php 
-                                            
-                                            echo strtotime($start->dateTime)+ date(Z).", 'delivery', "?>$event)" class="list-group-item mode-selector">
-
-                                                    <i class="fa fa-truck"></i> <?php 
-                                            
-                                            echo date_i18n('<b>l</b> j F',strtotime($start->dateTime)+ date(Z)).
-                                            ' tra le '.date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z)); ?>
-                                                </button>
-                                            </label>
-
-                                            <?php        
-                                            }
-                                            ?>      
-                                                <div class="radio">
-                                                    <input class="radio input-lg" required data-ng-model="mode" id="delivery" type="radio" value="delivery" name="mode" data-ng-change="deliverySelect()"/>
-                                                </div>
-                                            </p>                               
-
-                                            <div data-ng-show="mode == 'delivery'">
-                                                <label for="address">Dove vuoi ricevere la verdura? *</label>
-                                                <input data-ng-disabled="mode == 'store'" data-ng-required="mode == 'delivery'" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+                                
                                 <div class="col-md-6">
                                     <div class="panel panel-default" id="panel-store">
                                         <div class="panel-heading">
@@ -374,6 +337,58 @@ $EUID = $_GET['uid'];
                                                         <input class="radio input-lg" required data-ng-model="mode" id="store" type="radio" value="store" name="mode" data-ng-change="deliverySelect()"/>
                                                     </div>
                                     </div>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="panel panel-default" id="panel-delivery">
+                                        <div class="panel-heading">
+                                            Consegna a domicilio (2€)
+                                        </div>
+                                        <div class="panel-body">
+                                            <?php 
+                                            if (count($deliveryEventsList)){
+                                                ?>
+                                                <p class="list-group">
+                                                <?php
+                                                foreach ($deliveryEventsList as $event){
+                                                    $start=$event['start'];
+                                                    $end = $event['end'];
+                                                    ?>                                          
+                                                    <label for="delivery">
+                                                        <button id="D_<?php echo strtotime($start->dateTime).'_D'?>" type="button" data-ng-click="dateSelect(<?php 
+                                                    
+                                                    echo strtotime($start->dateTime)+ date(Z).", 'delivery', "?>$event)" class="list-group-item mode-selector">
+        
+                                                            <i class="fa fa-truck"></i> <?php 
+                                                    
+                                                    echo date_i18n('<b>l</b> j F',strtotime($start->dateTime)+ date(Z)).
+                                                    ' tra le '.date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z)); ?>
+                                                        </button>
+                                                    </label>
+        
+                                                    <?php        
+                                                    }
+                                                    ?>
+                                                    </p>
+                                                    <?php
+                                            } else { ?>
+                                            <p class="alert alert-warning no-delivery">Nei prossimi giorni non sono previstre consegne a domicilio, vieni a trovarci in azienda!</p>
+                                            <?php }
+                                        
+                                            ?>      
+                                                <div class="radio">
+                                                    <input class="radio input-lg" required data-ng-model="mode" id="delivery" type="radio" value="delivery" name="mode" data-ng-change="deliverySelect()"/>
+                                                </div>
+                                            </p>                               
+
+                                            <div data-ng-show="mode == 'delivery'">
+                                                <label for="address">Dove vuoi ricevere la verdura? *</label>
+                                                <input data-ng-disabled="mode == 'store'" data-ng-required="mode == 'delivery'" data-ng-model="user.address" class="form-control" type="text" name="address" placeholder="Indirizzo a cui effettuare la consegna">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                         <div class="col-md-12 col-xs-12 visible-xs-block">
                             <p>
