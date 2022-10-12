@@ -17,11 +17,10 @@
 
   bookingApp.controller("bookingController", [
     '$scope', '$http', '$location', function($scope, $http, $location) {
-      var a, paramValue;
+      var paramValue;
       paramValue = $location.search().myParam;
       $scope.loading = false;
       $scope.success = false;
-      a = true ? 5 : 10;
       $scope.deliveryChange = function() {
         return $scope.emailDate = $scope.user.delivery === '1' ? $scope.delivery_date : $scope.date;
       };
@@ -41,11 +40,12 @@
         return false;
       };
       $scope.saveBooking = function(e) {
-        var bookingDate, date, product, productsData, request, selectedProducts, userData;
+        var bookingDate, date, mode, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
+        mode = $scope.mode;
         date = $scope.emailDate ? $scope.emailDate : $scope.date;
         bookingDate = $scope.date;
         e.target.disabled = true;
@@ -60,7 +60,8 @@
             action: "book_products",
             products: selectedProducts,
             user: userData,
-            date: date
+            date: date,
+            mode: mode
           };
           return $http({
             method: "POST",

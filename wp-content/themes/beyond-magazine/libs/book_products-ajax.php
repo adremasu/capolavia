@@ -63,6 +63,7 @@ class book_productsClass {
         $this->products = $_POST['products'];
         $this->userData = $_POST['user'];
         $this->date = $_POST['date'];
+        $this->mode = $this->$_POST['mode'];
         $this->notes = $this->userData['notes'];
         $this->delivery = $this->userData['delivery'];
         $this->phone = $this->userData['phone'];
@@ -132,12 +133,13 @@ class book_productsClass {
         $this->emailMessage .= "</table>";
         $this->emailMessage .= "<table width='100%'>";
         $this->emailMessage .= "<tr>";
-        if ($this->delivery != 'store'){
+        
+        if ($this->mode != 'store'){
             $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
         } else {
             $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." in azienda (via Rodolfo Rossi,66)</td>";
-
         }
+
         $this->emailMessage .= "</tr>";
         $this->emailMessage .= "<tr>";
         $this->emailMessage .= "<td>NOTE: ".$this->notes."</td>";
