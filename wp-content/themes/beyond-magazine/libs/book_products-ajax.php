@@ -63,7 +63,7 @@ class book_productsClass {
         $this->products = $_POST['products'];
         $this->userData = $_POST['user'];
         $this->date = $_POST['date'];
-        $this->mode = $this->$_POST['mode'];
+        $this->mode = $_POST['mode'];
         $this->notes = $this->userData['notes'];
         $this->delivery = $this->userData['delivery'];
         $this->phone = $this->userData['phone'];
