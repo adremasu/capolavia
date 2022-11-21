@@ -63,8 +63,8 @@ $optParams = array(
     'maxResults' => $maxResults,
     'orderBy' => 'startTime',
     'singleEvents' => TRUE,
-    'timeMin' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_min') ).' days')),
-    'timeMax' => date('c', strtotime('now +'.esc_attr( get_option('booking_searchdate_range_max') ).' days'))
+    'timeMin' => date('c', strtotime('today +'.esc_attr( get_option('booking_searchdate_range_min') ).' days')),
+    'timeMax' => date('c', strtotime('today +'.esc_attr( get_option('booking_searchdate_range_max') ).' days'))
 );
 
 $storeEvents = $service->events->listEvents($storeCalendarId);
