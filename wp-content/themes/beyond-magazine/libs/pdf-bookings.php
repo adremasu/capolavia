@@ -7,6 +7,9 @@
  */
 
 
+
+// Export of PDF file
+
 $date = $_GET['date'];
 $format = $_GET['format'];
 
@@ -93,13 +96,14 @@ if ($date) {
         }
         $pdf->Output("report.pdf", "I");
     }
-   if ($format == 'TT'){
+
+    // Export of CSV file
+    if ($format == 'TT'){
         header("Content-type: text/csv");
         header("Content-Disposition: attachment; filename=bookings.csv");
         header("Pragma: no-cache");
         header("Expires: 0");
 
-//header
         $completeProductList = [];
         $productsList = [];
         foreach ($bookings as $booking) {

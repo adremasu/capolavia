@@ -40,8 +40,6 @@
         var clickedButtonId,
     newModeSelected,
     prevModeSelected;
-        console.log(date);
-        console.log(mode);
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -56,6 +54,7 @@
       $scope.saveBooking = function(e) {
         var bookingDate,
     date,
+    deliveryMode,
     product,
     productsData,
     request,
@@ -70,8 +69,9 @@
         //pofor a smooth update to 2022 version
         date = $scope.emailDate ? $scope.emailDate : $scope.date;
         bookingDate = $scope.date;
+        deliveryMode = $scope.mode;
         e.target.disabled = true;
-        // se il form è valido invia l'ordine
+        // se il form è valido invia l'ordine 
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
           for (product in productsData) {
@@ -83,7 +83,8 @@
             action: "book_products",
             products: selectedProducts,
             user: userData,
-            date: date
+            date: date,
+            mode: deliveryMode
           };
           return $http({
             method: "POST",

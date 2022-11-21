@@ -27,8 +27,6 @@
       };
       $scope.dateSelect = function(date, mode, event) {
         var clickedButtonId, newModeSelected, prevModeSelected;
-        console.log(date);
-        console.log(mode);
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -41,13 +39,14 @@
         return false;
       };
       $scope.saveBooking = function(e) {
-        var bookingDate, date, product, productsData, request, selectedProducts, userData;
+        var bookingDate, date, deliveryMode, product, productsData, request, selectedProducts, userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
         date = $scope.emailDate ? $scope.emailDate : $scope.date;
         bookingDate = $scope.date;
+        deliveryMode = $scope.mode;
         e.target.disabled = true;
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
@@ -60,7 +59,8 @@
             action: "book_products",
             products: selectedProducts,
             user: userData,
-            date: date
+            date: date,
+            mode: deliveryMode
           };
           return $http({
             method: "POST",

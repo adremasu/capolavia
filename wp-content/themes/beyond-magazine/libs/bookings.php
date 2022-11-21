@@ -105,10 +105,13 @@ class bookings{
         $subscription_data =  $_POST['products'];
         $user_data =  $_POST['userData'];
         $date =  $_POST['date'];
+        $mode =  $_POST['mode'];
+
         // Update the meta field.
         update_post_meta( $post_id, 'products', $subscription_data );
         update_post_meta( $post_id, 'userData', $user_data );
         update_post_meta( $post_id, 'date', $date/1000 );
+        update_post_meta( $post_id, 'mode', $mode );
 
     }
 
@@ -141,6 +144,7 @@ class bookings{
         $products_meta = get_post_meta($post->ID, 'products', true);
         $user_meta = get_post_meta($post->ID, 'userData', true);
         $date = ( (int) get_post_meta($post->ID, 'date', true)) ;
+        $mode = ( get_post_meta($post->ID, 'mode', true)) ;
         echo "<style type='text/css'>
             #ui-datepicker-div td.not_available a{
                 background-color: #dddddd;
@@ -242,28 +246,34 @@ class bookings{
             </div>
 
             <a href="#TB_inline?width=600&height=150&inlineId=add-product" class="button thickbox">Aggiungi prodotto</a>
+        
         <?php
         echo "<table>";
-        if ($user_meta[delivery]){
+        if ($mode == 'delivery'){
             $yes = 'checked';
             $no = '';
-        } else {
+        } elseif ($mode == 'store') {
             $no = 'checked';
             $yes = '';
-
+        } elseif(!$user_meta['delivery']){
+            $no = 'checked';
+            $yes = '';
+        } elseif($user_meta['delivery']){
+            $yes = 'checked';
+            $no = '';
         }
+
         echo "<tr><td><label for='date'>Data</label></td><td><a href='#!' class='button' id='pickertrigger'>{{date | date:'d/M/yyyy'}}</a>";
         echo "<input id='date' name='date' data-ng-model='date' type='text' style='display:none'>";
         echo "</td></tr>";
         echo "<tr><td><label for='userData[name]'>Nome</label></td><td><input type='text' name='userData[name]' value='".$user_meta[name]."'/></td></tr>";
         echo "<tr><td><label for='userData[email]'>Indirizzo E-mail</label></td><td><input type='text' name='userData[email]' value='".$user_meta[email]."'/></td></tr>";
         echo "<tr><td><label for='userData[phone]'>Telefono</label></td><td><input type='text' name='userData[phone]' value='".$user_meta[phone]."'/></td></tr>";
-        echo "<tr><td><label for='userData[delivery]'>Consegna a domicilio</label></td><td><input type='radio' ".$yes." name='userData[delivery]' value='1'/>Sì<input type='radio' ".$no." name='userData[delivery]' value='0'/>No</td></tr>";
+        echo "<tr><td><label for='mode'>Consegna a domicilio</label></td><td><input type='radio' ".$yes." name='mode' value='delivery'/>Sì<input type='radio' ".$no." name='mode' value='store'/>No</td></tr>";
         echo "<tr><td><label for='userData[address]'>Indirizzo di consegna</label></td><td><input type='text' name='userData[address]' value='".$user_meta[address]."'/></td></tr>";
         echo "<tr><td><label for='userData[notes]'>Note</label></td><td><textarea cols='50' rows='10' name='userData[notes]'>".$user_meta[notes]."</textarea></td></tr>";
         echo "</table>";
         echo "</div>";
-
 
     }
 }

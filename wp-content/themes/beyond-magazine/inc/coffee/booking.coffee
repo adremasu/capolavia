@@ -19,8 +19,6 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
     $scope.emailDate = if $scope.user.delivery == '1' then $scope.delivery_date else $scope.date
 
   $scope.dateSelect = (date, mode, event)->
-    console.log date
-    console.log mode
     $scope.date = date
     $scope.mode = mode
     prevModeSelected = jQuery('.panel-success')
@@ -47,9 +45,10 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
     date = if $scope.emailDate then $scope.emailDate else $scope.date
     
     bookingDate = $scope.date
+    deliveryMode = $scope.mode
     e.target.disabled =  true
 
-    # se il form è valido invia l'ordine
+    # se il form è valido invia l'ordine 
     if ($scope.booking_form.$valid)
       selectedProducts = {}
       for product of productsData
@@ -60,6 +59,7 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
         products: selectedProducts
         user:     userData
         date:     date
+        mode:     deliveryMode
       }
       $http(
         method: "POST"
