@@ -110,6 +110,7 @@ if ($date) {
             $id = $booking->ID;
             $meta = $booking->meta;
             $products = $meta['products'];
+            
 
             foreach ($products as $key => $product) {
                 $productCollection[$key]['name'] = $product['name'];
@@ -161,7 +162,7 @@ if ($date) {
         }
         $CSVproductsQts .= "\n";
 
-        $CSVProductsList =  "Prodotti,Cons.,";
+        $CSVProductsList =  "Prodotti,Cons., Data";
         foreach($prodNames as $key => $_productName){
             $nameParts = explode(' ',$_productName);
             $productName = '';
@@ -184,6 +185,8 @@ if ($date) {
         foreach ($_CSVBookings as &$booking){
             $CSVOrders .= $booking['name'].',';
             $CSVOrders .= $booking['delivery'].',';
+            $CSVOrders .= $booking['date'].',';
+
             $orders = $booking['orders'];
                 foreach ($orderedProductList as $key => &$prod){
 
