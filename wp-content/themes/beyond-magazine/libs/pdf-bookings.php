@@ -132,8 +132,12 @@ if ($date) {
             $phone = $meta['userData']['phone'];
             $address = $meta['userData']['address'];
             $notes = $meta['userData']['notes'];
-            $deliveryText = ($delivery ? 'V': 'X');
+            $mode = $meta['mode'];
+            $deliveryText = (($mode == 'delivery') ? 'V': 'X');
+            $date = $meta['date'];
             $_CSVBookings[$id]['delivery'] = $deliveryText;
+            $_CSVBookings[$id]['mode'] = $deliveryText;
+            $_CSVBookings[$id]['date'] = $date;
             $_CSVBookings[$id]['address'] = $address;
             $_CSVBookings[$id]['notes'] = $notes;
             foreach ($products as $product){
@@ -149,7 +153,7 @@ if ($date) {
         }
         // Sort the data with volume descending, edition ascending
         // Add $data as the last parameter, to sort by the common key
-        $CSVproductsQts = 'Totale, ,';
+        $CSVproductsQts = 'Totale, , ,';
         foreach ($productCollection as $key => $Cproduct){
             if ($Cproduct['weight']['qt']){
                 $CSVproductsQts .= $Cproduct['weight']['qt'].' '.$Cproduct['weight']['mu'].' ';
@@ -183,12 +187,11 @@ if ($date) {
         }
 
         foreach ($_CSVBookings as &$booking){
-            $bookingDate = date("d-m", $meta['date']);
-            $bookingMode = ($meta['mode'] == 'delivery') ? 'V' : 'X';
+            $bookingDate = date("d-m", $booking['date']);
+            $bookingMode = $booking['mode'];
             $CSVOrders .= $booking['name'].',';
             $CSVOrders .= $bookingMode.',';
             $CSVOrders .= $bookingDate.',';
-
             $orders = $booking['orders'];
                 foreach ($orderedProductList as $key => &$prod){
 

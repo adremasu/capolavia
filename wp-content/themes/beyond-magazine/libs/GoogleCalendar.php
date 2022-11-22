@@ -103,7 +103,7 @@ class Calendar {
             $_approxDate = date('d-m-Y', $date);
             $a = strptime($_approxDate, '%d-%m-%Y');
             $timestamp = mktime(0, 0, 0, $a['tm_mon']+1, $a['tm_mday'], $a['tm_year']+1900);
-            $dayAfterTimestamp = mktime(0, 0, 0, $a['tm_mon']+1, $a['tm_mday']+1, $a['tm_year']+1900);
+            $dayAfterTimestamp = mktime(0, 0, 0, $a['tm_mon']+2, $a['tm_mday']+1, $a['tm_year']+1900);
             $my_query = new WP_Query(
                 array(
                     'post_type' => 'bookings',
