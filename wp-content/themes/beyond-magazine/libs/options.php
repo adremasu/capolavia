@@ -183,9 +183,6 @@ class OptionsPage {
       }
       echo "</select><input type='submit' value='Cerca'></form>";
 
-//      var_dump($bookings);
-
-
       echo '        <script type = "text/template" getdata>
           {"data_type":"dates", "data":'."[$weeksString]".'}
       </script>';

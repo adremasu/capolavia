@@ -15,5 +15,6 @@
     <label for="weight_name">UM peso</label><br>
     kg<input type="radio" <?php if ($weight_name_checked == "kg"){echo "checked";}?> name="_my_meta[weight_name]" value="kg"><br/>
     g <input type="radio" <?php if ($weight_name_checked == "g"){echo "checked";}?> name="_my_meta[weight_name]" value="g"><br>
-    <label for="items_name">Nome pezzo</label> <input type="text" name="_my_meta[items_name]"value="<?php if(!empty($meta['items_name'])) echo $meta['items_name']; ?>" >
+    <label for="items_name">Nome pezzo</label> <input type="text" name="_my_meta[items_name]"value="<?php if(!empty($meta['items_name'])) echo $meta['items_name']; ?>" ><br/>
+    <label for="items_name">Nome abbreviato</label> <input type="text" name="_my_meta[item_short_name]"value="<?php if(!empty($meta['item_short_name'])) echo $meta['item_short_name']; ?>" >
 </div>

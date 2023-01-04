@@ -56,8 +56,10 @@ $client->setDeveloperKey(DEV_KEY);
 $service = new Google_Service_Calendar($client);
 
 // Print the next 10 events on the user's calendar.
-$calendarId = 'r7t3hsima10qg4m7ioai4dp0ek@group.calendar.google.com';
-$deliveryCalendarId = 'kl71f97tksv8ed0gggvf1bg5ok@group.calendar.google.com';
+$calendarId = get_option('booking_store_calendar_id');
+$deliveryCalendarId = get_option('booking_delivery_calendar_id');
+//$calendarId = '4c454dc7ee7305be61cd865701cc9bf9c1fc35e96068e5e42b015421bf6c2242@group.calendar.google.com';
+//$deliveryCalendarId = 'kl71f97tksv8ed0gggvf1bg5ok@group.calendar.google.com';
 $optParams = array(
     'maxResults' => 1,
     'orderBy' => 'startTime',
