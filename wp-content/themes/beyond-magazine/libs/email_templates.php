@@ -256,7 +256,7 @@ public function getTemplate_bottom(){
                                           <br>
                                           è un prodotto di Capolavia Azienda Agricola di Marchetto Andrea
                                           <br>
-                                          via Rodolfo Rossi 101
+                                          via Rodolfo Rossi 66
                                           <br>
                                           45100 Rovigo
                                           <br>

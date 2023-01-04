@@ -60,7 +60,10 @@ class book_productsClass {
     var $productsJson = null;
 
     public function __construct(){
-        $this->products = $_POST['products'];
+        foreach($_POST['products'] as $id=>$p){
+            $p['id']=$id;
+            $this->products[$id]=$p;             
+        }
         $this->userData = $_POST['user'];
         $this->date = $_POST['date'];
         $this->mode = $_POST['mode'];
@@ -91,7 +94,7 @@ class book_productsClass {
         if ($this->isNewBooking()){
             if ($this->sendUserEmail() && $this->sendAdminEmail()){
                 return $this->saveNewBooking();
-            }
+                }
         } else {
             return $this->updateBooking();
         }
@@ -101,7 +104,6 @@ class book_productsClass {
     private function _orderEmail($isAdmin = false){
         $this->emailMessage = '';
         $products = ($this->productsJson ? $this->productsJson : $this->getBookingProducts());
-
         $this->emailMessage .= "<table width='100%'>";
         foreach($products as $id => $product){
             $product_name = $product['name'];
@@ -233,11 +235,17 @@ class book_productsClass {
     */
     public function getBookingProducts(){
         $_products = $this->products;
-        foreach ($_products as $id => $_product){
 
+        // order products by name
+        usort($_products, function($a, $b) {
+            return $a['name'] <=> $b['name'];
+        });
+
+        foreach ($_products as $i => $_product){
+            $id = $_product['id'];
             $product = get_post($id);
             $product_meta = get_post_meta($id,'_my_meta', true);
-            $product_name = $product->post_title;
+            $product_name = $_product['name'];
 
             // get requested weight
             if (array_key_exists('weight', $_product) && $_product['weight']){
