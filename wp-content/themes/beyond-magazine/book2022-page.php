@@ -326,7 +326,7 @@ $EUID = $_GET['uid'];
                                                 echo "<label for='store'><button id='D_".strtotime($start->dateTime)."_S' type='button' data-ng-click='dateSelect(";
                                                 echo strtotime($start->dateTime)+ date(Z);
                                                 echo ",\"store\",\$event)' class='list-group-item mode-selector'><i class='fa fa-map-marker'></i> ";
-                                                echo date_i18n('<b>l</b> j F',strtotime($start->dateTime)+ date(Z))." tra le"; 
+                                                echo date_i18n('<b>l</b> j F',strtotime($start->dateTime)+ date(Z))." tra le "; 
                                                 echo date_i18n('G:i',strtotime($start->dateTime)+ date(Z)).' e le '.date_i18n('G:i',strtotime($end->dateTime)+ date(Z));
                                                 echo "
                                                 </button>
@@ -390,15 +390,6 @@ $EUID = $_GET['uid'];
                                     </div>
                                     
                                 </div>
-                        <div class="col-md-12 col-xs-12 visible-xs-block">
-                            <p>
-                                Il ritiro in azienda sarà disponibile <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($start['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($start['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($end['dateTime'])+ date(Z)) ?></span></strong>
-                            </p>
-                            <p>
-                                La consegna a domicilio avverrà <span  class="text-success"><?php echo date_i18n('l j F Y',strtotime($deliveryStart['dateTime'])).'<strong> tra le '.date_i18n('G:i',strtotime($deliveryStart['dateTime'])+ date(Z)).' e le '.date_i18n('G:i',strtotime($deliveryEnd['dateTime'])+ date(Z)) ?></span></strong>
-                            </p>
-                        </div>
-
                         <div class="col-md-12 col-xs-12">
                             <div class="form-group">
                                 <label for="notes">Note:</label>
