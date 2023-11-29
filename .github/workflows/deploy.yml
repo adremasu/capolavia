@@ -20,7 +20,7 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp://ftp.capolavia.it/
+        server: ftp.capolavia.it/
         username: github@capolavia.it
         password: ${{ secrets.FTP_PASSWORD }}
         #git-ftp-args: --insecure if your ertificate is setup correctly this can be removed
