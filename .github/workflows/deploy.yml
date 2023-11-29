@@ -18,7 +18,7 @@ jobs:
       with:
         fetch-depth: 2
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      uses: SamKirkland/FTP-Deploy-Action@4.3.4
       with:
         ftp-server: ftp://ftp.capolavia.it/
         ftp-username: github@capolavia.it
