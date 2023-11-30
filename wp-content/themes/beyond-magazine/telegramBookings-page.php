@@ -69,5 +69,5 @@ define('SCOPES', implode(' ', array(
       'chat_id' => '155860140',
       'text' => $text
   ];
-    $response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" .
-                                 http_build_query($data) );
+    //$response = file_get_contents("https://api.telegram.org/bot$apiToken/sendMessage?" .http_build_query($data) );
+echo $data['text'];
