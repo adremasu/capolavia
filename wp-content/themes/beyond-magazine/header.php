@@ -42,6 +42,17 @@
     <?php wp_head(); ?>
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/36c7b604eabfd0f01c09956bc/d345499b43b5ac1af79d4d689.js");</script>
 </head>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CK3L24EH9C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CK3L24EH9C');
+</script>
+
 <?php $products_archive=get_post_type_archive_link( 'products' );?>
 <?php
 $Path = $_SERVER['REQUEST_URI'];
