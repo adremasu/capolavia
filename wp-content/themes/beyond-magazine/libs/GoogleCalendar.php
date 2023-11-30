@@ -78,7 +78,7 @@ class Calendar {
         return update_option('booking_options[calendarId]', $this->id);
     }
 
-    public function getEvents($eventsNumber = 1, $timeMin = 'today', $timeMax = 'first day of next month' ){
+    public function getEvents($eventsNumber = 1, $timeMin = 'today', $timeMax = 'today + 2 days' ){
 
         $optParams = array(
             'maxResults' => $eventsNumber,
