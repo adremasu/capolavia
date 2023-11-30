@@ -96,10 +96,11 @@ class Calendar {
         return $events;
     }
 
-    public function getBookingsByDate($date){
+    public function getBookingsByDate($date, $public = false){
         if (!$date){
             return false;
         } else {
+            $postStatus = $public ? 'any' : 'draft';
             $_approxDate = date('d-m-Y', $date);
             $a = strptime($_approxDate, '%d-%m-%Y');
             $timestamp = mktime(0, 0, 0, $a['tm_mon']+1, $a['tm_mday'], $a['tm_year']+1900);
@@ -110,6 +111,7 @@ class Calendar {
                     'nopaging'=> true,
                     'orderby' => 'date',
                     'order' => 'ASC',
+                    'post_status' => $postStatus,
                     'meta_query' => array(
                         array(
                             'key' => 'date',
