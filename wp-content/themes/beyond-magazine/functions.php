@@ -866,6 +866,19 @@ function create_post_type() {
 
         )
     );
+    register_post_type( 'giftcodes',
+    array(
+        'labels' => array(
+            'name' => __( 'Gift Codes' ),
+            'singular_name' => __( 'Gift code' )
+        ),
+        'public' => true,
+        'has_archive' => 'giftcodes',
+        'rewrite' => array('slug' => 'giftcodes'),
+        'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
+
+    )
+);
     register_post_type( 'recipes',
         array(
             'labels' => array(
