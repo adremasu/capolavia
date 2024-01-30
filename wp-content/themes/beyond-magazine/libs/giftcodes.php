@@ -45,8 +45,9 @@ class giftcodes {
             'has_archive'        => true,
             'hierarchical'       => false,
             'menu_position'      => null,
-            'supports'           => array( 'title')
+            'supports'           => array( 'title','author')
         );
+        
         register_post_type( $post_type, $args );
 
         add_action( 'add_meta_boxes', array( $this, 'add_giftcodes_meta_boxes' ) );
