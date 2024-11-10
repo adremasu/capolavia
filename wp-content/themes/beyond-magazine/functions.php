@@ -867,6 +867,19 @@ function create_post_type() {
 
         )
     );
+        register_post_type( 'xmasproducts',
+        array(
+            'labels' => array(
+                'name' => __( 'Pacchetto' ),
+                'singular_name' => __( 'Pacchetto' )
+            ),
+            'public' => true,
+            'has_archive' => 'xmasproducts',
+            'rewrite' => array('slug' => 'xmasproducts'),
+            'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
+
+        )
+    );
     register_post_type( 'giftcodes',
     array(
         'labels' => array(
