@@ -18,17 +18,23 @@ $html_code = "";
 ?>
 
 <div class="row" id="kt-main" data-ng-app="xmasbookingApp"  data-ng-controller="xmasbookingController">
-        <div ng-show="::false" style="position: fixed; height: 100%; width: 100%; background-color: #353535; top: 0; left: 0; z-index: 10000; opacity: 0.5">
-            <div style="position: relative; top: 50%; display: table; margin: 0 auto; font-size: 26px; color: #CCC;">
+        <?php include('xmas.svg'); ?>
+        
+        <?php 
+            /*
+                <div ng-show="::false" style="position: fixed; height: 100%; width: 100%; background-color: #353535; top: 0; left: 0; z-index: 10000; opacity: 0.5">
+                <div style="position: relative; top: 50%; display: table; margin: 0 auto; font-size: 26px; color: #CCC;">
                 Sta arrivando il Natale...
+                </div>
             </div>
-        </div>
+                */
+    ?>
         <div class="col-md-12" ng-cloack>
             <div id="kt-latest-title" class="h3" >
 
                 <p data-ng-hide="success">
 
-                  <span>LE proposte di Capolavia per il tuo Natale 2024</span>
+                  <span><?php the_title(); ?></span>
                 </p>
                 <p data-ng-show="success" data-ng-cloak ><span></span></p>
             </div>
