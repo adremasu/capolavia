@@ -18,6 +18,9 @@ $my_query = new WP_Query(
 
     )
 );
+$products =  $my_query->posts;
+$array_products = json_decode(json_encode($products),TRUE);
+$html_code = "";
 ?>
 
 <div class="row" id="kt-main" data-ng-app="xmasbookingApp"  data-ng-controller="xmasbookingController">
