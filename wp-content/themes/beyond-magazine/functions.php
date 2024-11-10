@@ -915,6 +915,11 @@ function my_connection_types() {
         'from' => 'products',
         'to' => 'recipes'
     ) );
+    p2p_register_connection_type( array(
+        'name' => 'products_to_xmasproducts',
+        'from' => 'products',
+        'to' => 'xmasproducts'
+    ) );
 }
 add_action( 'p2p_init', 'my_connection_types' );
 
