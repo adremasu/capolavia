@@ -8,13 +8,7 @@ $my_query = new WP_Query(
         'post_type' => 'xmasproducts',
         'nopaging'=> true,
         'orderby' => 'title',
-        'order' => 'ASC',
-        'meta_query' => array(
-            array(
-                'key' => 'disponibilita',
-                'value' => '1'
-            )
-        )
+        'order' => 'ASC')
 
     )
 );
@@ -109,7 +103,6 @@ $html_code = "";
 
                 <div class="row">
                 <?php
-                $is_odd = false;
                 foreach ($array_products as $product) {
                     $url = $product[guid];
                     $content = $product[post_content];
