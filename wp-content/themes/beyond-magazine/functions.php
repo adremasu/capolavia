@@ -867,6 +867,19 @@ function create_post_type() {
 
         )
     );
+        register_post_type( 'xmasproducts',
+        array(
+            'labels' => array(
+                'name' => __( 'Pacchetto' ),
+                'singular_name' => __( 'Pacchetto' )
+            ),
+            'public' => true,
+            'has_archive' => 'xmasproducts',
+            'rewrite' => array('slug' => 'xmasproducts'),
+            'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
+
+        )
+    );
     register_post_type( 'giftcodes',
     array(
         'labels' => array(
@@ -901,6 +914,11 @@ function my_connection_types() {
         'name' => 'products_to_recipes',
         'from' => 'products',
         'to' => 'recipes'
+    ) );
+    p2p_register_connection_type( array(
+        'name' => 'products_to_xmasproducts',
+        'from' => 'products',
+        'to' => 'xmasproducts'
     ) );
 }
 add_action( 'p2p_init', 'my_connection_types' );

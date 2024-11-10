@@ -2,6 +2,7 @@
 /**
  * Template Name: XMas page
  */
-get_headers();
+get_header();
+
 get_footer();
 ?>
