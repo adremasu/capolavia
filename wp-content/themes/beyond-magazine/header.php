@@ -28,8 +28,6 @@
     }
     //if is xmas page put some more css and js
     if(is_page_template('xmasBooking-page.php')){
-      //wp_enqueue_script('xmas_js');
-      //wp_enqueue_style('xmas_css');
     } 
 
     $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );

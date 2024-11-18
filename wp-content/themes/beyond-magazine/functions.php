@@ -273,7 +273,8 @@ function beyond_theme_setup(){
     );
     add_theme_support( 'custom-background', $beyond_background_args );
     add_editor_style( 'style.css' );
-
+    
+    //wp_enqueue_style ('theme-style', get_template_directory_uri().'/inc/sass/style.css');
     $beyond_header_defaults = array(
         'default-image'          => '',
         'random-default'         => false,

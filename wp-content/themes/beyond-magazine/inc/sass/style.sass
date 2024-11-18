@@ -34,20 +34,21 @@
 @import "lightbox" 
 @import "xmas" 
 
-@include font-face("DJB BAILEY", "fonts/DJB BAILEY", woff2 woff ttf )
-//@include font-face("djb_baileyregular", font-files("DJB BAILEY-webfont.woff2", woff2, "DJB BAILEY-webfont.woff", woff, "DJB BAILEY-webfont.ttf", truetype, "DJB BAILEY-webfont.svg", svg), "DJB BAILEY-webfont.eot")
-@include font-face("FontAwesome", font-files("fontawesome-webfont.woff2", woff2, "fontawesome-webfont.woff", woff, "fontawesome-webfont.ttf", truetype, "fontawesome-webfont.svg", svg), "fontawesome-webfont.eot")
-@include font-face("Glyphicons Halflings", font-files("glyphicons-halflings-regular.woff2", woff2, "glyphicons-halflings-regular.woff", woff, "glyphicons-halflings-regular.ttf", truetype, "glyphicons-halflings-regular.svg", svg), "glyphicons-halflings-regular.eot")
-
- 
-$fa-font-path: "fonts/" 
+@font-face
+  font-family: "DJB BAILEY", 
+  src: url("inc/webfonts/DJB BAILEY-webfont.woff2") 
+  src: url("inc/webfonts/DJB BAILEY-webfont.woff")
+  src: url("inc/webfonts/DJB BAILEY-webfont.ttf")
+  src: url("inc/webfonts/DJB BAILEY-webfont.svg")
+  src: url("inc/webfonts/DJB BAILEY-webfont.eot")
 
 .djb_baileyregular
-  font-family: 'DJB BAILEY'
-
-
+  font-family: 'djb_baileyregular'
+ 
+.classeacaso
+  color: #ffffff
 span.cc
-  font-family: 'CC-ICONS'
+  font-family: 'CC-ICONS' 
   color: #ABB3AC
 body
   text-align: justify
