@@ -15732,7 +15732,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype");
+  src: url("inc/webfonts/fa-solid-900.woff2") format("woff2"), url("inc/webfonts/fa-solid-900.ttf") format("truetype");
 }
 .fas,
 .fa-solid {
@@ -18548,7 +18548,7 @@ body.lb-disable-scrolling {
 
 @font-face {
   font-family: "DJB_BAILEY";
-  src: url("inc/webfonts/DJB_ BAILEY-webfont.woff2") format("woff2"), url("inc/webfonts/DJB_BAILEY-webfont.woff") format("woff");
+  src: url("inc/webfonts/DJB_BAILEY-webfont.woff2") format("woff2"), url("inc/webfonts/DJB_BAILEY-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
