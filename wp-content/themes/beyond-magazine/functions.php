@@ -384,7 +384,7 @@ add_action('wp_enqueue_scripts', 'beyond_load_scripts');
 
 function beyond_load_styles()
 {
-  wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2024.11.14','all' );
+  wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2024.11.15','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
 
