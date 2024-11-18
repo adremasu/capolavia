@@ -45,7 +45,26 @@ module.exports = function (grunt) {
 
         concat: {
             dist: {
-                src: [ 'js/jquery-3.2.1.min.js','js/angular.min.js','js/angular-locale_it-it.js', 'js/angular-animate.min.js','js/angular-route.js','js/dirPagination.js','js/bootstrap.js', 'js/jquery.slicknav.js', 'js/lightbox.js', 'js/init.js', 'libs/main/main.js','libs/main/controller.js', 'libs/main/menu.js', 'libs/main/subscribe.js', 'libs/main/booking.js',  'libs/main/customerArea.js'],
+                src: [ 
+                    'js/jquery-3.2.1.min.js',
+                    'js/angular.min.js',
+                    'js/angular-locale_it-it.js', 
+                    'js/angular-animate.min.js',
+                    'js/angular-route.js',
+                    'js/dirPagination.js',
+                    'js/bootstrap.js', 
+                    'js/jquery.slicknav.js', 
+                    'js/lightbox.js', 
+                    'js/init.js', 
+                    'libs/main/controller.js', 
+                    'libs/main/menu.js', 
+                    'libs/main/subscribe.js', 
+                    'libs/main/booking.js',  
+                    'libs/main/xmas.js',  
+                    'libs/main/products.js',  
+                    'libs/main/customerArea.js',
+                    'libs/main/main.js'
+                ],
                 dest: 'js/main.js'
             }
         },
@@ -99,6 +118,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-docco2');
 
-    grunt.registerTask('default', ['compass', 'coffee', 'concat', 'uglify']);
+    grunt.registerTask('default', ['coffee', 'concat', 'uglify']);
 
 };

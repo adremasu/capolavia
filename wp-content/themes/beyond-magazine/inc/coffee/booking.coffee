@@ -110,4 +110,3 @@ bookingApp.controller "bookingController", ['$scope','$http', '$location', ($sco
   $scope.recap = (e) ->
 
 ]
-bookingApp

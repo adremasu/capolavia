@@ -107,9 +107,11 @@ require_once('vendor/autoload.php');
 require_once('libs/class-tgm-plugin-activation.php');
 require_once('libs/subscription.php');
 require_once('libs/bookings.php');
+require_once('libs/xmasbookings.php');
 require_once('libs/bookings_admin-ajax.php');
 require_once('libs/subscription-ajax.php');
 require_once('libs/book_products-ajax.php');
+require_once('libs/book_xmasproducts-ajax.php');
 require_once('libs/options.php');
 require_once('libs/bookingManager.php');
 require_once('libs/GoogleCalendar.php');
@@ -118,9 +120,10 @@ require_once('libs/pdf-bookings.php');
 require_once('libs/class-booking-user.php');
 require_once('libs/chickenFeeder.php');
 require_once('libs/giftcodes.php');
+require_once('libs/xmas-products.php');
 
 
-add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+//add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
 
 define('CREDENTIALS_PATH',  __DIR__ . '/calendar-php-quickstart.json');
 define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
@@ -338,7 +341,7 @@ function beyond_load_scripts() {
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
     remove_action( 'admin_print_styles', 'print_emoji_styles' ); // php is not closed in the last line
     wp_register_script('main_js', ltrim(get_template_directory_uri(),'').'/main.min.js', null ,'2018.05.12', false);
-    wp_register_script('xmas_js', ltrim(get_template_directory_uri(),'').'/xmas.js', null ,'2024.11.10', false);
+//    wp_register_script('xmas_js', ltrim(get_template_directory_uri(),'').'/xmas.js', null ,'2024.11.10', false);
     wp_register_style('xmas_css', ltrim(get_template_directory_uri(),'').'/xmas.css', null ,'2024.11.10');
     wp_enqueue_script('main_js');
     add_filter( 'wp_default_scripts', 'change_default_jquery' );
@@ -380,7 +383,7 @@ add_action('wp_enqueue_scripts', 'beyond_load_scripts');
 
 function beyond_load_styles()
 {
-  wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2016.12.12','all' );
+  wp_enqueue_style( 'beyond_style', ltrim(get_stylesheet_uri(),'https:'),'','2024.11.14','all' );
 }
 add_action('wp_enqueue_scripts', 'beyond_load_styles');
 
@@ -869,19 +872,7 @@ function create_post_type() {
 
         )
     );
-        register_post_type( 'xmasproducts',
-        array(
-            'labels' => array(
-                'name' => __( 'Pacchetto' ),
-                'singular_name' => __( 'Pacchetto' )
-            ),
-            'public' => true,
-            'has_archive' => 'xmasproducts',
-            'rewrite' => array('slug' => 'xmasproducts'),
-            'supports' => array('thumbnail', 'title', 'editor', 'revisions'),
 
-        )
-    );
     register_post_type( 'giftcodes',
     array(
         'labels' => array(

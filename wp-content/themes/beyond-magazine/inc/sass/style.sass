@@ -16,31 +16,34 @@
  *GENERAL
  **
  ***
-$fa-font-path: "fonts/"
-@import "compass/css3/font-face"
 
-@import "compass/css3/border-radius"
+@import "font-face"
 @import "colors"
+@import "bootstrap/mixins/border-radius"
 @import "carousel"
 @import "bootstrap5c"
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import "bootstrap/theme"
-@import "font-awesome-sprockets"
 @import "font-awesome"
 @import "slicknav"
 @import "products"
 @import "subscribe"
 @import "booking"
 @import "homeCarousel"
-@import "lightbox"
+@import "lightbox" 
+@import "xmas" 
+
+@include font-face("DJB BAILEY", "fonts/DJB BAILEY", woff2 woff ttf )
+//@include font-face("djb_baileyregular", font-files("DJB BAILEY-webfont.woff2", woff2, "DJB BAILEY-webfont.woff", woff, "DJB BAILEY-webfont.ttf", truetype, "DJB BAILEY-webfont.svg", svg), "DJB BAILEY-webfont.eot")
+@include font-face("FontAwesome", font-files("fontawesome-webfont.woff2", woff2, "fontawesome-webfont.woff", woff, "fontawesome-webfont.ttf", truetype, "fontawesome-webfont.svg", svg), "fontawesome-webfont.eot")
+@include font-face("Glyphicons Halflings", font-files("glyphicons-halflings-regular.woff2", woff2, "glyphicons-halflings-regular.woff", woff, "glyphicons-halflings-regular.ttf", truetype, "glyphicons-halflings-regular.svg", svg), "glyphicons-halflings-regular.eot")
+
+ 
+$fa-font-path: "fonts/" 
 
 .djb_baileyregular
-  font-family: 'djb_baileyregular'
-
-+font-face("djb_baileyregular", font-files("DJB BAILEY-webfont.woff2", woff2, "DJB BAILEY-webfont.woff", woff, "DJB BAILEY-webfont.ttf", truetype, "DJB BAILEY-webfont.svg", svg), "DJB BAILEY-webfont.eot")
-+font-face("FontAwesome", font-files("fontawesome-webfont.woff2", woff2, "fontawesome-webfont.woff", woff, "fontawesome-webfont.ttf", truetype, "fontawesome-webfont.svg", svg), "fontawesome-webfont.eot")
-+font-face("Glyphicons Halflings", font-files("glyphicons-halflings-regular.woff2", woff2, "glyphicons-halflings-regular.woff", woff, "glyphicons-halflings-regular.ttf", truetype, "glyphicons-halflings-regular.svg", svg), "glyphicons-halflings-regular.eot")
+  font-family: 'DJB BAILEY'
 
 
 span.cc
@@ -58,7 +61,7 @@ img
   height: auto
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
-  font-family: 'djb_baileyregular', sans-serif
+  font-family: 'DJB BAILEY', sans-serif
   font-weight: 400
   color: $color-text
   line-height: 1.4
@@ -72,8 +75,35 @@ a
     color: $color-secondary
     text-decoration: none
 
+.vcenter
+  display: inline-block
+  vertical-align: middle
+  float: none
+
+.display-flex-center
+  display: flex
+  align-items: center
+
+.transform-center-parent
+  position: relative
+  transform-style: preserve-3d
+
+.transform-center
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+
+.display-inline-block
+  display: inline
+
+  > div
+    display: inline-block
+    float: none
+    vertical-align: middle
+
+
 /***
- **
+ ** 
  *DEFAULT WORDPRESS CLASSES
  **
  ***
@@ -176,7 +206,7 @@ dd
       content: ""
   &:after
     display: block
-    +border-top-radius(10px)
+    @include border-top-radius(10px)
     background-color: white
     height: 40px
     width: 10px
@@ -186,11 +216,11 @@ dd
     right: 0
   &:before
     display: block
-    +border-top-radius(10px)
+    @include border-top-radius(10px)
     background-color: white
     height: 40px
     width: 10px
-    position: absolute
+    position: absolute 
     margin-left: -5px
     top: 0
     left: 0
@@ -258,6 +288,11 @@ dd
     position: relative
   @media screen and (max-width: 768px)
     padding-top: 150px
+  .btn-primary
+    background-color: $color-primary
+    background-image: none
+    &:hover
+      border-color: $color-border
 
 #kt-logo h1
   font-size: 1.8em

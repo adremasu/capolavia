@@ -4,13 +4,17 @@
   subscribeApp = angular.module('subscribeApp', []);
 
   subscribeApp.controller("configCtrl", [
-    '$scope', '$http', function($scope, $http) {
+    '$scope',
+    '$http',
+    function($scope,
+    $http) {
       var copyValues;
       $scope.current_step = 'length';
       $scope.subscription = {};
       $scope.subscription.length = false;
       $scope.message = 'Qualcosa è andato storto';
-      $scope.goToStep = function(event, size) {
+      $scope.goToStep = function(event,
+    size) {
         $scope.current_step = size;
         return event.preventDefault();
       };
@@ -21,7 +25,8 @@
           return 'hidden_step';
         }
       };
-      copyValues = function(o, n) {
+      copyValues = function(o,
+    n) {
         if (typeof $scope.user !== 'undefined') {
           if (!$scope.subscription.different_address) {
             return $scope.user.invoice = n;
@@ -47,7 +52,8 @@
           }
         }).success(function(data) {
           if (data.success === true) {
-            $scope.goToStep(e, 'payment');
+            $scope.goToStep(e,
+    'payment');
             $scope.price = data.price;
             return $scope.paypal_ID = data.paypal_ID;
           } else {
@@ -61,9 +67,13 @@
       $scope.showMessage = function(message) {
         return jQuery('#myModal').modal();
       };
-      return $scope.$watch('subscription', function(oldValue, newValue) {
-        return copyValues(oldValue, newValue);
-      }, true);
+      return $scope.$watch('subscription',
+    function(oldValue,
+    newValue) {
+        return copyValues(oldValue,
+    newValue);
+      },
+    true);
     }
   ]);
 
@@ -71,12 +81,18 @@
     function() {
       return {
         require: 'ngModel',
-        link: function(scope, elem, attrs, ctrl) {
+        link: function(scope,
+    elem,
+    attrs,
+    ctrl) {
           var firstPassword;
           firstPassword = '#' + attrs.pwCheck;
-          elem.add(firstPassword).on('keyup', function() {
+          elem.add(firstPassword).on('keyup',
+    function() {
             scope.$apply(function() {
-              ctrl.$setValidity('pwmatch', elem.val() === jQuery(firstPassword).val());
+              // console.info(elem.val() === $(firstPassword).val());
+              ctrl.$setValidity('pwmatch',
+    elem.val() === jQuery(firstPassword).val());
             });
           });
         }
@@ -92,11 +108,14 @@
       link: function(scope, elm, attrs, ctrl) {
         ctrl.$validators.integer = function(modelValue, viewValue) {
           if (ctrl.$isEmpty(modelValue)) {
+            // consider empty models to be valid
             return false;
           }
           if (pattern.test(viewValue)) {
+            // it is valid
             return true;
           }
+          // it is invalid
           return false;
         };
       }

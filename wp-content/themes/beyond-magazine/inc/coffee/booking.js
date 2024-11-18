@@ -140,8 +140,6 @@
     }
   ]);
 
-  bookingApp;
-
 }).call(this);
 
 

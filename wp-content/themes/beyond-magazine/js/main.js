@@ -4960,30 +4960,6 @@ jQuery(document).ready(function($){
  });
 });
 (function() {
-  var productsApp;
-
-  productsApp = angular.module('productsApp', []);
-
-  productsApp.archiveCtrl = function($scope) {
-    $scope.currentPage = 0;
-    $scope.pageSize = 2;
-    $scope.numberOfPages = function() {
-      return Math.ceil($scope.products.length / $scope.pageSize);
-    };
-  };
-
-  productsApp.filter('startFrom', function() {
-    return function(input, start) {
-      start = +start;
-      return input.slice(start);
-    };
-  });
-
-  productsApp;
-
-}).call(this);
-
-(function() {
   jQuery(document).ready(function($) {
     $('.main-menu').slicknav({
       label: init_vars.label
@@ -4998,13 +4974,17 @@ jQuery(document).ready(function($){
   subscribeApp = angular.module('subscribeApp', []);
 
   subscribeApp.controller("configCtrl", [
-    '$scope', '$http', function($scope, $http) {
+    '$scope',
+    '$http',
+    function($scope,
+    $http) {
       var copyValues;
       $scope.current_step = 'length';
       $scope.subscription = {};
       $scope.subscription.length = false;
       $scope.message = 'Qualcosa è andato storto';
-      $scope.goToStep = function(event, size) {
+      $scope.goToStep = function(event,
+    size) {
         $scope.current_step = size;
         return event.preventDefault();
       };
@@ -5015,7 +4995,8 @@ jQuery(document).ready(function($){
           return 'hidden_step';
         }
       };
-      copyValues = function(o, n) {
+      copyValues = function(o,
+    n) {
         if (typeof $scope.user !== 'undefined') {
           if (!$scope.subscription.different_address) {
             return $scope.user.invoice = n;
@@ -5041,7 +5022,8 @@ jQuery(document).ready(function($){
           }
         }).success(function(data) {
           if (data.success === true) {
-            $scope.goToStep(e, 'payment');
+            $scope.goToStep(e,
+    'payment');
             $scope.price = data.price;
             return $scope.paypal_ID = data.paypal_ID;
           } else {
@@ -5055,9 +5037,13 @@ jQuery(document).ready(function($){
       $scope.showMessage = function(message) {
         return jQuery('#myModal').modal();
       };
-      return $scope.$watch('subscription', function(oldValue, newValue) {
-        return copyValues(oldValue, newValue);
-      }, true);
+      return $scope.$watch('subscription',
+    function(oldValue,
+    newValue) {
+        return copyValues(oldValue,
+    newValue);
+      },
+    true);
     }
   ]);
 
@@ -5065,12 +5051,18 @@ jQuery(document).ready(function($){
     function() {
       return {
         require: 'ngModel',
-        link: function(scope, elem, attrs, ctrl) {
+        link: function(scope,
+    elem,
+    attrs,
+    ctrl) {
           var firstPassword;
           firstPassword = '#' + attrs.pwCheck;
-          elem.add(firstPassword).on('keyup', function() {
+          elem.add(firstPassword).on('keyup',
+    function() {
             scope.$apply(function() {
-              ctrl.$setValidity('pwmatch', elem.val() === jQuery(firstPassword).val());
+              // console.info(elem.val() === $(firstPassword).val());
+              ctrl.$setValidity('pwmatch',
+    elem.val() === jQuery(firstPassword).val());
             });
           });
         }
@@ -5086,11 +5078,14 @@ jQuery(document).ready(function($){
       link: function(scope, elm, attrs, ctrl) {
         ctrl.$validators.integer = function(modelValue, viewValue) {
           if (ctrl.$isEmpty(modelValue)) {
+            // consider empty models to be valid
             return false;
           }
           if (pattern.test(viewValue)) {
+            // it is valid
             return true;
           }
+          // it is invalid
           return false;
         };
       }
@@ -5111,13 +5106,21 @@ jQuery(document).ready(function($){
   bookingApp = angular.module('bookingApp', ['ngRoute']);
 
   bookingApp.config([
-    '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    '$routeProvider',
+    '$locationProvider',
+    function($routeProvider,
+    $locationProvider) {
       return $locationProvider.html5Mode(true);
     }
   ]);
 
   bookingApp.controller("bookingController", [
-    '$scope', '$http', '$location', function($scope, $http, $location) {
+    '$scope',
+    '$http',
+    '$location',
+    function($scope,
+    $http,
+    $location) {
       var paramValue;
       paramValue = $location.search().myParam;
       $scope.loading = false;
@@ -5125,8 +5128,12 @@ jQuery(document).ready(function($){
       $scope.deliveryChange = function() {
         return $scope.emailDate = $scope.user.delivery === '1' ? $scope.delivery_date : $scope.date;
       };
-      $scope.dateSelect = function(date, mode, event) {
-        var clickedButtonId, newModeSelected, prevModeSelected;
+      $scope.dateSelect = function(date,
+    mode,
+    event) {
+        var clickedButtonId,
+    newModeSelected,
+    prevModeSelected;
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -5139,16 +5146,28 @@ jQuery(document).ready(function($){
         return false;
       };
       $scope.saveBooking = function(e) {
-        var bookingDate, date, deliveryMode, mode, product, productsData, request, selectedProducts, userData;
+        var bookingDate,
+    date,
+    deliveryMode,
+    mode,
+    product,
+    productsData,
+    request,
+    selectedProducts,
+    userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
         mode = $scope.mode;
+        
+        //date value legacy: i have to keep the possibility to get emailDate value, 
+        //pofor a smooth update to 2022 version
         date = $scope.emailDate ? $scope.emailDate : $scope.date;
         bookingDate = $scope.date;
         deliveryMode = $scope.mode;
         e.target.disabled = true;
+        // se il form è valido invia l'ordine 
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
           for (product in productsData) {
@@ -5181,7 +5200,7 @@ jQuery(document).ready(function($){
             }
           }).error(function() {
             $scope.loading = false;
-            $scope.success = data["false"];
+            $scope.success = data.false;
             $scope.userMessage = 'Ops! Qualcosa è andato storto';
             jQuery('#myModal').modal('hide');
             jQuery('#errorModal').modal('show');
@@ -5217,6 +5236,204 @@ jQuery(document).ready(function($){
     }
   ]);
 
-  bookingApp;
+}).call(this);
+
+(function() {
+  var xmasbookingApp;
+
+  document.addEventListener('wheel', function(event) {
+    if (document.activeElement.type === 'number') {
+      document.activeElement.blur();
+    }
+  });
+
+  xmasbookingApp = angular.module('xmasbookingApp', ['ngRoute']);
+
+  xmasbookingApp.config([
+    '$routeProvider',
+    '$locationProvider',
+    function($routeProvider,
+    $locationProvider) {
+      return $locationProvider.html5Mode(true);
+    }
+  ]);
+
+  xmasbookingApp.controller("xmasbookingController", [
+    '$scope',
+    '$http',
+    '$location',
+    function($scope,
+    $http,
+    $location) {
+      var numInput,
+    paramValue;
+      paramValue = $location.search().myParam;
+      $scope.loading = false;
+      $scope.success = false;
+      numInput = document.querySelector('input');
+      numInput.addEventListener('input',
+    function() {
+        var num;
+        num = this.value.match(/^\d+$/);
+        if (num === null) {
+          this.value = '';
+        }
+      });
+      $scope.plus = function(product) {
+        $scope.id = product;
+        return $scope.xmasproducts[$scope.id]['qt']++;
+      };
+      $scope.minus = function(product) {
+        $scope.id = product;
+        if ($scope.xmasproducts[$scope.id]['qt'] > 0) {
+          return $scope.xmasproducts[$scope.id]['qt']--;
+        }
+      };
+      $scope.saveBooking = function(e) {
+        var bookingDate,
+    date,
+    mode,
+    product,
+    productsData,
+    request,
+    selectedProducts,
+    userData;
+        e.preventDefault();
+        $scope.loading = true;
+        productsData = $scope.xmasproducts;
+        console.log(productsData);
+        userData = $scope.user;
+        mode = $scope.mode;
+        
+        //date value legacy: i have to keep the possibility to get emailDate value, 
+        //pofor a smooth update to 2022 version
+        date = $scope.emailDate ? $scope.emailDate : $scope.date;
+        bookingDate = $scope.date;
+        e.target.disabled = true;
+        // se il form è valido invia l'ordine 
+        if ($scope.booking_form.$valid) {
+          selectedProducts = {};
+          for (product in productsData) {
+            if (productsData[product].qt > 0) {
+              selectedProducts[product] = productsData[product];
+            }
+          }
+          request = {
+            action: "book_xmasproducts",
+            xmasproducts: selectedProducts,
+            user: userData
+          };
+          return $http({
+            method: "POST",
+            url: "/wp-admin/admin-ajax.php",
+            data: jQuery.param(request),
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            }
+          }).success(function(data) {
+            $scope.loading = false;
+            $scope.success = data.success;
+            $scope.userMessage = data.userMessage;
+            jQuery('#myModal').modal('hide');
+            e.target.disabled = false;
+            if (!data.success) {
+              return jQuery('#errorModal').modal('show');
+            }
+          }).error(function() {
+            $scope.loading = false;
+            $scope.success = data.false;
+            $scope.userMessage = 'Ops! Qualcosa è andato storto';
+            jQuery('#myModal').modal('hide');
+            jQuery('#errorModal').modal('show');
+            return e.target.disabled = false;
+          });
+        }
+      };
+      $scope.completed = function() {
+        return false;
+      };
+      $scope.select = function(productId) {
+        var request;
+        jQuery('#productLoadingGif').show();
+        $scope.selectedProduct = {};
+        $scope.selectedProduct.id = productId;
+        request = {
+          action: "get_product_info",
+          id: productId
+        };
+        return $http({
+          method: "POST",
+          url: "/wp-admin/admin-ajax.php",
+          data: jQuery.param(request),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }).success(function(data) {
+          $scope.selectedProduct = data;
+          return jQuery('#productLoadingGif').hide();
+        });
+      };
+      return $scope.recap = function(e) {};
+    }
+  ]);
+
+}).call(this);
+
+(function() {
+  var productsApp;
+
+  productsApp = angular.module('productsApp', []);
+
+  //We already have a limitTo filter built-in to angular,
+  //let's make a startFrom filter
+  productsApp.archiveCtrl = function($scope) {
+    $scope.currentPage = 0;
+    $scope.pageSize = 2;
+    $scope.numberOfPages = function() {
+      return Math.ceil($scope.products.length / $scope.pageSize);
+    };
+  };
+
+  productsApp.filter('startFrom', function() {
+    return function(input, start) {
+      start = +start;
+      //parse to int
+      return input.slice(start);
+    };
+  });
+
+}).call(this);
+
+(function() {
+  var findOrCreateModule, initialModules;
+
+  initialModules = [
+    {
+      name: 'bookingApp',
+      deps: ['ngRoute']
+    },
+    {
+      name: 'xmasbookingAppApp',
+      deps: ['ngRoute']
+    },
+    {
+      name: 'productsApp'
+    }
+  ];
+
+  findOrCreateModule = function(moduleName, deps) {
+    var error;
+    deps = deps || [];
+    try {
+      angular.module(moduleName);
+    } catch (error1) {
+      error = error1;
+      angular.module(moduleName, deps);
+    }
+  };
+
+  initialModules.forEach(function(moduleDefinition) {
+    findOrCreateModule(moduleDefinition.name, moduleDefinition.deps);
+  });
 
 }).call(this);

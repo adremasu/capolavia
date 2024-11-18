@@ -159,7 +159,6 @@ class book_productsClass {
         $emailAddress = get_option('booking_email_address');
         $date = date_i18n('l j F Y', $this->date);
         $emailMessage = '<p>Ordine per '.$date.'</p>';
-
         $emailMessage .= $this->_orderEmail(true);
         $customerEmail = $this->userData['email'];
         $header = 'From: '.$this->userData["name"].' <'.$this->userData['email'].'>' . "\r\n";
@@ -169,7 +168,6 @@ class book_productsClass {
         } else {
             return false;
         }
-
     }
 
     private function sendUserEmail(){
@@ -177,20 +175,15 @@ class book_productsClass {
         $date = date_i18n('l j F Y \d\a\l\l\e H:i', $this->date);
         $emailTemplate = new emailTemplate();
         $emailMessage = $emailTemplate->getTopTemplate($date);
-        $emailMessage .= "<table width='100%'>";
-        $emailMessage .= "<tr>";
+        $emailMessage .= "<table width='100%'><tr>";
         $emailMessage .= "<td><b>Gentile ".$this->userData['name'].", abbiamo ricevuto da te il seguente ordine</b></td>";
-        $emailMessage .= "</tr>";
-
-        $emailMessage .= "</table>";
+        $emailMessage .= "</tr></table>";
         $emailMessage .= $this->_orderEmail();
         $emailMessage .= $emailTemplate->getTemplate_bottom();
         $header = 'From: Sapori di Capolavia <ordini@capolavia.it>' . "\r\n";
 
         if(wp_mail($emailAddress, 'Ordine confermato', $emailMessage, $header)){
-
             return true;
-
         } else {
             return false;
         }

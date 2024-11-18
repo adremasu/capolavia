@@ -10,13 +10,21 @@
   bookingApp = angular.module('bookingApp', ['ngRoute']);
 
   bookingApp.config([
-    '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    '$routeProvider',
+    '$locationProvider',
+    function($routeProvider,
+    $locationProvider) {
       return $locationProvider.html5Mode(true);
     }
   ]);
 
   bookingApp.controller("bookingController", [
-    '$scope', '$http', '$location', function($scope, $http, $location) {
+    '$scope',
+    '$http',
+    '$location',
+    function($scope,
+    $http,
+    $location) {
       var paramValue;
       paramValue = $location.search().myParam;
       $scope.loading = false;
@@ -24,8 +32,12 @@
       $scope.deliveryChange = function() {
         return $scope.emailDate = $scope.user.delivery === '1' ? $scope.delivery_date : $scope.date;
       };
-      $scope.dateSelect = function(date, mode, event) {
-        var clickedButtonId, newModeSelected, prevModeSelected;
+      $scope.dateSelect = function(date,
+    mode,
+    event) {
+        var clickedButtonId,
+    newModeSelected,
+    prevModeSelected;
         $scope.date = date;
         $scope.mode = mode;
         prevModeSelected = jQuery('.panel-success');
@@ -38,16 +50,28 @@
         return false;
       };
       $scope.saveBooking = function(e) {
-        var bookingDate, date, deliveryMode, mode, product, productsData, request, selectedProducts, userData;
+        var bookingDate,
+    date,
+    deliveryMode,
+    mode,
+    product,
+    productsData,
+    request,
+    selectedProducts,
+    userData;
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.products;
         userData = $scope.user;
         mode = $scope.mode;
+        
+        //date value legacy: i have to keep the possibility to get emailDate value, 
+        //pofor a smooth update to 2022 version
         date = $scope.emailDate ? $scope.emailDate : $scope.date;
         bookingDate = $scope.date;
         deliveryMode = $scope.mode;
         e.target.disabled = true;
+        // se il form è valido invia l'ordine 
         if ($scope.booking_form.$valid) {
           selectedProducts = {};
           for (product in productsData) {
@@ -80,7 +104,7 @@
             }
           }).error(function() {
             $scope.loading = false;
-            $scope.success = data["false"];
+            $scope.success = data.false;
             $scope.userMessage = 'Ops! Qualcosa è andato storto';
             jQuery('#myModal').modal('hide');
             jQuery('#errorModal').modal('show');
@@ -115,7 +139,5 @@
       return $scope.recap = function(e) {};
     }
   ]);
-
-  bookingApp;
 
 }).call(this);
