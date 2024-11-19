@@ -117,10 +117,10 @@ $html_code = "";
                     $html_code .= '
                         <div class="booking-product-wrapper col-xs-12 col-sm-12">
                             <div class="row display-flex-center">
-                                <div class="col-md-4 text-center">
+                                <div class="col-md-4 col-xs-12 text-center">
                                     <img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')"  src="' . $thumbnail . '" alt="' . $product['post_title'] . $price . '"/>                            
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-xs-12">
                                     <h3 data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')" >' . $product['post_title'] .'</h3><h5>'. $price . '</h5></p>';
                                     $html_code .= $content;                                 
                                     $html_code .= '<ul>';                                 
@@ -138,19 +138,20 @@ $html_code = "";
                                     $html_code .= '</ul>
                                 </div>';
                                 $html_code  .= '
-                                    <div class="col-md-4 display-flex-center">
-
-                                        <label class="sr-only" for="'.$product['ID'].'"></label>
-                                        <div class="form-group-lg">
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <button ng-click="minus('.$product['ID'].')" class="btn btn-lg btn-xmas" type="button">-</button>
-                                            </span>                                      
-                                            <input data-ng-model="xmasproducts['.$product['ID'].'][\'qt\']" type="number" ng-pattern="/^[0-9]{1,}$/" class="form-control" placeholder="0" value="0" min="0" max="50" step="1">
-                                            <span class="input-group-btn">
-                                                <button ng-click="plus('.$product['ID'].')" class="btn btn-lg btn-xmas" type="button">+</button>
-                                            </span>  
-                                        </div>
+                                    <div class="col-md-4 col-xs-12 ">
+                                        <div class="display-flex-center">
+                                            <label class="sr-only" for="'.$product['ID'].'"></label>
+                                            <div class="form-group-lg">
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                        <button ng-click="minus('.$product['ID'].')" class="btn btn-lg btn-xmas" type="button">-</button>
+                                                    </span>                                      
+                                                    <input data-ng-model="xmasproducts['.$product['ID'].'][\'qt\']" type="number" ng-pattern="/^[0-9]{1,}$/" class="form-control" placeholder="0" value="0" min="0" max="50" step="1">
+                                                    <span class="input-group-btn">
+                                                        <button ng-click="plus('.$product['ID'].')" class="btn btn-lg btn-xmas" type="button">+</button>
+                                                    </span>  
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>';
                     

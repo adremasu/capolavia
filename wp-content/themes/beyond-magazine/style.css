@@ -18538,6 +18538,10 @@ body.lb-disable-scrolling {
 .page-template-xmasBooking-page #kt-latest-title {
   color: #da2c38;
 }
+.page-template-xmasBooking-page .booking-product-wrapper {
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #da2c38;
+}
 
 .btn-xmas {
   background: #87c38f;
@@ -18554,10 +18558,6 @@ body.lb-disable-scrolling {
 }
 .djb_baileyregular {
   font-family: "DJB_BAILEY";
-}
-
-.classeacaso {
-  color: #ffffff;
 }
 
 span.cc {
@@ -18606,22 +18606,21 @@ a:hover, a:focus {
   float: none;
 }
 
-.display-flex-center {
-  display: flex;
-  align-items: center;
+@media only screen and (min-width: 768px) {
+  .display-flex-center {
+    display: flex;
+    align-items: center;
+  }
+  .transform-center-parent {
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  .transform-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
-
-.transform-center-parent {
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.transform-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .display-inline-block {
   display: inline;
 }

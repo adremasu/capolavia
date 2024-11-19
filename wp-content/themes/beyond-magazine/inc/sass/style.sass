@@ -44,8 +44,6 @@
 .djb_baileyregular
   font-family: 'DJB_BAILEY'
  
-.classeacaso
-  color: #ffffff
 span.cc
   font-family: 'CC-ICONS' 
   color: #ABB3AC 
@@ -80,22 +78,23 @@ a
   vertical-align: middle
   float: none
 
-.display-flex-center
-  display: flex
-  align-items: center
+@media only screen and (min-width: $screen-sm-min)
+  .display-flex-center
+    display: flex
+    align-items: center
 
-.transform-center-parent
-  position: relative
-  transform-style: preserve-3d
+  .transform-center-parent
+    position: relative
+    transform-style: preserve-3d
 
-.transform-center
-  position: relative
-  top: 50%
-  transform: translateY(-50%)
+  .transform-center
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
 
 .display-inline-block
   display: inline
-
+ 
   > div
     display: inline-block
     float: none
@@ -273,7 +272,7 @@ dd
     width: 50%
     margin: 0 auto
 
-.kt-wrapper
+.kt-wrapper 
   @media only screen and (max-device: 768px) and (min-device: 320px), (max-width: 900px)
     margin-top:  40px
   border-top: 3px solid $color-primary
