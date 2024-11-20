@@ -856,6 +856,7 @@ function my_add_excerpts_to_pages() {
 add_image_size( "post-list", 287, 215, true );
 add_image_size( "gallery", 518, 388, true );
 add_image_size( "small_square", 250, 250, true );
+add_image_size( "smallest_square", 100, 100, true );
 
 //create vegetables posts
 add_action( 'init', 'create_post_type' );

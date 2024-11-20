@@ -49,19 +49,27 @@ $html_code = "";
 
         <div id="booking-wrapper" class="col-md-12">
 
-          <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
-              <div class="modal-dialog">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">Riepilogo</h4>
-                      </div>
-                      <div class="modal-body">
-                          <p>Nome: {{user.name}}</p>
-                          <p>Indirizzo e-mail: {{user.email}}</p>
-                          <p>Telefono: {{user.phone}}</p>
-                      </div>
-                      <div class="modal-footer">
+            <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Riepilogo</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Nome: {{user.name}}</p>
+                            <p>Indirizzo e-mail: {{user.email}}</p>
+                            <p>Telefono: {{user.phone}}</p>
+                            <table class="table">
+                                <tr data-ng-hide="!product.qt" data-ng-repeat="product in xmasproducts">
+                                <td><img src="{{product.smallthumb}}"/></td>
+                                <td>{{product.name}}</td>
+                                <td data-ng-if="product.qt">{{product.qt}}</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="modal-footer">
                           <button type="button" class="btn btn-default" data-dismiss="modal">Modifica</button>
                           <button type="button" data-ng-click="saveBooking($event)" class="btn btn-success">
                               <span data-ng-show="loading" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
@@ -111,9 +119,16 @@ $html_code = "";
                     $_price = get_post_meta($product['ID'], 'price', true);
                     $price = ($_price ? $_price : '');
                     $_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($product['ID']), 'small_square');
+                    $_small_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($product['ID']), 'smallest_square');
                     $stock = get_post_meta($product['ID'], '_my_meta', true);
                     $thumbnail = (has_post_thumbnail($product['ID']) ? $_thumbnail[0] : get_header_image());
-                    $html_code .= "<div data-ng-init='xmasproducts[".$product['ID']."][\"qt\"] = 0'></div>";
+                    $small_thumbnail = (has_post_thumbnail($product['ID']) ? $_small_thumbnail[0] : get_header_image());
+                    $html_code .= "<div 
+                        data-ng-init='
+                            xmasproducts[".$product['ID']."][\"qt\"] = 0; 
+                            xmasproducts[".$product['ID']."][\"name\"] = \"".$product['post_title']."\";
+                            xmasproducts[".$product['ID']."][\"smallthumb\"] = \"".$small_thumbnail."\";
+                            '></div>";
                     $html_code .= '
                         <div class="booking-product-wrapper col-xs-12 col-sm-12">
                             <div class="row display-flex-center">
@@ -138,7 +153,7 @@ $html_code = "";
                                     $html_code .= '</ul>
                                 </div>';
                                 $html_code  .= '
-                                    <div class="col-md-4 col-xs-12 ">
+                                    <div class="col-md-4 col-xs-12">
                                         <div class="display-flex-center">
                                             <label class="sr-only" for="'.$product['ID'].'"></label>
                                             <div class="form-group-lg">
