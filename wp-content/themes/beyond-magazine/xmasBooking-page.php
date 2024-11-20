@@ -8,8 +8,9 @@ $my_query = new WP_Query(
     array(
         'post_type' => 'xmasproducts',
         'nopaging'=> true,
-        'orderby' => 'title',
-        'order' => 'ASC'
+        'meta_key' => 'price',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC'
     )
 );
 $products =  $my_query->posts;
@@ -136,8 +137,11 @@ $html_code = "";
                                     <img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')"  src="' . $thumbnail . '" alt="' . $product['post_title'] . $price . '"/>                            
                                 </div>
                                 <div class="col-md-4 col-xs-12">
-                                    <h3 data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')" >' . $product['post_title'] .'</h3><h5>'. $price . '</h5></p>';
-                                    $html_code .= $content;                                 
+                                <h3 data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')" >' . $product['post_title'] .'</h3>';
+                                    if ($price){
+                                        $html_code .= '<h5>'. $price . '&euro;</h5>';
+                                    }   
+                                    $html_code .= '</p>'.$content;                                 
                                     $html_code .= '<ul>';                                 
                                     $product_name = addslashes($product['post_title']);
                                     
