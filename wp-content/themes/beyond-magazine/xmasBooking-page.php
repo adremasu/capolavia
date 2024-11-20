@@ -134,10 +134,10 @@ $html_code = "";
                         <div class="booking-product-wrapper col-xs-12 col-sm-12">
                             <div class="row display-flex-center">
                                 <div class="col-md-4 col-xs-12 text-center">
-                                    <img data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')"  src="' . $thumbnail . '" alt="' . $product['post_title'] . $price . '"/>                            
+                                    <img src="' . $thumbnail . '" alt="' . $product['post_title'] . $price . '"/>                            
                                 </div>
                                 <div class="col-md-4 col-xs-12">
-                                <h3 data-toggle="modal" data-target="#productModal" data-ng-click="select('.$product['ID'].')" >' . $product['post_title'] .'</h3>';
+                                <h3>' . $product['post_title'] .'</h3>';
                                     if ($price){
                                         $html_code .= '<h5>'. $price . '&euro;</h5>';
                                     }   
@@ -151,8 +151,7 @@ $html_code = "";
                                         'nopaging' => true
                                     ) );
                                     while ( $connections->have_posts() ) : $connections->the_post();                                    
-                                        $html_code .= '<li>' . $post->post_title . '</li>';
-                            
+                                        $html_code .= '<li>' . $post->post_title . ' <i data-toggle="modal" data-target="#productModal" data-ng-click="select('.$post->ID.')" class="info-point fa-solid fa-circle-info"></i></li>';
                                     endwhile;
                                     $html_code .= '</ul>
                                 </div>';

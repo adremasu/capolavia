@@ -18542,6 +18542,9 @@ body.lb-disable-scrolling {
   padding-bottom: 25px;
   border-bottom: 1px dashed #da2c38;
 }
+.page-template-xmasBooking-page .info-point {
+  cursor: pointer;
+}
 
 .btn-xmas {
   background: #87c38f;

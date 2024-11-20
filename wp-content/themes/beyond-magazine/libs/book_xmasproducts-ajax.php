@@ -10,10 +10,6 @@ function book_xmasproducts() {
     new book_xmasproductsClass();
 }
 
-
-add_action('wp_ajax_get_xmasproduct_info', 'get_xmasproduct_info');
-add_action('wp_ajax_nopriv_get_xmasproduct_info', 'get_xmasproduct_info');
-
 add_action('wp_ajax_book_xmasproducts', 'book_xmasproducts');
 add_action('wp_ajax_nopriv_book_xmasproducts', 'book_xmasproducts');
 
