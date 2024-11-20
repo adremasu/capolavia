@@ -180,14 +180,23 @@ class book_productsClass {
         $emailMessage .= "</tr></table>";
         $emailMessage .= $this->_orderEmail();
         $emailMessage .= $emailTemplate->getTemplate_bottom();
-        $header = 'From: Sapori di Capolavia <ordini@capolavia.it>' . "\r\n";
+        $headers = "MIME-Version: 1.0" . "\r\n"; 
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        $header .= 'From: Sapori di Capolavia <ordini@capolavia.it>' . "\r\n";
 
-        if(wp_mail($emailAddress, 'Ordine confermato', $emailMessage, $header)){
+        function set_html_mail_content_type() {
+            return 'text/html';
+        }
+        add_filter('wp_mail_content_type', 'set_html_mail_content_type');
+        
+        if(wp_mail($emailAddress, 'Ordine confermato', $emailMessage)){
             return true;
         } else {
             return false;
         }
-
+        
+        // Reset content type to avoid affecting other emails
+        remove_filter('wp_mail_content_type', 'set_html_mail_content_type');
 
     }
 
