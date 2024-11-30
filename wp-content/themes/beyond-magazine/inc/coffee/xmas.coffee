@@ -39,12 +39,8 @@ xmasbookingApp.controller "xmasbookingController", ['$scope','$http', '$location
     userData = $scope.user
     mode = $scope.mode
     
-    #date value legacy: i have to keep the possibility to get emailDate value, 
-    #pofor a smooth update to 2022 version
-    date = if $scope.emailDate then $scope.emailDate else $scope.date
-    
-    bookingDate = $scope.date
-    e.target.disabled =  true
+    _date = userData.date.getTime()
+    userData.timestampdate = _date
 
     # se il form è valido invia l'ordine 
     if ($scope.booking_form.$valid)

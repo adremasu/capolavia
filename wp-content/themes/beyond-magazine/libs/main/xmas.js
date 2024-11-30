@@ -50,8 +50,7 @@
         }
       };
       $scope.saveBooking = function(e) {
-        var bookingDate,
-    date,
+        var _date,
     mode,
     product,
     productsData,
@@ -61,15 +60,12 @@
         e.preventDefault();
         $scope.loading = true;
         productsData = $scope.xmasproducts;
-        console.log(productsData);
         userData = $scope.user;
         mode = $scope.mode;
-        
-        //date value legacy: i have to keep the possibility to get emailDate value, 
-        //pofor a smooth update to 2022 version
-        date = $scope.emailDate ? $scope.emailDate : $scope.date;
-        bookingDate = $scope.date;
-        e.target.disabled = true;
+        console.log(userData.date);
+        _date = userData.date.getTime();
+        userData.timestampdate = _date;
+        console.log(userData.timestampdate);
         // se il form è valido invia l'ordine 
         if ($scope.booking_form.$valid) {
           selectedProducts = {};

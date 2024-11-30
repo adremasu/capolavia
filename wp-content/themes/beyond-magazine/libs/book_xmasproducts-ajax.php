@@ -28,7 +28,7 @@ class book_xmasproductsClass {
             $this->xmasproducts[$id]=$p;             
         }
         $this->userData = $_POST['user'];
-        $this->date = $_POST['date'];
+        $this->date = $this->userData['timestampdate'];
         $this->notes = $this->userData['notes'];
         $this->phone = $this->userData['phone'];
 
@@ -51,7 +51,25 @@ class book_xmasproductsClass {
         wp_die();
     }
 
-    private function saveBooking(){      
+    public function isDateInMilliseconds($date){
+        if ($date < 100000000) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function dateInSeconds($date){
+        if ($this->isDateInMilliseconds($date)){
+            return (int) $date/1000;
+        } else {
+            return $date;
+        }
+    }
+    
+    private function saveBooking(){   
+        return $this->saveNewBooking();
+   
         if ($this->isNewBooking()){
             if ($this->sendUserEmail() && $this->sendAdminEmail()){
                 return $this->saveNewBooking();
@@ -87,9 +105,9 @@ class book_xmasproductsClass {
         $this->emailMessage .= "<tr>";
         
         if ($this->mode != 'store'){
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." al seguente indirizzo: ".$this->userData['address']."</td>";
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->dateInSeconds($this->date))." al seguente indirizzo: ".$this->userData['address']."</td>";
         } else {
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->date)." dalle ore ".date_i18n('H:i ', $this->date)." in azienda (via Rodolfo Rossi,66)</td>";
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->dateInSeconds($this->date))." in azienda (via Rodolfo Rossi,66)</td>";
         }
 
         $this->emailMessage .= "</tr>";
@@ -110,7 +128,7 @@ class book_xmasproductsClass {
 
     private function sendAdminEmail(){
         $emailAddress = get_option('booking_email_address');
-        $date = date_i18n('l j F Y', $this->date);
+        $date = date_i18n('l j F Y', $this->dateInSeconds($this->date));
         $emailMessage = '<p>Ordine per '.$date.'</p>';
         $emailMessage .= $this->_orderEmail(true);
         $customerEmail = $this->userData['email'];
@@ -125,7 +143,7 @@ class book_xmasproductsClass {
 
     private function sendUserEmail(){
         $emailAddress = $this->userData['email'];
-        $date = date_i18n('l j F Y \d\a\l\l\e H:i', $this->date);
+        $date = date_i18n('l j F Y \d\a\l\l\e H:i', $this->dateInSeconds($this->date));
         $emailTemplate = new emailTemplate();
         $emailMessage = $emailTemplate->getTopTemplate($date);
         $emailMessage .= "<table width='100%'><tr>";
@@ -155,7 +173,7 @@ class book_xmasproductsClass {
 
     public function isNewBooking(){
         $emailAddress = $this->userData['email'];
-        $bookingDay = $this->date;
+        $bookingDay = $this->dateInSeconds($this->date);
         $args = array(
             'post_type' => 'bookings',
             'meta_query' => array(
@@ -223,13 +241,13 @@ class book_xmasproductsClass {
           $post_author_ID = '';
         }
         $args = array(
-            'post_title' => date('Y_m_d', $this->date).' '.$this->userData['email'],
+            'post_title' => date('Y_m_d', $this->dateInSeconds($this->date)).' '.$this->userData['email'],
             'post_type' => 'xmasbookings',
             'post_author' => $post_author->ID,
             'meta_input' => array(
                 'userData' => $this->userData,
                 'xmasproducts' => $this->productsJson,
-                'date' => $this->date,
+                'date' => $this->dateInSeconds($this->date),
                 'hash' => $this->hash
             )
         );
