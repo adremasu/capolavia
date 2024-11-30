@@ -68,7 +68,6 @@ class book_xmasproductsClass {
     }
     
     private function saveBooking(){   
-        return $this->saveNewBooking();
    
         if ($this->isNewBooking()){
             if ($this->sendUserEmail() && $this->sendAdminEmail()){
