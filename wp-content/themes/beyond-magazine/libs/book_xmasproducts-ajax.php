@@ -104,9 +104,9 @@ class book_xmasproductsClass {
         $this->emailMessage .= "<tr>";
         
         if ($this->mode != 'store'){
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->dateInSeconds($this->date))." al seguente indirizzo: ".$this->userData['address']."</td>";
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->dateInSeconds($this->date)+86400)." al seguente indirizzo: ".$this->userData['address']."</td>";
         } else {
-            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->dateInSeconds($this->date))." in azienda (via Rodolfo Rossi,66)</td>";
+            $this->emailMessage .= "<td>Consegna prevista per ".date_i18n('l j F Y', $this->dateInSeconds($this->date)+86400)." in azienda (via Rodolfo Rossi,66)</td>";
         }
 
         $this->emailMessage .= "</tr>";
@@ -127,7 +127,7 @@ class book_xmasproductsClass {
 
     private function sendAdminEmail(){
         $emailAddress = get_option('booking_email_address');
-        $date = date_i18n('l j F Y', $this->dateInSeconds($this->date));
+        $date = date_i18n('l j F Y', $this->dateInSeconds($this->date)+86400);
         $emailMessage = '<p>Ordine per '.$date.'</p>';
         $emailMessage .= $this->_orderEmail(true);
         $customerEmail = $this->userData['email'];
@@ -142,7 +142,7 @@ class book_xmasproductsClass {
 
     private function sendUserEmail(){
         $emailAddress = $this->userData['email'];
-        $date = date_i18n('l j F Y \d\a\l\l\e H:i', $this->dateInSeconds($this->date));
+        $date = date_i18n('l j F Y \d\a\l\l\e H:i', $this->dateInSeconds($this->date)+86400);
         $emailTemplate = new emailTemplate();
         $emailMessage = $emailTemplate->getTopTemplate($date);
         $emailMessage .= "<table width='100%'><tr>";
