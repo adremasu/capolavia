@@ -27,7 +27,7 @@ class WPCF7_Sendinblue extends WPCF7_Service {
 	}
 
 	public function get_title() {
-		return __( 'Sendinblue', 'contact-form-7' );
+		return __( 'Brevo', 'contact-form-7' );
 	}
 
 	public function is_active() {
@@ -47,8 +47,8 @@ class WPCF7_Sendinblue extends WPCF7_Service {
 
 	public function link() {
 		echo wpcf7_link(
-			'https://www.sendinblue.com/?tap_a=30591-fb13f0&tap_s=1031580-b1bb1d',
-			'sendinblue.com'
+			'https://get.brevo.com/wpcf7-integration',
+			'brevo.com'
 		);
 	}
 
@@ -88,9 +88,7 @@ class WPCF7_Sendinblue extends WPCF7_Service {
 				$this->reset_data();
 				$redirect_to = $this->menu_page_url( 'action=setup' );
 			} else {
-				$this->api_key = isset( $_POST['api_key'] )
-					? trim( $_POST['api_key'] )
-					: '';
+				$this->api_key = trim( $_POST['api_key'] ?? '' );
 
 				$confirmed = $this->confirm_key();
 
@@ -119,43 +117,54 @@ class WPCF7_Sendinblue extends WPCF7_Service {
 	}
 
 	public function admin_notice( $message = '' ) {
-		if ( 'unauthorized' == $message ) {
-			echo sprintf(
-				'<div class="notice notice-error"><p><strong>%1$s</strong>: %2$s</p></div>',
-				esc_html( __( "Error", 'contact-form-7' ) ),
-				esc_html( __( "You have not been authenticated. Make sure the provided API key is correct.", 'contact-form-7' ) )
+		if ( 'unauthorized' === $message ) {
+			wp_admin_notice(
+				sprintf(
+					'<strong>%1$s</strong>: %2$s',
+					esc_html( __( "Error", 'contact-form-7' ) ),
+					esc_html( __( "You have not been authenticated. Make sure the provided API key is correct.", 'contact-form-7' ) )
+				),
+				'type=error'
 			);
 		}
 
-		if ( 'invalid' == $message ) {
-			echo sprintf(
-				'<div class="notice notice-error"><p><strong>%1$s</strong>: %2$s</p></div>',
-				esc_html( __( "Error", 'contact-form-7' ) ),
-				esc_html( __( "Invalid key values.", 'contact-form-7' ) )
+		if ( 'invalid' === $message ) {
+			wp_admin_notice(
+				sprintf(
+					'<strong>%1$s</strong>: %2$s',
+					esc_html( __( "Error", 'contact-form-7' ) ),
+					esc_html( __( "Invalid key values.", 'contact-form-7' ) )
+				),
+				'type=error'
 			);
 		}
 
-		if ( 'success' == $message ) {
-			echo sprintf(
-				'<div class="notice notice-success"><p>%s</p></div>',
-				esc_html( __( 'Settings saved.', 'contact-form-7' ) )
+		if ( 'success' === $message ) {
+			wp_admin_notice(
+				esc_html( __( "Settings saved.", 'contact-form-7' ) ),
+				'type=success'
 			);
 		}
 	}
 
 	public function display( $action = '' ) {
-		echo '<p>' . sprintf(
-			esc_html( __( "Store and organize your contacts while protecting user privacy on Sendinblue, the leading CRM & email marketing platform in Europe. Sendinblue offers unlimited contacts and advanced marketing features. For details, see %s.", 'contact-form-7' ) ),
+		echo sprintf(
+			'<p>%s</p>',
+			esc_html( __( "Store and organize your contacts while protecting user privacy on Brevo, the leading CRM & email marketing platform in Europe. Brevo offers unlimited contacts and advanced marketing features.", 'contact-form-7' ) )
+		);
+
+		echo sprintf(
+			'<p><strong>%s</strong></p>',
 			wpcf7_link(
 				__( 'https://contactform7.com/sendinblue-integration/', 'contact-form-7' ),
-				__( 'Sendinblue integration', 'contact-form-7' )
+				__( 'Brevo integration', 'contact-form-7' )
 			)
-		) . '</p>';
+		);
 
 		if ( $this->is_active() ) {
 			echo sprintf(
 				'<p class="dashicons-before dashicons-yes">%s</p>',
-				esc_html( __( "Sendinblue is active on this site.", 'contact-form-7' ) )
+				esc_html( __( "Brevo is active on this site.", 'contact-form-7' ) )
 			);
 		}
 
@@ -247,12 +256,14 @@ trait WPCF7_Sendinblue_API {
 	}
 
 
-	public function get_lists() {
+	public function get_lists( $options = '' ) {
+		$options = wp_parse_args( $options, array(
+			'limit' => 50,
+			'offset' => 0,
+		) );
+
 		$endpoint = add_query_arg(
-			array(
-				'limit' => 50,
-				'offset' => 0,
-			),
+			$options,
 			'https://api.sendinblue.com/v3/contacts/lists'
 		);
 
@@ -331,7 +342,7 @@ trait WPCF7_Sendinblue_API {
 				'Content-Type' => 'application/json; charset=utf-8',
 				'API-Key' => $this->get_api_key(),
 			),
-			'body' => json_encode( $properties ),
+			'body' => wp_json_encode( $properties ),
 		);
 
 		$response = wp_remote_post( $endpoint, $request );
@@ -359,7 +370,7 @@ trait WPCF7_Sendinblue_API {
 				'Content-Type' => 'application/json; charset=utf-8',
 				'API-Key' => $this->get_api_key(),
 			),
-			'body' => json_encode( $properties ),
+			'body' => wp_json_encode( $properties ),
 		);
 
 		$response = wp_remote_post( $endpoint, $request );

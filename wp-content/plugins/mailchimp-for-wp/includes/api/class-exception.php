@@ -1,8 +1,14 @@
 <?php
 
-class MC4WP_API_Exception extends Exception {
-
-  
+/**
+ * Class MC4WP_API_Exception
+ *
+ * @property string $title
+ * @property string $detail
+ * @property array $errors
+ */
+class MC4WP_API_Exception extends Exception
+{
     /**
     * @var object
     */
@@ -27,10 +33,11 @@ class MC4WP_API_Exception extends Exception {
      * @param array $response
      * @param object $data
      */
-    public function __construct( $message, $code, $request = null, $response = null, $data = null ) {
-        parent::__construct( $message, $code );
+    public function __construct($message, $code, $request = null, $response = null, $data = null)
+    {
+        parent::__construct($message, $code);
 
-        $this->request = $request;
+        $this->request  = $request;
         $this->response = $response;
 
         $this->response_data = $data;
@@ -38,10 +45,13 @@ class MC4WP_API_Exception extends Exception {
 
     /**
     * Backwards compatibility for direct property access.
+    * @param string $property
+    * @return mixed
     */
-    public function __get( $property ) {
-        if( in_array( $property, array( 'title', 'detail', 'errors' ) ) ) {
-            if( ! empty( $this->response_data ) && isset( $this->response_data->{$property} ) ) {
+    public function __get($property)
+    {
+        if (in_array($property, array( 'title', 'detail', 'errors' ), true)) {
+            if (! empty($this->response_data) && isset($this->response_data->{$property})) {
                 return $this->response_data->{$property};
             }
 
@@ -52,55 +62,59 @@ class MC4WP_API_Exception extends Exception {
     /**
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         $string = $this->message . '.';
 
-        // add errors from response data returned by MailChimp
-        if( ! empty( $this->response_data ) ) {
-            if( ! empty( $this->response_data->title ) && $this->response_data->title !== $this->getMessage() ) {
+        // add errors from response data returned by Mailchimp
+        if (! empty($this->response_data)) {
+            if (! empty($this->response_data->title) && $this->response_data->title !== $this->getMessage()) {
                 $string .= ' ' . $this->response_data->title . '.';
             }
 
             // add detail message
-            if( ! empty( $this->response_data->detail ) ) {
+            if (! empty($this->response_data->detail)) {
                 $string .= ' ' . $this->response_data->detail;
             }
 
             // add field specific errors
-            if( ! empty( $this->response_data->errors ) && isset( $this->response_data->errors[0]->field ) ) {
-
+            if (! empty($this->response_data->errors) && isset($this->response_data->errors[0]->field)) {
                 // strip off obsolete msg
-                $string = str_replace( 'For field-specific details, see the \'errors\' array.', '', $string );
+                $string = str_replace('For field-specific details, see the \'errors\' array.', '', $string);
 
                 // generate list of field errors
                 $field_errors = array();
-                foreach( $this->response_data->errors as $error ) {
-                    if( ! empty( $error->field ) ) {
-                        $field_errors[] = sprintf( '- %s : %s', $error->field, $error->message );
+                foreach ($this->response_data->errors as $error) {
+                    if (! empty($error->field)) {
+                        $field_errors[] = sprintf('- %s : %s', $error->field, $error->message);
                     } else {
-                        $field_errors[] = sprintf( '- %s', $error->message );
+                        $field_errors[] = sprintf('- %s', $error->message);
                     }
                 }
 
-                $string .= " \n" . join( "\n", $field_errors );
+                $string .= " \n" . join("\n", $field_errors);
             }
         }
 
         // Add request data
-        if( ! empty( $this->request ) && is_array( $this->request ) ) {
-            $string .= "\n" . sprintf( 'Request: %s %s', $this->request['method'], $this->request['url'] );
+        if (! empty($this->request) && is_array($this->request)) {
+            $string .= "\n\n" . sprintf("Request: \n%s %s\n", $this->request['method'], $this->request['url']);
 
-            if( ! empty( $this->request['body'] ) ) {
-                $string .= sprintf( ' - %s', $this->request['body'] );
+            //          foreach ( $this->request['headers'] as $key => $value ) {
+            //              $string .= sprintf( "%s: %s\n", $key, $value );
+            //          }
+
+            if (! empty($this->request['body'])) {
+                $string .= "\n" . $this->request['body'];
             }
         }
 
         // Add response data
-        if( ! empty( $this->response ) && is_array( $this->response ) ) {
-            $response_code = wp_remote_retrieve_response_code( $this->response );
-            $response_message = wp_remote_retrieve_response_message( $this->response );
-            $response_body = wp_remote_retrieve_body( $this->response );
-            $string .= "\n" . sprintf( 'Response: %d %s - %s', $response_code, $response_message, $response_body );
+        if (! empty($this->response) && is_array($this->response)) {
+            $response_code    = wp_remote_retrieve_response_code($this->response);
+            $response_message = wp_remote_retrieve_response_message($this->response);
+            $response_body    = wp_remote_retrieve_body($this->response);
+            $string          .= "\n\n" . sprintf("Response: \n%d %s\n%s", $response_code, $response_message, $response_body);
         }
 
         return $string;

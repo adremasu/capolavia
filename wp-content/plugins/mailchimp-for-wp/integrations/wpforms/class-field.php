@@ -1,22 +1,7 @@
 <?php
 
-/**
- * Checkbox field.
- *
- * @package    WPForms
- * @author     WPForms
- * @since      1.0.0
- * @license    GPL-2.0+
- * @copyright  Copyright (c) 2016, WPForms LLC
- */
 class MC4WP_WPForms_Field extends WPForms_Field
 {
-
-    /**
-     * @var MC4WP_MailChimp
-     */
-    private $mailchimp;
-
     /**
      * Primary class constructor.
      *
@@ -24,18 +9,16 @@ class MC4WP_WPForms_Field extends WPForms_Field
      */
     public function init()
     {
-
-        // Define field type information
-        $this->name = 'MailChimp';
-        $this->type = 'mailchimp';
-        $this->icon = 'fa-envelope-o';
-        $this->order = 21;
+        $this->name     = 'Mailchimp';
+        $this->type     = 'mailchimp';
+        $this->icon     = 'fa-envelope-o';
+        $this->order    = 21;
         $this->defaults = array(
-            0 => array(
-                'label' => __('Sign-up to our newsletter?', 'mailchimp-for-wp'),
-                'value' => '1',
+            array(
+                'label'   => __('Sign-up to our newsletter?', 'mailchimp-for-wp'),
+                'value'   => '1',
                 'default' => '',
-            )
+            ),
         );
     }
 
@@ -53,9 +36,9 @@ class MC4WP_WPForms_Field extends WPForms_Field
         //--------------------------------------------------------------------//
 
         // Options open markup
-        $this->field_option('basic-options', $field, array('markup' => 'open'));
+        $this->field_option('basic-options', $field, array( 'markup' => 'open' ));
 
-        // MailChimp list
+        // Mailchimp list
         $this->field_option_mailchimp_list($field);
 
         // Choices
@@ -68,20 +51,20 @@ class MC4WP_WPForms_Field extends WPForms_Field
         $this->field_option('required', $field);
 
         // Options close markup
-        $this->field_option('basic-options', $field, array('markup' => 'close'));
+        $this->field_option('basic-options', $field, array( 'markup' => 'close' ));
 
         //--------------------------------------------------------------------//
         // Advanced field options
         //--------------------------------------------------------------------//
 
         // Options open markup
-        $this->field_option('advanced-options', $field, array('markup' => 'open'));
+        $this->field_option('advanced-options', $field, array( 'markup' => 'open' ));
 
         // Custom CSS classes
         $this->field_option('css', $field);
 
         // Options close markup
-        $this->field_option('advanced-options', $field, array('markup' => 'close'));
+        $this->field_option('advanced-options', $field, array( 'markup' => 'close' ));
     }
 
     private function field_option_mailchimp_list($field)
@@ -89,52 +72,50 @@ class MC4WP_WPForms_Field extends WPForms_Field
         $mailchimp = new MC4WP_MailChimp();
 
         // Field option label
-        $tooltip = __('Select the MailChimp list to subscribe to.', 'mailchimp-for-wp');
+        $tooltip      = __('Select the Mailchimp list to subscribe to.', 'mailchimp-for-wp');
         $option_label = $this->field_element(
             'label',
             $field,
             array(
-                'slug' => 'mailchimp-list',
-                'value' => __('MailChimp list', 'mailchimp-for-wp'),
+                'slug'    => 'mailchimp-list',
+                'value'   => __('Mailchimp list', 'mailchimp-for-wp'),
                 'tooltip' => $tooltip,
             ),
             false
         );
 
         $option_select = sprintf('<select name="fields[%s][mailchimp_list]" data-field-id="%d" data-field-type="%s">', $field['id'], $field['id'], $this->type);
-        $lists = $mailchimp->get_cached_lists();
+        $lists         = $mailchimp->get_lists();
         foreach ($lists as $list) {
             $option_select .= sprintf('<option value="%s" %s>%s</option>', $list->id, selected($list->id, $field['mailchimp_list'], false), $list->name);
         }
         $option_select .= '</select>';
-
 
         // Field option row (markup) including label and input.
         $output = $this->field_element(
             'row',
             $field,
             array(
-                'slug' => 'mailchimp-list',
+                'slug'    => 'mailchimp-list',
                 'content' => $option_label . $option_select,
             )
         );
-
     }
 
     private function field_option_choices($field)
     {
         $tooltip = __('Set your sign-up label text and whether it should be pre-checked.', 'mailchimp-for-wp');
-        $values = !empty($field['choices']) ? $field['choices'] : $this->defaults;
-        $class = !empty($field['show_values']) && $field['show_values'] == '1' ? 'show-values' : '';
-        $class .= !empty($dynamic) ? ' wpforms-hidden' : '';
+        $values  = ! empty($field['choices']) ? $field['choices'] : $this->defaults;
+        $class   = ! empty($field['show_values']) && (int) $field['show_values'] === 1 ? 'show-values' : '';
+        $class  .= ! empty($dynamic) ? ' wpforms-hidden' : '';
 
         // Field option label
         $option_label = $this->field_element(
             'label',
             $field,
             array(
-                'slug' => 'mailchimp-checkbox',
-                'value' => __('Sign-up checkbox', 'mailchimp-for-wp'),
+                'slug'    => 'mailchimp-checkbox',
+                'value'   => __('Sign-up checkbox', 'mailchimp-for-wp'),
                 'tooltip' => $tooltip,
             ),
             false
@@ -143,7 +124,7 @@ class MC4WP_WPForms_Field extends WPForms_Field
         // Field option choices inputs
         $option_choices = sprintf('<ul class="choices-list %s" data-field-id="%d" data-field-type="%s">', $class, $field['id'], $this->type);
         foreach ($values as $key => $value) {
-            $default = !empty($value['default']) ? $value['default'] : '';
+            $default         = ! empty($value['default']) ? $value['default'] : '';
             $option_choices .= sprintf('<li data-key="%d">', $key);
             $option_choices .= sprintf('<input type="checkbox" name="fields[%s][choices][%s][default]" class="default" value="1" %s>', $field['id'], $key, checked('1', $default, false));
             $option_choices .= sprintf('<input type="text" name="fields[%s][choices][%s][label]" value="%s" class="label">', $field['id'], $key, esc_attr($value['label']));
@@ -157,7 +138,7 @@ class MC4WP_WPForms_Field extends WPForms_Field
             'row',
             $field,
             array(
-                'slug' => 'choices',
+                'slug'    => 'choices',
                 'content' => $option_label . $option_choices,
             )
         );
@@ -171,20 +152,19 @@ class MC4WP_WPForms_Field extends WPForms_Field
      */
     public function field_preview($field)
     {
-        $values = !empty($field['choices']) ? $field['choices'] : $this->defaults;
+        $values = ! empty($field['choices']) ? $field['choices'] : $this->defaults;
 
         // Field checkbox elements
         echo '<ul class="primary-input">';
 
         // Notify if currently empty
         if (empty($values)) {
-            $values = array('label' => __('(empty)', 'wpforms'));
+            $values = array( 'label' => __('(empty)', 'wpforms') );
         }
 
         // Individual checkbox options
         foreach ($values as $key => $value) {
-
-            $default = isset($value['default']) ? $value['default'] : '';
+            $default  = isset($value['default']) ? $value['default'] : '';
             $selected = checked('1', $default, false);
 
             printf('<li><input type="checkbox" %s disabled>%s</li>', $selected, $value['label']);
@@ -212,27 +192,31 @@ class MC4WP_WPForms_Field extends WPForms_Field
      */
     public function field_display($field, $field_atts, $form_data)
     {
+        // Setup some defaults because WPForms broke their integration in v1.8.1.1
+        $field_atts = array_merge(array(
+            'input_class' => array(),
+            'input_id' => array(),
+        ), $field_atts);
 
         // Setup and sanitize the necessary data
-        $field_required = !empty($field['required']) ? ' required' : '';
-        $field_class = implode(' ', array_map('sanitize_html_class', $field_atts['input_class']));
-        $field_id = implode(' ', array_map('sanitize_html_class', $field_atts['input_id']));
-        $form_id = $form_data['id'];
-        $choices = $field['choices'];
-
+        $field_required = ! empty($field['required']) ? ' required' : '';
+        $field_class    = implode(' ', array_map('sanitize_html_class', (array) $field_atts['input_class']));
+        $field_id       = implode(' ', array_map('sanitize_html_class', (array) $field_atts['input_id']));
+        $form_id        = $form_data['id'];
+        $choices        = (array) $field['choices'];
 
         // List
         printf('<ul id="%s" class="%s">', $field_id, $field_class);
 
         foreach ($choices as $key => $choice) {
-
             $selected = isset($choice['default']) ? '1' : '0';
-            $depth = isset($choice['depth']) ? absint($choice['depth']) : 1;
+            $depth    = isset($choice['depth']) ? absint($choice['depth']) : 1;
 
             printf('<li class="choice-%d depth-%d">', $key, $depth);
 
             // Checkbox elements
-            printf('<input type="checkbox" id="wpforms-%d-field_%d_%d" name="wpforms[fields][%d]" value="%s" %s %s>',
+            printf(
+                '<input type="checkbox" id="wpforms-%d-field_%d_%d" name="wpforms[fields][%d]" value="%s" %s %s>',
                 $form_id,
                 $field['id'],
                 $key,
@@ -260,18 +244,18 @@ class MC4WP_WPForms_Field extends WPForms_Field
      */
     public function format($field_id, $field_submit, $form_data)
     {
-        $field = $form_data['fields'][$field_id];
+        $field  = $form_data['fields'][ $field_id ];
         $choice = array_pop($field['choices']);
-        $name = sanitize_text_field($choice['label']);
+        $name   = sanitize_text_field($choice['label']);
 
         $data = array(
-            'name' => $name,
-            'value' => empty($field_submit) ? __('No') : __('Yes'),
+            'name'      => $name,
+            'value'     => empty($field_submit) ? __('No', 'mailchimp-for-wp') : __('Yes', 'mailchimp-for-wp'),
             'value_raw' => $field_submit,
-            'id' => absint($field_id),
-            'type' => $this->type,
+            'id'        => absint($field_id),
+            'type'      => $this->type,
         );
 
-        wpforms()->process->fields[$field_id] = $data;
+        wpforms()->process->fields[ $field_id ] = $data;
     }
 }
