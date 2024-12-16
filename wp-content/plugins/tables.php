@@ -494,7 +494,8 @@ class SP_Plugin {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer; }';
+  cursor: pointer; }
+  .action {visibility: hidden}';
         echo '</style>';
         ?>
 
