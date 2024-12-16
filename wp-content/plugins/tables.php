@@ -76,7 +76,9 @@ class Products_List extends WP_List_Table {
 
         foreach ($array_products as $product){
             $availability = get_post_meta( $product[ID], 'disponibilita', TRUE);
+            $prezzo = get_post_meta( $product[ID], 'prezzo', TRUE);
             $product['availability'] = $availability;
+            $product['prezzo'] = $prezzo;
             $result[]=$product;
 
         }
@@ -140,7 +142,7 @@ class Products_List extends WP_List_Table {
     public function column_default( $item, $column_name ) {
         switch ( $column_name ) {
             case 'post_title':
-                return print_r( $item[post_title], true );
+                return print_r( $item[post_title]. ' [<a target="_blank" href="'.get_edit_post_link($item[ID]).'">edit</a>]', true );
             case 'availability': {
             $available_yes = ($item[availability] ? "checked" : "");
             $available_no = ($item[availability] ? "" : "checked");
@@ -150,7 +152,7 @@ class Products_List extends WP_List_Table {
             );
 
         }
-            case 'city':
+            case 'prezzo':
                 return $item[ $column_name ];
             default:
                 return print_r( $item, true ); //Show the whole array for troubleshooting purposes
@@ -204,6 +206,7 @@ class Products_List extends WP_List_Table {
     function get_columns() {
         $columns = [
             'post_title'    => __( 'Prodotto', 'sp' ),
+            'prezzo'    => __( 'Prezzo', 'sp' ),
             'availability'    => __( 'Disponibile', 'sp' )
         ];
 
@@ -219,6 +222,7 @@ class Products_List extends WP_List_Table {
     public function get_sortable_columns() {
         $sortable_columns = array(
             'post_title' => array( 'post_title', true ),
+            'prezzo' => array('prezzo',  true),
             'availability' => array('disponibilita',  false)
         );
 
@@ -492,16 +496,14 @@ class SP_Plugin {
                     <div id="post-body-content">
                         <div class="meta-box-sortables ui-sortable">
                             <form method="post">
-                                <?php
-                                  $this->products_obj->prepare_items();
-                                  $this->products_obj->display();
+                            <button class="" >Applica</button>
+                            <?php
+                                $this->products_obj->prepare_items();
+                                $this->products_obj->display();
                                 ?>
-                                <button class="" >Codice per newsletter</button>
+                                <button class="" >Applica</button>
                                 <br/>
-                                <textarea name="" id="" cols="100" rows="10">
-                                  <?php echo $this->products_obj->get_newsletter_code(); ?>
-                                </textarea><br/>
-                                <h4>Newsletter 2018</h4>
+                                <h4>Newsletter</h4>
                                 <textarea name="" id="" cols="100" rows="10">
                                   <?php echo $this->products_obj->get_newsletter_code('2018'); ?>
                                 </textarea>
