@@ -485,6 +485,16 @@ class SP_Plugin {
     public function plugin_settings_page() {
         echo '<style type="text/css">';
         echo '.wp-list-table .column-cb { width: 30%; }';
+        echo '.applybutton {   background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer; }';
         echo '</style>';
         ?>
 
@@ -496,12 +506,12 @@ class SP_Plugin {
                     <div id="post-body-content">
                         <div class="meta-box-sortables ui-sortable">
                             <form method="post">
-                            <button class="" >Applica</button>
+                            <button class="applybutton" >Applica</button>
                             <?php
                                 $this->products_obj->prepare_items();
                                 $this->products_obj->display();
                                 ?>
-                                <button class="" >Applica</button>
+                                <button class="applybutton" >Applica</button>
                                 <br/>
                                 <h4>Newsletter</h4>
                                 <textarea name="" id="" cols="100" rows="10">
