@@ -50,10 +50,49 @@ class giftcodes {
         
         register_post_type( $post_type, $args );
 
-        add_action( 'add_meta_boxes', array( $this, 'add_giftcodes_meta_boxes' ) );
+        add_action( 'add_meta_boxes', array( $this, 'add_all_metaboxes' ) );
+        add_action('admin_enqueue_scripts', array( $this, 'enqueue_js' ));
 
         add_action( 'save_post', array( $this, 'save' ) );
 
+    }
+
+    public function enqueue_js( $hook ) {
+
+        wp_enqueue_style('plugin_name-admin-ui-css',
+            'https://code.jquery.com/ui/jquery-ui-git.css',
+            false,
+            PLUGIN_VERSION,
+            false);
+        wp_enqueue_script( 'angularjs',   get_bloginfo('template_directory'). '/js/angular.min.js' );
+        wp_enqueue_script( 'bookingAdmin',   get_bloginfo('template_directory'). '/libs/main/admin.js', array(), '5.5' );
+        wp_enqueue_script( 'jquery-ui-core' );
+        wp_enqueue_script( 'jquery-ui-datepicker' );
+    }
+
+
+    public function get_residual_value($post_id){
+        if ($post_id){
+            $giftcode_meta = get_post_meta($post->ID, 'code', true);
+        } elseif (!$post_id && $post->ID) {
+            $giftcode_meta = get_post_meta($post->ID, 'code', true);
+        } else {
+            return 0;
+        }
+        $code = $giftcode_meta[code]; 
+        $shoppings = get_post_meta($post_id, 'shoppings', true);
+        $giftcode_meta = get_post_meta($post_id, 'code', true);        
+        $_residual_value = $giftcode_meta[value]; 
+        foreach($shoppings as $shopping){
+            $_residual_value = $_residual_value-$shopping[value];
+        }        
+        return $_residual_value;
+    } 
+
+    public function add_all_metaboxes(){
+
+        $this->add_giftcodes_meta_boxes();
+        $this->add_spent_meta_boxes();
     }
 
     public function add_giftcodes_meta_boxes(){
@@ -66,14 +105,55 @@ class giftcodes {
             'low'
         );
     }
+    
+    public function add_spent_meta_boxes(){
+        add_meta_box(
+            'spent_meta',
+            __( 'Spese'),
+            array( $this, 'spent_metabox' ),
+            'giftcodes',
+            'normal',
+            'low'
+        );
+    }
+
+
+
     public function giftcodes_metabox($post){
-        $giftcode_meta = get_post_meta($post->ID, 'giftcode', true);
 
         wp_nonce_field( 'sub_inner_custom_box', 'sub_inner_custom_box_nonce' );
-        echo "<input value='".$giftcode_meta[value]."' type='text' name='giftcode[value]'>";
-        echo "<input value='".$giftcode_meta[code]."' type='text' name='giftcode[code]'>";
+        $giftcode_meta = get_post_meta($post->ID, 'code', true);        
+        echo "Valore residuo: ".$this->get_residual_value($post->ID)."<br/>";
+        echo "Utente: <br/>";
+        echo "Codice: <input value='".$giftcode_meta[code]."' type='text' name='code[code]'> ";
+        echo "Valore originale: <input value='".$giftcode_meta[value]."' type='text' name='code[value]'> ";
+
+        echo "<div ng-app='giftcodesApp' ng-controller='ShoppingsController'>";
+
+        $shoppings = get_post_meta($post->ID, 'shoppings', true);
+        $i=0;
+        foreach ($shoppings as $shopping) {           
+            if ($shopping[date] && $shopping [value]){
+                echo "Data: <input value='".$shopping[date]."' type='date' name='shoppings[".$i."][date]'> ";
+                echo "Valore: <input value='".$shopping[value]."' type='text' name='shoppings[".$i."][value]'>€<br/> ";
+                $i++;
+            }
+            
+        }
+        if ($i){
+            $id = $i;
+        } else {
+            $id = 0;
+        }
+        echo "<b>Aggiungi nuovo</b><br/>";
+        echo "Data: <input value='' type='date' name='shoppings[".$id."][date]'> ";
+        echo "Valore: <input value='' type='text' name='shoppings[".$id."][value]'>€<br/> ";
+        echo "</div>";
+        wp_nonce_field( 'sub_inner_custom_box', 'sub_inner_custom_box_nonce' );
 
     }
+
+
     public function save($post_id){
         /*
          * We need to verify this came from the our screen and with proper authorization,
@@ -115,9 +195,11 @@ class giftcodes {
 
         // Sanitize the user input.
 
-        $gitftcode_data =  $_POST['gitftcode'];
+        $gitftcode_data =  $_POST['code'];
+        $shoppings =  $_POST['shoppings'];
         // Update the meta field.
-        update_post_meta( $post_id, 'gitftcode', $gitftcode_data );
+        update_post_meta( $post_id, 'code', $gitftcode_data );
+        update_post_meta( $post_id, 'shoppings', $shoppings );
 
     }
 

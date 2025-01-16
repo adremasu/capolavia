@@ -105,11 +105,11 @@ require_once('vendor/autoload.php');
 
 
 require_once('libs/class-tgm-plugin-activation.php');
-require_once('libs/subscription.php');
+//require_once('libs/subscription.php');
 require_once('libs/bookings.php');
 require_once('libs/xmasbookings.php');
 require_once('libs/bookings_admin-ajax.php');
-require_once('libs/subscription-ajax.php');
+//require_once('libs/subscription-ajax.php');
 require_once('libs/book_products-ajax.php');
 require_once('libs/book_xmasproducts-ajax.php');
 require_once('libs/options.php');
