@@ -70,19 +70,45 @@ class giftcodes {
         wp_enqueue_script( 'jquery-ui-datepicker' );
     }
 
+    public function get_postid_by_code($code){
+        $args = array(
+            'post_type' => 'giftcodes',
+            'meta_query' => array(
+                array(
+                'key' => 'code',
+                'value' => $code,
+                'compare' => '==',
+                )
+                
+                ),
+                'nopaging'               => false,
+                'posts_per_page'         => '1',    
+            );
+        $query = new WP_Query( $args );
+        $posts = $query->get_posts();
 
+        foreach( $posts as $post ) {
+            $meta = get_post( $post->ID );   
+        }
+        return $meta->ID;
+
+    }
+
+    public function get_shoppings_by_code($post_id){
+        $shoppings = get_post_meta($post_id, 'shoppings', true);
+        return $shoppings;
+    }
     public function get_residual_value($post_id){
         if ($post_id){
-            $giftcode_meta = get_post_meta($post->ID, 'code', true);
+            $code = get_post_meta($post->ID, 'code', true);
         } elseif (!$post_id && $post->ID) {
-            $giftcode_meta = get_post_meta($post->ID, 'code', true);
+            $code = get_post_meta($post->ID, 'code', true);
         } else {
             return 0;
         }
-        $code = $giftcode_meta[code]; 
         $shoppings = get_post_meta($post_id, 'shoppings', true);
-        $giftcode_meta = get_post_meta($post_id, 'code', true);        
-        $_residual_value = $giftcode_meta[value]; 
+        $value = get_post_meta($post_id, 'value', true);        
+        $_residual_value = $value; 
         foreach($shoppings as $shopping){
             $_residual_value = $_residual_value-$shopping[value];
         }        
@@ -122,11 +148,12 @@ class giftcodes {
     public function giftcodes_metabox($post){
 
         wp_nonce_field( 'sub_inner_custom_box', 'sub_inner_custom_box_nonce' );
-        $giftcode_meta = get_post_meta($post->ID, 'code', true);        
+        $giftcode_meta[code] = get_post_meta($post->ID, 'code', true);        
+        $giftcode_meta[value] = get_post_meta($post->ID, 'value', true);        
         echo "Valore residuo: ".$this->get_residual_value($post->ID)."<br/>";
         echo "Utente: <br/>";
-        echo "Codice: <input value='".$giftcode_meta[code]."' type='text' name='code[code]'> ";
-        echo "Valore originale: <input value='".$giftcode_meta[value]."' type='text' name='code[value]'> ";
+        echo "Codice: <input value='".$giftcode_meta[code]."' type='text' name='code'> ";
+        echo "Valore originale: <input value='".$giftcode_meta[value]."' type='text' name='value'> ";
 
         echo "<div ng-app='giftcodesApp' ng-controller='ShoppingsController'>";
 
@@ -195,10 +222,37 @@ class giftcodes {
 
         // Sanitize the user input.
 
-        $gitftcode_data =  $_POST['code'];
-        $shoppings =  $_POST['shoppings'];
+        $giftcode_code =  $_POST['code'];
+        $giftcode_value =  $_POST['value'];
+
+        $_shoppings =  $_POST['shoppings'];
+        $i=0;
+        foreach($_shoppings as $_shopping){
+
+            if ($_shopping['value']){
+                $shoppings[$i]['date'] = $_shopping['date'];
+                $shoppings[$i]['value'] = $_shopping['value'];
+                $i++;
+            }
+        }
+        // Obtain a list of columns
+        foreach ($shoppings as $key => $row) {
+            $date[$key]  = $row['date'];
+            $value[$key] = $row['value'];
+        }
+
+        // You can use array_column() instead of the above code
+        $date  = array_column($shoppings, 'date');
+        $value = array_column($shoppings, 'value');
+
+        // Sort the data with volume descending, edition ascending
+        // Add $data as the last parameter, to sort by the common key
+        array_multisort($date, SORT_ASC, $value, SORT_ASC, $shoppings);
+
+
         // Update the meta field.
-        update_post_meta( $post_id, 'code', $gitftcode_data );
+        update_post_meta( $post_id, 'code', $giftcode_code );
+        update_post_meta( $post_id, 'value', $giftcode_value );
         update_post_meta( $post_id, 'shoppings', $shoppings );
 
     }
